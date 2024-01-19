@@ -9,6 +9,8 @@ Exercise:
 ## Scénario de l’exercice 
 Dans cette unité, vous allez configurer la résolution de noms DNS pour Contoso Ltd. Vous allez créer une zone DNS privée nommée contoso.com, lier les réseaux virtuels pour l’inscription et la résolution, puis créer deux machines virtuelles et tester la configuration.
 
+![Diagramme de l’architecture DNS.](../media/6-exercise-configure-domain-name-servers-configuration-azure.png)
+
 Dans cet exercice, vous allez :
 
 + Tâche 1 : Créer une zone DNS privée
@@ -35,7 +37,7 @@ Dans cet exercice, vous allez :
 | --------------- | -------------------------------------- | -------------------- |
 | Concepts de base          | Resource group                         | ContosoResourceGroup |
 |                 | Nom                                   | Contoso.com          |
-| Les indicateurs            | Aucune modification n’est requise                    |                      |
+| Balises            | Aucune modification n’est requise                    |                      |
 | Vérifier + créer | Passez en revue vos paramètres, puis sélectionnez Créer |                      |
 
 

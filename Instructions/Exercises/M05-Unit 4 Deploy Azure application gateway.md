@@ -9,6 +9,9 @@ Exercise:
 
 Dans cet exercice, vous allez utiliser le Portail Azure pour créer une passerelle applicative. Puis, vous la testerez pour vous assurer qu’elle fonctionne correctement.
 
+![Diagramme d’une architecture de passerelle applicative.](../media/4-exercise-deploy-azure-application-gateway.png)
+
+
 >**Remarque :** Une **[simulation de labo interactive](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Deploy%20Azure%20Application%20Gateway)** est disponible et vous permet de progresser à votre propre rythme. Il peut exister de légères différences entre la simulation interactive et le labo hébergé. Toutefois, les concepts et idées de base présentés sont identiques.
 
 #### Durée estimée : 25 minutes
@@ -39,7 +42,7 @@ Dans cet exercice, vous allez :
    | **Paramètre**         | **Valeur**                                    |
    | ------------------- | -------------------------------------------- |
    | Abonnement        | Sélectionnez votre abonnement.                    |
-   | Groupe de ressources      | Sélectionnez CréerContosoResourceGroup.       |
+   | Resource group      | Sélectionnez CréerContosoResourceGroup.       |
    | Application Gateway | ContosoAppGateway                            |
    | Région              | Sélectionnez **USA Est**.                           |
    | Réseau virtuel     | Sélectionnez **Créer**                        |

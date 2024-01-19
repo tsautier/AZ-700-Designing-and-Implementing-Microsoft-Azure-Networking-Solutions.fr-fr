@@ -11,7 +11,7 @@ Dans cet exercice, vous allez créer un équilibreur de charge interne pour l’
 
 Le diagramme ci-dessous illustre l’environnement que vous déploierez dans cet exercice.
 
-![Diagramme illustrant l’architecture d’équilibreur de charge qui sera créée dans l’exercice (comprend l’équilibreur de charge, le réseau virtuel, le sous-réseau, le sous-réseau Bastion et les machines virtuelles)](../media/exercise-internal-standard-load-balancer-environment-diagram.png)
+![Diagramme illustrant l’architecture d’équilibreur de charge qui sera créée dans l’exercice (comprend l’équilibreur de charge, le réseau virtuel, le sous-réseau, le sous-réseau Bastion et les machines virtuelles)](../media/3-exercise-monitor-load-balancer-resource-using-azure-monitor.png)
 
  Dans cet exercice, vous allez :
 
@@ -259,7 +259,7 @@ Dans cette section, vous allez créer une machine virtuelle de test, puis tester
    | Réseau virtuel                                              | **IntLB-VNet**                |
    | Subnet                                                       | **myBackendSubnet**           |
    | Adresse IP publique                                                    | Remplacez par **Aucun**            |
-   | Groupe de sécurité réseau de la carte réseau                                   | **Avancé**                  |
+   | Groupe de sécurité réseau de la carte réseau                                   | **Avancée**                  |
    | Configurer un groupe de sécurité réseau                             | Sélectionnez le groupe **myNSG** existant |
    | Équilibrage de charge                                               | **Aucun** (ou case non cochée)       |
 

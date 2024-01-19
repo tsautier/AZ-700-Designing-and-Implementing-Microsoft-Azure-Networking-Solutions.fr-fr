@@ -7,6 +7,8 @@ Exercise:
 
 ## Déployer des passerelles ExpressRoute
 
+![Diagramme d’une passerelle de réseau virtuel.](../media/4-exercise-configure-expressroute-gateway.png)
+
 Pour connecter votre réseau virtuel Azure et votre réseau local via ExpressRoute, vous devez d’abord créer une passerelle réseau virtuelle. Une passerelle de réseau virtuel a deux rôles : échanger des routes IP entre les réseaux et router le trafic réseau. 
 
 **Remarque :** Une **[simulation de labo interactive](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Configure%20an%20ExpressRoute%20gateway)** est disponible et vous permet de progresser à votre propre rythme. Il peut exister de légères différences entre la simulation interactive et le labo hébergé. Toutefois, les concepts et idées de base présentés sont identiques.

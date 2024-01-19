@@ -11,7 +11,7 @@ Dans cet exercice, vous allez créer un circuit ExpressRoute à l’aide du port
 
 #### Durée estimée : 15 minutes
 
-![Diagramme de disposition de circuit ExpressRoute pour l’exercice](../media/environment-diagram.png)
+![Diagramme de disposition de circuit ExpressRoute pour l’exercice](../media/5-exercise-provision-expressroute-circuit.png)
 
 
 

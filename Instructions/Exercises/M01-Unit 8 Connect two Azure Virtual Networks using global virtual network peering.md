@@ -8,20 +8,22 @@ Exercise:
 ## Scénario de l’exercice 
 Dans cette unité, vous allez configurer la connectivité entre CoreServicesVnet et ManufacturingVnet en ajoutant des peerings pour autoriser le flux de trafic. 
 
-Dans cette unité, vous allez :
+![Diagramme du peering de réseaux virtuels.](../media/8-exercise-connect-two-azure-virtual-networks-global.png)
 
-+ Tâche 1 : Créer une machine virtuelle pour tester la configuration
-+ Tâche 2 : Se connecter aux machines virtuelles de test à l’aide du protocole RDP
-+ Tâche 3 : Tester la connexion entre les machines virtuelles
-+ Tâche 4 : Créer des peerings de réseaux virtuels entre CoreServicesVnet et ManufacturingVnet
-+ Tâche 5 : Tester la connexion entre les machines virtuelles
+Cette unité vous montrera :
+
++ Tâche 1 : créer une machine virtuelle pour tester la configuration
++ Tâche 2 : se connecter aux machines virtuelles de test à l’aide du protocole RDP
++ Tâche 3 : tester la connexion entre les machines virtuelles
++ Tâche 4 : créer des peerings de réseaux virtuels entre CoreServicesVnet et ManufacturingVnet
++ Tâche 5 : tester la connexion entre les machines virtuelles
 + Tâche 6 : Nettoyer les ressources
 
 **Remarque :** Une **[simulation de labo interactive](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Connect%20two%20Azure%20virtual%20networks%20using%20global%20virtual%20network%20peering)** est disponible et vous permet de progresser à votre propre rythme. Il peut exister de légères différences entre la simulation interactive et le labo hébergé. Toutefois, les concepts et idées de base présentés sont identiques.
 
 #### Durée estimée : 20 minutes
 
-## Tâche 1 : Créer une machine virtuelle pour tester la configuration
+## Tâche 1 : créer une machine virtuelle pour tester la configuration
 
 Dans cette section, vous allez créer une machine virtuelle de test sur le réseau virtuel Manufacturing pour tester si vous pouvez accéder à des ressources à l’intérieur d’un autre réseau virtuel Azure à partir de ManufacturingVnet.
 
@@ -46,7 +48,7 @@ Dans cette section, vous allez créer une machine virtuelle de test sur le rése
 
 1. Vérifiez que la machine virtuelle a été créée.
 
-## Tâche 2 : Se connecter aux machines virtuelles de test à l’aide du protocole RDP
+## Tâche 2 : se connecter aux machines virtuelles de test à l’aide du protocole RDP
 
 1. Sur la page d’accueil du portail Azure, sélectionnez **Machines virtuelles**.
 
@@ -82,7 +84,7 @@ Dans cette section, vous allez créer une machine virtuelle de test sur le rése
 
  
 
-## Tâche 3 : Tester la connexion entre les machines virtuelles
+## Tâche 3 : tester la connexion entre les machines virtuelles
 
 1. Sur ManufacturingVM, ouvrez une invite de commandes PowerShell.
 
@@ -97,7 +99,7 @@ Dans cette section, vous allez créer une machine virtuelle de test sur le rése
 
  
 
-## Tâche 4 : Créer des peerings de réseaux virtuels entre CoreServicesVnet et ManufacturingVnet
+## Tâche 4 : créer des peerings de réseaux virtuels entre CoreServicesVnet et ManufacturingVnet
 
 1. Dans la page d’accueil Azure, sélectionnez **Réseaux virtuels**, puis **CoreServicesVnet**.
 
@@ -135,7 +137,7 @@ Dans cette section, vous allez créer une machine virtuelle de test sur le rése
 
  
 
-## Tâche 5 : Tester la connexion entre les machines virtuelles
+## Tâche 5 : tester la connexion entre les machines virtuelles
 
 1. Sur ManufacturingVM, ouvrez une invite de commandes PowerShell.
 

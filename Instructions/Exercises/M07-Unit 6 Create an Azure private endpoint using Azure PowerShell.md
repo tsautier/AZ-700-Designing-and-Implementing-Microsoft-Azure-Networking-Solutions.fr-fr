@@ -8,6 +8,9 @@ Exercise:
 
 Démarrez avec Azure Private Link en utilisant un point de terminaison privé pour vous connecter en toute sécurité à une application web Azure. Il existe de nombreuses façons de créer des points de terminaison, notamment le portail, l’interface CLI, PowerShell, etc. 
 
+![Diagramme de l’architecture d’un point de terminaison privé.](../media/6-exercise-create-azure-private-endpoint-using-azure-powershell.png)
+
+
 **Remarque :** Une **[simulation de labo interactive](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Create%20an%20Azure%20private%20endpoint%20using%20Azure%20PowerShell)** est disponible et vous permet de progresser à votre propre rythme. Il peut exister de légères différences entre la simulation interactive et le labo hébergé. Toutefois, les concepts et idées de base présentés sont identiques.
 
 #### Durée estimée : 45 minutes

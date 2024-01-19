@@ -9,6 +9,9 @@ Exercise:
 
 Dans cet exercice, vous allez créer le réseau virtuel Spoke et créer un hub virtuel sécurisé, puis connecter les réseaux virtuels Hub and Spoke et acheminer le trafic vers votre hub. Ensuite, vous allez déployer les serveurs de charge de travail, puis créer une stratégie de pare-feu et sécuriser votre hub. Enfin, vous allez tester le pare-feu.
 
+![Diagramme de l’architecture de réseau virtuel avec un hub sécurisé.](../media/9-exercise-secure-your-virtual-hub-using-azure-firewall-manager.png)
+
+
 **Remarque :** Une **[simulation de labo interactive](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Secure%20your%20virtual%20hub%20using%20Azure%20Firewall%20Manager)** est disponible et vous permet de progresser à votre propre rythme. Il peut exister de légères différences entre la simulation interactive et le labo hébergé. Toutefois, les concepts et idées de base présentés sont identiques.
 
 ## Créer une architecture hub and spoke
@@ -311,13 +314,13 @@ Dans cette tâche, vous allez tester la règle d’application pour confirmer qu
 
 1. Dans la zone **Nom d’utilisateur**, entrez **TestUser**.
 
-1. Cliquez sur **Se connecter**.
+1. Sélectionnez **Se connecter**.
 
    ![Connexion RDP à srv-workload-01](../media/rdp-srv-workload-01.png)
 
 1. Dans la boîte de dialogue **Entrez vos informations d’identification**, connectez-vous à la machine virtuelle du serveur **Srv-workload-01** à l’aide du mot de passe que vous avez spécifié pendant le déploiement.
 
-1. Sélectionnez **OK**.
+1. Cliquez sur **OK**.
 
 1. Sélectionnez **Oui** dans le message du certificat.
 
@@ -351,7 +354,7 @@ Dans cette tâche, vous allez tester la règle réseau pour confirmer qu’elle 
 
 1. Dans la boîte de dialogue **Entrer vos informations d’identification**, connectez-vous au serveur **Srv-workload-02** à l’aide du nom d’utilisateur **TestUser** et du mot de passe que vous avez spécifié pendant le déploiement.
 
-1. Sélectionnez **OK**.
+1. Cliquez sur **OK**.
 
 1. Sélectionnez **Oui** dans le message du certificat.
 

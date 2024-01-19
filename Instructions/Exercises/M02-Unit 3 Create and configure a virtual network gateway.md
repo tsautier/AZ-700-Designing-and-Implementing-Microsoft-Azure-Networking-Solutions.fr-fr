@@ -9,6 +9,8 @@ Exercise:
 
 Dans cet exercice, vous allez configurer une passerelle de réseau virtuel pour connecter le VNet Contoso Core Services et le VNet Manufacturing. 
 
+![Diagramme d’une passerelle de réseau virtuel.](../media/3-exercise-create-configure-local-network-gateway.png)
+
 Dans cet exercice, vous allez :
 
 + Tâche 1 : Créer CoreServicesVnet et ManufacturingVnet
@@ -104,7 +106,7 @@ Dans cet exercice, vous allez :
 
  
 
-## Tâche 5 : Tester la connexion entre les machines virtuelles
+## Tâche 5 : tester la connexion entre les machines virtuelles
 
 1. Sur **ManufacturinVM**, ouvrez PowerShell.
 
@@ -140,7 +142,7 @@ Dans cet exercice, vous allez :
    |                 |                   | SKU                                         | VpnGw1                       |
    |                 |                   | Generation                                  | Génération1                  |
    |                 |                   | Réseau virtuel                             | CoreServicesVnet             |
-   |                 |                   | Subnet                                      | GatewaySubnet (10.20.0.0/27) |
+   |                 |                   | Sous-réseau                                      | GatewaySubnet (10.20.0.0/27) |
    |                 |                   | Type d’adresse IP publique                      | Standard                     |
    |                 | Adresse IP publique | Adresse IP publique                           | Création                   |
    |                 |                   | Nom de l’adresse IP publique                      | CoreServicesVnetGateway-ip   |
@@ -171,7 +173,7 @@ Dans cet exercice, vous allez :
    |                 |                   | SKU                                         | VpnGw1                       |
    |                 |                   | Generation                                  | Génération1                  |
    |                 |                   | Réseau virtuel                             | ManufacturingVnet            |
-   |                 |                   | Subnet                                      | GatewaySubnet (10.30.0.0/27) |
+   |                 |                   | Sous-réseau                                      | GatewaySubnet (10.30.0.0/27) |
    |                 |                   | Type d’adresse IP publique                      | Standard                     |
    |                 | Adresse IP publique | Adresse IP publique                           | Création                   |
    |                 |                   | Nom de l’adresse IP publique                      | ManufacturingVnetGateway-ip  |

@@ -8,6 +8,8 @@ Exercise:
 
 En tant que membre de l’équipe de sécurité réseau de Contoso, la tâche suivante consiste à créer des règles de pare-feu pour autoriser/refuser l’accès à certains sites web. Les étapes suivantes vous guident dans la création d’un groupe de ressources, d’un réseau virtuel et de sous-réseaux, et d’une machine virtuelle en tant que tâches de préparation de l’environnement, puis le déploiement d’un pare-feu et d’une stratégie de pare-feu, la configuration des itinéraires par défaut et des règles d’application, réseau et DNAT, et enfin les tests du pare-feu.
 
+![Diagramme de réseau virtuel avec l’architecture du pare-feu Azure.](../media/7-exercise-deploy-configure-azure-firewall-using-azure-portal.png)
+
 Dans cet exercice, vous allez :
 
 + Tâche 1 : Créer un groupe de ressources
@@ -198,7 +200,7 @@ Dans cette tâche, sur le sous-réseau Workload-SN, vous allez configurer l’it
 
 1. Dans **Sous-réseau**, sélectionnez **Workload-SN**. Veillez à ne sélectionner que le sous-réseau Workload-SN pour cette route, sinon votre pare-feu ne fonctionnera pas correctement.
 
-1. Sélectionnez **OK**.
+1. Cliquez sur **OK**.
 
 1. Sous **Paramètres**, sélectionnez **Itinéraires**, puis **Ajouter**.
 
@@ -234,7 +236,7 @@ Dans cette tâche, vous allez ajouter une règle d’application qui autorise l�
    | ---------------------- | ----------------------------------------- |
    | Nom                   | **App-Coll01**                            |
    | Type de regroupement de règles   | **Application**                           |
-   | Priority               | **200**                                   |
+   | Priorité               | **200**                                   |
    | Action de regroupement de règles | **Autoriser**                                 |
    | Groupe de regroupement de règles  | **DefaultApplicationRuleCollectionGroup** |
    | **Section Règles**      |                                           |
@@ -266,7 +268,7 @@ Dans cette tâche, vous allez ajouter une règle réseau qui autorise l’accès
    | ---------------------- | ------------------------------------------------------------ |
    | Nom                   | **Net-Coll01**                                               |
    | Type de regroupement de règles   | **Réseau**                                                  |
-   | Priority               | **200**                                                      |
+   | Priorité               | **200**                                                      |
    | Action de regroupement de règles | **Autoriser**                                                    |
    | Groupe de regroupement de règles  | **DefaultNetworkRuleCollectionGroup**                        |
    | **Section Règles**      |                                                              |
@@ -305,7 +307,7 @@ Au cours de cette tâche, vous allez ajouter une règle DNAT qui vous permet de 
    | Nom                  | **rdp-nat**                                                  |
    | Type de source           | **Adresse IP**                                               |
    | Source                | *                                                            |
-   | Protocol              | **TCP**                                                      |
+   | Protocole              | **TCP**                                                      |
    | Ports de destination     | **3389**                                                     |
    | Type de destination      | **Adresse IP**                                               |
    | Destination           | Entrez l’adresse IP publique de pare-feu de **fw-pip** que vous avez notée précédemment.<br />**par ex. 20.90.136.51** |
@@ -355,13 +357,13 @@ Dans cette dernière tâche, vous allez tester le pare-feu pour vérifier que le
 
 1. Dans la zone **Nom d’utilisateur**, entrez **TestUser**.
 
-1. Cliquez sur **Se connecter**.
+1. Sélectionnez **Se connecter**.
 
    ![Connexion RDP à l’adresse IP publique du pare-feu](../media/remote-desktop-connection-1.png)
 
 1. Dans la boîte de dialogue **Entrez vos informations d’identification**, connectez-vous à la machine virtuelle du serveur **Srv-Work** à l’aide du mot de passe que vous avez spécifié pendant le déploiement.
 
-1. Sélectionnez **OK**.
+1. Cliquez sur **OK**.
 
 1. Sélectionnez **Oui** dans le message du certificat.
 

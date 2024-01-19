@@ -12,7 +12,7 @@ Exercise:
 
 Dans cet exercice, vous allez configurer une configuration Azure Front Door regroupant deux instances d’une application web qui s’exécutent dans différentes régions Azure. Cette configuration dirige le trafic vers le site le plus proche qui exécute l’application. Azure Front Door supervise en permanence l’application web. Vous ferez la preuve d’un basculement automatique vers le site disponible suivant quand le site le plus proche n’est pas disponible. La configuration réseau est présentée dans la table suivante :
 
-![Configuration réseau pour Azure Front Door.](../media/front-door-environment-diagram.png)
+![Configuration réseau pour Azure Front Door.](../media/6-exercise-create-front-door-for-highly-available.png)
 
 Dans cet exercice, vous allez :
 
@@ -41,7 +41,7 @@ Cet exercice demande deux instances d’une application web qui s’exécutent d
    | **Paramètre**      | **Valeur**                                                    |
    | ---------------- | ------------------------------------------------------------ |
    | Abonnement     | Sélectionnez votre abonnement.                                    |
-   | Groupe de ressources   | Sélectionnez le groupe de ressources ContosoResourceGroup.               |
+   | Resource group   | Sélectionnez le groupe de ressources ContosoResourceGroup.               |
    | Nom             | Attribuez un Nom unique à votre application web. Cet exemple utilise WebAppContoso-1. |
    | Publish          | Sélectionnez **Code**.                                             |
    | Pile d’exécution    | Sélectionnez **.NET 6 (LTS)**.                                     |
@@ -62,7 +62,7 @@ Cet exercice demande deux instances d’une application web qui s’exécutent d
    | **Paramètre**      | **Valeur**                                                    |
    | ---------------- | ------------------------------------------------------------ |
    | Abonnement     | Sélectionnez votre abonnement.                                    |
-   | Groupe de ressources   | Sélectionnez le groupe de ressources ContosoResourceGroup.               |
+   | Resource group   | Sélectionnez le groupe de ressources ContosoResourceGroup.               |
    | Nom             | Attribuez un Nom unique à votre application web. Cet exemple utilise WebAppContoso-2. |
    | Publish          | Sélectionnez **Code**.                                             |
    | Pile d’exécution    | Sélectionnez **.NET 6 (LTS)**.                                     |
@@ -88,7 +88,7 @@ Configurez Azure Front Door pour diriger le trafic utilisateur selon la plus pet
    | **Paramètre**             | **Valeur**                                    |
    | ----------------------- | -------------------------------------------- |
    | Abonnement            | Sélectionnez votre abonnement.                    |
-   | Groupe de ressources          | Sélectionnez ContosoResourceGroup                  |
+   | Resource group          | Sélectionnez ContosoResourceGroup                  |
    | Emplacement du groupe de ressources | Acceptez les paramètres par défaut.                       |
    | Nom                    | Entrez un nom unique dans cet abonnement, par exemple FrontDoor(vosinitiales).   |
    | Niveau                    | Standard   |

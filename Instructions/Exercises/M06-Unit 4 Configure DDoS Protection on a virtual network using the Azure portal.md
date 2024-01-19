@@ -8,6 +8,9 @@ Exercise:
 
 En tant que responsable de l’équipe de sécurité réseau de Contoso, vous allez exécuter une attaque DDoS sur le réseau virtuel. Les étapes suivantes vous guident dans la création d’un réseau virtuel, la configuration de la DDoS Protection et la création d’une attaque que vous pouvez observer et surveiller à l’aide de la télémétrie et des métriques.
 
+![Diagramme de l’architecture DDoS.](../media/4-exercise-configure-ddos-protection-virtual-network-using-azure-portal.png)
+
+
 Dans cet exercice, vous allez :
 
 + Tâche 1 : Créer un groupe de ressources
