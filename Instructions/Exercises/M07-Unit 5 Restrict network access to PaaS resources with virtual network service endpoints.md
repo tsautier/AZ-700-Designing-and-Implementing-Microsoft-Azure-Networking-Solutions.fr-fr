@@ -9,6 +9,8 @@ Exercise:
 
 Les points de terminaison de service de réseau virtuel permettent de restreindre l’accès réseau à certaines ressources du service Azure en n’autorisant leur accès qu’à partir d’un sous-réseau du réseau virtuel. Vous pouvez également supprimer l’accès Internet aux ressources. Les points de terminaison de service fournissent une connexion directe entre votre réseau virtuel et les services Azure pris en charge, ce qui vous permet d’utiliser l’espace d’adressage privé de votre réseau virtuel pour accéder aux services Azure. Le trafic destiné aux ressources Azure via les points de terminaison de service reste toujours sur le serveur principal de Microsoft Azure.
 
+![Diagramme de l’architecture du point de terminaison de service.](../media/5-exercise-restrict-network-paas-resources-virtual-network-service-endpoints.png)
+
 Dans cet exercice, vous allez :
 
 + Tâche 1 : Créer un réseau virtuel
@@ -274,7 +276,7 @@ Pour tester l’accès réseau à un compte de stockage, déployez une machine v
    ![Interface utilisateur graphique, application, description générée automatiquement](../media/private-virtual-machine-connect.png)
 1. Après avoir sélectionné le bouton Connecter et RDP, sélectionnez le bouton Télécharger le fichier RDP. Un fichier .rdp (Remote Desktop Protocol) est créé et téléchargé sur votre ordinateur.
 1. Ouvrez le fichier .rdp téléchargé. Si vous y êtes invité, sélectionnez Connexion. Entrez le nom d’utilisateur et le mot de passe spécifiés lors de la création de la machine virtuelle. Vous devrez peut-être sélectionner Plus de choix, puis Utiliser un autre compte, pour spécifier les informations d’identification que vous avez entrées lorsque vous avez créé la machine virtuelle.
-1. Sélectionnez **OK**.
+1. Cliquez sur **OK**.
 1. Un avertissement de certificat peut s’afficher pendant le processus de connexion. Si vous recevez l’avertissement, sélectionnez Oui ou Continuer pour poursuivre le processus de connexion.
 1. Sur la machine virtuelle ContosoPrivate, mappez le partage de fichiers Azure au lecteur Z à l’aide de PowerShell. Avant d’exécuter les commandes qui suivent, remplacez <storage-account-key>,  <storage-account-name> (par exemple contosostoragexx) et my-file-share (par exemple marketing) par les valeurs que vous avez fournies et récupérées dans la tâche Créer un compte de stockage.
 

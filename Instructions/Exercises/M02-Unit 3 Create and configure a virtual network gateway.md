@@ -43,6 +43,7 @@ Dans cet exercice, vous allez :
    New-AzResourceGroup -Name $RGName -Location "eastus"
    New-AzResourceGroupDeployment -ResourceGroupName $RGName -TemplateFile azuredeploy.json -TemplateParameterFile azuredeploy.parameters.json
    ```
+ > **Remarque :** Il existe à l’heure actuelle un problème en cours dans la région Europe Ouest qui affecte les déploiements de passerelle. En tant que solution de contournement, la région ManufacturingVnet est passée à l’Europe Nord pour ce déploiement. 
 
 ## Tâche 2 : créer CoreServicesVM
 
@@ -167,7 +168,7 @@ Dans cet exercice, vous allez :
    | Concepts de base          | Détails du projet   | Abonnement                                | Aucune modification n’est requise          |
    |                 |                   | ResourceGroup                               | ContosoResourceGroup         |
    |                 | Détails de l’instance  | Nom                                        | ManufacturingVnetGateway     |
-   |                 |                   | Région                                      | Europe Ouest                  |
+   |                 |                   | Région                                      | Europe Nord                  |
    |                 |                   | Type de passerelle                                | VPN                          |
    |                 |                   | Type de VPN                                    | basé sur la route                  |
    |                 |                   | SKU                                         | VpnGw1                       |
