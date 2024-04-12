@@ -6,8 +6,9 @@ Exercise:
 
 # M08 - Unité 3 Superviser une ressource d’équilibreur de charge à l’aide d’Azure Monitor
 
+## Scénario de l’exercice
 
-Dans cet exercice, vous allez créer un équilibreur de charge interne pour l’organisation fictive Contoso Ltd. Vous créerez ensuite un espace de travail Log Analytics et utiliserez les insights Azure Monitor pour afficher des informations sur votre équilibreur de charge interne. Vous afficherez la vue Dépendance fonctionnelle, puis afficherez des métriques détaillées pour la ressource d’équilibreur de charge ainsi que des informations sur l’intégrité des ressources pour l’équilibreur de charge. Pour finir, vous configurerez les paramètres de diagnostic de l’équilibreur de charge de façon à envoyer des métriques à l’espace de travail Log Analytics que vous avez créé. 
+Dans cet exercice, vous allez créer un équilibreur de charge interne pour l’organisation fictive Contoso Ltd. Vous créerez ensuite un espace de travail Log Analytics et utiliserez les insights Azure Monitor pour afficher des informations sur votre équilibreur de charge interne. Vous afficherez la vue Dépendance fonctionnelle, puis afficherez des métriques détaillées pour la ressource d’équilibreur de charge ainsi que des informations sur l’intégrité des ressources pour l’équilibreur de charge. Pour finir, vous configurerez les paramètres de diagnostic de l’équilibreur de charge de façon à envoyer des métriques à l’espace de travail Log Analytics que vous avez créé.
 
 Le diagramme ci-dessous illustre l’environnement que vous déploierez dans cet exercice.
 
@@ -30,14 +31,12 @@ Le diagramme ci-dessous illustre l’environnement que vous déploierez dans cet
 + Tâche 13 : configurer les paramètres de diagnostic
 + Tâche 14 : nettoyer les ressources
 
-
 **Remarque :** Une **[simulation de labo interactive](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Monitor%20a%20load%20balancer%20resource%20using%20Azure%20Monitor)** est disponible et vous permet de progresser à votre propre rythme. Il peut exister de légères différences entre la simulation interactive et le labo hébergé. Toutefois, les concepts et idées de base présentés sont identiques.
 
-
 > [!Note]  
-> Il peut exister de légères différences entre les instructions et l’interface du portail Azure, mais le concept de base est identique. 
+> Il peut exister de légères différences entre les instructions et l’interface du portail Azure, mais le concept de base est identique.
 
-#### Durée estimée : 55 minutes
+### Durée estimée : 55 minutes
 
 ## Tâche 1 : Créer le réseau virtuel
 
@@ -88,14 +87,13 @@ Dans cette section, vous allez créer un réseau virtuel et un sous-réseau.
 
 Dans cette section, vous allez créer un équilibreur de charge interne de référence SKU Standard. La raison pour laquelle nous créons un équilibreur de charge de référence SKU Standard dans cet exercice, plutôt qu’un équilibreur de charge de référence SKU De base, est que certains exercices ultérieurs nécessiteront une version SKU Standard de l’équilibreur de charge.
 
-1.  Dans la page d’accueil Azure, dans la barre de recherche, entrez **Équilibreur de charge**. 
-1.  Sélectionnez **Créer un équilibreur de charge**.
-1.  Sous l’onglet **De base**, utilisez les informations du tableau ci-dessous pour créer l’équilibreur de charge.
-    
+1. Dans la page d’accueil Azure, dans la barre de recherche, entrez **Équilibreur de charge**.
+1. Sélectionnez **Créer un équilibreur de charge**.
+1. Sous l’onglet **De base**, utilisez les informations du tableau ci-dessous pour créer l’équilibreur de charge.
 
    | **Paramètre**           | **Valeur**                |
    | --------------------- | ------------------------ |
-   | Onglet Informations de base            |                          | 
+   | Onglet Informations de base            |                          |
    | Abonnement          | Sélectionnez votre abonnement |
    | Resource group        | **IntLB-RG**             |
    | Nom                  | **myIntLoadBalancer**    |
@@ -108,12 +106,9 @@ Dans cette section, vous allez créer un équilibreur de charge interne de réf�
    | Subnet                | **myBackendSubnet**      |
    | Affectation d’adresses IP | **Dynamique**              |
 
-
 1. Sélectionnez **Revoir + créer**.
 
-
 1. Sélectionnez **Create** (Créer).
-
 
 ## Tâche 3 : Créer un pool de back-ends
 
@@ -135,8 +130,6 @@ Le pool d’adresses de back-ends contient les adresses IP des cartes d’inter
 
    ![Afficher le pool de back-ends créé dans l’équilibreur de charge](../media/create-backendpool.png)
 
-   
-
 ## Tâche 4 : Créer une sonde d’intégrité
 
 L’équilibreur de charge supervise l’état de votre application avec une sonde d’intégrité. La sonde d’intégrité ajoute ou supprime des machines virtuelles dans l’équilibreur de charge en fonction de leur réponse aux contrôles d’intégrité. Vous allez maintenant créer une sonde d’intégrité afin de superviser l’intégrité des machines virtuelles.
@@ -156,8 +149,6 @@ L’équilibreur de charge supervise l’état de votre application avec une son
 1. Sélectionnez **Ajouter**.
 
    ![Afficher la sonde d’intégrité créée dans l’équilibreur de charge](../media/create-healthprobe.png)
-
-
 
 ## Tâche 5 : Créer une règle d’équilibreur de charge
 
@@ -187,11 +178,12 @@ Une règle d’équilibrage de charge est utilisée pour définir la distributio
 
 ## Tâche 6 : Créer des serveurs back-end
 
-
 Dans cette section, vous allez créer trois machines virtuelles pour le pool principal de l’équilibreur de charge, ajouter les machines virtuelles au pool principal, puis installer IIS sur les trois machines virtuelles afin de tester l’équilibreur de charge.
 
 1. Dans le portail Azure, ouvrez la session **PowerShell** dans le volet **Cloud Shell**.
+
  > **Remarque :** si c’est la première fois que vous ouvrez Cloud Shell, vous serez peut-être invité à créer un compte de stockage. Sélectionnez **Créer le stockage**.
+
 1. Dans la barre d’outils du volet Cloud Shell, sélectionnez l’icône **Charger/télécharger des fichiers**, dans le menu déroulant, sélectionnez **Charger** et chargez les fichiers **azuredeploy.json** et **azuredeploy.parameters.json** l’un après l’autre dans le répertoire racine de Cloud Shell à partir du dossier source **F:\Allfiles\Exercises\M08**.
 
 1. Déployez les modèles ARM suivants pour créer le réseau virtuel, les sous-réseaux et les machines virtuelles nécessaires à cet exercice :
@@ -204,7 +196,7 @@ Dans cette section, vous allez créer trois machines virtuelles pour le pool pri
    New-AzResourceGroupDeployment -ResourceGroupName $RGName -TemplateFile azuredeploy.json -TemplateParameterFile azuredeploy.parameters.json
    ```
   
-    > **Remarque :** le déploiement peut prendre plusieurs minutes. 
+    > **Remarque :** le déploiement peut prendre plusieurs minutes.
 
 ## Tâche 7 : Ajouter des machines virtuelles au pool de back-ends
 
@@ -222,8 +214,6 @@ Dans cette section, vous allez créer trois machines virtuelles pour le pool pri
 
    ![Afficher les machines virtuelles ajoutées au pool de back-ends dans l’équilibreur de charge](../media/add-vms-backendpool.png)
 
- 
-
 ## Tâche 8 : tester l’équilibreur de charge
 
 Dans cette section, vous allez créer une machine virtuelle de test, puis tester l’équilibreur de charge.
@@ -231,9 +221,9 @@ Dans cette section, vous allez créer une machine virtuelle de test, puis tester
 ### Créer une machine virtuelle de test
 
 > [!Note]  
-> Il peut exister de légères différences entre les instructions et l’interface du portail Azure, mais le concept de base est identique. 
+> Il peut exister de légères différences entre les instructions et l’interface du portail Azure, mais le concept de base est identique.
 
-1. Sur la page d’accueil Azure, dans la zone de recherche globale, entrez **Machines virtuelles** et sélectionnez Machines virtuelles sous Services. 
+1. Sur la page d’accueil Azure, dans la zone de recherche globale, entrez **Machines virtuelles** et sélectionnez Machines virtuelles sous Services.
 
 1. Sélectionnez **+ Créer; + Machine virtuelle**, dans l’onglet **Fonctions de base**, créez la première machine virtuelle en utilisant les informations du tableau ci-dessous.
 
@@ -250,7 +240,7 @@ Dans cette section, vous allez créer une machine virtuelle de test, puis tester
    | Mot de passe             | **Choisissez un mot de passe sécurisé**                |
    | Confirmer le mot de passe     | **Choisissez un mot de passe sécurisé**                |
 
-1. Sélectionnez **Suivant : Disques**, puis **Suivant : Mise en réseau**. 
+1. Sélectionnez **Suivant : Disques**, puis **Suivant : Mise en réseau**.
 
 1. Sous l’onglet **Mise en réseau**, utilisez les informations du tableau ci-dessous pour configurer les paramètres réseau.
 
@@ -306,7 +296,7 @@ Dans cette section, vous allez créer une machine virtuelle de test, puis tester
 
    ![Accès aux espaces de travail Log Analytics à partir de la page d’accueil du portail Azure](../media/log-analytics-workspace-1.png)
 
-1. Sélectionnez **Créer**. 
+1. Sélectionnez **Créer**.
 
 1. Dans la page **Créer un espace de travail Log Analytics**, sous l’onglet **De base**, utilisez les informations du tableau ci-dessous pour créer l’espace de travail.
 
@@ -320,8 +310,6 @@ Dans cette section, vous allez créer une machine virtuelle de test, puis tester
 1. Sélectionnez **Vérifier + créer**, puis **Créer**.
 
    ![Liste des espaces de travail Log Analytics](../media/log-analytics-workspace-2.png)
-
-
 
 ## Tâche 10 : utiliser l’affichage Dépendance fonctionnelle
 
@@ -337,11 +325,11 @@ Dans cette section, vous allez créer une machine virtuelle de test, puis tester
 
 1. Utilisez les boutons **Zoom avant (+)** et **Zoom arrière (-)** dans le coin inférieur droit de la page pour effectuer un zoom avant ou arrière sur le diagramme de la topologie (vous pouvez également utiliser la molette de la souris si vous en avez une). Vous pouvez aussi faire glisser le diagramme de topologie sur la page pour le déplacer.
 
-1. Pointez sur le composant **LoadBalancerFrontEnd** dans le diagramme, puis sur le composant **myBackendPool**. 
+1. Pointez sur le composant **LoadBalancerFrontEnd** dans le diagramme, puis sur le composant **myBackendPool**.
 
 1. Notez que vous pouvez utiliser les liens de ces fenêtres indépendantes pour afficher des informations sur ces composants d’équilibreur de charge et ouvrir leurs panneaux de portail Azure respectifs.
 
-1. Pour télécharger une copie au format de fichier .SVG du diagramme de topologie, sélectionnez **Télécharger la topologie**, puis enregistrez le fichier dans votre dossier **Téléchargements**. 
+1. Pour télécharger une copie au format de fichier .SVG du diagramme de topologie, sélectionnez **Télécharger la topologie**, puis enregistrez le fichier dans votre dossier **Téléchargements**.
 
 1. Dans le coin supérieur droit, sélectionnez **Afficher les métriques** pour rouvrir le volet de métriques sur le côté droit de l’écran.
     ![Affichage Dépendance fonctionnelle des insights réseau Azure Monitor - Bouton Afficher les métriques mis en évidence](../media/network-insights-functional-dependency-view-3.png)
@@ -349,8 +337,6 @@ Dans cette section, vous allez créer une machine virtuelle de test, puis tester
 1. Le volet Métriques fournit un aperçu rapide de certaines métriques clés pour cette ressource d’équilibreur de charge, sous la forme de graphiques à barres et en courbes.
 
     ![Insights réseau Azure Monitor - Vue de base des métriques](../media/network-insights-basicmetrics-view.png)
-
- 
 
 ## Tâche 11 : afficher les métriques détaillées
 
@@ -368,11 +354,9 @@ Dans cette section, vous allez créer une machine virtuelle de test, puis tester
 1. Placez le curseur sur certains des points de données des graphiques ; vous constaterez que les valeurs changent et affichent la valeur exacte à ce moment précis.
    ![Insights réseau Azure Monitor - Vue détaillée des métriques - Onglet Débit de données](../media/network-insights-detailedmetrics-3.png)
 
-1. Sélectionnez l’onglet **Distribution du flux** et faites défiler la page pour afficher les graphiques sous la section **Création de flux de machine virtuelle et trafic réseau**. 
+1. Sélectionnez l’onglet **Distribution du flux** et faites défiler la page pour afficher les graphiques sous la section **Création de flux de machine virtuelle et trafic réseau**.
 
    ![Insights réseau Azure Monitor - Vue détaillée des métriques - Graphiques de création de flux de machine virtuelle et de trafic réseau](../media/network-insights-detailedmetrics-4.png)
-
- 
 
 ## Tâche 12 : afficher l’intégrité des ressources
 
@@ -391,8 +375,6 @@ Dans cette section, vous allez créer une machine virtuelle de test, puis tester
 1. La page **Resource Health** identifie les éventuels gros problèmes de disponibilité liés à votre ressource d’équilibreur de charge. Si des événements figurent sous la section **Historique d’intégrité**, vous pouvez développer l’événement d’intégrité pour afficher plus de détails. Vous pouvez même enregistrer les détails de l’événement sous forme de fichier PDF, afin de pouvoir l’examiner ultérieurement et créer des rapports.
 
    ![Service Health>Vue Resource health](../media/resource-health-2.png)
-
- 
 
 ## Tâche 13 : configurer les paramètres de diagnostic
 
@@ -413,8 +395,6 @@ Dans cette section, vous allez créer une machine virtuelle de test, puis tester
 1. Sélectionnez **Enregistrer**.
 
    ![Page Paramètre de diagnostic pour l’équilibreur de charge](../media/diagnostic-settings-2.png)
-
- 
 
 ## Tâche 14 : nettoyer les ressources
 

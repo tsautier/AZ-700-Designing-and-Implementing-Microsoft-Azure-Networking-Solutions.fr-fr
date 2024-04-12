@@ -6,7 +6,8 @@ Exercise:
 
 # M01 - Unité 6 Configurer les paramètres DNS dans Azure
 
-## Scénario de l’exercice 
+## Scénario de l’exercice
+
 Dans cette unité, vous allez configurer la résolution de noms DNS pour Contoso Ltd. Vous allez créer une zone DNS privée nommée contoso.com, lier les réseaux virtuels pour l’inscription et la résolution, puis créer deux machines virtuelles et tester la configuration.
 
 ![Diagramme de l’architecture DNS.](../media/6-exercise-configure-domain-name-servers-configuration-azure.png)
@@ -20,7 +21,7 @@ Dans cet exercice, vous allez :
 
 **Remarque :** Une **[simulation de labo interactive](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Configure%20DNS%20settings%20in%20Azure)** est disponible et vous permet de progresser à votre propre rythme. Il peut exister de légères différences entre la simulation interactive et le labo hébergé. Toutefois, les concepts et idées de base présentés sont identiques.
 
-#### Durée estimée : 25 minutes
+### Durée estimée : 25 minutes
 
 ## Tâche 1 : Créer une zone DNS privée
 
@@ -39,7 +40,6 @@ Dans cet exercice, vous allez :
 |                 | Nom                                   | Contoso.com          |
 | Balises            | Aucune modification n’est requise                    |                      |
 | Vérifier + créer | Passez en revue vos paramètres, puis sélectionnez Créer |                      |
-
 
 5. Attendez la fin du déploiement, puis sélectionnez **Accéder à la ressource**.
 
@@ -63,12 +63,11 @@ Dans cet exercice, vous allez :
 | Activer l’inscription automatique            | Volumes sélectionnés                                |
 | Passez en revue vos paramètres, puis sélectionnez OK. |                                         |
 
-
 4. Cliquez sur **Actualiser**.
 
 5. Vérifiez que CoreServicesVnetLink a été créé et que l’inscription automatique est activée.
 
-6. Répétez les étapes 2 à 5 pour ManufacturingVnet en utilisant les informations du tableau suivant : 
+6. Répétez les étapes 2 à 5 pour ManufacturingVnet en utilisant les informations du tableau suivant :
 
 | **Option**                          | **Valeur**                                |
 | ----------------------------------- | ---------------------------------------- |
@@ -78,12 +77,11 @@ Dans cet exercice, vous allez :
 | Activer l’inscription automatique            | Volumes sélectionnés                                 |
 | Passez en revue vos paramètres, puis sélectionnez OK. |                                          |
 
-
 7. Cliquez sur **Actualiser**.
 
 8. Vérifiez que le ManufacturingVnetLink a été créé et que l’inscription automatique est activée.
 
-9. Répétez les étapes 2 à 5 pour ResearchVnet, en utilisant les informations du tableau suivant : 
+9. Répétez les étapes 2 à 5 pour ResearchVnet, en utilisant les informations du tableau suivant :
 
 | **Option**                          | **Valeur**                           |
 | ----------------------------------- | ----------------------------------- |
@@ -93,19 +91,16 @@ Dans cet exercice, vous allez :
 | Activer l’inscription automatique            | Volumes sélectionnés                            |
 | Passez en revue vos paramètres, puis sélectionnez OK. |                                     |
 
-
 10. Cliquez sur **Actualiser**.
 
 11. Vérifiez que ResearchVnetLink a été créé et que l’inscription automatique est activée.
 
- 
-
-##  Tâche 3 : Créer des machines virtuelles pour tester la configuration
+## Tâche 3 : Créer des machines virtuelles pour tester la configuration
 
 Dans cette section, vous allez créer deux machines virtuelles de test pour tester la configuration de la zone DNS privée.
 
 1. Dans le portail Azure, ouvrez la session **PowerShell** dans le volet **Cloud Shell**.
-    
+
     > **Remarque :** si c’est la première fois que vous ouvrez Cloud Shell, vous serez peut-être invité à créer un compte de stockage. Sélectionnez **Créer le stockage**.
 
 2. Dans la barre d’outils du volet Cloud Shell, sélectionnez l’icône **Charger/télécharger des fichiers**, dans le menu déroulant, sélectionnez **Charger** et chargez les fichiers **azuredeploy.json** et **azuredeploy.parameters.json** l’un après l’autre dans le répertoire racine de Cloud Shell à partir du dossier source **F:\Allfiles\Exercises\M01**.
@@ -124,8 +119,6 @@ Dans cette section, vous allez créer deux machines virtuelles de test pour test
 
 5. Vérifiez que les deux machines virtuelles ont été créées.
 
- 
-
 ## Tâche 4 : Vérifier que les enregistrements sont présents dans la zone DNS
 
 1. Sur la page d’accueil du portail Azure, sélectionnez **Zones DNS privées**.
@@ -136,11 +129,7 @@ Dans cette section, vous allez créer deux machines virtuelles de test pour test
 
 ![Zone DNS contoso.com présentant les enregistrements A de l’hôte inscrit automatiquement.](../media/contoso_com-dns-zone.png)
 
- 
-
 4. Notez les noms et adresses IP des machines virtuelles.
-
- 
 
 ### Se connecter aux machines virtuelles de test à l’aide du protocole RDP
 
@@ -173,6 +162,5 @@ Dans cette section, vous allez créer deux machines virtuelles de test pour test
 1. Vérifiez que le nom de domaine complet (FQDN) correspond à l’adresse IP que vous avez notée dans la zone DNS privé. Le test Ping lui-même expire en raison du pare-feu Windows activé sur les machines virtuelles.
 
 1. Vous pouvez également entrer la commande nslookup TestVM2.contoso.com et vérifier que vous recevez un enregistrement de résolution de noms correct pour VM2.
- 
 
-Félicitations ! Vous avez créé une zone DNS privée, ajouté une résolution de noms et un lien d’inscription automatique, et testé la résolution de noms dans votre configuration. 
+Félicitations ! Vous avez créé une zone DNS privée, ajouté une résolution de noms et un lien d’inscription automatique, et testé la résolution de noms dans votre configuration.

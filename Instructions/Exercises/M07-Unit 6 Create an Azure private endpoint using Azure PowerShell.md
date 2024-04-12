@@ -6,14 +6,16 @@ Exercise:
 
 # M07 - Unité 6 Créer un point de terminaison privé Azure à l’aide d’Azure PowerShell
 
-Démarrez avec Azure Private Link en utilisant un point de terminaison privé pour vous connecter en toute sécurité à une application web Azure. Il existe de nombreuses façons de créer des points de terminaison, notamment le portail, l’interface CLI, PowerShell, etc. 
+## Scénario de l’exercice
+
+Démarrez avec Azure Private Link en utilisant un point de terminaison privé pour vous connecter en toute sécurité à une application web Azure. Il existe de nombreuses façons de créer des points de terminaison, notamment le portail, l’interface CLI, PowerShell, etc.
 
 ![Diagramme de l’architecture d’un point de terminaison privé.](../media/6-exercise-create-azure-private-endpoint-using-azure-powershell.png)
 
 
 **Remarque :** Une **[simulation de labo interactive](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Create%20an%20Azure%20private%20endpoint%20using%20Azure%20PowerShell)** est disponible et vous permet de progresser à votre propre rythme. Il peut exister de légères différences entre la simulation interactive et le labo hébergé. Toutefois, les concepts et idées de base présentés sont identiques.
 
-#### Durée estimée : 45 minutes
+### Durée estimée : 45 minutes
 
 Vous allez créer un point de terminaison privé pour une application web Azure et déployer une machine virtuelle pour tester la connexion privée.
 
@@ -35,13 +37,13 @@ Si vous choisissez d’installer et d’utiliser PowerShell en local, vous devez
 
 Dans cet exercice, vous allez :
 
-+ Tâche 1 : Créer un groupe de ressources
-+ Tâche 2 : Créer un réseau virtuel et un hôte bastion
-+ Tâche 3 : Créer une machine virtuelle de test
-+ Tâche 4 : Créer un point de terminaison privé
-+ Tâche 5 : Configurer la zone DNS privée
-+ Tâche 6 : Tester la connectivité vers le point de terminaison privé
-+ Tâche 7 : Nettoyer les ressources
+- Tâche 1 : Créer un groupe de ressources
+- Tâche 2 : Créer un réseau virtuel et un hôte bastion
+- Tâche 3 : Créer une machine virtuelle de test
+- Tâche 4 : Créer un point de terminaison privé
+- Tâche 5 : Configurer la zone DNS privée
+- Tâche 6 : Tester la connectivité vers le point de terminaison privé
+- Tâche 7 : Nettoyer les ressources
 
 ## Tâche 1 : créer un groupe de ressources et déployer l’application web utilisée
 
@@ -52,6 +54,7 @@ Créez un groupe de ressources avec [New-AzResourceGroup](https://docs.microsoft
 ```PowerShell
 New-AzResourceGroup -Name 'CreatePrivateEndpointQS-rg' -Location 'eastus'
 ```
+
 Déployez les modèles ARM suivants pour créer les applications web Azure PremiumV2-tier nécessaires à cet exercice :
 
    ```powershell
@@ -59,6 +62,7 @@ Déployez les modèles ARM suivants pour créer les applications web Azure Premi
    
    New-AzResourceGroupDeployment -ResourceGroupName $RGName -TemplateFile template.json -TemplateParameterFile parameters.json
    ```
+
 Si une erreur s’affiche (par exemple, lors de la recherche de l’état de déploiement dans le portail) comme « Un site web portant le nom GEN-UNIQUE existe déjà », veillez à accéder aux conditions préalables mentionnées ci-dessus en ce qui concerne la modification du modèle.
 
 ## Tâche 2 : Créer un réseau virtuel et un hôte bastion
@@ -74,8 +78,6 @@ Créez un réseau virtuel et un hôte bastion avec :
 - New-AzPublicIpAddress
 
 - New-AzBastion
-
- 
 
 ```PowerShell
 ## Create backend subnet config. ##
@@ -138,9 +140,6 @@ $parameters3 = @{
 
 New-AzBastion @parameters3
 ```
-
-
-
 
 ## Tâche 3 : Créer une machine virtuelle de test
 
@@ -226,9 +225,6 @@ New-AzVM -ResourceGroupName 'CreatePrivateEndpointQS-rg' -Location 'eastus' -VM 
 
 ```
 
-
-
-
 Azure fournit une adresse IP éphémère pour les machines virtuelles Azure qui n’ont pas d’adresse IP publique ou qui se trouvent dans le pool de back-ends d’un Azure Load Balancer de base interne. Le mécanisme d’adresse IP éphémère fournit une adresse IP sortante qui n’est pas configurable.
 
 L’adresse IP éphémère est désactivée lorsqu’une adresse IP publique est attribuée à la machine virtuelle ou que celle-ci est placée dans le pool de back-ends d’un Standard Load Balancer avec ou sans règles de trafic sortant. Si une ressource de passerelle NAT de réseau virtuel Azure est affectée au sous-réseau de la machine virtuelle, l’adresse IP éphémère est désactivée.
@@ -242,8 +238,6 @@ Dans cette section, vous allez créer le point de terminaison privé et une conn
 - New-AzPrivateLinkServiceConnection
 
 - New-AzPrivateEndpoint
-
- 
 
 ```PowerShell
 ## Place web app into variable. This assumes that only one web app exists in the resource group. ##
@@ -292,9 +286,6 @@ $parameters2 = @{
 
 New-AzPrivateEndpoint @parameters2 
 ```
-
-
-
 
 ## Tâche 5 : Configurer la zone DNS privée
 
@@ -370,7 +361,6 @@ $parameters4 = @{
 New-AzPrivateDnsZoneGroup @parameters4 
 ```
 
-
 ## Tâche 6 : Tester la connectivité vers le point de terminaison privé
 
 Dans cette section, vous allez utiliser la machine virtuelle que vous avez créée à l’étape précédente pour vous connecter à l’application web via le point de terminaison privé.
@@ -407,13 +397,12 @@ Dans cette section, vous allez utiliser la machine virtuelle que vous avez cré�
   Aliases: mywebapp8675.azurewebsites.net 
   ```  
 
-
 L’adresse IP privée **10.0.0.5** est retournée pour le nom de l’application web. Cette adresse se trouve dans le sous-réseau du réseau virtuel que vous avez créé précédemment.
 
 1. Dans la connexion bastion à **myVM**, ouvrez Internet Explorer.
 1. Entrez l’URL de votre application web, **https://&lt;your-webapp-name&gt;.azurewebsites.net**.
 1. La page d’application web par défaut s’affichera si votre application n’a pas été déployée : ![capture d’écran de page dans Azure indiquant qu’un service d’application est opérationnel](../media/web-app-default-page.png)
-1. Fermez la connexion à **myVM**. 
+1. Fermez la connexion à **myVM**.
 
 ## Tâche 7 : Nettoyer les ressources
 
@@ -422,8 +411,3 @@ Lorsque vous avez fini d’utiliser le point de terminaison privé et la machine
 ```PowerShell
 Remove-AzResourceGroup -Name CreatePrivateEndpointQS-rg -Force -AsJob
 ```
-
-
-
-
-

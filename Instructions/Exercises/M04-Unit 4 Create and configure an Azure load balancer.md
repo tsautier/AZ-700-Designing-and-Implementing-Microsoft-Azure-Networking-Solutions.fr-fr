@@ -7,18 +7,16 @@ Exercise:
 
 # M04 - Unité 4 Créer et configurer un équilibreur de charge Azure
 
-Dans cet exercice, vous allez créer un équilibreur de charge interne pour l’organisation fictive Contoso Ltd. 
+Dans cet exercice, vous allez créer un équilibreur de charge interne pour l’organisation fictive Contoso Ltd.
 
 **Remarque :** Une **[simulation de labo interactive](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Create%20and%20configure%20an%20Azure%20load%20balancer)** est disponible et vous permet de progresser à votre propre rythme. Il peut exister de légères différences entre la simulation interactive et le labo hébergé. Toutefois, les concepts et idées de base présentés sont identiques.
 
-#### Durée estimée : 60 minutes (dont environ 45 minutes d’attente pour le déploiement)
+### Durée estimée : 60 minutes (dont environ 45 minutes d’attente pour le déploiement)
 
 Les étapes de création d’un équilibreur de charge interne sont très similaires à celles que vous avez déjà apprises dans ce module pour créer un équilibreur de charge public. La principale différence réside dans le fait qu’avec un équilibreur de charge public, le serveur frontal est accessible via une adresse IP publique et que vous testez la connectivité à partir d’un hôte situé en dehors de votre réseau virtuel. En revanche, avec un équilibreur de charge interne, le serveur frontal est une adresse IP privée à l’intérieur de votre réseau virtuel et vous testez la connectivité à partir d’un hôte situé dans le même réseau.
 
-
 ![diagramme d’équilibreur de charge standard interne](../media/4-exercise-create-configure-azure-load-balancer.png)
 
- 
 Dans cet exercice, vous allez :
 
 + Tâche 1 : Créer le réseau virtuel
@@ -30,7 +28,7 @@ Dans cet exercice, vous allez :
 ## Tâche 1 : Créer le réseau virtuel
 
 Dans cette section, vous allez créer un réseau virtuel et un sous-réseau.
-   
+
 1. Connectez-vous au portail Azure.
 
 2. Dans la page d’accueil du portail Azure, accédez à la barre de recherche globale et recherchez **Réseaux virtuels**, puis sélectionnez Réseaux virtuels sous Services.  ![Résultats de la recherche de « réseau virtuel» dans la barre de recherche globale de la page d’accueil du portail Azure.](../media/global-search-bar.PNG)
@@ -45,7 +43,6 @@ Dans cette section, vous allez créer un réseau virtuel et un sous-réseau.
    | Resource group | Sélectionnez **Créer nouveau** Nom : **IntLB-RG** |
    | Nom           | **IntLB-VNet**                             |
    | Région         | **(États-Unis) USA Est**                           |
-
 
 5. Sélectionnez **Suivant : Adresses IP**.
 
@@ -69,7 +66,6 @@ Dans cette section, vous allez créer un réseau virtuel et un sous-réseau.
     | Espace d'adressage AzureBastionSubnet | **10.1.1.0/26**                               |
     | Adresse IP publique                 | Sélectionnez **Créer nouveau** Nom : **myBastionIP** |
 
-
 13. Sélectionnez **Revoir + créer**.
 
 14. Sélectionnez **Create** (Créer).
@@ -79,7 +75,9 @@ Dans cette section, vous allez créer un réseau virtuel et un sous-réseau.
 Dans cette section, vous allez créer trois machines virtuelles qui seront dans le même groupe à haute disponibilité, pour le pool de back-ends de l’équilibreur de charge, ajouter les machines virtuelles au pool de back-ends, puis installer IIS sur les trois machines virtuelles afin de tester l’équilibreur de charge.
 
 1. Dans le portail Azure, ouvrez la session **PowerShell** dans le volet **Cloud Shell**.
+
  > **Remarque :** si c’est la première fois que vous ouvrez Cloud Shell, vous serez peut-être invité à créer un compte de stockage. Sélectionnez **Créer le stockage**.
+
 2. Dans la barre d’outils du volet Cloud Shell, sélectionnez l’icône **Charger/télécharger des fichiers**, dans le menu déroulant, sélectionnez **Charger** et chargez un par un les fichiers azuredeploy.json et azuredeploy.parameters.json dans le répertoire racine de Cloud Shell.
 
 3. Déployez les modèles ARM suivants pour créer les machines virtuelles nécessaires à cet exercice :
@@ -118,18 +116,16 @@ Dans cette section, vous allez créer un équilibreur de charge interne de réf�
    | Type                  | **Interne**             |
    | Niveau                  | **Regional**             |
 
-
 1. Sélectionnez **Suivant : configurations d’adresse IP front-end**.
 1. Sélectionnez Ajouter une adresse IP front-end
 1. Dans le volet **Ajouter une adresse IP front-end**, entrez les informations du tableau ci-dessous et sélectionnez **Ajouter**.
- 
+
    | **Paramètre**     | **Valeur**                |
    | --------------- | ------------------------ |
    | Nom            | **LoadBalancerFrontEnd** |
    | Réseau virtuel | **IntLB-VNet**           |
    | Subnet          | **myFrontEndSubnet**     |
    | Affectation      | **Dynamique**              |
-
 
 1. Sélectionnez **Revoir + créer**.
 
@@ -154,14 +150,12 @@ Le pool d’adresses de back-ends contient les adresses IP des cartes d’inter
    | Nom            | **myBackendPool**    |
    | Réseau virtuel | **IntLB-VNet**       |
 
-
 1. Sous **Machines virtuelles**, sélectionnez **Ajouter**.
 
 1. Cochez les cases des trois machines virtuelles (**myVM1**, **myVM2** et **myVM3**), puis sélectionnez **Ajouter**.
 
 1. Sélectionnez **Enregistrer**.
    ![Image 7](../media/add-vms-backendpool.png)
-   
 
 ### Créer une sonde d’intégrité
 
@@ -179,11 +173,8 @@ L’équilibreur de charge supervise l’état de votre application avec une son
    | Chemin d’accès                | **/**             |
    | Intervalle            | **15**            |
 
-
 1. Sélectionnez **Ajouter**.
    ![Image 5](../media/create-healthprobe.png)
-
- 
 
 ### Créer une règle d’équilibreur de charge
 
@@ -207,16 +198,8 @@ Une règle d’équilibrage de charge est utilisée pour définir la distributio
    | Délai d’inactivité (minutes) | **15**                   |
    | IP flottante            | **Disabled**             |
 
-
 1. Sélectionnez **Enregistrer**.
    ![Image 6](../media/create-loadbalancerrule.png)
-
- 
-
-
- 
-
- 
 
 ## Tâche 5 : Tester l’équilibreur de charge
 
@@ -241,8 +224,7 @@ Dans cette section, vous allez créer une machine virtuelle de test, puis tester
    | Mot de passe             | **Choisissez un mot de passe sécurisé**                |
    | Confirmer le mot de passe     | **Choisissez un mot de passe sécurisé**                |
 
-
-1. Sélectionnez **Suivant : Disques**, puis **Suivant : Mise en réseau**. 
+1. Sélectionnez **Suivant : Disques**, puis **Suivant : Mise en réseau**.
 
 1. Sous l’onglet **Mise en réseau**, utilisez les informations du tableau ci-dessous pour configurer les paramètres réseau.
 
@@ -254,7 +236,6 @@ Dans cette section, vous allez créer une machine virtuelle de test, puis tester
    | Groupe de sécurité réseau de la carte réseau                                   | **Avancée**                  |
    | Configurer un groupe de sécurité réseau                             | Sélectionnez le groupe **myNSG** existant |
    | Options d’équilibrage de charge                                       | **Aucun**                      |
-
 
 1. Sélectionnez **Revoir + créer**.
 

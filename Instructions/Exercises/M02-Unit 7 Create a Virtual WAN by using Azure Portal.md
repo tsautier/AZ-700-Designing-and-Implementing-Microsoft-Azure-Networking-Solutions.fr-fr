@@ -6,10 +6,11 @@ Exercise:
 
 # M02 - Unité 7 Créer un WAN virtuel à l’aide du portail Azure
 
+## Scénario de l’exercice
+
 Dans cet exercice, vous allez créer un WAN virtuel pour Contoso.
 
 ![Diagramme de l’architecture WAN de réseau virtuel.](../media/7-exercise-create-virtual-wan-by-using-azure-portal.png)
-
 
 Dans cet exercice, vous allez :
 
@@ -20,7 +21,7 @@ Dans cet exercice, vous allez :
 
 **Remarque :** Une **[simulation de labo interactive](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Create%20a%20virtual%20WAN%20using%20the%20Azure%20portal)** est disponible et vous permet de progresser à votre propre rythme. Il peut exister de légères différences entre la simulation interactive et le labo hébergé. Toutefois, les concepts et idées de base présentés sont identiques.
 
-#### Durée estimée : 65 minutes (dont environ 45 minutes d’attente pour le déploiement)
+### Durée estimée : 65 minutes (dont environ 45 minutes d’attente pour le déploiement)
 
 ## Tâche 1 : Créer un WAN virtuel
 
@@ -30,21 +31,19 @@ Dans cet exercice, vous allez :
 
    ![Recherchez WAN virtuel dans le portail Azure.](../media/search-for-virtual-wan.png)
 
- 
-
-1. Dans la page WAN virtuel, sélectionnez + **Créer**. 
+1. Dans la page WAN virtuel, sélectionnez + **Créer**.
 
 1. Sur la page Créer un WAN, dans l’onglet **Fonctions de base**, renseignez les champs suivants :
 
-   - **Abonnement :** utilisez l’abonnement existant
+   + **Abonnement :** utilisez l’abonnement existant
 
-   - **Groupe de ressources :** ContosoResourceGroup
+   + **Groupe de ressources :** ContosoResourceGroup
 
-   - **Emplacement du groupe de ressources** : choisissez un emplacement pour les ressources dans la liste déroulante. Un WAN est une ressource globale et ne réside pas dans une région particulière. Toutefois, vous devez sélectionner une région pour gérer et localiser la ressource WAN que vous créez.
+   + **Emplacement du groupe de ressources** : choisissez un emplacement pour les ressources dans la liste déroulante. Un WAN est une ressource globale et ne réside pas dans une région particulière. Toutefois, vous devez sélectionner une région pour gérer et localiser la ressource WAN que vous créez.
 
-   - **Nom :** ContosoVirtualWAN
+   + **Nom :** ContosoVirtualWAN
 
-   - **Type :** Standard. 
+   + **Type :** Standard.
 
 1. Lorsque vous avez terminé de renseigner les champs, sélectionnez **Vérifier + créer**.
 
@@ -54,29 +53,29 @@ Dans cet exercice, vous allez :
 
 Un hub contient des passerelles pour offrir des fonctionnalités site à site, ExpressRoute ou point à site. La création de la passerelle VPN de site à site prend 30 minutes dans le hub virtuel. Vous devez créer un WAN virtuel avant de pouvoir créer un hub.
 
-1. Localisez l’instance Virtual WAN que vous avez créée. 
+1. Localisez l’instance Virtual WAN que vous avez créée.
 1. Dans la page WAN virtuel, sous **Connectivité**, sélectionnez **Hubs**.
 1. Dans la page Hubs, sélectionnez **+Nouveau hub** pour ouvrir la page Créer un hub virtuel.
    ![Créer un hub virtuel, onglet Informations de base.](../media/create-vwan-hub.png)
 1. Sur la page Créer un hub virtuel, dans l’onglet **Fonctions de base**, renseignez les champs suivants :
-   - **Région :** USA Ouest
-   - **Nom :** ContosoVirtualWANHub-WestUS
-   - **Espace d’adressage privé du hub :** 10.60.0.0/24
-   - **Capacité du hub virtuel :** 2 unités d’infrastructure de routage
-   - **Préférence de routage du hub :** laissez la valeur par défaut.
+   + **Région :** USA Ouest
+   + **Nom :** ContosoVirtualWANHub-WestUS
+   + **Espace d’adressage privé du hub :** 10.60.0.0/24
+   + **Capacité du hub virtuel :** 2 unités d’infrastructure de routage
+   + **Préférence de routage du hub :** laissez la valeur par défaut.
 1. Sélectionnez **Suivant : site à site**.
 1. Sous l’onglet **Site à site**, complétez les champs suivants :
-   - **Voulez-vous créer une configuration site à site (passerelle VPN) ? :** Oui
-   - Le champ **Numéro AS** ne peut pas être modifié.
-   - **Unités d’échelle de la passerelle :** 1 unité d’échelle = 500 Mbits/s x 2.
-   - **Préférence de routage du hub :** laissez la valeur par défaut. 
+   + **Voulez-vous créer une configuration site à site (passerelle VPN) ? :** Oui
+   + Le champ **Numéro AS** ne peut pas être modifié.
+   + **Unités d’échelle de la passerelle :** 1 unité d’échelle = 500 Mbits/s x 2.
+   + **Préférence de routage du hub :** laissez la valeur par défaut.
 1. Sélectionnez **Vérifier + créer** pour valider.
-1. Sélectionnez **Créer** pour créer le hub. 
-1. Après 30 minutes, **Actualisez** pour afficher le hub dans la page Hubs. 
+1. Sélectionnez **Créer** pour créer le hub.
+1. Après 30 minutes, **Actualisez** pour afficher le hub dans la page Hubs.
 
 ## Tâche 3 : Connecter un VNet au hub virtuel
 
-1. Localisez l’instance Virtual WAN que vous avez créée. 
+1. Localisez l’instance Virtual WAN que vous avez créée.
 
 1. Dans ContosoVirtualWAN, sous **Connectivité**, sélectionnez **Connexions de réseau virtuel**.
 
@@ -86,23 +85,21 @@ Un hub contient des passerelles pour offrir des fonctionnalités site à site, E
 
 1. Dans Ajouter une connexion, utilisez les informations suivantes pour créer la connexion.
 
-   - **Nom de la connexion :** ContosoVirtualWAN-to-ResearchVNet
+   + **Nom de la connexion :** ContosoVirtualWAN-to-ResearchVNet
 
-   - **Hubs :** ContosoVirtualWANHub-WestUS
+   + **Hubs :** ContosoVirtualWANHub-WestUS
 
-   - **Abonnement :** aucune modification
+   + **Abonnement :** aucune modification
 
-   - **Groupe de ressources :** ContosoResourceGroup
+   + **Groupe de ressources :** ContosoResourceGroup
 
-   - **Réseau virtuel :** ResearchVNet
+   + **Réseau virtuel :** ResearchVNet
 
-   - **Propager à aucun :** Oui
+   + **Propager à aucun :** Oui
 
-   - **Associer une table de routage :** Par défaut
+   + **Associer une table de routage :** Par défaut
 
 1. Sélectionnez **Créer**.
-
- 
 
 Félicitations ! Vous avez créé un WAN virtuel et un hub de WAN virtuel, et vous avez connecté ResearchVNet au hub.
 
