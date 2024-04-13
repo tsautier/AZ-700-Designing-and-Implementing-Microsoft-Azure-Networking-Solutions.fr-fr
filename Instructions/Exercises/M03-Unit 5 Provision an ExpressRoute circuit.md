@@ -5,15 +5,15 @@ Exercise:
 ---
 # M03 - Unité 5 Provisionner un circuit ExpressRoute
 
-Dans cet exercice, vous allez créer un circuit ExpressRoute à l’aide du portail Azure et du modèle de déploiement Azure Resource Manager. 
+## Scénario de l’exercice
+
+Dans cet exercice, vous allez créer un circuit ExpressRoute à l’aide du portail Azure et du modèle de déploiement Azure Resource Manager.
 
 **Remarque :** Une **[simulation de labo interactive](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Provision%20an%20ExpressRoute%20circuit)** est disponible et vous permet de progresser à votre propre rythme. Il peut exister de légères différences entre la simulation interactive et le labo hébergé. Toutefois, les concepts et idées de base présentés sont identiques.
 
-#### Durée estimée : 15 minutes
+### Durée estimée : 15 minutes
 
 ![Diagramme de disposition de circuit ExpressRoute pour l’exercice](../media/5-exercise-provision-expressroute-circuit.png)
-
-
 
 Dans cet exercice, vous allez :
 
@@ -22,14 +22,11 @@ Dans cet exercice, vous allez :
 + Tâche 3 : Déprovisionner un circuit ExpressRoute
 + Tâche 4 : Nettoyer les ressources
 
-
 ## Tâche 1 : Créer et provisionner un circuit ExpressRoute
-
- 
 
 1. Dans un navigateur, accédez au [portail Azure](https://portal.azure.com/) et connectez-vous avec votre compte Azure.
 
-   > [!Important] 
+   > [!Important]
    >
    > Votre circuit ExpressRoute est facturé à partir de l’émission d'une clé de service. Effectuez cette opération seulement quand le fournisseur de connectivité prêt à approvisionner le circuit.
 
@@ -45,42 +42,38 @@ Dans cet exercice, vous allez :
 
 1. Confirmez la validation de la configuration ExpressRoute, puis sélectionnez **Créer**.
 
-
 ![Portail Azure - Onglet de configuration de circuit ExpressRoute](../media/expressroute-create-configuration2.png)
 
- 
-
-- Type de port détermine si vous vous connectez à un fournisseur de services ou directement au réseau global de Microsoft dans un emplacement de peering.
-- L’option Créer ou importer à partir du modèle classique détermine si un nouveau circuit est en cours de création ou si vous migrez un circuit classique vers Azure Resource Manager.
-- Le fournisseur est le service Internet à partir duquel vous allez demander votre service.
-- L’Emplacement de peering est l’emplacement physique où vous effectuez le peering auprès de Microsoft.
++ Type de port détermine si vous vous connectez à un fournisseur de services ou directement au réseau global de Microsoft dans un emplacement de peering.
++ L’option Créer ou importer à partir du modèle classique détermine si un nouveau circuit est en cours de création ou si vous migrez un circuit classique vers Azure Resource Manager.
++ Le fournisseur est le service Internet à partir duquel vous allez demander votre service.
++ L’Emplacement de peering est l’emplacement physique où vous effectuez le peering auprès de Microsoft.
 
 > [!Important]
 >
 > L’emplacement de peering indique [l’emplacement physique](https://docs.microsoft.com/en-us/azure/expressroute/expressroute-locations) où vous effectuez le peering auprès de Microsoft. Cet emplacement n’est pas lié à la propriété « Emplacement », qui fait référence à la zone géographique où se trouve le fournisseur de ressources réseau Azure. Bien que ces éléments ne soient pas liés, nous vous conseillons de choisir un fournisseur de ressources réseau géographiquement proche de l’emplacement de peering du circuit.
 
-- La **référence SKU** détermine si un module complémentaire ExpressRoute local, ExpressRoute standard ou ExpressRoute premium est activé. Vous pouvez spécifier **Local** pour obtenir la référence SKU locale, **Standard** pour obtenir la référence SKU standard ou **Premium** pour le module complémentaire Premium. Vous pouvez changer la référence SKU pour activer le module complémentaire Premium.
++ La **référence SKU** détermine si un module complémentaire ExpressRoute local, ExpressRoute standard ou ExpressRoute premium est activé. Vous pouvez spécifier **Local** pour obtenir la référence SKU locale, **Standard** pour obtenir la référence SKU standard ou **Premium** pour le module complémentaire Premium. Vous pouvez changer la référence SKU pour activer le module complémentaire Premium.
 
 > [!Important]
 >
 > Vous ne pouvez pas remplacer la référence SKU de Standard/Premium par celle de Local.
 
-- Le **modèle de facturation** détermine le type de facturation. Vous pouvez spécifier **Limité** pour un forfait de données limité, et **Illimité** pour un forfait de données illimité. Vous pouvez changer le type de facturation de **Limité** à **Illimité**.
++ Le **modèle de facturation** détermine le type de facturation. Vous pouvez spécifier **Limité** pour un forfait de données limité, et **Illimité** pour un forfait de données illimité. Vous pouvez changer le type de facturation de **Limité** à **Illimité**.
 
 > [!Important]
 >
 > Vous ne pouvez pas modifier le type de Illimité à Limité.
 
-- **Autoriser les opérations classiques** permet de lier des réseaux virtuels classiques au circuit.
++ **Autoriser les opérations classiques** permet de lier des réseaux virtuels classiques au circuit.
 
 ## Tâche 2 : Récupérer votre clé de service
- 
 
 1. Vous pouvez afficher tous les circuits que vous avez créés en sélectionnant **Tous les services &gt; Mise en réseau &gt; Circuits ExpressRoute**.
 
    ![Portail Azure - Créer un menu de ressources ExpressRoute](../media/expressroute-circuit-menu.png)
 
-1. Tous les circuits ExpressRoute créés dans l’abonnement sont listés ici. 
+1. Tous les circuits ExpressRoute créés dans l’abonnement sont listés ici.
 
    ![Portail Azure - Afficher les circuits ExpressRoute existants](../media/expressroute-circuit-list.png)
 
@@ -88,26 +81,22 @@ Dans cet exercice, vous allez :
 
    ![Portail Azure - Propriétés du circuit ExpressRoute montrant la clé de service](../media/expressroute-circuit-overview.png)
 
-1. Dans cette page, **Statut du fournisseur** vous donne des informations sur l’état actuel du provisionnement du côté fournisseur de services. **Statut du circuit** vous indique l’état du côté Microsoft. 
+1. Dans cette page, **Statut du fournisseur** vous donne des informations sur l’état actuel du provisionnement du côté fournisseur de services. **Statut du circuit** vous indique l’état du côté Microsoft.
 
 1. Quand vous créez un circuit ExpressRoute, ce circuit affiche l’état suivant :
 
-   - Statu du fournisseur : Non approvisionné
-   - Statut du circuit : Activé
+   + Statu du fournisseur : Non approvisionné
+   + État du circuit : Activé
 
-
-
-   - Le circuit passe à l’état suivant quand le fournisseur de connectivité l’active pour vous :
-     - Statut du fournisseur : En cours d’approvisionnement
-     - Statut du circuit : Activé
-   - Pour être utilisé, le circuit ExpressRoute doit être dans l’état suivant :
-     - Statut du fournisseur : Approvisionné
-     - Statut du circuit : Activé
-   - Vous devez vérifier régulièrement l’état du provisionnement et l’état du circuit.
+   + Le circuit passe à l’état suivant quand le fournisseur de connectivité l’active pour vous :
+     + Statut du fournisseur : En cours d’approvisionnement
+     + Statut du circuit : Activé
+   + Pour être utilisé, le circuit ExpressRoute doit être dans l’état suivant :
+     + Statut du fournisseur : Approvisionné
+     + Statut du circuit : Activé
+   + Vous devez vérifier régulièrement l’état du provisionnement et l’état du circuit.
 
 ![Portail Azure - Propriétés du circuit ExpressRoute montrant que le statut est maintenant « Provisionné »](../media/provisioned.png)
-
- 
 
 Félicitations ! Vous avez créé un circuit ExpressRoute et localisé la clé de service, dont vous auriez besoin pour terminer le provisionnement du circuit.
 
@@ -127,7 +116,6 @@ Vous pouvez supprimer votre circuit ExpressRoute en sélectionnant l’icône **
 
 ![Portail Azure - Supprimer un circuit ExpressRoute](../media/expressroute-circuit-delete.png)
 
-
    >**Remarque** : N’oubliez pas de supprimer toutes les nouvelles ressources Azure que vous n’utilisez plus. La suppression des ressources inutilisées vous évitera d’encourir des frais inattendus.
 
 1. Dans le portail Azure, ouvrez la session **PowerShell** dans le volet **Cloud Shell**.
@@ -138,6 +126,5 @@ Vous pouvez supprimer votre circuit ExpressRoute en sélectionnant l’icône **
    Remove-AzResourceGroup -Name 'ContosoResourceGroup' -Force -AsJob
    Remove-AzResourceGroup -Name 'ExpressRouteResourceGroup' -Force -AsJob
    ```
+
    >**Remarque** : La commande s’exécute de façon asynchrone (tel que déterminé par le paramètre -AsJob). Vous pourrez donc exécuter une autre commande PowerShell immédiatement après au cours de la même session PowerShell, mais la suppression effective du groupe de ressources peut prendre quelques minutes.
-
-

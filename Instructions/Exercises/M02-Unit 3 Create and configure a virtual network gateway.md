@@ -7,7 +7,9 @@ Exercise:
 
 # M02 - Unité 3 Créer et configurer une passerelle de réseau virtuel
 
-Dans cet exercice, vous allez configurer une passerelle de réseau virtuel pour connecter le VNet Contoso Core Services et le VNet Manufacturing. 
+## Scénario de l’exercice
+
+Dans cet exercice, vous allez configurer une passerelle de réseau virtuel pour connecter le VNet Contoso Core Services et le VNet Manufacturing.
 
 ![Diagramme d’une passerelle de réseau virtuel.](../media/3-exercise-create-configure-local-network-gateway.png)
 
@@ -20,19 +22,21 @@ Dans cet exercice, vous allez :
 + Tâche 5 : Tester la connexion entre les machines virtuelles
 + Tâche 6 : Créer la passerelle CoreServicesVnet
 + Tâche 7 : Créer la passerelle ManufacturingVnet
-+ Tâche 8 : Connecter CoreServicesVnet à ManufacturingVnet 
++ Tâche 8 : Connecter CoreServicesVnet à ManufacturingVnet
 + Tâche 9 : Connecter ManufacturingVnet à CoreServicesVnet
-+ Tâche 10 : Vérifier que les connexions sont établies 
++ Tâche 10 : Vérifier que les connexions sont établies
 + Tâche 11 : Tester la connexion entre les machines virtuelles
 
 **Remarque :** Une **[simulation de labo interactive](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Create%20and%20configure%20a%20virtual%20network%20gateway)** est disponible et vous permet de progresser à votre propre rythme. Il peut exister de légères différences entre la simulation interactive et le labo hébergé. Toutefois, les concepts et idées de base présentés sont identiques.
 
-#### Durée estimée : 70 minutes (dont environ 45 minutes d’attente pour le déploiement)
+### Durée estimée : 70 minutes (dont environ 45 minutes d’attente pour le déploiement)
 
 ## Tâche 1 : Créer CoreServicesVnet et ManufacturingVnet
 
 1. Dans le portail Azure, ouvrez la session **PowerShell** dans le volet **Cloud Shell**.
+
  > **Remarque :** si c’est la première fois que vous ouvrez Cloud Shell, vous serez peut-être invité à créer un compte de stockage. Sélectionnez **Créer le stockage**.
+
 1. Dans la barre d’outils du volet Cloud Shell, sélectionnez l’icône **Charger/télécharger des fichiers**, dans le menu déroulant, sélectionnez **Charger** et chargez les fichiers **azuredeploy.json** et **azuredeploy.parameters.json** l’un après l’autre dans le répertoire racine de Cloud Shell à partir du dossier source **F:\Allfiles\Exercises\M02**
 
 1. Déployez les modèles ARM suivants pour créer le réseau virtuel et les sous-réseaux nécessaires à cet exercice :
@@ -43,7 +47,8 @@ Dans cet exercice, vous allez :
    New-AzResourceGroup -Name $RGName -Location "eastus"
    New-AzResourceGroupDeployment -ResourceGroupName $RGName -TemplateFile azuredeploy.json -TemplateParameterFile azuredeploy.parameters.json
    ```
- > **Remarque :** Il existe à l’heure actuelle un problème en cours dans la région Europe Ouest qui affecte les déploiements de passerelle. En tant que solution de contournement, la région ManufacturingVnet est passée à l’Europe Nord pour ce déploiement. 
+
+ > **Remarque :** Il existe à l’heure actuelle un problème en cours dans la région Europe Ouest qui affecte les déploiements de passerelle. En tant que solution de contournement, la région ManufacturingVnet est passée à l’Europe Nord pour ce déploiement.
 
 ## Tâche 2 : créer CoreServicesVM
 
@@ -85,7 +90,6 @@ Dans cet exercice, vous allez :
 
 1. Vérifiez que la machine virtuelle a été créée.
 
-
 ## Tâche 4 : Se connecter aux machines virtuelles à l’aide du protocole RDP
 
 1. Sur la page d’accueil du portail Azure, sélectionnez **Machines virtuelles**.
@@ -103,9 +107,7 @@ Dans cet exercice, vous allez :
 1. Sur les deux machines virtuelles, dans **Choisir les paramètres de confidentialité pour votre appareil**, sélectionnez **Accepter**.
 1. Sur les deux machines virtuelles, dans **Réseaux**, sélectionnez **Oui**.
 1. Sur **CoreServicesVM**, ouvrez PowerShell, puis exécutez la commande suivante : ipconfig
-1. Notez l’adresse IPv4. 
-
- 
+1. Notez l’adresse IPv4.
 
 ## Tâche 5 : tester la connexion entre les machines virtuelles
 
@@ -121,9 +123,7 @@ Dans cet exercice, vous allez :
 
    ![Échec de Test-NetConnection.](../media/test-netconnection-fail.png)
 
- 
-
-##  Tâche 6 : Créer la passerelle CoreServicesVnet
+## Tâche 6 : Créer la passerelle CoreServicesVnet
 
 1. Dans **Rechercher des ressources, des services et des documents (G+/)**, tapez **passerelle de réseau virtuel**, puis sélectionnez **Passerelles de réseaux virtuels** dans les résultats.
    ![Recherche de passerelle de réseau virtuel sur le portail Azure.](../media/virtual-network-gateway-search.png)
@@ -151,9 +151,9 @@ Dans cet exercice, vous allez :
    |                 |                   | Configurer BGP                               | Désactivé                     |
    | Vérifier + créer |                   | Passez en revue vos paramètres, puis sélectionnez **Créer**. |                              |
 
-   > [!NOTE] 
+   > [!NOTE]
    >
-   > La création d’une passerelle de réseau virtuel peut prendre jusqu’à 45 minutes. 
+   > La création d’une passerelle de réseau virtuel peut prendre jusqu’à 45 minutes.
 
 ## Tâche 7 : Créer la passerelle ManufacturingVnet
 
@@ -181,14 +181,12 @@ Dans cet exercice, vous allez :
    |                 |                   | Activer le mode actif/actif                   | Désactivé                     |
    |                 |                   | Configurer BGP                               | Désactivé                     |
    | Vérifier + créer |                   | Passez en revue vos paramètres, puis sélectionnez **Créer**. |                              |
-   
+
    > [!NOTE]
    >
-   > La création d’une passerelle de réseau virtuel peut prendre jusqu’à 45 minutes. 
+   > La création d’une passerelle de réseau virtuel peut prendre jusqu’à 45 minutes.
 
- 
-
-## Tâche 8 : Connecter CoreServicesVnet à ManufacturingVnet 
+## Tâche 8 : Connecter CoreServicesVnet à ManufacturingVnet
 
 1. Dans **Rechercher des ressources, des services et des documents (G+/)**, tapez **passerelle de réseau virtuel**, puis sélectionnez **Passerelles de réseaux virtuels** dans les résultats.
 
@@ -217,7 +215,6 @@ Dans cet exercice, vous allez :
    | Emplacement                       | USA Est                           |
 
 1. Sélectionnez **OK** pour établir la connexion.
-   
 
 ## Tâche 9 : Connecter ManufacturingVnet à CoreServicesVnet
 
@@ -245,15 +242,13 @@ Dans cet exercice, vous allez :
 
 1. Sélectionnez **OK** pour établir la connexion.
 
-## Tâche 10 : Vérifier que les connexions sont établies 
+## Tâche 10 : Vérifier que les connexions sont établies
 
 1. Dans **Rechercher des ressources, des services et des documents (G+/)**, entrez **connexions**, puis sélectionnez **Connexions** dans les résultats.
 
-1. Attendez que l’état des deux connexions soit **Connecté**. Vous devrez peut-être actualiser l’écran. 
+1. Attendez que l’état des deux connexions soit **Connecté**. Vous devrez peut-être actualiser l’écran.
 
    ![Connexions à la passerelle VPN correctement créées.](../media/connections-status-connected.png)
-
- 
 
 ## Tâche 11 : Tester la connexion entre les machines virtuelles
 

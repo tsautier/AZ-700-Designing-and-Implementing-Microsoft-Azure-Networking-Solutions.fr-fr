@@ -5,8 +5,9 @@ Exercise:
 ---
 # M01 - Unité 8 Connecter deux réseaux virtuels Azure à l’aide du peering de réseaux virtuels globaux
 
-## Scénario de l’exercice 
-Dans cette unité, vous allez configurer la connectivité entre CoreServicesVnet et ManufacturingVnet en ajoutant des peerings pour autoriser le flux de trafic. 
+## Scénario de l’exercice
+
+Dans cette unité, vous allez configurer la connectivité entre CoreServicesVnet et ManufacturingVnet en ajoutant des peerings pour autoriser le flux de trafic.
 
 ![Diagramme du peering de réseaux virtuels.](../media/8-exercise-connect-two-azure-virtual-networks-global.png)
 
@@ -21,7 +22,7 @@ Cette unité vous montrera :
 
 **Remarque :** Une **[simulation de labo interactive](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Connect%20two%20Azure%20virtual%20networks%20using%20global%20virtual%20network%20peering)** est disponible et vous permet de progresser à votre propre rythme. Il peut exister de légères différences entre la simulation interactive et le labo hébergé. Toutefois, les concepts et idées de base présentés sont identiques.
 
-#### Durée estimée : 20 minutes
+### Durée estimée : 20 minutes
 
 ## Tâche 1 : créer une machine virtuelle pour tester la configuration
 
@@ -80,9 +81,7 @@ Dans cette section, vous allez créer une machine virtuelle de test sur le rése
 
 1. Sur TestVM1, ouvrez une invite PowerShell et exécutez la commande suivante : ipconfig
 
-1. Notez l’adresse IPv4. 
-
- 
+1. Notez l’adresse IPv4.
 
 ## Tâche 3 : tester la connexion entre les machines virtuelles
 
@@ -94,10 +93,7 @@ Dans cette section, vous allez créer une machine virtuelle de test sur le rése
     Test-NetConnection 10.20.20.4 -port 3389
     ```
 
-
 1. Le test de connexion doit échouer et un résultat similaire à ce qui suit s’affiche : ![Fenêtre PowerShell avec Test-NetConnection 10.20.20.4-port 3389 qui indique un échec ](../media/test-netconnection-fail.png)
-
- 
 
 ## Tâche 4 : créer des peerings de réseaux virtuels entre CoreServicesVnet et ManufacturingVnet
 
@@ -135,24 +131,19 @@ Dans cette section, vous allez créer une machine virtuelle de test sur le rése
 
 1. Sous Réseaux virtuels, sélectionnez **ManufacturingVnet**, puis vérifiez que le peering **ManufacturingVnet-to-CoreServicesVnet** est répertorié.
 
- 
-
 ## Tâche 5 : tester la connexion entre les machines virtuelles
 
 1. Sur ManufacturingVM, ouvrez une invite de commandes PowerShell.
 
-1. Utilisez la commande suivante pour vérifier qu’il existe maintenant une connexion à TestVM1 sur CoreServicesVnet. 
+1. Utilisez la commande suivante pour vérifier qu’il existe maintenant une connexion à TestVM1 sur CoreServicesVnet.
 
    ```powershell
     Test-NetConnection 10.20.20.4 -port 3389
     ```
 
-
 1. Le test de connexion doit réussir et un résultat similaire à ce qui suit s’affiche : ![Fenêtre PowerShell avec Test-NetConnection 10.20.20.4 -port 3389 indiquant TCP test succeeded: true](../media/test-connection-succeeded.png)
 
- 
-
-Félicitations ! Vous avez réussi à configurer la connectivité entre les réseaux virtuels en ajoutant des peerings. 
+Félicitations ! Vous avez réussi à configurer la connectivité entre les réseaux virtuels en ajoutant des peerings.
 
 ## Tâche 6 : Nettoyer les ressources
 

@@ -6,11 +6,13 @@ Exercise:
 
 # M04 - Unité 6 Créer un profil Traffic Manager à l’aide du portail Azure
 
-Dans cet exercice, vous allez créer un profil Traffic Manager pour fournir une haute disponibilité pour l’application web de l’organisation fictive Contoso Ltd. 
+## Scénario de l’exercice
+
+Dans cet exercice, vous allez créer un profil Traffic Manager pour fournir une haute disponibilité pour l’application web de l’organisation fictive Contoso Ltd.
 
 **Remarque :** Une **[simulation de labo interactive](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Create%20a%20Traffic%20Manager%20profile%20using%20the%20Azure%20portal)** est disponible et vous permet de progresser à votre propre rythme. Il peut exister de légères différences entre la simulation interactive et le labo hébergé. Toutefois, les concepts et idées de base présentés sont identiques.
 
-#### Durée estimée : 35 minutes
+### Durée estimée : 35 minutes
 
 Vous allez créer deux instances d’une application web déployées dans deux régions différentes (USA Est et Europe Ouest). La région USA Est fait office de point de terminaison principal pour Traffic Manager et la région Europe Ouest agit comme un point de terminaison de basculement.
 
@@ -18,16 +20,15 @@ Vous allez ensuite créer un profil Traffic Manager en fonction de la priorité 
 
 Le diagramme ci-dessous illustre l’environnement que vous allez déployer dans cet exercice.
 
-    ![Picture 14](../media/exercise-traffic-manager-environment-diagram.png)
+ ![Image 14](../media/exercise-traffic-manager-environment-diagram.png)
 
  Dans cet exercice, vous allez :
 
 + Tâche 1 : Créer les applications web
 + Tâche 2 : Créer un profil Traffic Manager
-+ Tâche 3 : Ajouter des points de terminaison Traffic Manager
++ Tâche 3 : ajouter des points de terminaison Traffic Manager
 + Tâche 4 : Tester le profil Traffic Manager
 + Tâche 5 : Nettoyer les ressources
-
 
 ## Tâche 1 : Créer les applications web
 
@@ -49,7 +50,6 @@ Dans cette section, vous allez créer deux instances d’une application web dé
    | Plan Windows     | Sélectionnez **Créer nouveau** Nom : **ContosoAppServicePlanEastUS** |
    | Plan tarifaire     | **Standard S1 100 ACU au total, 1,75 Go de mémoire**               |
 
-
 1. Sélectionnez l’onglet **Supervision**.
 
 1. Sous l’onglet **Supervision**, sélectionnez l’option **Non** pour **Activer Application Insights**.
@@ -60,7 +60,7 @@ Dans cette section, vous allez créer deux instances d’une application web dé
 
 1. Sélectionnez **Créer**. Quand l’application web est déployé correctement, elle crée un site web par défaut.
 
-1. Répétez les étapes 1 à 6 ci-dessus pour créer une deuxième application web. Utilisez les mêmes paramètres que précédemment, à l’exception des informations du tableau ci-dessous. 
+1. Répétez les étapes 1 à 6 ci-dessus pour créer une deuxième application web. Utilisez les mêmes paramètres que précédemment, à l’exception des informations du tableau ci-dessous.
 
    | **Paramètre**    | **Valeur**                                                    |
    | -------------- | ------------------------------------------------------------ |
@@ -69,14 +69,11 @@ Dans cette section, vous allez créer deux instances d’une application web dé
    | Région         | **Europe Ouest**                                              |
    | Plan Windows   | Sélectionnez **Créer nouveau** Nom : **ContosoAppServicePlanWestEurope** |
 
-
 1. Dans la page d’accueil Azure, sélectionnez **Tous les services**, dans le menu de navigation de gauche, sélectionnez **Web**, puis sélectionnez **App Services**.
 
 1. Les deux nouvelles applications web doivent apparaître.
 
    ![Image 19](../media/create-web-app-2.png)
-
- 
 
 ## Tâche 2 : Créer un profil Traffic Manager
 
@@ -100,12 +97,9 @@ Vous allez maintenant créer un profil Traffic Manager qui dirige le trafic util
    | Resource group          | **Contoso-RG-TM1**       |
    | Emplacement du groupe de ressources | **USA Est**              |
 
-
 1. Sélectionnez **Créer**.
 
- 
-
-## Tâche 3 : Ajouter des points de terminaison Traffic Manager
+## Tâche 3 : ajouter des points de terminaison Traffic Manager
 
 Dans cette section, vous allez ajouter le site web dans la région USA Est comme point de terminaison principal pour acheminer tout le trafic utilisateur. Vous allez ensuite ajouter le site web dans la région Europe Ouest en tant que point de terminaison de basculement. Si le point de terminaison principal devient indisponible, le trafic est automatiquement acheminé vers le point de terminaison de basculement.
 
@@ -125,17 +119,15 @@ Dans cette section, vous allez ajouter le site web dans la région USA Est comme
    | Ressource cible      | **ContosoWebAppEastUS (East US)** |
    | Priorité             | **1**                             |
 
-
 1. Sélectionnez **Ajouter**.
 
-1. Répétez les étapes 2 à 4 ci-dessus pour créer le point de terminaison de basculement. Utilisez les mêmes paramètres que précédemment, à l’exception des informations du tableau ci-dessous. 
+1. Répétez les étapes 2 à 4 ci-dessus pour créer le point de terminaison de basculement. Utilisez les mêmes paramètres que précédemment, à l’exception des informations du tableau ci-dessous.
 
    | **Paramètre**     | **Valeur**                                 |
    | --------------- | ----------------------------------------- |
    | Nom            | **myFailoverEndpoint**                    |
    | Ressource cible | **ContosoWebAppWestEurope (West Europe)** |
-   | Priority        | **2**                                     |
-
+   | Priorité        | **2**                                     |
 
 1. Définir une priorité sur 2 signifie que le trafic est acheminé vers ce point de terminaison de basculement si le point de terminaison principal configuré devient non sain.
 
@@ -144,8 +136,6 @@ Dans cette section, vous allez ajouter le site web dans la région USA Est comme
 1. Les deux nouveaux points de terminaison s’affichent dans le profil Traffic Manager. Notez qu’après quelques minutes, l'**État de la supervision** doit passer à **En ligne**.
 
    ![Image 22](../media/create-tmendpoints-2.png)
-
- 
 
 ## Tâche 4 : Tester le profil Traffic Manager
 
@@ -181,8 +171,7 @@ Dans cette section, vous allez vérifier le nom DNS de votre profil Traffic Mana
 
 1. Vérifiez que l’application web répond toujours. Étant donné que le point de terminaison principal n’était pas disponible, le trafic était acheminé vers le point de terminaison de basculement pour permettre au site web de continuer à fonctionner.
 
- 
- ## Tâche 5 : Nettoyer les ressources
+## Tâche 5 : Nettoyer les ressources
 
    >**Remarque** : N’oubliez pas de supprimer toutes les nouvelles ressources Azure que vous n’utilisez plus. La suppression des ressources inutilisées vous évitera d’encourir des frais inattendus.
 
@@ -198,5 +187,3 @@ Dans cette section, vous allez vérifier le nom DNS de votre profil Traffic Mana
    ```
 
     >**Remarque** : La commande s’exécute de façon asynchrone (tel que déterminé par le paramètre -AsJob). Vous pourrez donc exécuter une autre commande PowerShell immédiatement après au cours de la même session PowerShell, mais la suppression effective du groupe de ressources peut prendre quelques minutes.
- 
-
