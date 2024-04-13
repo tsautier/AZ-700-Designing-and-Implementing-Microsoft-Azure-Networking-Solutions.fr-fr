@@ -6,6 +6,8 @@ Exercise:
 
 # M06 - Unité 7 Déployer et configurer le Pare-feu Azure à l’aide du portail Azure
 
+## Scénario de l’exercice
+
 En tant que membre de l’équipe de sécurité réseau de Contoso, la tâche suivante consiste à créer des règles de pare-feu pour autoriser/refuser l’accès à certains sites web. Les étapes suivantes vous guident dans la création d’un groupe de ressources, d’un réseau virtuel et de sous-réseaux, et d’une machine virtuelle en tant que tâches de préparation de l’environnement, puis le déploiement d’un pare-feu et d’une stratégie de pare-feu, la configuration des itinéraires par défaut et des règles d’application, réseau et DNAT, et enfin les tests du pare-feu.
 
 ![Diagramme de réseau virtuel avec l’architecture du pare-feu Azure.](../media/7-exercise-deploy-configure-azure-firewall-using-azure-portal.png)
@@ -26,8 +28,7 @@ Dans cet exercice, vous allez :
 
 **Remarque :** Une **[simulation de labo interactive](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Deploy%20and%20configure%20Azure%20Firewall%20using%20the%20Azure%20portal)** est disponible et vous permet de progresser à votre propre rythme. Il peut exister de légères différences entre la simulation interactive et le labo hébergé. Toutefois, les concepts et idées de base présentés sont identiques.
 
-
-#### Durée estimée : 60 minutes
+### Durée estimée : 60 minutes
 
 ## Tâche 1 : Créer un groupe de ressources
 
@@ -37,7 +38,7 @@ Dans cette tâche, vous allez créer un nouveau groupe de ressources.
 
 1. Dans la page d’accueil du portail Azure, sélectionnez **Groupes de ressources**.
 
-1. Sélectionnez **Créer**. 
+1. Sélectionnez **Créer**.
 
 1. Sous l’onglet **Général**, dans **Groupe de ressources**, entrez **Test-FW-RG**.
 
@@ -48,8 +49,6 @@ Dans cette tâche, vous allez créer un nouveau groupe de ressources.
 1. Sélectionnez **Revoir + créer**.
 
 1. Sélectionnez **Create** (Créer).
-
- 
 
 ## Tâche 2 : Créer un réseau virtuel et des sous-réseaux
 
@@ -65,7 +64,7 @@ Au cours de cette tâche, vous allez créer un seul réseau virtuel avec deux so
 
    ![Créer un réseau virtuel, onglet Général](../media/create-vnet-basics-for-azure-firewall.png)
 
-1. Sélectionnez **Suivant : Adresses IP**. Entrez l’espace d’adressage IPv4 10.0.0.0/16 si ce n’est pas déjà fait par défaut. 
+1. Sélectionnez **Suivant : Adresses IP**. Entrez l’espace d’adressage IPv4 10.0.0.0/16 si ce n’est pas déjà fait par défaut.
 
 1. Sous **Nom de sous-réseau**, sélectionnez le mot **par défaut**.
 
@@ -77,9 +76,8 @@ Au cours de cette tâche, vous allez créer un seul réseau virtuel avec deux so
 
 1. Sélectionnez **Ajouter un sous-réseau** pour créer un autre sous-réseau qui hébergera le serveur de charge de travail que vous allez bientôt créer.
 
-
     ![Ajouter un sous-réseau](../media/add-workload-subnet.png)
-    
+
 1. Dans la boîte de dialogue **Modifier le sous-réseau**, remplacez le nom par **Workload-SN**.
 
 1. Remplacez la **Plage d’adresses de sous-réseau** par **10.0.2.0/24**.
@@ -89,8 +87,6 @@ Au cours de cette tâche, vous allez créer un seul réseau virtuel avec deux so
 1. Sélectionnez **Revoir + créer**.
 
 1. Sélectionnez **Create** (Créer).
-
- 
 
 ## Tâche 3 : Créer une machine virtuelle
 
@@ -117,7 +113,6 @@ Au cours de cette tâche, vous allez créer la machine virtuelle de charge de tr
 1. Lorsque le déploiement de la machine virtuelle est terminé, sélectionnez **Accéder à la ressource**.
 
 1. Sur la page **Vue d’ensemble** de **Srv-Work**, à droite de la page, sous **Réseau**, prenez note de l’**Adresse IP privée** pour cette machine virtuelle (par exemple **10.0.2.4**).
- 
 
 ## Tâche 4 : Déployer le pare-feu et la stratégie de pare-feu
 
@@ -146,7 +141,6 @@ Au cours de cette tâche, vous allez déployer le pare-feu dans le réseau virtu
    | Réseau virtuel          | **Test-FW-VN**                           |
    | Adresse IP publique        | Sélectionnez **Ajouter**<br />Nom : **fw-pip** |
 
-
    ![Ajouter une adresse IP publique au pare-feu](../media/assign-public-ip-to-firewall.png)
 
 1. Passez en revue tous les paramètres pour vous assurer qu’ils correspondent à la capture d’écran ci-dessous.
@@ -165,8 +159,6 @@ Au cours de cette tâche, vous allez déployer le pare-feu dans le réseau virtu
 
 1. Prenez note de l’adresse sous **Adresse IP** pour la configuration IP publique **fw-pip** (par exemple **20.90.136.51**).
 
- 
-
 ## Tâche 5 : Créer un itinéraire par défaut
 
 Dans cette tâche, sur le sous-réseau Workload-SN, vous allez configurer l’itinéraire par défaut sortant pour traverser le pare-feu.
@@ -184,7 +176,6 @@ Dans cette tâche, sur le sous-réseau Workload-SN, vous allez configurer l’it
    | Région                   | Votre région              |
    | Nom                     | **Firewall-route**       |
    | Propager des itinéraires de passerelle | **Oui**                  |
-
 
 1. Sélectionnez **Revoir + créer**.
 
@@ -216,11 +207,9 @@ Dans cette tâche, sur le sous-réseau Workload-SN, vous allez configurer l’it
 
     ![Ajouter un itinéraire de pare-feu](../media/add-firewall-route.png)
 
- 
-
 ## Tâche 6 : Configurer une règle d’application
 
-Dans cette tâche, vous allez ajouter une règle d’application qui autorise l’accès sortant à www.google.com.
+Dans cette tâche, vous allez ajouter une règle d’application qui autorise l’accès sortant à <www.google.com>.
 
 1. Dans la page d’accueil du portail Azure, sélectionnez **Toutes les ressources**.
 
@@ -245,14 +234,11 @@ Dans cette tâche, vous allez ajouter une règle d’application qui autorise l�
    | Source                 | **10.0.2.0/24**                           |
    | Protocol               | **http,https**                            |
    | Type de destination       | **FQDN**                                  |
-   | Destination            | **www.google.com**                        |
-
+   | Destination            | **<www.google.com>**                        |
 
    ![Ajouter un regroupement de règles d’application](../media/add-an-application-rule-for-firewall.png)
 
 1. Sélectionnez **Ajouter**.
-
- 
 
 ## Tâche 7 : Configurer une règle réseau
 
@@ -280,12 +266,9 @@ Dans cette tâche, vous allez ajouter une règle réseau qui autorise l’accès
    | Type de destination       | **Adresse IP**                                               |
    | Destination            | **209.244.0.3, 209.244.0.4**<br />Il s’agit de serveurs DNS publics gérés par CenturyLink |
 
-
     ![Ajouter un regroupement de règles réseau](../media/add-a-network-rule-for-firewall.png)
 
 1. Sélectionnez **Ajouter**.
-
- 
 
 ## Tâche 8 : Configurer une règle NAT de destination (DNAT)
 
@@ -314,12 +297,9 @@ Au cours de cette tâche, vous allez ajouter une règle DNAT qui vous permet de 
    | Adresse traduite    | Entrez l’adresse IP privée de **Srv-Work** que vous avez notée précédemment.<br />**par ex. 10.0.2.4** |
    | Port traduit       | **3389**                                                     |
 
-
-        ![Add a DNAT rule collection](../media/add-a-dnat-rule.png)
+  ![Ajouter un regroupement de règles DNAT](../media/add-a-dnat-rule.png)
 
 1. Sélectionnez **Ajouter**.
-
- 
 
 ## Tâche 9 : Modifier les adresses DNS principales et secondaires de l’interface réseau du serveur
 
@@ -345,8 +325,6 @@ Au cours de cette tâche, vous allez ajouter une règle DNAT qui vous permet de 
 
 1. Redémarrez la machine virtuelle **Srv-Work**.
 
- 
-
 ## Tâche 10 : Tester le pare-feu
 
 Dans cette dernière tâche, vous allez tester le pare-feu pour vérifier que les règles sont configurées correctement et qu’elles fonctionnent comme prévu. Cette configuration vous permet d’établir une connexion Bureau à distance à la machine virtuelle Srv-Work par le biais du pare-feu, via l’adresse IP publique du pare-feu.
@@ -367,7 +345,7 @@ Dans cette dernière tâche, vous allez tester le pare-feu pour vérifier que le
 
 1. Sélectionnez **Oui** dans le message du certificat.
 
-1. Ouvrez Internet Explorer et accédez à **https://www.google.com**.
+1. Ouvrez Internet Explorer et accédez à **<https://www.google.com>**.
 
 1. Dans la boîte de dialogue **Alerte de sécurité**, sélectionnez **OK**.
 
@@ -377,14 +355,13 @@ Dans cette dernière tâche, vous allez tester le pare-feu pour vérifier que le
 
     ![Session RDP sur le serveur Srv-Work - Navigateur sur google.com](../media/remote-desktop-connection-2.png)
 
-1. Accédez à **https://www.microsoft.com**.
+1. Accédez à **<https://www.microsoft.com>**.
 
 1. Vous devriez être bloqué par le pare-feu.
 
     ![Session RDP sur le serveur Srv-Work - Navigateur bloqué sur microsoft.com](../media/remote-desktop-connection-3.png)
 
- 
-## Tâche 11 : Nettoyer les ressources 
+## Tâche 11 : Nettoyer les ressources
 
 >**Remarque** : N’oubliez pas de supprimer toutes les nouvelles ressources Azure que vous n’utilisez plus. La suppression des ressources inutilisées vous évitera d’encourir des frais inattendus.
 
