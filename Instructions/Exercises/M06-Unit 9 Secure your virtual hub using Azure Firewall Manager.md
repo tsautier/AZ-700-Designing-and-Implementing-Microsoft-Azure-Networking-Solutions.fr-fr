@@ -7,6 +7,8 @@ Exercise:
 
 # M06 - Unité 9 Sécuriser votre hub virtuel avec Azure Firewall Manager
 
+## Scénario de l’exercice
+
 Dans cet exercice, vous allez créer le réseau virtuel Spoke et créer un hub virtuel sécurisé, puis connecter les réseaux virtuels Hub and Spoke et acheminer le trafic vers votre hub. Ensuite, vous allez déployer les serveurs de charge de travail, puis créer une stratégie de pare-feu et sécuriser votre hub. Enfin, vous allez tester le pare-feu.
 
 ![Diagramme de l’architecture de réseau virtuel avec un hub sécurisé.](../media/9-exercise-secure-your-virtual-hub-using-azure-firewall-manager.png)
@@ -31,11 +33,11 @@ Dans cet exercice, vous allez :
 + Tâche 9 : tester la règle réseau
 + Tâche 10 : Nettoyer les ressources
 
-#### Durée estimée : 35 minutes
+### Durée estimée : 35 minutes
 
 ## Tâche 1 : créer deux réseaux virtuels et sous-réseaux à rayons
 
-Au cours de cette tâche, vous allez créer les deux réseaux virtuels Spoke contenant chacun un sous-réseau qui hébergera vos serveurs de charge de travail. 
+Au cours de cette tâche, vous allez créer les deux réseaux virtuels Spoke contenant chacun un sous-réseau qui hébergera vos serveurs de charge de travail.
 
 1. Sur la page d’accueil du portail Azure, dans la zone de recherche, entrez **Réseau virtuel**, puis sélectionnez **Réseau virtuel** lorsque la valeur apparaît.
 2. Sélectionnez **Créer**.
@@ -43,7 +45,7 @@ Au cours de cette tâche, vous allez créer les deux réseaux virtuels Spoke con
 4. Dans **Nom**, entrez **Spoke-01**.
 5. Dans **Région**, sélectionnez votre région.
 6. Sélectionnez **Suivant : Adresses IP**.
-7. Dans **Espace d’adressage IPv4**, entrez **10.0.0.0/16**. 
+7. Dans **Espace d’adressage IPv4**, entrez **10.0.0.0/16**.
 8. **Supprimez** tous les autres espaces d’adressage répertoriés ici, par exemple **10.1.0.0/16**.
 9. Sous **Nom de sous-réseau**, sélectionnez le mot **par défaut**.
 10. Dans la boîte de dialogue **Modifier le sous-réseau**, remplacez le nom par **Workload-01-SN**.
@@ -54,11 +56,11 @@ Au cours de cette tâche, vous allez créer les deux réseaux virtuels Spoke con
 
 Répétez les étapes 1 à 14 ci-dessus pour créer un autre réseau virtuel et un sous-réseau similaires, mais à l’aide des informations suivantes :
 
-- Groupe de ressources : **fw-manager-rg** (sélectionner un groupe existant)
-- Nom : **Spoke-02**
-- Espace d’adressage : **10.1.0.0/16** (supprimer tous les autres espaces d’adressage listés)
-- Nom du sous-réseau : **Charge de travail-02-SN**
-- Plage d’adresses de sous-réseau : **10.1.1.0/24**
++ Groupe de ressources : **fw-manager-rg** (sélectionner un groupe existant)
++ Nom : **Spoke-02**
++ Espace d’adressage : **10.1.0.0/16** (supprimer tous les autres espaces d’adressage listés)
++ Nom du sous-réseau : **Charge de travail-02-SN**
++ Plage d’adresses de sous-réseau : **10.1.1.0/24**
 
 ## Tâche 2 : créer le hub virtuel sécurisé
 
@@ -93,7 +95,7 @@ Au cours de cette tâche, vous allez créer votre hub virtuel sécurisé à l’
 
 14. Sélectionnez **Créer**.
 
-    > **[!NOTE]** 
+    > **[!NOTE]**
     >
     > Le déploiement peut durer jusqu’à 30 minutes.
 
@@ -131,8 +133,6 @@ Au cours de cette tâche, vous allez connecter les réseaux virtuels Hub and Spo
 
 ![Ajouter une connexion Hub and Spoke à un WAN virtuel - Spoke 2](../media/connect-hub-spoke-vnet-2.png)
 
- 
-
 ## Tâche 4 : déployer les serveurs
 
 1. Dans le portail Azure, ouvrez la session **PowerShell** dans le volet **Cloud Shell**.
@@ -155,13 +155,12 @@ Au cours de cette tâche, vous allez connecter les réseaux virtuels Hub and Spo
 
 1. Dans la page **Vue d’ensemble** de **Srv-workload-02**, dans le volet de droite, sous la section **Réseau**, notez l’**Adresse IP privée** (par exemple **10.1.1.4**).
 
-
 ## Tâche 5 : créer une stratégie de pare-feu et sécuriser votre hub
 
 Au cours de cette tâche, vous allez d’abord créer votre stratégie de pare-feu, puis sécuriser votre hub. La stratégie de pare-feu définit des collections de règles pour diriger le trafic sur un ou plusieurs hubs virtuels sécurisés.
 
 1. Dans la page d’accueil du portail Azure, sélectionnez **Firewall Manager**.
-   - Si l’icône de Firewall Manager n’apparaît pas sur la page d’accueil, sélectionnez **Tous les services**. Ensuite, dans la zone de recherche, saisissez **Firewall Manager** et sélectionnez **Firewall Manager** lorsqu’il apparaît.
+   + Si l’icône de Firewall Manager n’apparaît pas sur la page d’accueil, sélectionnez **Tous les services**. Ensuite, dans la zone de recherche, saisissez **Firewall Manager** et sélectionnez **Firewall Manager** lorsqu’il apparaît.
 
 1. Dans **Firewall Manager**, à partir de la page Vue d’ensemble, sélectionnez **Voir les stratégies de pare-feu Azure**.
 
@@ -274,7 +273,7 @@ Au cours de cette tâche, vous allez d’abord créer votre stratégie de pare-f
 Au cours de cette tâche, vous allez associer la stratégie de pare-feu au hub virtuel.
 
 1. Dans la page d’accueil du portail Azure, sélectionnez **Firewall Manager**.
-   - Si l’icône de Firewall Manager n’apparaît pas sur la page d’accueil, sélectionnez **Tous les services**. Ensuite, dans la zone de recherche, saisissez **Firewall Manager** et sélectionnez **Firewall Manager** lorsqu’il apparaît.
+   + Si l’icône de Firewall Manager n’apparaît pas sur la page d’accueil, sélectionnez **Tous les services**. Ensuite, dans la zone de recherche, saisissez **Firewall Manager** et sélectionnez **Firewall Manager** lorsqu’il apparaît.
 1. Dans **Firewall Manager**, sous **Sécurité**, sélectionnez **Stratégies de pare-feu Azure**.
 1. Cochez la case **Policy-01**.
 1. Sélectionnez **Gérer les associations&gt;associer des hubs**.
@@ -283,8 +282,6 @@ Au cours de cette tâche, vous allez associer la stratégie de pare-feu au hub v
 1. Une fois la stratégie attachée, sélectionnez **Actualiser**. L’association doit être affichée.
 
 ![Afficher la stratégie de pare-feu associée sur le hub](../media/associate-firewall-policy-with-hub-end.png)
-
- 
 
 ## Tâche 7 : acheminer le trafic vers votre hub
 
@@ -295,10 +292,9 @@ Pour cette tâche, vous devez vérifiez que le trafic réseau est acheminé via 
 1. Sous **Paramètres**, sélectionnez **Configuration de la sécurité**.
 1. Dans **Trafic Internet**, sélectionnez **Pare-feu Azure**.
 1. Dans **Trafic privé**, sélectionnez **Envoyer via le pare-feu Azure**.
-1. Sélectionnez **Enregistrer**. 
+1. Sélectionnez **Enregistrer**.
 1. L’exécution de cette opération nécessite quelques minutes.
 1. Une fois la configuration terminée, vérifiez que sous **TRAFIC INTERNET** et **TRAFIC PRIVÉ**, vous pouvez voir **Sécurisé par le pare-feu Azure** pour les connexions Hub and Spoke.
-
 
 ## Tâche 8 : tester la règle d’application
 
@@ -326,7 +322,7 @@ Dans cette tâche, vous allez tester la règle d’application pour confirmer qu
 
 1. Ouvrez Internet Explorer, puis sélectionnez **OK** dans la boîte de dialogue **Configurer Internet Explorer 11**.
 
-1. Accédez à **https://** **www.microsoft.com**.
+1. Accédez à **https://** **<www.microsoft.com>**.
 
 1. Dans la boîte de dialogue **Alerte de sécurité**, sélectionnez **OK**.
 
@@ -336,7 +332,7 @@ Dans cette tâche, vous allez tester la règle d’application pour confirmer qu
 
     ![Session RDP - Exploration de microsoft.com](../media/microsoft-home-page.png)
 
-1. Accédez à **https://****www.google.com**.
+1. Accédez à **https://** **<www.google.com>**.
 
 1. Vous devriez être bloqué par le pare-feu.
 
@@ -364,8 +360,7 @@ Dans cette tâche, vous allez tester la règle réseau pour confirmer qu’elle 
 
 1. Fermez les deux sessions RDP pour les déconnecter.
 
-
-## Tâche 10 : Nettoyer les ressources 
+## Tâche 10 : Nettoyer les ressources
 
 >**Remarque** : N’oubliez pas de supprimer toutes les nouvelles ressources Azure que vous n’utilisez plus. La suppression des ressources inutilisées vous évitera d’encourir des frais inattendus.
 

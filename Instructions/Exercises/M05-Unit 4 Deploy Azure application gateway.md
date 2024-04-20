@@ -5,7 +5,8 @@ Exercise:
 ---
 
 # M05 – Unité 4 Déployer une passerelle applicative Azure
- 
+
+## Scénario de l’exercice
 
 Dans cet exercice, vous allez utiliser le Portail Azure pour créer une passerelle applicative. Puis, vous la testerez pour vous assurer qu’elle fonctionne correctement.
 
@@ -14,7 +15,7 @@ Dans cet exercice, vous allez utiliser le Portail Azure pour créer une passerel
 
 >**Remarque :** Une **[simulation de labo interactive](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Deploy%20Azure%20Application%20Gateway)** est disponible et vous permet de progresser à votre propre rythme. Il peut exister de légères différences entre la simulation interactive et le labo hébergé. Toutefois, les concepts et idées de base présentés sont identiques.
 
-#### Durée estimée : 25 minutes
+### Durée estimée : 25 minutes
 
 La passerelle d’application dirige le trafic web des applications vers des ressources spécifiques d’un pool de back-ends. Vous attribuez des écouteurs aux ports, créez des règles et ajoutez des ressources à un pool de back-ends. Par souci de simplicité, cet article utilise une configuration simple avec une adresse IP front-end publique, un écouteur de base pour héberger un site unique sur cette passerelle d’application, une règle de routage des requêtes simple et deux machines virtuelles dans le pool de back-ends.
 
@@ -27,13 +28,12 @@ Dans cet exercice, vous allez :
 + Tâche 3 : ajouter des serveurs back-end au pool de back-ends
 + Tâche 4 : tester la passerelle applicative
 
-
 ## Tâche 1 : créer une passerelle applicative
 
 1. Connectez-vous au [portail Azure](https://portal.azure.com/) avec votre compte Azure.
 
 1. Sur n’importe quelle page du portail Azure, dans **Rechercher des ressources, des services et des documents (G+/)**, entrez passerelle applicative, puis sélectionnez **Passerelles applicatives** dans les résultats.
-    ![Recherche du portail Azure pour la passerelle applicative](../media/search-application-gateway.png)    
+    ![Recherche du portail Azure pour la passerelle applicative](../media/search-application-gateway.png)
 
 1. Dans la page Passerelles applicatives, sélectionnez **+ Créer**.
 
@@ -128,7 +128,7 @@ Dans cet exercice, vous allez :
 
 1. Analysez les paramètres de l’onglet **Analyser + créer**
 
-1. Sélectionnez **Créer** pour créer le réseau virtuel, l’adresse IP publique et la passerelle applicative. 
+1. Sélectionnez **Créer** pour créer le réseau virtuel, l’adresse IP publique et la passerelle applicative.
 
 La création de la passerelle d’application par Azure peut prendre plusieurs minutes. Patientez jusqu’à ce que le déploiement soit terminé avant de passer à la section suivante.
 
@@ -162,11 +162,11 @@ La création de la passerelle d’application par Azure peut prendre plusieurs m
 
 1. Dans la page Modifier le pool back-end, sous **Cibles back-end**, dans **Type de cible**, sélectionnez **Machine virtuelle**.
 
-1. Sous **Cible**, sélectionnez **BackendVM1.** 
+1. Sous **Cible**, sélectionnez **BackendVM1.**
 
 1. Dans **Type de cible**, sélectionnez **Machine virtuelle**.
 
-1. Sous **Cible**, sélectionnez **BackendVM2.** 
+1. Sous **Cible**, sélectionnez **BackendVM2.**
 
    ![Portail Azure - Ajouter des serveurs principaux cibles au pool back-end](../media/edit-backend-pool.png)
 
@@ -178,9 +178,9 @@ Attendez que le déploiement se termine avant de passer à l’étape suivante.
 
 IIS n’est pas obligatoire pour créer la passerelle applicative, mais vous l’avez installé dans cet exercice pour vérifier si Azure avait bien créé la passerelle applicative.
 
-### Utilisez IIS pour tester la passerelle d’application :
+### Utiliser IIS pour tester la passerelle applicative
 
-1. Recherchez l’adresse IP publique de la passerelle d’application dans la page **Vue d’ensemble** correspondante. 
+1. Recherchez l’adresse IP publique de la passerelle d’application dans la page **Vue d’ensemble** correspondante.
 
    ![Portail Azure - Recherche de l’adresse IP publique front-end ](../media/app-gw-public-ip.png)
 
