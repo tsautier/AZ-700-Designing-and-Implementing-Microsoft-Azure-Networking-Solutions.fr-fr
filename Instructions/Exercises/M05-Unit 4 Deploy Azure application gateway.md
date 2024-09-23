@@ -134,8 +134,11 @@ La création de la passerelle d’application par Azure peut prendre plusieurs m
 
 ## Tâche 2 : créer des machines virtuelles
 
-1. Dans le portail Azure, ouvrez la session **PowerShell** dans le volet **Cloud Shell**.
- > **Remarque :** si c’est la première fois que vous ouvrez Cloud Shell, vous serez peut-être invité à créer un compte de stockage. Sélectionnez **Créer le stockage**.
+1. Sélectionnez l’icône Cloud Shell en haut à droite du portail Azure. Si nécessaire, configurez l’interpréteur de commandes.  
+    + Sélectionnez **PowerShell**.
+    + Sélectionnez **Aucun compte de stockage requis** et votre **abonnement**, puis sélectionnez **Appliquer**.
+    + Attendez que le terminal crée et qu’une invite s’affiche.
+      
 1. Dans la barre d’outils du volet Cloud Shell, sélectionnez l’icône **Charger/télécharger des fichiers**, dans le menu déroulant, sélectionnez **Charger** et chargez les fichiers **backend.json** et **backend.parameters.json** l’un après l’autre dans le répertoire racine de Cloud Shell à partir du dossier source **F:\Allfiles\Exercises\M05**.
 
 1. Déployez les modèles ARM suivants pour créer les machines virtuelles nécessaires à cet exercice :

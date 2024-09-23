@@ -135,7 +135,10 @@ Au cours de cette tâche, vous allez connecter les réseaux virtuels Hub and Spo
 
 ## Tâche 4 : déployer les serveurs
 
-1. Dans le portail Azure, ouvrez la session **PowerShell** dans le volet **Cloud Shell**.
+1. Sélectionnez l’icône Cloud Shell en haut à droite du portail Azure. Si nécessaire, configurez l’interpréteur de commandes.  
+    + Sélectionnez **PowerShell**.
+    + Sélectionnez **Aucun compte de stockage requis** et votre **abonnement**, puis sélectionnez **Appliquer**.
+    + Attendez que le terminal crée et qu’une invite s’affiche. 
 
 1. Dans la barre d’outils du volet Cloud Shell, sélectionnez l’icône **Charger/télécharger des fichiers**, dans le menu déroulant, sélectionnez **Charger** et chargez les fichiers **FirewallManager.json** et **FirewallManager.parameters.json** l’un après l’autre dans le répertoire racine de Cloud Shell à partir du dossier source **F:\Allfiles\Exercises\M06**.
 

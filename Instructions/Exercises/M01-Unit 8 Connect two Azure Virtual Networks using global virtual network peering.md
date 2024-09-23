@@ -3,6 +3,7 @@ Exercise:
   title: M01 - Unité 8 Connecter deux réseaux virtuels Azure à l’aide du peering de réseaux virtuels globaux
   module: Module 01 - Introduction to Azure Virtual Networks
 ---
+
 # M01 - Unité 8 Connecter deux réseaux virtuels Azure à l’aide du peering de réseaux virtuels globaux
 
 ## Scénario de l’exercice
@@ -30,8 +31,10 @@ Dans cette section, vous allez créer une machine virtuelle de test sur le rése
 
 ### Créer ManufacturingVM
 
-1. Dans le portail Azure, ouvrez la session **PowerShell** dans le volet **Cloud Shell**.
-  > **Remarque :** si c’est la première fois que vous ouvrez Cloud Shell, vous serez peut-être invité à créer un compte de stockage. Sélectionnez **Créer le stockage**.
+1. Sélectionnez l’icône Cloud Shell en haut à droite du portail Azure. Si nécessaire, configurez l’interpréteur de commandes.  
+    + Sélectionnez **PowerShell**.
+    + Sélectionnez **Aucun compte de stockage requis** et votre **abonnement**, puis sélectionnez **Appliquer**.
+    + Attendez que le terminal crée et qu’une invite s’affiche. 
 
 1. Dans la barre d’outils du volet Cloud Shell, sélectionnez l’icône **Charger/télécharger des fichiers**, dans le menu déroulant, sélectionnez **Charger** et chargez les fichiers **ManufacturingVMazuredeploy.json** et **ManufacturingVMazuredeploy.parameters.json** l’un après l’autre dans le répertoire racine de Cloud Shell à partir du dossier source **F:\Allfiles\Exercises\M01**.
 
@@ -57,7 +60,7 @@ Dans cette section, vous allez créer une machine virtuelle de test sur le rése
 
 1. Dans ManufacturingVM, sélectionnez **Se connecter &gt; RDP**.
 
-1. Dans ManufacturingVM | Se connecter, sélectionnez **Télécharger le fichier RDP**.
+1. Dans ManufacturingVM \| Se connecter, sélectionnez **Télécharger le fichier RDP**.
 
 1. Enregistrez le fichier RDP sur votre bureau.
 
@@ -69,7 +72,7 @@ Dans cette section, vous allez créer une machine virtuelle de test sur le rése
 
 1. Dans TestVM1, sélectionnez **Se connecter &gt; RDP**.
 
-1. Dans TestVM1 | Se connecter, sélectionnez **Télécharger le fichier RDP**.
+1. Dans TestVM1 \| Se connecter, sélectionnez **Télécharger le fichier RDP**.
 
 1. Enregistrez le fichier RDP sur votre bureau.
 
@@ -100,34 +103,34 @@ Dans cette section, vous allez créer une machine virtuelle de test sur le rése
 1. Dans la page d’accueil Azure, sélectionnez **Réseaux virtuels**, puis **CoreServicesVnet**.
 
 1. Dans CoreServicesVnet, sous **Paramètres**, sélectionnez **Peerings**.
-   ![Capture d’écran des paramètres du peering de réseaux virtuels de Core Services ](../media/create-peering-on-coreservicesvnet.png)
+   ![Capture d’écran des paramètres du peering de réseaux virtuels de services principaux ](../media/create-peering-on-coreservicesvnet.png)
 
-1. Sur CoreServicesVnet | Peerings, sélectionnez **+ Ajouter**.
+1. Sur CoreServicesVnet \| Peerings, sélectionnez **+ Ajouter**.
 
 1. Utilisez les informations du tableau suivant pour créer le peering.
 
-| **Section**                          | **Option**                                    | **Valeur**                             |
-| ------------------------------------ | --------------------------------------------- | ------------------------------------- |
-| Ce réseau virtuel                 |                                               |                                       |
-|                                      | Nom du lien de peering                             | CoreServicesVnet-to-ManufacturingVnet |
-|                                      | Trafic vers le réseau virtuel distant             | Autoriser (par défaut)                       |
-|                                      | Trafic transféré à partir du réseau virtuel distant | Autoriser (par défaut)                       |
-|                                      | Passerelle ou serveur de routes de réseau virtuel       | Aucun (par défaut)                        |
-| Réseau virtuel distant               |                                               |                                       |
-|                                      | Nom du lien de peering                             | ManufacturingVnet-to-CoreServicesVnet |
-|                                      | Modèle de déploiement de réseau virtuel              | Gestionnaire des ressources                      |
-|                                      | Je connais mon ID de ressource                         | Non sélectionné                          |
-|                                      | Abonnement                                  | Sélectionnez l’abonnement fourni      |
-|                                      | Réseau virtuel                               | ManufacturingVnet                     |
-|                                      | Trafic vers le réseau virtuel distant             | Autoriser (par défaut)                       |
-|                                      | Trafic transféré à partir du réseau virtuel distant | Autoriser (par défaut)                       |
-|                                      | Passerelle ou serveur de routes de réseau virtuel       | Aucun (par défaut)                        |
-| Passez en revue vos paramètres, puis sélectionnez Ajouter. |                                               |                                       |
-|                                      |                                               |                                       |
+   | **Section**                          | **Option**                                    | **Valeur**                             |
+   | ------------------------------------ | --------------------------------------------- | ------------------------------------- |
+   | Ce réseau virtuel                 |                                               |                                       |
+   |                                      | Nom du lien de peering                             | CoreServicesVnet-to-ManufacturingVnet |
+   |                                      | Trafic vers le réseau virtuel distant             | Autoriser (par défaut)                       |
+   |                                      | Trafic transféré à partir du réseau virtuel distant | Autoriser (par défaut)                       |
+   |                                      | Passerelle ou serveur de routes de réseau virtuel       | Aucun (par défaut)                        |
+   | Réseau virtuel distant               |                                               |                                       |
+   |                                      | Nom du lien de peering                             | ManufacturingVnet-to-CoreServicesVnet |
+   |                                      | Modèle de déploiement de réseau virtuel              | Gestionnaire des ressources                      |
+   |                                      | Je connais mon ID de ressource                         | Non sélectionné                          |
+   |                                      | Abonnement                                  | Sélectionnez l’abonnement fourni      |
+   |                                      | Réseau virtuel                               | ManufacturingVnet                     |
+   |                                      | Trafic vers le réseau virtuel distant             | Autoriser (par défaut)                       |
+   |                                      | Trafic transféré à partir du réseau virtuel distant | Autoriser (par défaut)                       |
+   |                                      | Passerelle ou serveur de routes de réseau virtuel       | Aucun (par défaut)                        |
+   | Passez en revue vos paramètres, puis sélectionnez Ajouter. |                                               |                                       |
+   |                                      |                                               |                                       |
 
- >**Remarque** : si vous n’avez pas d’abonnement MOC, utilisez l’abonnement dont vous vous serviez précédemment. Il doit consister en un simple nom.
+   >**Remarque** : si vous n’avez pas d’abonnement MOC, utilisez l’abonnement dont vous vous serviez précédemment.
 
-1. Dans CoreServicesVnet | Peerings, vérifiez que le peering **CoreServicesVnet-ManufacturingVnet** est répertorié.
+1. Dans CoreServicesVnet \| Peerings, vérifiez que le peering **CoreServicesVnet-ManufacturingVnet** est répertorié.
 
 1. Sous Réseaux virtuels, sélectionnez **ManufacturingVnet**, puis vérifiez que le peering **ManufacturingVnet-to-CoreServicesVnet** est répertorié.
 
@@ -157,4 +160,4 @@ Félicitations ! Vous avez réussi à configurer la connectivité entre les rés
    Remove-AzResourceGroup -Name 'ContosoResourceGroup' -Force -AsJob
    ```
 
-    >**Remarque** : La commande s’exécute de façon asynchrone (tel que déterminé par le paramètre -AsJob). Vous pourrez donc exécuter une autre commande PowerShell immédiatement après au cours de la même session PowerShell, mais la suppression effective du groupe de ressources peut prendre quelques minutes.
+   >**Remarque** : La commande s’exécute de façon asynchrone (tel que déterminé par le paramètre -AsJob). Vous pourrez donc exécuter une autre commande PowerShell immédiatement après au cours de la même session PowerShell, mais la suppression effective du groupe de ressources peut prendre quelques minutes.
