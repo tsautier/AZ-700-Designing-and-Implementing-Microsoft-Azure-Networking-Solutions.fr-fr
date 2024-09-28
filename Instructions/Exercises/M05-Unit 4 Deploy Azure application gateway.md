@@ -57,11 +57,7 @@ Dans cet exercice, vous allez :
    | **SOUS-RÉSEAUX**       |                                    |
    | Nom du sous-réseau       | Modifier la **valeur par défaut** par **AGSubnet** |
    | Plage d’adresses     | 10.0.0.0/24                        |
-   | Nom du sous-réseau       | BackendSubnet                      |
-   | Plage d’adresses     | 10.0.1.0/24                        |
 
-
->**Remarque** : si l’interface utilisateur ne permet pas d’ajouter des sous-réseaux supplémentaires, suivez les étapes et ajoutez le sous-réseau back-end après avoir créé la passerelle. 
 
 1. Sélectionnez **OK** pour revenir à l’onglet Créer les informations de base de la passerelle applicative.
 
@@ -92,13 +88,14 @@ Dans cet exercice, vous allez :
 
 1. Dans la zone **Nom de la règle**, entrez **RoutingRule**.
 
+1. Pour **Priorité**, entrez **100**. 
+
 1. Sous l’onglet **Écouteur**, entrez ou sélectionnez les informations suivantes :
 
     | **Paramètre**   | **Valeur**         |
     | ------------- | ----------------- |
     | Nom de l’écouteur | Port d'écoute          |
-    | Priority      | **100**           |
-    | Adresse IP du front-end   | Sélectionnez **Public** |
+    | Adresse IP du front-end   | Sélectionnez **Adresse IPv4 publique**. |
 
 1. Acceptez les valeurs par défaut pour les autres paramètres de l’onglet **Écouteur**.
 
@@ -130,27 +127,59 @@ Dans cet exercice, vous allez :
 
 1. Sélectionnez **Créer** pour créer le réseau virtuel, l’adresse IP publique et la passerelle applicative.
 
-La création de la passerelle d’application par Azure peut prendre plusieurs minutes. Patientez jusqu’à ce que le déploiement soit terminé avant de passer à la section suivante.
+1. La création de la passerelle d’application par Azure peut prendre plusieurs minutes. Attendez la fin du déploiement.
+
+### Ajouter un sous-réseau pour un serveur backend
+
+1. Recherchez et sélectionnez le **ContosoVNet**. Vérifiez que le **AGSubnet** a été créé. 
+
+1. Pour créer le **BackendSubnet**, sélectionnez **Paramètres**, puis **Subnets**. Veillez à **ajouter** le sous-réseau lorsque vous avez terminé.
+   
+   | **Paramètre**       | **Valeur**                          |
+   | ----------------- | ---------------------------------- |
+   | Nom du sous-réseau       | BackendSubnet                      |
+   | Plage d’adresses     | 10.0.1.0/24                        |
 
 ## Tâche 2 : créer des machines virtuelles
 
-1. Dans le portail Azure, ouvrez la session **PowerShell** dans le volet **Cloud Shell**.
- > **Remarque :** si c’est la première fois que vous ouvrez Cloud Shell, vous serez peut-être invité à créer un compte de stockage. Sélectionnez **Créer le stockage**.
-1. Dans la barre d’outils du volet Cloud Shell, sélectionnez l’icône **Charger/télécharger des fichiers**, dans le menu déroulant, sélectionnez **Charger** et chargez les fichiers **backend.json** et **backend.parameters.json** l’un après l’autre dans le répertoire racine de Cloud Shell à partir du dossier source **F:\Allfiles\Exercises\M05**.
+1. Sélectionnez l’icône Cloud Shell en haut à droite du portail Azure. Si nécessaire, configurez l’interpréteur de commandes.  
+    + Sélectionnez **PowerShell**.
+    + Sélectionnez **Aucun compte de stockage requis** et votre **abonnement**, puis sélectionnez **Appliquer**.
+    + Attendez que le terminal crée et qu’une invite s’affiche.
+      
+1. Dans la barre d’outils du volet Cloud Shell, sélectionnez **Gérer les fichiers**, puis **Charger**. Chargez les fichiers suivants : **backend.json**, **backend.parameters.json** et **install-iis.ps1**. Les fichiers peuvent être téléchargés à partir du référentiel, dans le dossier **\Allfiles\Exercises\M05**.
 
 1. Déployez les modèles ARM suivants pour créer les machines virtuelles nécessaires à cet exercice :
 
->**Remarque** : Vous serez invité à fournir un mot de passe d’administrateur.
+>**Remarque** : Vous serez invité à fournir un mot de passe d’administrateur. 
 
    ```powershell
    $RGName = "ContosoResourceGroup"
    
    New-AzResourceGroupDeployment -ResourceGroupName $RGName -TemplateFile backend.json -TemplateParameterFile backend.parameters.json
    ```
-  
-1. Une fois le déploiement terminé, accédez à la page d’accueil du portail Azure, puis sélectionnez **Machines virtuelles**.
+>**Remarque** : prenez le temps de passer en revue le fichier **backend.json**. Deux machines virtuelles sont en cours de déploiement. Cette opération prendra quelques minutes. 
 
-1. Vérifiez que les deux machines virtuelles ont été créées.
+1. La commande doit s’exécuter correctement et lister **BackendVM1** et **BackendVM2**.
+
+### Installer IIS sur chaque machine virtuelle
+
+1. Chaque serveur back-end nécessite qu’IIS soit installé.
+
+1. Continuez vers l’invite PowerShell et utilisez le script fourni pour installer IIS sur **BackendVM1**.
+
+   ```powershell
+   Invoke-AzVMRunCommand -ResourceGroupName 'ContosoResourceGroup' -Name 'BackendVM1' -CommandId 'RunPowerShellScript' -ScriptPath 'install-iis.ps1'
+   ```
+
+>**Remarque** : pendant que vous patientez, vérifiez le script PowerShell. Notez que la page d’accueil IIS est personnalisée de manière à indiquer le nom de la machine virtuelle.
+
+1. Exécutez à nouveau la commande, cette fois pour **BackendVM2**.
+
+   ```powershell
+   Invoke-AzVMRunCommand -ResourceGroupName 'ContosoResourceGroup' -Name 'BackendVM2' -CommandId 'RunPowerShellScript' -ScriptPath 'install-iis.ps1'
+   ```
+>**Remarque :** chacune des commandes prend quelques minutes à s’exécuter.
 
 ## Tâche 3 : ajouter des serveurs back-end au pool de back-ends
 
@@ -162,17 +191,19 @@ La création de la passerelle d’application par Azure peut prendre plusieurs m
 
 1. Dans la page Modifier le pool back-end, sous **Cibles back-end**, dans **Type de cible**, sélectionnez **Machine virtuelle**.
 
-1. Sous **Cible**, sélectionnez **BackendVM1.**
+1. Dans **Cible**, sélectionnez **BackendVM1-nic.**
 
 1. Dans **Type de cible**, sélectionnez **Machine virtuelle**.
 
-1. Sous **Cible**, sélectionnez **BackendVM2.**
+1. Dans **Cible**, sélectionnez **BackendVM2-nic.**
 
    ![Portail Azure - Ajouter des serveurs principaux cibles au pool back-end](../media/edit-backend-pool.png)
 
-1. Sélectionnez **Enregistrer**.
+1. Sélectionnez **Enregistrer** et attendez que les cibles soient ajoutées. 
 
-Attendez que le déploiement se termine avant de passer à l’étape suivante.
+1. Vérifiez que les serveurs back-end sont sains. Sélectionnez **Surveillance**, puis **Intégrité du back-end**. Les deux cibles doivent être saines. 
+
+   ![Vérifiez l’intégrité du back-end dans le portail Azure.](../media/contoso-backend-health.png)
 
 ## Tâche 4 : tester la passerelle applicative
 
@@ -191,5 +222,6 @@ IIS n’est pas obligatoire pour créer la passerelle applicative, mais vous l�
    ![Navigateur : afficher BackendVM1 ou BackendVM2 selon le serveur principal qui répond à la requête.](../media/browse-to-backend.png)
 
 1. Actualisez plusieurs fois le navigateur et vous devriez voir les connexions à BackendVM1 et BackendVM2.
+
 
 Félicitations ! Vous avez configuré et testé une passerelle applicative Azure.

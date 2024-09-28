@@ -27,85 +27,86 @@ Dans cet exercice, vous allez :
 
 1. Accédez au [portail Azure](https://portal.azure.com/).
 
-2. Dans la page d’accueil Azure, dans la barre de recherche, entrez DNS, puis sélectionnez **Zones DNS privé**.  
+1. Dans la page d’accueil Azure, dans la barre de recherche, entrez DNS, puis sélectionnez **Zones DNS privé**.  
    ![Page d’accueil du portail Azure avec la recherche DNS.](../media/create-private-dns-zone.png)
 
-3. Dans Zones DNS privées, sélectionnez **+ Créer**.
+1. Dans Zones DNS privées, sélectionnez **+ Créer**.
 
-4. Utilisez les informations du tableau suivant pour créer la zone DNS privée.
+1. Utilisez les informations du tableau suivant pour créer la zone DNS privée.
 
-| **Tab**         | **Option**                             | **Valeur**            |
-| --------------- | -------------------------------------- | -------------------- |
-| Concepts de base          | Resource group                         | ContosoResourceGroup |
-|                 | Nom                                   | Contoso.com          |
-| Balises            | Aucune modification n’est requise                    |                      |
-| Vérifier + créer | Passez en revue vos paramètres, puis sélectionnez Créer |                      |
+    | **Tab**         | **Option**                             | **Valeur**            |
+    | --------------- | -------------------------------------- | -------------------- |
+    | Concepts de base          | Resource group                         | ContosoResourceGroup |
+    |                 | Nom                                   | Contoso.com          |
+    | Balises            | Aucune modification n’est requise                    |                      |
+    | Vérifier + créer | Passez en revue vos paramètres, puis sélectionnez Créer |                      |
 
-5. Attendez la fin du déploiement, puis sélectionnez **Accéder à la ressource**.
+1. Attendez la fin du déploiement, puis sélectionnez **Accéder à la ressource**.
 
-6. Vérifiez que la zone a été créée.
+1. Vérifiez que la zone a été créée.
 
 ## Tâche 2 : Lier le sous-réseau pour l’inscription automatique
 
 1. Sur contoso.com, sous **Paramètres**, sélectionnez **Liaisons de réseau virtuel**.
 
-2. Sur contoso.com | Liaisons de réseau virtuel, sélectionnez **+ Ajouter**.
+1. Sur contoso.com \| Liaisons de réseau virtuel, sélectionnez **+ Ajouter**.
 
-![contoso.com | Liaisons de réseau virtuel avec + Ajouter en évidence.](../media/add-network-link-dns.png)
+    ![contoso.com \| Liaisons de réseau virtuel avec + Ajouter en évidence.](../media/add-network-link-dns.png)
 
-3. Utilisez les informations du tableau suivant pour ajouter la liaison de réseau virtuel.
+1. Utilisez les informations du tableau suivant pour ajouter la liaison de réseau virtuel.
 
-| **Option**                          | **Valeur**                               |
-| ----------------------------------- | --------------------------------------- |
-| Nom de la liaison                           | CoreServicesVnetLink                    |
-| Abonnement                        | Aucune modification n’est requise                     |
-| Réseau virtuel                     | CoreServicesVnet (ContosoResourceGroup) |
-| Activer l’inscription automatique            | Volumes sélectionnés                                |
-| Passez en revue vos paramètres, puis sélectionnez OK. |                                         |
+    | **Option**                          | **Valeur**                               |
+    | ----------------------------------- | --------------------------------------- |
+    | Nom de la liaison                           | CoreServicesVnetLink                    |
+    | Abonnement                        | Aucune modification n’est requise                     |
+    | Réseau virtuel                     | CoreServicesVnet (ContosoResourceGroup) |
+    | Activer l’inscription automatique            | Volumes sélectionnés                                |
+    | Passez en revue vos paramètres, puis sélectionnez OK. |                                         |
 
-4. Cliquez sur **Actualiser**.
+1. Cliquez sur **Actualiser**.
 
-5. Vérifiez que CoreServicesVnetLink a été créé et que l’inscription automatique est activée.
+1. Vérifiez que CoreServicesVnetLink a été créé et que l’inscription automatique est activée.
 
-6. Répétez les étapes 2 à 5 pour ManufacturingVnet en utilisant les informations du tableau suivant :
+1. Répétez les étapes 2 à 5 pour ManufacturingVnet en utilisant les informations du tableau suivant :
 
-| **Option**                          | **Valeur**                                |
-| ----------------------------------- | ---------------------------------------- |
-| Nom de la liaison                           | ManufacturingVnetLink                    |
-| Abonnement                        | Aucune modification n’est requise                      |
-| Réseau virtuel                     | ManufacturingVnet (ContosoResourceGroup) |
-| Activer l’inscription automatique            | Volumes sélectionnés                                 |
-| Passez en revue vos paramètres, puis sélectionnez OK. |                                          |
+    | **Option**                          | **Valeur**                                |
+    | ----------------------------------- | ---------------------------------------- |
+    | Nom de la liaison                           | ManufacturingVnetLink                    |
+    | Abonnement                        | Aucune modification n’est requise                      |
+    | Réseau virtuel                     | ManufacturingVnet (ContosoResourceGroup) |
+    | Activer l’inscription automatique            | Volumes sélectionnés                                 |
+    | Passez en revue vos paramètres, puis sélectionnez OK. |                                          |
 
-7. Cliquez sur **Actualiser**.
+1. Cliquez sur **Actualiser**.
 
-8. Vérifiez que le ManufacturingVnetLink a été créé et que l’inscription automatique est activée.
+1. Vérifiez que le ManufacturingVnetLink a été créé et que l’inscription automatique est activée.
 
-9. Répétez les étapes 2 à 5 pour ResearchVnet, en utilisant les informations du tableau suivant :
+1. Répétez les étapes 2 à 5 pour ResearchVnet, en utilisant les informations du tableau suivant :
 
-| **Option**                          | **Valeur**                           |
-| ----------------------------------- | ----------------------------------- |
-| Nom de la liaison                           | ResearchVnetLink                    |
-| Abonnement                        | Aucune modification n’est requise                 |
-| Réseau virtuel                     | ResearchVnet (ContosoResourceGroup) |
-| Activer l’inscription automatique            | Volumes sélectionnés                            |
-| Passez en revue vos paramètres, puis sélectionnez OK. |                                     |
+    | **Option**                          | **Valeur**                           |
+    | ----------------------------------- | ----------------------------------- |
+    | Nom de la liaison                           | ResearchVnetLink                    |
+    | Abonnement                        | Aucune modification n’est requise                 |
+    | Réseau virtuel                     | ResearchVnet (ContosoResourceGroup) |
+    | Activer l’inscription automatique            | Volumes sélectionnés                            |
+    | Passez en revue vos paramètres, puis sélectionnez OK. |                                     |
 
-10. Cliquez sur **Actualiser**.
+1. Cliquez sur **Actualiser**.
 
-11. Vérifiez que ResearchVnetLink a été créé et que l’inscription automatique est activée.
+1. Vérifiez que ResearchVnetLink a été créé et que l’inscription automatique est activée.
 
 ## Tâche 3 : Créer des machines virtuelles pour tester la configuration
 
 Dans cette section, vous allez créer deux machines virtuelles de test pour tester la configuration de la zone DNS privée.
 
-1. Dans le portail Azure, ouvrez la session **PowerShell** dans le volet **Cloud Shell**.
+1. Sélectionnez l’icône Cloud Shell en haut à droite du portail Azure. Si nécessaire, configurez l’interpréteur de commandes.  
+    + Sélectionnez **PowerShell**.
+    + Sélectionnez **Aucun compte de stockage requis** et votre **abonnement**, puis sélectionnez **Appliquer**.
+    + Attendez que le terminal crée et qu’une invite s’affiche. 
 
-    > **Remarque :** si c’est la première fois que vous ouvrez Cloud Shell, vous serez peut-être invité à créer un compte de stockage. Sélectionnez **Créer le stockage**.
+1. Dans la barre d’outils du volet Cloud Shell, sélectionnez l’icône **Charger/télécharger des fichiers**, dans le menu déroulant, sélectionnez **Charger** et chargez les fichiers **azuredeploy.json** et **azuredeploy.parameters.json** l’un après l’autre dans le répertoire racine de Cloud Shell à partir du dossier source **F:\Allfiles\Exercises\M01**.
 
-2. Dans la barre d’outils du volet Cloud Shell, sélectionnez l’icône **Charger/télécharger des fichiers**, dans le menu déroulant, sélectionnez **Charger** et chargez les fichiers **azuredeploy.json** et **azuredeploy.parameters.json** l’un après l’autre dans le répertoire racine de Cloud Shell à partir du dossier source **F:\Allfiles\Exercises\M01**.
-
-3. Déployez les modèles ARM suivants pour créer les machines virtuelles nécessaires à cet exercice :
+1. Déployez les modèles ARM suivants pour créer les machines virtuelles nécessaires à cet exercice :
 
     >**Remarque** : Vous serez invité à fournir un mot de passe d’administrateur.
 
@@ -115,21 +116,21 @@ Dans cette section, vous allez créer deux machines virtuelles de test pour test
    New-AzResourceGroupDeployment -ResourceGroupName $RGName -TemplateFile azuredeploy.json -TemplateParameterFile azuredeploy.parameters.json
    ```
   
-4. Une fois le déploiement terminé, accédez à la page d’accueil du portail Azure, puis sélectionnez **Machines virtuelles**.
+1. Une fois le déploiement terminé, accédez à la page d’accueil du portail Azure, puis sélectionnez **Machines virtuelles**.
 
-5. Vérifiez que les deux machines virtuelles ont été créées.
+1. Vérifiez que les deux machines virtuelles ont été créées.
 
 ## Tâche 4 : Vérifier que les enregistrements sont présents dans la zone DNS
 
 1. Sur la page d’accueil du portail Azure, sélectionnez **Zones DNS privées**.
 
-2. Dans Zones DNS privées, sélectionnez **contoso.com**.
+1. Dans Zones DNS privées, sélectionnez **contoso.com**.
 
-3. Vérifiez que les enregistrements de l’hôte (A) sont répertoriés pour les deux machines virtuelles, comme indiqué :
+1. Vérifiez que les enregistrements de l’hôte (A) sont répertoriés pour les deux machines virtuelles, comme indiqué :
 
-![Zone DNS contoso.com présentant les enregistrements A de l’hôte inscrit automatiquement.](../media/contoso_com-dns-zone.png)
+    ![Zone DNS contoso.com présentant les enregistrements A de l’hôte inscrit automatiquement.](../media/contoso_com-dns-zone.png)
 
-4. Notez les noms et adresses IP des machines virtuelles.
+1. Notez les noms et adresses IP des machines virtuelles.
 
 ### Se connecter aux machines virtuelles de test à l’aide du protocole RDP
 
@@ -153,7 +154,7 @@ Dans cette section, vous allez créer deux machines virtuelles de test pour test
 
 1. Sur les deux machines virtuelles, si vous y êtes invité, dans **Réseaux**, sélectionnez **Oui**.
 
-1. Sur TestVM1, ouvrez une invite de commandes et entrez la commande ipconfig /all.
+1. Sur TestVM1, ouvrez une invite de commandes et entrez la commande `ipconfig /all`.
 
 1. Vérifiez que l’adresse IP est identique à celle que vous avez notée dans la zone DNS.
 
