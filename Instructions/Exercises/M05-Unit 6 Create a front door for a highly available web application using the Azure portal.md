@@ -73,6 +73,8 @@ Cet exercice demande deux instances d’une application web qui s’exécutent d
 1. Sélectionnez **Analyser + créer**, vérifiez le Résumé, puis sélectionnez **Créer**.
    Le déploiement peut prendre plusieurs minutes.
 
+**Remarque :** si vous recevez une erreur de déploiement, lisez attentivement la notification. Si l’erreur implique la disponibilité de la région en raison de quotas, essayez de passer à une autre région. 
+
 ## Tâche 2 : créer une instance Front Door pour votre application
 
 Configurez Azure Front Door pour diriger le trafic utilisateur selon la plus petite latence entre les serveurs des deux applications web. Pour commencer, ajoutez un hôte front-end pour Azure Front Door.
