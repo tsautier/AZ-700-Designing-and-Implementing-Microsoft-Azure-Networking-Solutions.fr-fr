@@ -1,6 +1,6 @@
 ---
 demo:
-  title: "Mod\_06\_: groupes de sécurité réseau"
+  title: "Groupes de sécurité réseau (module\_06)"
   module: Module 06 - Design and Implement Network Security
 ---
 ## Configurer des groupes de sécurité réseau

@@ -1,11 +1,13 @@
 ---
 demo:
-  title: 'VNET Peering            '
+  title: "VNET Peering (module\_01)"
   module: Module 01 - Introduction to Azure Virtual Networks
 ---
 ## Configurer VNET Peering
 
 **Remarque :**  Pour cette démonstration, vous aurez besoin de deux réseaux virtuels.
+
+**Simulation :** [connecter deux réseaux virtuels à l’aide du peering Azure](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Connect%20two%20Azure%20virtual%20networks%20using%20global%20virtual%20network%20peering)
 
 **Informations de référence** : [Connecter des réseaux virtuels avec le peering VNet - Tutoriel](https://docs.microsoft.com/azure/virtual-network/tutorial-connect-virtual-networks-portal)
 

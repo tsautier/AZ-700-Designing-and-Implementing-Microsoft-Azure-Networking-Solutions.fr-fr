@@ -1,15 +1,17 @@
 ---
 demo:
-  title: "Module\_05\_: Application Gateway"
   module: Module 05 - Load balancing HTTPS traffic
+  title: "Application\_Gateway (module\_05)"
 ---
 ## Configurer Azure Application Gateway
 
 Dans cette démonstration, nous allons apprendre à créer une instance Azure Application Gateway. 
 
+**Simulation :** [déployer une instance Azure Application Gateway](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Deploy%20Azure%20Application%20Gateway)
+
 **Référence** : [Démarrage rapide : Diriger le trafic web avec Azure Application Gateway - Portail Azure](https://learn.microsoft.com/azure/application-gateway/quick-create-portal)
 
-**Référence** : [Chiffrer le trafic réseau de bout en bout avec Azure Application Gateway](https://github.com/MicrosoftDocs/mslearn-end-to-end-encryption-with-app-gateway)
+**Référence** : [chiffrer le trafic réseau de bout en bout avec Azure Application Gateway](https://github.com/MicrosoftDocs/mslearn-end-to-end-encryption-with-app-gateway)
 
 **Remarque** : Pour simplifier les choses, créez des réseaux virtuels et des sous-réseaux lorsque vous procédez à la configuration. 
 

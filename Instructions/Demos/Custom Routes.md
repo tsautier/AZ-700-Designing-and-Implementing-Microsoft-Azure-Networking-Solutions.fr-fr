@@ -1,7 +1,7 @@
 ---
 demo:
   module: Module 01 - Introduction to Azure Virtual Networks
-  title: "Module\_01\_: itinéraires personnalisés"
+  title: "Itinéraires personnalisés (module\_01)"
 ---
 ## Configurer le routage et les points de terminaison réseau
 

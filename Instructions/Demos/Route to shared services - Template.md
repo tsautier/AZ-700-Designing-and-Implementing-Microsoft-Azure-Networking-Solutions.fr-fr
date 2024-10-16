@@ -1,6 +1,6 @@
 ---
 demo:
-  title: Router vers des services partagés
+  title: "Mod\_02\_: router vers des services partagés"
   module: Module 02 - Design and implement hybrid networking
 ---
 Pensez à en faire la démonstration aux étudiants : 

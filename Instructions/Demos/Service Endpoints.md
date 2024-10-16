@@ -1,7 +1,9 @@
 ---
 demo:
-  title: "Mod\_07\_: points de terminaison de service"
+  title: "Points de terminaison de service (module\_07)"
   module: Module 07 - Design and implement private access to Azure Services
 ---
-Restreindre l’accès aux ressources PaaS - Tutoriel - Portail Azure | Microsoft Docs - https://learn.microsoft.com/azure/virtual-network/tutorial-restrict-network-access-to-resources?tabs=portal
+**Simulation :** [restreindre l’accès aux ressources PaaS](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Restrict%20network%20access%20to%20PaaS%20resources%20with%20virtual%20network%20service%20endpoints)
+
+**Référence :** [restreindre l’accès aux ressources PaaS - tutoriel](https://learn.microsoft.com/azure/virtual-network/tutorial-restrict-network-access-to-resources?tabs=portal)
 

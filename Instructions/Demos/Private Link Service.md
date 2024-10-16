@@ -1,9 +1,11 @@
 ---
 demo:
-  title: "Mod\_07\_: service Private Link"
-  module: Module 07 - Design and implement private access to Azure Services
+  title: "Service de liaison privée (module\_07)"
+  module: 'Demo: Design and implement private access to Azure Services'
 ---
-Démarrage rapide : créer un service Private Link à l’aide du portail Azure | Microsoft Docs – https://learn.microsoft.com/azure/private-link/create-private-link-service-portal
+Dans cette démonstration, passez en revue la configuration d’une liaison privée. 
 
-Démarrage rapide : créer un point de terminaison privé à l’aide du portail Azure | Microsoft Docs https://learn.microsoft.com/azure/private-link/create-private-endpoint-portal
+**Référence :**[Démarrage rapide : créer un service de liaison privée avec le portail Azure](https://learn.microsoft.com/azure/private-link/create-private-link-service-portal)
+
+**Référence :** [Démarrage rapide : créer un point de terminaison privé avec le portail Azure](https://learn.microsoft.com/azure/private-link/create-private-endpoint-portal)
 

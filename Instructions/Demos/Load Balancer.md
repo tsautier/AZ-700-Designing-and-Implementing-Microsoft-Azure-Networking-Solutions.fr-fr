@@ -1,11 +1,13 @@
 ---
 demo:
-  title: Load Balancer
-  module: 'Module 04 - Load balancing non-HTTPS traffic '
+  module: Module 04 - Load balancing non-HTTPS traffic
+  title: "Équilibreur de charge (module\_04)"
 ---
 ## Configurer Azure Load Balancer
 
 Dans cette démonstration, nous allons apprendre à créer un équilibreur de charge public. 
+
+**Simulation :** [créer et configurer un équilibreur de charge Azure](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Create%20and%20configure%20an%20Azure%20load%20balancer)
 
 **Référence** : [Démarrage rapide : Créer un équilibreur de charge public pour équilibrer la charge des machines virtuelles en utilisant le portail Azure](https://learn.microsoft.com/azure/load-balancer/quickstart-load-balancer-standard-public-portal)
 

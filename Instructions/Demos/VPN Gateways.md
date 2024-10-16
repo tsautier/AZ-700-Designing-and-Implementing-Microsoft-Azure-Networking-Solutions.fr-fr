@@ -1,8 +1,11 @@
 ---
 demo:
-  title: Passerelles VPN
+  title: "Passerelles VPN (module\_02)"
   module: Module 02 - Design and implement hybrid networking
 ---
+
+**Simulation :** [créer et configurer une passerelle de réseau virtuel](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Create%20and%20configure%20a%20virtual%20network%20gateway)
+
 Dans cette démonstration, nous allons explorer les passerelles de réseau virtuel.
 
 **Remarque :**  Cette démonstration fonctionne mieux avec deux réseaux virtuels avec des sous-réseaux.

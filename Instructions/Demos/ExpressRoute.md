@@ -1,11 +1,15 @@
 ---
 demo:
   module: Module 03 - Design and implement Azure ExpressRoute
-  title: "Module\_03\_: ExpressRoute"
+  title: "ExpressRoute (module\_03)"
 ---
 ## ExpressRoute
 
 Dans cette démonstration, passez en revue la configuration d’ExpressRoute.
+
+**Simulation :** [configurer une passerelle ExpressRoute](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Configure%20an%20ExpressRoute%20gateway)
+
+**Simulation :** [approvisionner un circuit ExpressRoute](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Provision%20an%20ExpressRoute%20circuit)
 
 **Référence :** [Démarrage rapide : créer et modifier des circuits ExpressRoute](https://learn.microsoft.com/azure/expressroute/expressroute-howto-circuit-portal-resource-manager)
 
