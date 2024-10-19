@@ -97,7 +97,7 @@ Au cours de cette tâche, vous allez créer la machine virtuelle de charge de tr
     + Sélectionnez **Aucun compte de stockage requis** et votre **abonnement**, puis sélectionnez **Appliquer**.
     + Attendez que le terminal crée et qu’une invite s’affiche. 
 
-1. Dans la barre d’outils du volet Cloud Shell, sélectionnez l’icône **Charger/télécharger des fichiers**, dans le menu déroulant, sélectionnez **Charger** et chargez les fichiers **firewall.json** et **firewall.parameters.json** l’un après l’autre dans le répertoire racine de Cloud Shell à partir du dossier source **F:\Allfiles\Exercises\M06**.
+1. Dans la barre d’outils du volet Cloud Shell, sélectionnez l’icône **Gérer des fichiers**, dans le menu déroulant, sélectionnez **Charger** et chargez les fichiers **firewall.json** et **firewall.parameters.json** l’un après l’autre dans le répertoire racine de Cloud Shell à partir du dossier source **F:\Allfiles\Exercises\M06**.
 
 1. Déployez les modèles ARM suivants pour créer les machines virtuelles nécessaires à cet exercice :
 

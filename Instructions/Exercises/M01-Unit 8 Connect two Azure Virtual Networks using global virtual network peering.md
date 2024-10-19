@@ -36,7 +36,7 @@ Dans cette section, vous allez créer une machine virtuelle de test sur le rése
     + Sélectionnez **Aucun compte de stockage requis** et votre **abonnement**, puis sélectionnez **Appliquer**.
     + Attendez que le terminal crée et qu’une invite s’affiche. 
 
-1. Dans la barre d’outils du volet Cloud Shell, sélectionnez l’icône **Charger/télécharger des fichiers**, dans le menu déroulant, sélectionnez **Charger** et chargez les fichiers **ManufacturingVMazuredeploy.json** et **ManufacturingVMazuredeploy.parameters.json** l’un après l’autre dans le répertoire racine de Cloud Shell à partir du dossier source **F:\Allfiles\Exercises\M01**.
+1. Dans la barre d’outils du volet Cloud Shell, sélectionnez l’icône **Gérer des fichiers**, dans le menu déroulant, sélectionnez **Charger** et chargez les fichiers **ManufacturingVMazuredeploy.json** et **ManufacturingVMazuredeploy.parameters.json** l’un après l’autre dans le répertoire racine de Cloud Shell à partir du dossier source **F:\Allfiles\Exercises\M01**.
 
 1. Déployez les modèles ARM suivants pour créer les machines virtuelles nécessaires à cet exercice :
 
@@ -107,29 +107,35 @@ Dans cette section, vous allez créer une machine virtuelle de test sur le rése
 
 1. Sur CoreServicesVnet \| Peerings, sélectionnez **+ Ajouter**.
 
-1. Utilisez les informations du tableau suivant pour créer le peering.
+1. Utilisez ces informations pour créer le peering. Lorsque vous avez terminé, sélectionnez **Ajouter**. 
 
-   | **Section**                          | **Option**                                    | **Valeur**                             |
-   | ------------------------------------ | --------------------------------------------- | ------------------------------------- |
-   | Ce réseau virtuel                 |                                               |                                       |
-   |                                      | Nom du lien de peering                             | CoreServicesVnet-to-ManufacturingVnet |
-   |                                      | Trafic vers le réseau virtuel distant             | Autoriser (par défaut)                       |
-   |                                      | Trafic transféré à partir du réseau virtuel distant | Autoriser (par défaut)                       |
-   |                                      | Passerelle ou serveur de routes de réseau virtuel       | Aucun (par défaut)                        |
-   | Réseau virtuel distant               |                                               |                                       |
-   |                                      | Nom du lien de peering                             | ManufacturingVnet-to-CoreServicesVnet |
-   |                                      | Modèle de déploiement de réseau virtuel              | Gestionnaire des ressources                      |
-   |                                      | Je connais mon ID de ressource                         | Non sélectionné                          |
-   |                                      | Abonnement                                  | Sélectionnez l’abonnement fourni      |
-   |                                      | Réseau virtuel                               | ManufacturingVnet                     |
-   |                                      | Trafic vers le réseau virtuel distant             | Autoriser (par défaut)                       |
-   |                                      | Trafic transféré à partir du réseau virtuel distant | Autoriser (par défaut)                       |
-   |                                      | Passerelle ou serveur de routes de réseau virtuel       | Aucun (par défaut)                        |
-   | Passez en revue vos paramètres, puis sélectionnez Ajouter. |                                               |                                       |
-   |                                      |                                               |                                       |
+   **Résumé du réseau virtuel distant**
 
-   >**Remarque** : si vous n’avez pas d’abonnement MOC, utilisez l’abonnement dont vous vous serviez précédemment.
+   | **Option**                                    | **Valeur**                             |
+   | ------------------------------------ | --------------------------------------------- | 
+   | Nom du lien de peering    | `CoreServicesVnet-to-ManufacturingVnet` |
+   | Réseau virtuel | ManufacturingVnet |
 
+    **Paramètres d’appairage de réseaux virtuels distants**
+   
+   | **Option**                                    | **Valeur**                             |
+   | ------------------------------------ | --------------------------------------------- | 
+   | Autoriser « ManufacturingVnet » à accéder à « CoreServicesVnet » | Activé(e) |
+   |Autoriser « ManufacturingVnet » à recevoir le trafic transféré à partir de « CoreServicesVnet » | Activé(e) |
+ 
+    **Résumé du réseau virtuel local**
+
+    | **Option**                                    | **Valeur**                             |
+    | ------------------------------------ | --------------------------------------------- | 
+    | Nom du lien de peering | `CoreServicesVnet-to-ManufacturingVnet` |
+ 
+    **Paramètres d’appairage de réseaux virtuels distants**
+   
+    | **Option**                                    | **Valeur**                             |
+    | ------------------------------------ | --------------------------------------------- | 
+    | Autoriser « CoreServicesVnet » à accéder à « ManufacturingVnet » | Activé(e)
+    | Autoriser « CoreServicesVnet » à recevoir le trafic transféré à partir de « ManufacturingVnet » | Activé(e) |
+ 
 1. Dans CoreServicesVnet \| Peerings, vérifiez que le peering **CoreServicesVnet-ManufacturingVnet** est répertorié.
 
 1. Sous Réseaux virtuels, sélectionnez **ManufacturingVnet**, puis vérifiez que le peering **ManufacturingVnet-to-CoreServicesVnet** est répertorié.
