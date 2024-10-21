@@ -47,7 +47,7 @@ Dans cet exercice, vous allez :
 
 ## Tâche 2 : Lier le sous-réseau pour l’inscription automatique
 
-1. Sur contoso.com, sous **Paramètres**, sélectionnez **Liaisons de réseau virtuel**.
+1. Dans Contoso.com, dans **Gestion des DNS**, sélectionnez **Liaisons de réseaux virtuels**.
 
 1. Sur contoso.com \| Liaisons de réseau virtuel, sélectionnez **+ Ajouter**.
 
@@ -104,7 +104,7 @@ Dans cette section, vous allez créer deux machines virtuelles de test pour test
     + Sélectionnez **Aucun compte de stockage requis** et votre **abonnement**, puis sélectionnez **Appliquer**.
     + Attendez que le terminal crée et qu’une invite s’affiche. 
 
-1. Dans la barre d’outils du volet Cloud Shell, sélectionnez l’icône **Charger/télécharger des fichiers**, dans le menu déroulant, sélectionnez **Charger** et chargez les fichiers **azuredeploy.json** et **azuredeploy.parameters.json** l’un après l’autre dans le répertoire racine de Cloud Shell à partir du dossier source **F:\Allfiles\Exercises\M01**.
+1. Dans la barre d’outils du volet Cloud Shell, sélectionnez l’icône **Gérer des fichiers**, dans le menu déroulant, sélectionnez **Charger** et chargez les fichiers **azuredeploy.json** et **azuredeploy.parameters.json** l’un après l’autre dans le répertoire racine de Cloud Shell à partir du dossier source **F:\Allfiles\Exercises\M01**.
 
 1. Déployez les modèles ARM suivants pour créer les machines virtuelles nécessaires à cet exercice :
 

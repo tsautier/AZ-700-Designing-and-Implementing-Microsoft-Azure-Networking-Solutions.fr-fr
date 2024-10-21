@@ -185,7 +185,7 @@ Dans cette section, vous allez créer trois machines virtuelles pour le pool pri
     + Sélectionnez **Aucun compte de stockage requis** et votre **abonnement**, puis sélectionnez **Appliquer**.
     + Attendez que le terminal crée et qu’une invite s’affiche. 
 
-1. Dans la barre d’outils du volet Cloud Shell, sélectionnez l’icône **Charger/télécharger des fichiers**, dans le menu déroulant, sélectionnez **Charger** et chargez les fichiers **azuredeploy.json** et **azuredeploy.parameters.json** l’un après l’autre dans le répertoire racine de Cloud Shell à partir du dossier source **F:\Allfiles\Exercises\M08**.
+1. Dans la barre d’outils du volet Cloud Shell, sélectionnez l’icône **Gérer des fichiers**, dans le menu déroulant, sélectionnez **Charger** et chargez les fichiers **azuredeploy.json** et **azuredeploy.parameters.json** l’un après l’autre dans le répertoire racine de Cloud Shell à partir du dossier source **F:\Allfiles\Exercises\M08**.
 
 1. Déployez les modèles ARM suivants pour créer le réseau virtuel, les sous-réseaux et les machines virtuelles nécessaires à cet exercice :
 

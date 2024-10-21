@@ -254,7 +254,7 @@ Pour tester l’accès réseau à un compte de stockage, déployez une machine v
     + Sélectionnez **Aucun compte de stockage requis** et votre **abonnement**, puis sélectionnez **Appliquer**.
     + Attendez que le terminal crée et qu’une invite s’affiche. 
 
-1. Dans la barre d’outils du volet Cloud Shell, sélectionnez l’icône **Charger/télécharger des fichiers**, dans le menu déroulant, sélectionnez **Charger** et chargez les fichiers **VMs.json** et **VMs.parameters.json** l’un après l’autre dans le répertoire racine de Cloud Shell à partir du dossier source **F:\Allfiles\Exercises\M07**.
+1. Dans la barre d’outils du volet Cloud Shell, sélectionnez l’icône **Gérer des fichiers**, dans le menu déroulant, sélectionnez **Charger** et chargez les fichiers **VMs.json** et **VMs.parameters.json** l’un après l’autre dans le répertoire racine de Cloud Shell à partir du dossier source **F:\Allfiles\Exercises\M07**.
 
 1. Déployez les modèles ARM suivants pour créer les machines virtuelles nécessaires à cet exercice :
 
