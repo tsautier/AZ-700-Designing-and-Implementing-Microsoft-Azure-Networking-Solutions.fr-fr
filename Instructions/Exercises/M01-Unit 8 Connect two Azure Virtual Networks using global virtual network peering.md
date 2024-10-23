@@ -36,7 +36,7 @@ Dans cette section, vous allez créer une machine virtuelle de test sur le rése
     + Sélectionnez **Aucun compte de stockage requis** et votre **abonnement**, puis sélectionnez **Appliquer**.
     + Attendez que le terminal crée et qu’une invite s’affiche. 
 
-1. Dans la barre d’outils du volet Cloud Shell, sélectionnez l’icône **Gérer des fichiers**, dans le menu déroulant, sélectionnez **Charger** et chargez les fichiers **ManufacturingVMazuredeploy.json** et **ManufacturingVMazuredeploy.parameters.json** l’un après l’autre dans le répertoire racine de Cloud Shell à partir du dossier source **F:\Allfiles\Exercises\M01**.
+1. Dans la barre d’outils du volet Cloud Shell, sélectionnez l’icône **Gérer des fichiers**, dans le menu déroulant, sélectionnez **Charger** et chargez les fichiers **ManufacturingVMazuredeploy.json** et **ManufacturingVMazuredeploy.parameters.json** dans le répertoire racine de Cloud Shell à partir du dossier source **F:\Allfiles\Exercises\M01**.
 
 1. Déployez les modèles ARM suivants pour créer les machines virtuelles nécessaires à cet exercice :
 
@@ -136,9 +136,9 @@ Dans cette section, vous allez créer une machine virtuelle de test sur le rése
     | Autoriser « CoreServicesVnet » à accéder à « ManufacturingVnet » | Activé(e)
     | Autoriser « CoreServicesVnet » à recevoir le trafic transféré à partir de « ManufacturingVnet » | Activé(e) |
  
-1. Dans CoreServicesVnet \| Peerings, vérifiez que le peering **CoreServicesVnet-ManufacturingVnet** est répertorié.
+1. Dans CoreServicesVnet\|Peerings, vérifiez que le peering **CoreServicesVnet-to-ManufacturingVnet** est **Connecté**.
 
-1. Sous Réseaux virtuels, sélectionnez **ManufacturingVnet**, puis vérifiez que le peering **ManufacturingVnet-to-CoreServicesVnet** est répertorié.
+1. Dans Réseaux virtuels, sélectionnez **ManufacturingVnet**, puis vérifiez que le peering **ManufacturingVnet-to-CoreServicesVnet** est **Connecté**.
 
 ## Tâche 5 : tester la connexion entre les machines virtuelles
 
