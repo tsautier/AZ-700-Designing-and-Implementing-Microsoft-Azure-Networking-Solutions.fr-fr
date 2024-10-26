@@ -154,15 +154,32 @@ Dans cet exercice, vous allez :
 
    > [!NOTE]
    >
-   > La création d’une passerelle de réseau virtuel peut prendre jusqu’à 45 minutes.
+   > La création d’une passerelle de réseau virtuel peut prendre de 15 à 30 minutes. Vous n’avez pas besoin d’attendre que le déploiement soit terminé. Passez à la création de la passerelle suivante. 
 
 ## Tâche 7 : Créer la passerelle ManufacturingVnet
+
+### Créer le GatewaySubnet
+
+**Remarque :** le modèle a créé le GatewaySubnet pour le CoreServicesVnet. Ici, vous créez le sous-réseau manuellement. 
+
+1. Recherchez et sélectionnez le **manufacturingVnet**.
+
+1. Dans le panneau **Paramètres**, sélectionnez **Sous-réseaux**, puis **+ Sous-réseau**. 
+
+    | Paramètre | Valeur |
+    | --------------- | ----------------- | 
+    | Objectif du sous-réseau | **Passerelle de réseau virtuel** |
+    | Taille | **/27 (32 adresses)** |
+
+1. Sélectionnez **Ajouter**. 
+
+### Créer la passerelle de réseau virtuel
 
 1. Dans **Rechercher des ressources, des services et des documents (G+/)**, tapez **passerelle de réseau virtuel**, puis sélectionnez **Passerelles de réseaux virtuels** dans les résultats.
 
 1. Dans Passerelles de réseau virtuel, sélectionnez **+ Créer**.
 
-1. Utilisez les informations du tableau suivant pour créer la passerelle de réseau virtuel :
+1. Utilisez ces informations et l’onglet **Paramètres** pour créer la passerelle de réseau virtuel. 
 
    | **Tab**         | **Section**       | **Option**                                  | **Valeur**                    |
    | --------------- | ----------------- | ------------------------------------------- | ---------------------------- |
@@ -185,7 +202,7 @@ Dans cet exercice, vous allez :
 
    > [!NOTE]
    >
-   > La création d’une passerelle de réseau virtuel peut prendre jusqu’à 45 minutes.
+   > La création d’une passerelle de réseau virtuel peut prendre de 15 à 30 minutes.
 
 ## Tâche 8 : Connecter CoreServicesVnet à ManufacturingVnet
 
@@ -199,12 +216,14 @@ Dans cet exercice, vous allez :
    >
    >  Vous ne pouvez pas effectuer cette configuration tant que les passerelles de réseau virtuel ne sont pas entièrement déployées.
 
-1. Utilisez les informations du tableau suivant pour créer la connexion :
+1. Utilisez ces informations et l’onglet **Paramètres** pour créer la passerelle de réseau virtuel. 
+
 
    | **Option**                     | **Valeur**                         |
    | ------------------------------ | --------------------------------- |
    | Nom                           | CoreServicesGW-to-ManufacturingGW |
    | Type de connexion                | Connexion entre deux réseaux virtuels                      |
+   | Région                         | USA Est                           |
    | Passerelle du premier réseau virtuel  | CoreServicesVnetGateway           |
    | Passerelle du deuxième réseau virtuel | ManufacturingVnetGateway          |
    | Clé partagée (PSK)               | abc123                            |
@@ -213,9 +232,9 @@ Dans cet exercice, vous allez :
    | Protocole IKE                   | IKEv2                             |
    | Abonnement                   | Aucune modification n’est requise               |
    | Resource group                 | Aucune modification n’est requise               |
-   | Emplacement                       | USA Est                           |
 
-1. Sélectionnez **OK** pour établir la connexion.
+
+1. Sélectionnez **Vérifier et créer**, puis **Créer** pour créer la connexion.
 
 ## Tâche 9 : Connecter ManufacturingVnet à CoreServicesVnet
 
@@ -231,6 +250,7 @@ Dans cet exercice, vous allez :
    | ------------------------------ | --------------------------------- |
    | Nom                           | ManufacturingGW-to-CoreServicesGW |
    | Type de connexion                | Connexion entre deux réseaux virtuels                      |
+   | Emplacement                       | Europe Ouest                       |
    | Passerelle du premier réseau virtuel  | ManufacturingVnetGateway          |
    | Passerelle du deuxième réseau virtuel | CoreServicesVnetGateway           |
    | Clé partagée (PSK)               | abc123                            |
@@ -239,9 +259,9 @@ Dans cet exercice, vous allez :
    | Protocole IKE                   | IKEv2                             |
    | Abonnement                   | Aucune modification n’est requise               |
    | Resource group                 | Aucune modification n’est requise               |
-   | Emplacement                       | Europe Ouest                       |
 
-1. Sélectionnez **OK** pour établir la connexion.
+
+1. Sélectionnez **Vérifier et créer**, puis **Créer** pour créer la connexion.
 
 ## Tâche 10 : Vérifier que les connexions sont établies
 
