@@ -287,4 +287,26 @@ Dans cet exercice, vous allez :
 
 1. Fermez la fenêtre de connexion Bureau à distance.
 
-Félicitations ! Vous avez configuré une connexion VNet à VNet à l’aide d’une passerelle de réseau virtuel.
+## Développer votre apprentissage avec Copilot
+
+Copilot peut vous aider à apprendre à utiliser les outils de script Azure. Copilot peut également aider dans des domaines non couverts dans le labo ou quand vous avez besoin de plus d’informations. Ouvrez un navigateur Edge et choisissez Copilot (en haut à droite), ou accédez à *copilot.microsoft.com*. Prenez quelques minutes pour essayer ces invites.
++ Quels sont les principaux types de passerelles VPN Azure et à quoi servent-ils ?
++ Quels facteurs dois-je prendre en compte lors de la sélection de la référence (SKU) de la passerelle VPN Azure ? Donnez des exemples.
++ Existe-t-il des coûts associés aux passerelles VPN Azure ?
+
+
+## En savoir plus grâce à l’apprentissage auto-rythmé
+
++ [Connectez votre réseau local à Azure avec une passerelle VPN](https://learn.microsoft.com/training/modules/connect-on-premises-network-with-vpn-gateway/). Dans ce module, vous allez utiliser l’interface CLI pour approvisionner des passerelles VPN.
++ [Résolvez les problèmes de passerelles VPN dans Microsoft Azure](https://learn.microsoft.com/training/modules/troubleshoot-vpn-gateways/). Dans ce module, vous allez découvrir comment surveiller et résoudre les problèmes de VPN site à site et point à site.
+
+## Points clés
+
+Félicitations, vous avez terminé le labo. Voici les principaux points à retenir de ce labo. 
+
++ La passerelle VPN Azure est un service qui fournit une connectivité sécurisée entre vos réseaux locaux et vos réseaux virtuels Azure.
++ Des connexion site à site (S2S) permettent de connecter votre réseau local à un réseau virtuel Azure à l’aide de tunnels VPN IPsec/IKE. Idéal pour les scénarios de cloud hybride.
++ Les connexions point à site (P2S) connnectent des clients individuels vers un réseau virtuel Azure à partir d’emplacements distants. Les protocoles VPN comprennent OpenVPN, IKEv2 ou SSTP. Utile pour les télétravailleurs.
++ Les connexions de réseau virtuel à réseau virtuel connectent deux réseaux virtuels Azure ou plus à l’aide de tunnels VPN IPsec/IKE. Convient aux déploiements sur plusieurs régions ou plusieurs éseaux virtuels.
++ Différentes références(SKU) de passerelle VPN offrent des niveaux de performances, de débit et de fonctionnalités divers. 
+

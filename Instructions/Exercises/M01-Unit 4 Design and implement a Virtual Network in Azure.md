@@ -157,5 +157,26 @@ Dans cet exercice, vous allez :
    ![Liste des sous-réseaux dans CoreServicesVnet.](../media/verify-subnets-annotated.png)
 
 1. Répétez les étapes 3 à 5 pour chaque réseau virtuel.
+   
+## Développer votre apprentissage avec Copilot
 
-Félicitations ! Vous avez créé avec succès un groupe de ressources, trois réseaux virtuels et les sous-réseaux associés.
+Copilot peut vous aider à apprendre à utiliser les outils de script Azure. Copilot peut également aider dans des domaines non couverts dans le labo ou quand vous avez besoin de plus d’informations. Ouvrez un navigateur Edge et choisissez Copilot (en haut à droite), ou accédez à *copilot.microsoft.com*. Prenez quelques minutes pour essayer ces invites.
++ Pouvez-vous fournir un exemple de la façon dont l’adresse IP 10.30.0.0/16 est utilisée dans un scénario du monde réel ?
++ Qu’est-ce que la commande Azure PowerShell pour créer un réseau virtuel appelé CoreServicesVnet dans la région Est (États-Unis). Le réseau virtuel devrait utiliser l’espace d’adressage IP 10.20.0.0/16.
++ Quelle est la commande Azure CLI pour créer un réseau virtuel appelé ManufacturingVnet dans la région Europe Ouest. Le réseau virtuel devrait utiliser l’espace d’adressage IP 10.30.0.0/16.
+
+## En savoir plus grâce à l’apprentissage auto-rythmé
+
++ [Concevez un schéma d’adressage IP pour votre déploiement Azure](https://learn.microsoft.com/en-us/training/modules/design-ip-addressing-for-azure/). Dans ce module, identifiez les fonctionnalités d’adressage IP public et privé des réseaux virtuels Azure.
++ [Présentation des réseaux virtuels Azure](https://learn.microsoft.com/en-us/training/modules/introduction-to-azure-virtual-networks/). Dans ce module, vous apprenez à concevoir et à implémenter des services de mise en réseau Azure. Vous y découvrez les réseaux virtuels, les adresses IP publiques et privées, le DNS, l’appairage de réseaux virtuels, le routage et la NAT virtuelle Azure.
+
+## Points clés
+
++ Le réseau virtuel Azure est le bloc de construction fondamental de votre réseau privé dans Azure. Une instance du service (un réseau virtuel) permet à de nombreux types de ressources Azure de communiquer de manière sécurisée entre elles, avec Internet et avec des réseaux locaux. Vérifiez que les espaces d’adressage ne se chevauchent pas. Assurez-vous que votre espace d’adressage de réseau virtuel (bloc CIDR) ne chevauche pas d’autres plages réseau de votre organisation.
++ Toutes les ressources Azure d’un réseau virtuel sont déployées en sous-réseaux au sein de ce réseau virtuel. Les sous-réseaux vous permettent de segmenter le réseau virtuel en sous-réseaux, et d’allouer une partie de l’espace d’adressage du réseau virtuel à chaque sous-réseau. Vos sous-réseaux ne doivent pas couvrir l’espace d’adressage entier du réseau virtuel. Planifiez et réserver de l’espace d’adressage pour l’avenir.
+
+
+
+
+
+

@@ -62,9 +62,7 @@ Dans cet exercice, vous allez :
 
 1. Confirmez la validation du réseau virtuel, puis sélectionnez **Créer**.
 
-> [!Note]  
->
-> Si vous utilisez un réseau virtuel à double pile et prévoyez d’utiliser un peering privé IPv6 plutôt qu’ExpressRoute, cliquez sur Ajouter un espace d’adressage IP6, puis entrez les valeurs de la plage d’adresses IPv6.
+>**Remarque :** si vous utilisez un réseau virtuel à double pile et prévoyez d’utiliser un peering privé IPv6 plutôt qu’ExpressRoute, cliquez sur Ajouter un espace d’adressage IP6, puis entrez les valeurs de la plage d’adresses IPv6.
 
 ## Tâche 2 : Créer la passerelle de réseau virtuel
 
@@ -87,7 +85,6 @@ Dans cet exercice, vous allez :
    | **Adresse IP publique**     |                            |
    | Adresse IP publique         | Création                 |
    | Nom de l’adresse IP publique    | CoreServicesVnetGateway-IP |
-   | Référence SKU d’adresse IP publique     | De base                      |
    | Affectation                | Non configurable           |
 
 1. Sélectionnez **Vérifier + créer**.
@@ -96,8 +93,25 @@ Dans cet exercice, vous allez :
 
 1. Une fois le déploiement terminé, sélectionnez **Accéder à la ressource**.
 
-> [!Note]
->
-> Le déploiement d’une passerelle peut prendre jusqu’à 45 minutes.
+>**Remarque :** le déploiement d’une passerelle peut prendre jusqu’à 45 minutes.
 
-Félicitations ! Vous avez réussi à créer un réseau virtuel, un sous-réseau de passerelle et une passerelle ExpressRoute.
+
+## Développer votre apprentissage avec Copilot
+
+Copilot peut vous aider à apprendre à utiliser les outils de script Azure. Copilot peut également aider dans des domaines non couverts dans le labo ou quand vous avez besoin de plus d’informations. Ouvrez un navigateur Edge et choisissez Copilot (en haut à droite), ou accédez à *copilot.microsoft.com*. Prenez quelques minutes pour essayer ces invites.
++ En quoi le service Azure ExpressRoute est-il différent de Virtual WAN ? Pourriez-vous utiliser ces technolgies ensemble ? Fournir des exemples.
++ Que dois-je prendre en compte lors du choix entre un modèle de fournisseur ExpressRoute et ExpressRoute Direct ?
++ Créez une tableau qui récapitule la référence (SKU) Azure ExpressRoute et ses fonctionnalités.
+
+## En savoir plus grâce à l’apprentissage auto-rythmé
+
++ [Présentation d’Azure ExpressRoute](https://learn.microsoft.com/training/modules/intro-to-azure-expressroute/). Dans ce module, vous allez découvrir Azure ExpressRoute et ses fonctionnalités.
++ [Concevez et implémentez ExpressRoute](https://learn.microsoft.com/training/modules/design-implement-azure-expressroute/). Dans ce module, vous allez apprendre à concevoir et à implémenter Azure ExpressRoute, ExpressRoute Global Reach, et ExpressRoute FastPath.
+
+## Points clés
+
+Félicitations, vous avez terminé le labo. Voici les principaux points à retenir de ce labo. 
++ Azure ExpressRoute permet à une organisation de connecter ses réseaux locaux directement aux clouds Microsoft Azure et Microsoft 365. Azure ExpressRoute utilise une connexion dédiée haut débit fournie par un partenaire Microsoft.
++ Microsoft garantit une disponibilité d’au moins 99,95 % pour les connexions dédiées ExpressRoute. La connexion est privée et se déplace sur une ligne dédiée. Les tiers ne peuvent pas intercepter le trafic.
++ Vous pouvez créer une connexion entre votre réseau local et le cloud Microsoft de quatre façons différentes : avec une colocalisation avec échange de cloud, avec une connexion Ethernet point à point, avec une connexion universelle (IPVPN) et avec ExpressRoute Direct.
++ Les fonctionnalités ExpressRoute sont déterminées par la référence (SKU) : local, standard et premium. 

@@ -164,4 +164,22 @@ Dans cette section, vous allez créer deux machines virtuelles de test pour test
 
 1. Vous pouvez également entrer la commande nslookup TestVM2.contoso.com et vérifier que vous recevez un enregistrement de résolution de noms correct pour VM2.
 
-Félicitations ! Vous avez créé une zone DNS privée, ajouté une résolution de noms et un lien d’inscription automatique, et testé la résolution de noms dans votre configuration.
+## Développer votre apprentissage avec Copilot
+
+Copilot peut vous aider à apprendre à utiliser les outils de script Azure. Copilot peut également aider dans des domaines non couverts dans le labo ou quand vous avez besoin de plus d’informations. Ouvrez un navigateur Edge et choisissez Copilot (en haut à droite), ou accédez à *copilot.microsoft.com*. Prenez quelques minutes pour essayer ces invites.
++ Quelle est la différence entre Azure DNS et Azure DNS privé ? Fournissez des exemples de situations où Azure DNS privé peut être utilisé.
++ Quel est l’objectif de l’inscription automatique lors de la création d’une zone Azure DNS ?
+
+## En savoir plus grâce à l’apprentissage auto-rythmé
+
++ [Introduction à Azure DNS](https://learn.microsoft.com/training/modules/intro-to-azure-dns/). Ce module explique ce que fait Azure DNS, comment il fonctionne et quand choisir de l’utiliser comme solution pour répondre aux besoins de votre organisation.
++ [Héberger votre domaine sur Azure DNS](https://learn.microsoft.com/training/modules/host-domain-azure-dns/). Dans ce module, vous créez une zone DNS et des enregistrements DNS pour mapper le domaine à une adresse IP. Vous allez également effectuer des tests pour vérifier que le nom de domaine est résolu sur votre serveur web.
+
+## Points clés
+
+Félicitations, vous avez terminé le labo. Voici les principaux points à retenir de ce labo. 
+
++ Azure DNS est un service cloud qui vous permet d’héberger et de gérer des domaines DNS (Domain Name System), également appelés zones DNS. 
++ Les zones publiques Azure DNS hébergent les données de zone de nom de domaine pour les enregistrements que vous avez l’intention de résoudre par n’importe quel hôte sur Internet.
++ Les zones Azure DNS privé vous permettent de configurer un espace de noms de zone DNS privée pour les ressources Azure privées.
++ Une zone DNS est une collection d’enregistrements DNS. Les enregistrements DNS fournissent des informations sur le domaine.

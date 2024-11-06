@@ -19,8 +19,8 @@ Dans cet exercice, vous allez :
 
 + Tâche 1 : Créer et provisionner un circuit ExpressRoute
 + Tâche 2 : Récupérer votre clé de service
-+ Tâche 3 : Déprovisionner un circuit ExpressRoute
-+ Tâche 4 : Nettoyer les ressources
++ Tâche 3 : Déprovisionner un circuit ExpressRoute
+
 
 ## Tâche 1 : Créer et provisionner un circuit ExpressRoute
 
@@ -110,13 +110,13 @@ Si l’état de provisionnement du fournisseur de services du circuit ExpressRou
 >
 > Si le fournisseur de services a annulé l’approvisionnement du circuit (l’état d’approvisionnement du fournisseur de services affiche la valeur Non approvisionné), vous pouvez supprimer le circuit. Cette opération arrête la facturation du circuit.
 
-## Tâche 4 : Nettoyer les ressources
+## Nettoyer les ressources
 
 Vous pouvez supprimer votre circuit ExpressRoute en sélectionnant l’icône **Supprimer**. Avant de continuer, assurez-vous que l’état du fournisseur est Non approvisionné.
 
 ![Portail Azure - Supprimer un circuit ExpressRoute](../media/expressroute-circuit-delete.png)
 
-   >**Remarque** : N’oubliez pas de supprimer toutes les nouvelles ressources Azure que vous n’utilisez plus. La suppression des ressources inutilisées vous évitera d’encourir des frais inattendus.
+>**Remarque** : N’oubliez pas de supprimer toutes les nouvelles ressources Azure que vous n’utilisez plus. La suppression des ressources inutilisées vous évitera d’encourir des frais inattendus.
 
 1. Dans le portail Azure, ouvrez la session **PowerShell** dans le volet **Cloud Shell**.
 
@@ -127,4 +127,23 @@ Vous pouvez supprimer votre circuit ExpressRoute en sélectionnant l’icône **
    Remove-AzResourceGroup -Name 'ExpressRouteResourceGroup' -Force -AsJob
    ```
 
-   >**Remarque** : La commande s’exécute de façon asynchrone (tel que déterminé par le paramètre -AsJob). Vous pourrez donc exécuter une autre commande PowerShell immédiatement après au cours de la même session PowerShell, mais la suppression effective du groupe de ressources peut prendre quelques minutes.
+>**Remarque** : La commande s’exécute de façon asynchrone (tel que déterminé par le paramètre -AsJob). Vous pourrez donc exécuter une autre commande PowerShell immédiatement après au cours de la même session PowerShell, mais la suppression effective du groupe de ressources peut prendre quelques minutes.
+
+## Développer votre apprentissage avec Copilot
+
+Copilot peut vous aider à apprendre à utiliser les outils de script Azure. Copilot peut également aider dans des domaines non couverts dans le labo ou quand vous avez besoin de plus d’informations. Ouvrez un navigateur Edge et choisissez Copilot (en haut à droite), ou accédez à *copilot.microsoft.com*. Prenez quelques minutes pour essayer ces invites.
++ Quels fournisseurs de services sont disponibles pour Azure ExpressRoute ?
++ Quels sont les problèmes de configuration les plus courants avec Azure ExpressRoute ? Que dois-je faire si je rencontre ce problème ?
+
+## En savoir plus grâce à l’apprentissage auto-rythmé
+
++ [Présentation d’Azure ExpressRoute](https://learn.microsoft.com/training/modules/intro-to-azure-expressroute/). Dans ce module, vous allez découvrir Azure ExpressRoute et ses fonctionnalités.
++ [Concevez et implémentez ExpressRoute](https://learn.microsoft.com/training/modules/design-implement-azure-expressroute/). Dans ce module, vous allez apprendre à concevoir et à implémenter Azure ExpressRoute, ExpressRoute Global Reach, et ExpressRoute FastPath.
+
+## Points clés
+
+Félicitations, vous avez terminé le labo. Voici les principaux points à retenir de ce labo. 
++ Azure ExpressRoute permet à une organisation de connecter ses réseaux locaux directement aux clouds Microsoft Azure et Microsoft 365. Azure ExpressRoute utilise une connexion dédiée haut débit fournie par un partenaire Microsoft.
++ Microsoft garantit une disponibilité d’au moins 99,95 % pour les connexions dédiées ExpressRoute. La connexion est privée et se déplace sur une ligne dédiée. Les tiers ne peuvent pas intercepter le trafic.
++ Vous pouvez créer une connexion entre votre réseau local et le cloud Microsoft de quatre façons différentes : avec une colocalisation avec échange de cloud, avec une connexion Ethernet point à point, avec une connexion universelle (IPVPN) et avec ExpressRoute Direct.
++ Les fonctionnalités ExpressRoute sont déterminées par la référence (SKU) : local, standard et premium. 

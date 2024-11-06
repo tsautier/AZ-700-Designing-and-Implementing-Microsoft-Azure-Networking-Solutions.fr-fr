@@ -19,7 +19,6 @@ Cette unité vous montrera :
 + Tâche 3 : tester la connexion entre les machines virtuelles
 + Tâche 4 : créer des peerings de réseaux virtuels entre CoreServicesVnet et ManufacturingVnet
 + Tâche 5 : tester la connexion entre les machines virtuelles
-+ Tâche 6 : Nettoyer les ressources
 
 **Remarque :** Une **[simulation de labo interactive](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Connect%20two%20Azure%20virtual%20networks%20using%20global%20virtual%20network%20peering)** est disponible et vous permet de progresser à votre propre rythme. Il peut exister de légères différences entre la simulation interactive et le labo hébergé. Toutefois, les concepts et idées de base présentés sont identiques.
 
@@ -152,9 +151,8 @@ Dans cette section, vous allez créer une machine virtuelle de test sur le rése
 
 1. Le test de connexion doit réussir et un résultat similaire à ce qui suit s’affiche : ![Fenêtre PowerShell avec Test-NetConnection 10.20.20.4 -port 3389 indiquant TCP test succeeded: true](../media/test-connection-succeeded.png)
 
-Félicitations ! Vous avez réussi à configurer la connectivité entre les réseaux virtuels en ajoutant des peerings.
 
-## Tâche 6 : Nettoyer les ressources
+## Nettoyer les ressources
 
    >**Remarque** : N’oubliez pas de supprimer toutes les nouvelles ressources Azure que vous n’utilisez plus. La suppression des ressources inutilisées vous évitera d’encourir des frais inattendus.
 
@@ -165,5 +163,26 @@ Félicitations ! Vous avez réussi à configurer la connectivité entre les rés
    ```powershell
    Remove-AzResourceGroup -Name 'ContosoResourceGroup' -Force -AsJob
    ```
-
    >**Remarque** : La commande s’exécute de façon asynchrone (tel que déterminé par le paramètre -AsJob). Vous pourrez donc exécuter une autre commande PowerShell immédiatement après au cours de la même session PowerShell, mais la suppression effective du groupe de ressources peut prendre quelques minutes.
+   
+## Développer votre apprentissage avec Copilot
+
+Copilot peut vous aider à apprendre à utiliser les outils de script Azure. Copilot peut également aider dans des domaines non couverts dans le labo ou quand vous avez besoin de plus d’informations. Ouvrez un navigateur Edge et choisissez Copilot (en haut à droite), ou accédez à *copilot.microsoft.com*. Prenez quelques minutes pour essayer ces invites.
++ Quelles sont les erreurs les plus courantes lors de la configuration de l’appairage de réseaux virtuels Azure ?
++ Dans Azure, si j’appaire Vnet1 avec Vnet2, puis que j’appaire Vnet2 avec Vnet3, Vnet1 est-il appairé à Vnet3 ?
++ Les pare-feu et les passerelles peuvent-ils affecter l’appairage de réseaux virtuels Azure ?
+
+
+## En savoir plus grâce à l’apprentissage auto-rythmé
+
++ [Présentation des réseaux virtuels Azure](https://learn.microsoft.com/training/modules/introduction-to-azure-virtual-networks/). Dans ce module, vous apprenez à concevoir et à implémenter des services de mise en réseau Azure. Vous y découvrez les réseaux virtuels, les adresses IP publiques et privées, le DNS, l’appairage de réseaux virtuels, le routage et la NAT virtuelle Azure.
++ [Distribuez vos services sur des réseaux virtuels Azure et les intégrer en utilisant l’appairage de réseaux virtuels](https://learn.microsoft.com/training/modules/integrate-vnets-with-vnet-peering/). Dans ce module, vous allez apprendre à configurer l’appairage de réseaux virtuels.
+
+## Points clés
+
+Félicitations, vous avez terminé le labo. Voici les principaux points à retenir de ce labo. 
+
++ Le peering de réseaux virtuels vous permet de connecter deux réseaux virtuels Azure en toute transparence. Les réseaux virtuels apparaissent comme un seul réseau à des fins de connectivité.
++ Azure prend en charge la connexion de réseaux virtuels au sein de la même région Azure et entre les régions Azure (global).
++ Le trafic entre les machines virtuelles dans des réseaux virtuels homologués est acheminé directement via l’infrastructure principale de Microsoft et non via une passerelle ou une connexion Internet publique.
++ Vous pouvez redimensionner l’espace d’adressage des réseaux virtuels Azure qui sont appairés sans que cela n’entraîne de temps d’arrêt sur l’espace d’adressage actuellement appairé.
