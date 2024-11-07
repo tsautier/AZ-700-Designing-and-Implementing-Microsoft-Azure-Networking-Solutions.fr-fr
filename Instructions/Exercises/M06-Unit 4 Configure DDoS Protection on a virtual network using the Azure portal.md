@@ -21,7 +21,7 @@ Dans cet exercice, vous allez :
 + Tâche 5 : Configurer les journaux de diagnostic DDoS
 + Tâche 6 : Configurer les alertes DDoS
 + Tâche 7 : tester avec des partenaires de simulation
-+ Tâche 8 : nettoyer les ressources
+
 
 **Remarque :** Une **[simulation de labo interactive](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Configure%20Azure%20DDoS%20Protection%20on%20a%20virtual%20network)** est disponible et vous permet de progresser à votre propre rythme. Il peut exister de légères différences entre la simulation interactive et le labo hébergé. Toutefois, les concepts et idées de base présentés sont identiques.
 
@@ -228,7 +228,7 @@ Au cours de cette étape, vous allez créer une machine virtuelle, lui affecter 
 
    ![Métriques présentant une ressource sous attaque DDoS](../media/metrics-showing-resource-under-attack.png)
 
-## Tâche 8 : nettoyer les ressources
+## Nettoyer les ressources
 
 >**Remarque** : N’oubliez pas de supprimer toutes les nouvelles ressources Azure que vous n’utilisez plus. La suppression des ressources inutilisées vous évitera d’encourir des frais inattendus.
 
@@ -240,4 +240,26 @@ Au cours de cette étape, vous allez créer une machine virtuelle, lui affecter 
    Remove-AzResourceGroup -Name 'MyResourceGroup' -Force -AsJob
    ```
 
-    >**Remarque** : La commande s’exécute de façon asynchrone (tel que déterminé par le paramètre -AsJob). Vous pourrez donc exécuter une autre commande PowerShell immédiatement après au cours de la même session PowerShell, mais la suppression effective du groupe de ressources peut prendre quelques minutes.
+>**Remarque** : La commande s’exécute de façon asynchrone (tel que déterminé par le paramètre -AsJob). Vous pourrez donc exécuter une autre commande PowerShell immédiatement après au cours de la même session PowerShell, mais la suppression effective du groupe de ressources peut prendre quelques minutes.
+
+## Développer votre apprentissage avec Copilot
+
+Copilot peut vous aider à apprendre à utiliser les outils de script Azure. Copilot peut également aider dans des domaines non couverts dans le labo ou quand vous avez besoin de plus d’informations. Ouvrez un navigateur Edge et choisissez Copilot (en haut à droite), ou accédez à *copilot.microsoft.com*. Prenez quelques minutes pour essayer ces invites.
++ Que sont les attaques DDoS ? Comment les attaques DDoS sont-elles classées et existe-t-il des stratégies d’atténuation ?
++ Fournissez une tableau récapitulant les deux différents niveaux Azure DDoS Protection.
++ Quelles ressources Azure peuvent être protégées par DDoS Protection ?
+
+
+## En savoir plus grâce à l’apprentissage auto-rythmé
+
++ [Présentation d’Azure DDoS Protection](https://learn.microsoft.com/training/modules/introduction-azure-ddos-protection/). Dans ce module, vous allez évaluer Azure DDoS Protection, ses fonctionnalités et ses options d’architecture.
++ [Concevez et implémentez la sécurité réseau](https://learn.microsoft.com/training/modules/design-implement-network-security-monitoring/). Dans ce module, vous allez découvrir et déployer Azure DDoS Protection.
+
+  
+## Points clés
+
+Félicitations, vous avez terminé le labo. Voici les principaux points à retenir de ce labo. 
++ Une attaque DDoS est une tentative malveillante de saturer les ressources d’une application afin de la rendre indisponible aux utilisateurs légitimes. 
++ Azure DDoS Protection fournit une protection contre les attaques DDoS. Cette solution s’adapte automatiquement pour protéger vos ressources Azure spécifiques dans un réseau virtuel. 
++ Les fonctionnalités d’Azure DDoS Protection sont les suivantes : surveillance du trafic Always-On, réglage adaptatif en temps réel, télémétrie et alertes.  
++ Azure DDoS Protection prend en charge deux types de niveaux : Protection IP DDoS et Protection réseau DDoS.

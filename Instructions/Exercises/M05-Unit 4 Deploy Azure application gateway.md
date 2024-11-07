@@ -223,5 +223,37 @@ IIS n’est pas obligatoire pour créer la passerelle applicative, mais vous l�
 
 1. Actualisez plusieurs fois le navigateur et vous devriez voir les connexions à BackendVM1 et BackendVM2.
 
+## Nettoyer les ressources
 
-Félicitations ! Vous avez configuré et testé une passerelle applicative Azure.
+>**Remarque** : N’oubliez pas de supprimer toutes les nouvelles ressources Azure que vous n’utilisez plus. La suppression des ressources inutilisées vous évitera d’encourir des frais inattendus.
+
+1. Dans le portail Azure, ouvrez la session **PowerShell** dans le volet **Cloud Shell**.
+
+1. Supprimez tous les groupes de ressources que vous avez créés dans les labos de ce module en exécutant la commande suivante :
+
+   ```powershell
+   Remove-AzResourceGroup -Name 'IntLB-RG' -Force -AsJob
+   ```
+
+>**Remarque** : La commande s’exécute de façon asynchrone (tel que déterminé par le paramètre -AsJob). Vous pourrez donc exécuter une autre commande PowerShell immédiatement après au cours de la même session PowerShell, mais la suppression effective du groupe de ressources peut prendre quelques minutes.
+
+## Développer votre apprentissage avec Copilot
+
+Copilot peut vous aider à apprendre à utiliser les outils de script Azure. Copilot peut également aider dans des domaines non couverts dans le labo ou quand vous avez besoin de plus d’informations. Ouvrez un navigateur Edge et choisissez Copilot (en haut à droite), ou accédez à *copilot.microsoft.com*. Prenez quelques minutes pour essayer ces invites.
++ Comment Azure Application Gateway achemine-t-il les requêtes ?
++ Quelles sont les fonctionnalités de sécurité d’Azure Application Gateway ?
++ Comparez Azure Application Gateway avec Azure Load Balancer. Donnez des exemples de situations dans lesquelles utiliser chaque produit.
+
+
+## En savoir plus grâce à l’apprentissage auto-rythmé
+
++ [Présentation d’Azure Application Gateway](https://learn.microsoft.com/training/modules/intro-to-azure-application-gateway/). Ce module explique à quoi sert Azure Application Gateway, comment il fonctionne et quand choisir de l’utiliser comme solution pour répondre aux besoins de votre organisation.
++ [Équilibrer la charge du trafic de votre service web avec Application Gateway](https://learn.microsoft.com/training/modules/load-balancing-https-traffic-azure/). Dans ce module, vous allez apprendre à créer et configurer Application Gateway avec le routage basé sur le chemin de l’URL.
++ [Équilibrez la charge du trafic HTTP(S) dans Azure](https://learn.microsoft.com/training/modules/load-balancing-https-traffic-azure/). Dans ce module, vous allez apprendre à concevoir et à implémenter Azure Application Gateway.
+
+## Points clés
+
+Félicitations, vous avez terminé le labo. Voici les principaux points à retenir de ce labo. 
++ Azure Application Gateway est un équilibreur de charge de trafic web (couche OSI 7) qui vous permet de gérer le trafic vers vos applications web.
++ Application Gateway peut prendre des décisions de routage basées sur des attributs supplémentaires d’une requête HTTP, par exemple des en-têtes d’hôte ou le chemin d’un URI.
++ Utilisez Application Gateway pour l’application hébergée dans une seule région et lorsque vous avez besoin d’un routage basé sur une URL. 
