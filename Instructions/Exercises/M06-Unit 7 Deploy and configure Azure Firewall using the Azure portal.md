@@ -24,7 +24,7 @@ Dans cet exercice, vous allez :
 + Tâche 8 : Configurer une règle NAT de destination (DNAT)
 + Tâche 9 : Modifier les adresses DNS principales et secondaires de l’interface réseau du serveur
 + Tâche 10 : Tester le pare-feu
-+ Tâche 11 : Nettoyer les ressources
+
 
 **Remarque :** Une **[simulation de labo interactive](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Deploy%20and%20configure%20Azure%20Firewall%20using%20the%20Azure%20portal)** est disponible et vous permet de progresser à votre propre rythme. Il peut exister de légères différences entre la simulation interactive et le labo hébergé. Toutefois, les concepts et idées de base présentés sont identiques.
 
@@ -364,7 +364,7 @@ Dans cette dernière tâche, vous allez tester le pare-feu pour vérifier que le
 
     ![Session RDP sur le serveur Srv-Work - Navigateur bloqué sur microsoft.com](../media/remote-desktop-connection-3.png)
 
-## Tâche 11 : Nettoyer les ressources
+## Nettoyer les ressources
 
 >**Remarque** : N’oubliez pas de supprimer toutes les nouvelles ressources Azure que vous n’utilisez plus. La suppression des ressources inutilisées vous évitera d’encourir des frais inattendus.
 
@@ -376,4 +376,24 @@ Dans cette dernière tâche, vous allez tester le pare-feu pour vérifier que le
    Remove-AzResourceGroup -Name 'Test-FW-RG' -Force -AsJob
    ```
 
-    >**Remarque** : La commande s’exécute de façon asynchrone (tel que déterminé par le paramètre -AsJob). Vous pourrez donc exécuter une autre commande PowerShell immédiatement après au cours de la même session PowerShell, mais la suppression effective du groupe de ressources peut prendre quelques minutes.
+>**Remarque** : La commande s’exécute de façon asynchrone (tel que déterminé par le paramètre -AsJob). Vous pourrez donc exécuter une autre commande PowerShell immédiatement après au cours de la même session PowerShell, mais la suppression effective du groupe de ressources peut prendre quelques minutes.
+
+## Développer votre apprentissage avec Copilot
+
+Copilot peut vous aider à apprendre à utiliser les outils de script Azure. Copilot peut également aider dans des domaines non couverts dans le labo ou quand vous avez besoin de plus d’informations. Ouvrez un navigateur Edge et choisissez Copilot (en haut à droite), ou accédez à *copilot.microsoft.com*. Prenez quelques minutes pour essayer ces invites.
++ Présentez trois scénarios d’utilisation courante des pare-feu. 
++ Fournissez un tableau comparant les fonctionnalités des références SKU du Pare-feu Azure.
++ Le tableau suivant décrit les trois types de règles que vous pouvez créer pour un Pare-feu Azure.
+
+## En savoir plus grâce à l’apprentissage auto-rythmé
+
++ [Présentation du Pare-feu Azure](https://learn.microsoft.com/training/modules/introduction-azure-firewall/). Dans ce module, vous allez découvrir comment le Pare-feu Azure protège les ressources de réseau virtuel Azure, notamment les fonctionnalités, les règles et les options de déploiement.
++ [Présentation d’Azure Firewall Manager](https://learn.microsoft.com/training/modules/intro-to-azure-firewall-manager/). Dans ce module, vous allez découvrir comment Azure Firewall Manager permet de centraliser la gestion des routes et des stratégies de sécurité pour les périmètres de sécurité basés sur le cloud.
+
+## Points clés
+
+Félicitations, vous avez terminé le labo. Voici les principaux points à retenir de ce labo. 
++ Un pare-feu est une fonctionnalité de sécurité réseau qui se situe entre un réseau approuvé et un réseau non approuvé, comme Internet. Le travail du pare-feu consiste à analyser le trafic réseau, et à l’autoriser ou à le rejeter.
++ Le Pare-feu Azure est un service de pare-feu basé sur le cloud. Dans la plupart des configurations, le Pare-feu Azure est provisionné dans un réseau virtuel Hub. Le trafic en provenance et à destination des réseaux virtuels Spoke et le réseau local est dirigé vers le pare-feu.
++ Les règles de pare-feu évaluent le trafic réseau. Le Pare-feu Azure comporte trois types de règles : application, réseau et NAT. 
++ Le Pare-feu Azure est proposé dans trois versions : Standard, Premium et De base.

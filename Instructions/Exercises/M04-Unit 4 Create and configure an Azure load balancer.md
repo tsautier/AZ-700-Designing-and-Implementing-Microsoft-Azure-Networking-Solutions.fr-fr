@@ -276,7 +276,7 @@ Dans cette section, vous allez créer une machine virtuelle de test, puis tester
 
 ## Nettoyer les ressources
 
-   >**Remarque** : N’oubliez pas de supprimer toutes les nouvelles ressources Azure que vous n’utilisez plus. La suppression des ressources inutilisées vous évitera d’encourir des frais inattendus.
+>**Remarque** : N’oubliez pas de supprimer toutes les nouvelles ressources Azure que vous n’utilisez plus. La suppression des ressources inutilisées vous évitera d’encourir des frais inattendus.
 
 1. Dans le portail Azure, ouvrez la session **PowerShell** dans le volet **Cloud Shell**.
 
@@ -286,4 +286,25 @@ Dans cette section, vous allez créer une machine virtuelle de test, puis tester
    Remove-AzResourceGroup -Name 'IntLB-RG' -Force -AsJob
    ```
 
-    >**Remarque** : La commande s’exécute de façon asynchrone (tel que déterminé par le paramètre -AsJob). Vous pourrez donc exécuter une autre commande PowerShell immédiatement après au cours de la même session PowerShell, mais la suppression effective du groupe de ressources peut prendre quelques minutes.
+>**Remarque** : La commande s’exécute de façon asynchrone (tel que déterminé par le paramètre -AsJob). Vous pourrez donc exécuter une autre commande PowerShell immédiatement après au cours de la même session PowerShell, mais la suppression effective du groupe de ressources peut prendre quelques minutes.
+
+## Développer votre apprentissage avec Copilot
+
+Copilot peut vous aider à apprendre à utiliser les outils de script Azure. Copilot peut également aider dans des domaines non couverts dans le labo ou quand vous avez besoin de plus d’informations. Ouvrez un navigateur Edge et choisissez Copilot (en haut à droite), ou accédez à *copilot.microsoft.com*. Prenez quelques minutes pour essayer ces invites.
++ En quoi les équilibreurs de charge publics et privés Azure sont-ils différents ? Fournissez des exemples de scénarios pour chaque type.
++ Fournissez une tableau qui compare les références (SKU) de base et standard de l’équilibreur de charge Azure.
++ Comment l’équilibreur de charge Azure décide-t-il de traiter les demandes entrantes ?
+
+
+## En savoir plus grâce à l’apprentissage auto-rythmé
++ [Introduction à Azure Load Balancer](https://learn.microsoft.com/training/modules/intro-to-azure-load-balancer/). Ce module explique à quoi sert Azure Load Balancer, comment il fonctionne et quand choisir de l’utiliser comme solution pour répondre aux besoins de votre organisation.
++ [Résolvez les problèmes de connectivité réseau entrante d’Azure Load Balancer](https://learn.microsoft.com/en-us/training/modules/troubleshoot-inbound-connectivity-azure-load-balancer/). Dans ce module, vous allez identifier et résoudre les problèmes courants de connectivité entrante d’Azure Load Balancer.
+
+## Points clés
+
+Félicitations, vous avez terminé le labo. Voici les principaux points à retenir de ce labo. 
++ L’équilibrage de charge fait référence à une distribution efficace du trafic réseau entrant au sein d’un groupe de serveurs ou ressources back-end.
++ Azure Load Balancer distribue les flux entrants depuis le serveur frontal de l’équilibreur de charge sur des instances du pool principal. Ces flux sont distribués selon des règles d’équilibrage de charge et des sondes d’intégrité configurées. Les instances de pool de back-ends peuvent être des machines virtuelles Azure ou des groupes de machines virtuelles identiques.
++ Azure offre des équilibreurs de charge privés et publics. Les équilibreurs de charge publics sont idéaux pour les applications accessibles sur Internet, les connexions sortantes et les applications web. Les équilibreurs de charge privés sont meilleurs pour les applications internes, les services principaux et les scénarios hybrides.
+
+

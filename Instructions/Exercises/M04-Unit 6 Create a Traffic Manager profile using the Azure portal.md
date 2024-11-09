@@ -28,7 +28,6 @@ Le diagramme ci-dessous illustre l’environnement que vous allez déployer dans
 + Tâche 2 : Créer un profil Traffic Manager
 + Tâche 3 : ajouter des points de terminaison Traffic Manager
 + Tâche 4 : Tester le profil Traffic Manager
-+ Tâche 5 : Nettoyer les ressources
 
 ## Tâche 1 : Créer les applications web
 
@@ -171,9 +170,9 @@ Dans cette section, vous allez vérifier le nom DNS de votre profil Traffic Mana
 
 1. Vérifiez que l’application web répond toujours. Étant donné que le point de terminaison principal n’était pas disponible, le trafic était acheminé vers le point de terminaison de basculement pour permettre au site web de continuer à fonctionner.
 
-## Tâche 5 : Nettoyer les ressources
+## Nettoyer les ressources
 
-   >**Remarque** : N’oubliez pas de supprimer toutes les nouvelles ressources Azure que vous n’utilisez plus. La suppression des ressources inutilisées vous évitera d’encourir des frais inattendus.
+>**Remarque** : N’oubliez pas de supprimer toutes les nouvelles ressources Azure que vous n’utilisez plus. La suppression des ressources inutilisées vous évitera d’encourir des frais inattendus.
 
 1. Dans le portail Azure, ouvrez la session **PowerShell** dans le volet **Cloud Shell**.
 
@@ -186,4 +185,23 @@ Dans cette section, vous allez vérifier le nom DNS de votre profil Traffic Mana
 
    ```
 
-    >**Remarque** : La commande s’exécute de façon asynchrone (tel que déterminé par le paramètre -AsJob). Vous pourrez donc exécuter une autre commande PowerShell immédiatement après au cours de la même session PowerShell, mais la suppression effective du groupe de ressources peut prendre quelques minutes.
+>**Remarque** : La commande s’exécute de façon asynchrone (tel que déterminé par le paramètre -AsJob). Vous pourrez donc exécuter une autre commande PowerShell immédiatement après au cours de la même session PowerShell, mais la suppression effective du groupe de ressources peut prendre quelques minutes.
+
+## Développer votre apprentissage avec Copilot
+
+Copilot peut vous aider à apprendre à utiliser les outils de script Azure. Copilot peut également aider dans des domaines non couverts dans le labo ou quand vous avez besoin de plus d’informations. Ouvrez un navigateur Edge et choisissez Copilot (en haut à droite), ou accédez à *copilot.microsoft.com*. Prenez quelques minutes pour essayer ces invites.
++  Quelles sont les étapes générales de configuration d’Azure Traffic Manager ?
++ Comparez les situations dans lesquelles utiliser Azure Load Balancer et Azure Traffic Manager.
++ Expliquez les profils de routage Traffic Manager et les situations dans lesquelles ils doivent être utilisés.
+
+## En savoir plus grâce à l’apprentissage auto-rythmé
+
++ [Améliorez la disponibilité de vos services et l’emplacement de vos données avec Azure Traffic Manager](https://learn.microsoft.com/training/modules/distribute-load-with-traffic-manager/). Dans ce module, vous allez découvrir comment utiliser Traffic Manager pour distribuer dynamiquement le trafic réseau.
++ [Équilibrage de charge du trafic non-HTTP(S) dans Azure](https://learn.microsoft.com/training/modules/load-balancing-non-https-traffic-azure/). Dans ce module, vous allez découvrir Azure Traffic Manager et implémenter des méthodes de routage. 
+
+## Points clés
+
+Félicitations, vous avez terminé le labo. Voici les principaux points à retenir de ce labo. 
++ Azure Traffic Manager est un équilibreur de charge de trafic DNS. Ce service vous permet de distribuer le trafic à vos applications publiques dans les régions Azure globales.
++ Traffic Manager comprend une série de méthodes de routage du trafic qui vous permet de contrôler la manière dont Traffic Manager choisit le point de terminaison qui doit recevoir le trafic de chaque utilisateur final. Combien pouvez-vous en citer ?
++ Vous pouvez imbriquer des profils Traffic Manager pour combiner les avantages de plusieurs méthodes de routage du trafic. Les profils imbriqués permettent de modifier le comportement par défaut de Traffic Manager pour prendre en charge des déploiements d’applications plus importants et plus complexes.

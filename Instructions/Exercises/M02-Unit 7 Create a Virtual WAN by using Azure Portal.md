@@ -17,7 +17,7 @@ Dans cet exercice, vous allez :
 + Tâche 1 : Créer un WAN virtuel
 + Tâche 2 : créer un hub à partir du portail Azure
 + Tâche 3 : Connecter un VNet au hub virtuel
-+ Tâche 4 : nettoyer les ressources
+
 
 **Remarque :** Une **[simulation de labo interactive](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Create%20a%20virtual%20WAN%20using%20the%20Azure%20portal)** est disponible et vous permet de progresser à votre propre rythme. Il peut exister de légères différences entre la simulation interactive et le labo hébergé. Toutefois, les concepts et idées de base présentés sont identiques.
 
@@ -101,11 +101,9 @@ Un hub contient des passerelles pour offrir des fonctionnalités site à site, E
 
 1. Sélectionnez **Créer**.
 
-Félicitations ! Vous avez créé un WAN virtuel et un hub de WAN virtuel, et vous avez connecté ResearchVNet au hub.
+## Nettoyer les ressources
 
-## Tâche 4 : Nettoyer les ressources
-
-   >**Remarque** : N’oubliez pas de supprimer toutes les nouvelles ressources Azure que vous n’utilisez plus. La suppression des ressources inutilisées vous évitera d’encourir des frais inattendus.
+>**Remarque** : N’oubliez pas de supprimer toutes les nouvelles ressources Azure que vous n’utilisez plus. La suppression des ressources inutilisées vous évitera d’encourir des frais inattendus.
 
 1. Dans le portail Azure, ouvrez la session **PowerShell** dans le volet **Cloud Shell**.
 
@@ -115,4 +113,34 @@ Félicitations ! Vous avez créé un WAN virtuel et un hub de WAN virtuel, et vo
    Remove-AzResourceGroup -Name 'ContosoResourceGroup' -Force -AsJob
    ```
 
-    >**Remarque** : La commande s’exécute de façon asynchrone (tel que déterminé par le paramètre -AsJob). Vous pourrez donc exécuter une autre commande PowerShell immédiatement après au cours de la même session PowerShell, mais la suppression effective du groupe de ressources peut prendre quelques minutes.
+>**Remarque** : La commande s’exécute de façon asynchrone (tel que déterminé par le paramètre -AsJob). Vous pourrez donc exécuter une autre commande PowerShell immédiatement après au cours de la même session PowerShell, mais la suppression effective du groupe de ressources peut prendre quelques minutes.
+
+## Développer votre apprentissage avec Copilot
+
+Copilot peut vous aider à apprendre à utiliser les outils de script Azure. Copilot peut également aider dans des domaines non couverts dans le labo ou quand vous avez besoin de plus d’informations. Ouvrez un navigateur Edge et choisissez Copilot (en haut à droite), ou accédez à *copilot.microsoft.com*. Prenez quelques minutes pour essayer ces invites.
++ Quel type d’architecture réseau est utilisé par Azure VWAN ?
++ Quelle sont les différences entre les types de base et standard d’Azure VWAN ? Fournir des exemples.
++ Un réseau VWAN Azure peut-il être créé avec des outils de script ?
+
+## En savoir plus grâce à l’apprentissage auto-rythmé
+
++ [Introduction à Azure Virtual WAN](https://learn.microsoft.com/training/modules/introduction-azure-virtual-wan/). Dans ce module, vous allez découvrir les fonctionnalités d’Azure Virtual WAN. 
++ [Concevez et implémentez la mise en réseau hybride](https://learn.microsoft.com/training/modules/design-implement-hybrid-networking/). Dans ce module, vous allez apprendre à concevoir et à implémenter Azure Virtual WAN.
+
+## Points clés
+
+Félicitations, vous avez terminé le labo. Voici les principaux points à retenir de ce labo. 
+
++ Azure Virtual WAN est un service de mise en réseau qui combine un grand nombre de fonctionnalités de réseau, de sécurité et de routage en une unique interface opérationnelle.
++ Virtual WAN repose sur une architecturede réseau en étoile avec des fonctionnalités de mise à l’échelle et de performances intégrées pour les branches, les utilisateurs, les circuits ExpressRoute et les réseaux virtuels.
++ Il existe trois principaux cas d’utilisation pour Virtual WAN : site à site, point à site et ExpressRoute. 
++ Il existe deux types de Virtual WAN : de base et standard.
+
+
+
+
+
+
+
+
+

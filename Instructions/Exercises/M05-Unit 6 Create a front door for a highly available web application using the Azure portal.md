@@ -18,8 +18,8 @@ Dans cet exercice, vous allez :
 
 + Tâche 1 : créer deux instances d’une application web
 + Tâche 2 : créer une instance Front Door pour votre application
-+ Tâche 3 : afficher Azure Front Door à l’œuvre
-+ Tâche 4 : nettoyer les ressources
++ Tâche 3 : afficher Azure Front Door à l’œuvre
+
 
 **Remarque :** Une **[simulation de labo interactive](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Create%20a%20Front%20Door%20profile%20for%20a%20highly%20available%20web%20application)** est disponible et vous permet de progresser à votre propre rythme. Il peut exister de légères différences entre la simulation interactive et le labo hébergé. Toutefois, les concepts et idées de base présentés sont identiques.
 
@@ -131,9 +131,9 @@ Une fois la porte d’entrée créée, le déploiement global de la configuratio
 
    Félicitations ! Vous avez configuré et testé Azure Front Door.
 
-## Tâche 4 : nettoyer les ressources
+## Nettoyer les ressources
 
-   >**Remarque** : N’oubliez pas de supprimer toutes les nouvelles ressources Azure que vous n’utilisez plus. La suppression des ressources inutilisées vous évitera d’encourir des frais inattendus.
+>**Remarque** : N’oubliez pas de supprimer toutes les nouvelles ressources Azure que vous n’utilisez plus. La suppression des ressources inutilisées vous évitera d’encourir des frais inattendus.
 
 1. Dans le portail Azure, ouvrez la session **PowerShell** dans le volet **Cloud Shell**.
 
@@ -145,4 +145,24 @@ Une fois la porte d’entrée créée, le déploiement global de la configuratio
 
    ```
 
-    >**Remarque** : La commande s’exécute de façon asynchrone (tel que déterminé par le paramètre -AsJob). Vous pourrez donc exécuter une autre commande PowerShell immédiatement après au cours de la même session PowerShell, mais la suppression effective du groupe de ressources peut prendre quelques minutes.
+>**Remarque** : La commande s’exécute de façon asynchrone (tel que déterminé par le paramètre -AsJob). Vous pourrez donc exécuter une autre commande PowerShell immédiatement après au cours de la même session PowerShell, mais la suppression effective du groupe de ressources peut prendre quelques minutes.
+
+## Développer votre apprentissage avec Copilot
+
+Copilot peut vous aider à apprendre à utiliser les outils de script Azure. Copilot peut également aider dans des domaines non couverts dans le labo ou quand vous avez besoin de plus d’informations. Ouvrez un navigateur Edge et choisissez Copilot (en haut à droite), ou accédez à *copilot.microsoft.com*. Prenez quelques minutes pour essayer ces invites.
++ Quelle sont les différences entre Azure Front Door et Azure Application Gateway ? Donnez des exemples de situations dans lesquelles utiliser chaque produit.
++ Fournissez une liste de contrôle des tâches à effectuer lors de la configuration d’Azure Front Door.
++ Qu’est-ce qu’une origine dans Azure Front Door et en quoi est-elle différente d’un point de terminaison ?
+
+
+## En savoir plus grâce à l’apprentissage auto-rythmé
+
++ [Présentation d’Azure Front Door](https://learn.microsoft.com/training/modules/intro-to-azure-front-door/). Dans ce module, vous allez découvrir comment Azure Front Door peut protéger vos applications.
++ [Équilibrez la charge du trafic de votre service web avec Front Door](https://learn.microsoft.com/training/modules/create-first-azure-front-door/). Dans ce module, vous allez apprendre à créer et configurer Azure Front Door. 
+
+## Points clés
+
+Félicitations, vous avez terminé le labo. Voici les principaux points à retenir de ce labo. 
++ Azure Front Door est un service cloud qui permet de diffuser vos applications partout dans le monde. 
++ Azure Front Door utilise l’équilibrage de charge de couche 7 pour distribuer le trafic entre plusieurs régions et plusieurs points de terminaison.
++ Azure Front Door prend en charge quatre méthodes différentes de routage du trafic pour déterminer comment votre trafic HTTP/HTTPS est distribué. Les méthodes de routage sont les suivantes : latence, priorité, pondération et affinité de session. 
