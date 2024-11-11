@@ -29,7 +29,7 @@ Le diagramme ci-dessous illustre l’environnement que vous déploierez dans cet
 + Tâche 11 : afficher les métriques détaillées
 + Tâche 12 : afficher l’intégrité des ressources
 + Tâche 13 : configurer les paramètres de diagnostic
-+ Tâche 14 : nettoyer les ressources
+
 
 **Remarque :** Une **[simulation de labo interactive](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Monitor%20a%20load%20balancer%20resource%20using%20Azure%20Monitor)** est disponible et vous permet de progresser à votre propre rythme. Il peut exister de légères différences entre la simulation interactive et le labo hébergé. Toutefois, les concepts et idées de base présentés sont identiques.
 
@@ -397,7 +397,7 @@ Dans cette section, vous allez créer une machine virtuelle de test, puis tester
 
    ![Page Paramètre de diagnostic pour l’équilibreur de charge](../media/diagnostic-settings-2.png)
 
-## Tâche 14 : nettoyer les ressources
+## Nettoyer les ressources
 
    >**Remarque** : N’oubliez pas de supprimer toutes les nouvelles ressources Azure que vous n’utilisez plus. La suppression des ressources inutilisées vous évitera d’encourir des frais inattendus.
 
@@ -409,4 +409,26 @@ Dans cette section, vous allez créer une machine virtuelle de test, puis tester
    Remove-AzResourceGroup -Name 'IntLB-RG' -Force -AsJob
    ```
 
-    >**Remarque** : La commande s’exécute de façon asynchrone (tel que déterminé par le paramètre -AsJob). Vous pourrez donc exécuter une autre commande PowerShell immédiatement après au cours de la même session PowerShell, mais la suppression effective du groupe de ressources peut prendre quelques minutes.
+>**Remarque** : La commande s’exécute de façon asynchrone (tel que déterminé par le paramètre -AsJob). Vous pourrez donc exécuter une autre commande PowerShell immédiatement après au cours de la même session PowerShell, mais la suppression effective du groupe de ressources peut prendre quelques minutes.
+    
+## Développer votre apprentissage avec Copilot
+
+Copilot peut vous aider à apprendre à utiliser les outils de script Azure. Copilot peut également aider dans des domaines non couverts dans le labo ou quand vous avez besoin de plus d’informations. Ouvrez un navigateur Edge et choisissez Copilot (en haut à droite), ou accédez à *copilot.microsoft.com*. Prenez quelques minutes pour essayer ces invites.
++ Résumez les outils Azure disponibles pour la surveillance des réseaux virtuels.
++ Quels sont les outils de surveillance Azure Network Watcher disponibles ?
+
+## En savoir plus grâce à l’apprentissage auto-rythmé
+
++ [Présentation d’Azure Monitor](https://learn.microsoft.com/training/modules/intro-to-azure-monitor/). Dans ce module, vous allez découvrir comment utiliser Azure Monitor pour fournir des insights sur les performances et les opérations de vos ressources Azure.
++ [Monitorez et dépannez votre infrastructure réseau Azure de bout en bout en tirant parti des outils de monitoring réseau](https://learn.microsoft.com/training/modules/troubleshoot-azure-network-infrastructure/). Dans ce modume, vous allez découvrir comment utiliser les outils, les diagnostics et les journaux d’Azure Network Watcher pour vous aider à détecter et à résoudre les problèmes réseau dans votre infrastructure Azure.
+
+## Points clés
+
+Félicitations, vous avez terminé le labo. Voici les principaux points à retenir de ce labo. 
+
++ Azure Monitor fournit des fonctionnalités et des outils pour collecter, gérer et analyser les données informatiques provenant de toutes vos ressources locales, Azure et d’autres cloud.
++ Les métriques sont des mesures quantitatives qui montrent des instantanés des performances des applications ou des ressources. Les métriques sont généralement des valeurs numériques que vous pouvez mesurer au fil du temps.
++ Les journaux sont des enregistrements textuels d’événements, d’actions et de messages qui se produisent dans une ressource ou une application. 
++ Les insights, les visualisations et les tableaux de bord Azure Monitor peuvent consommer et transmettre des informations de surveillance concernant vos applications.
++ Les alertes vous avertissent de conditions critiques, et sont susceptibles de prendre des actions correctives. Les règles d’alerte peuvent être basées sur des données de mesure ou de journal.+ 
+    

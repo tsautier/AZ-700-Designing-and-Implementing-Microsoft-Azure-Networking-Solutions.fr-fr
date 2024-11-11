@@ -162,13 +162,13 @@ Dans cet exercice, vous allez :
 
 Copilot peut vous aider à apprendre à utiliser les outils de script Azure. Copilot peut également aider dans des domaines non couverts dans le labo ou quand vous avez besoin de plus d’informations. Ouvrez un navigateur Edge et choisissez Copilot (en haut à droite), ou accédez à *copilot.microsoft.com*. Prenez quelques minutes pour essayer ces invites.
 + Pouvez-vous fournir un exemple de la façon dont l’adresse IP 10.30.0.0/16 est utilisée dans un scénario du monde réel ?
-+ Qu’est-ce que la commande Azure PowerShell pour créer un réseau virtuel appelé CoreServicesVnet dans la région Est (États-Unis). Le réseau virtuel devrait utiliser l’espace d’adressage IP 10.20.0.0/16.
-+ Quelle est la commande Azure CLI pour créer un réseau virtuel appelé ManufacturingVnet dans la région Europe Ouest. Le réseau virtuel devrait utiliser l’espace d’adressage IP 10.30.0.0/16.
++ Qu’est-ce que la commande Azure PowerShell pour créer un réseau virtuel appelé CoreServicesVnet dans la région Est (États-Unis) ? Le réseau virtuel devrait utiliser l’espace d’adressage IP 10.20.0.0/16.
++ Quelle est la commande Azure CLI pour créer un réseau virtuel appelé ManufacturingVnet dans la région Europe Ouest ? Le réseau virtuel devrait utiliser l’espace d’adressage IP 10.30.0.0/16.
 
 ## En savoir plus grâce à l’apprentissage auto-rythmé
 
-+ [Concevez un schéma d’adressage IP pour votre déploiement Azure](https://learn.microsoft.com/en-us/training/modules/design-ip-addressing-for-azure/). Dans ce module, identifiez les fonctionnalités d’adressage IP public et privé des réseaux virtuels Azure.
-+ [Présentation des réseaux virtuels Azure](https://learn.microsoft.com/en-us/training/modules/introduction-to-azure-virtual-networks/). Dans ce module, vous apprenez à concevoir et à implémenter des services de mise en réseau Azure. Vous y découvrez les réseaux virtuels, les adresses IP publiques et privées, le DNS, l’appairage de réseaux virtuels, le routage et la NAT virtuelle Azure.
++ [Concevez un schéma d’adressage IP pour votre déploiement Azure](https://learn.microsoft.com/training/modules/design-ip-addressing-for-azure/). Dans ce module, identifiez les fonctionnalités d’adressage IP public et privé des réseaux virtuels Azure.
++ [Présentation des réseaux virtuels Azure](https://learn.microsoft.com/training/modules/introduction-to-azure-virtual-networks/). Dans ce module, vous apprenez à concevoir et à implémenter des services de mise en réseau Azure. Vous y découvrez les réseaux virtuels, les adresses IP publiques et privées, le DNS, l’appairage de réseaux virtuels, le routage et la NAT virtuelle Azure.
 
 ## Points clés
 

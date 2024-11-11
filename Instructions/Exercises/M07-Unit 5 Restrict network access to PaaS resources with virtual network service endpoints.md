@@ -24,7 +24,7 @@ Dans cet exercice, vous allez :
 + Tâche 8 : Restreindre l’accès réseau à un sous-réseau
 + Tâche 9 : Créer des machines virtuelles
 + Tâche 10 : Confirmer l’accès au compte de stockage
-+ Tâche 11 : Nettoyer les ressources
+
 
 **Remarque :** Une **[simulation de labo interactive](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Restrict%20network%20access%20to%20PaaS%20resources%20with%20virtual%20network%20service%20endpoints)** est disponible et vous permet de progresser à votre propre rythme. Il peut exister de légères différences entre la simulation interactive et le labo hébergé. Toutefois, les concepts et idées de base présentés sont identiques.
 
@@ -329,9 +329,9 @@ Vous ne recevez aucune réponse, car le groupe de sécurité réseau associé au
 
 Résultats : vous avez maintenant terminé ce labo.
 
-## Tâche 11 : Nettoyer les ressources
+## Nettoyer les ressources
 
-   >**Remarque** : N’oubliez pas de supprimer toutes les nouvelles ressources Azure que vous n’utilisez plus. La suppression des ressources inutilisées vous évitera d’encourir des frais inattendus.
+>**Remarque** : N’oubliez pas de supprimer toutes les nouvelles ressources Azure que vous n’utilisez plus. La suppression des ressources inutilisées vous évitera d’encourir des frais inattendus.
 
 1. Dans le portail Azure, ouvrez la session **PowerShell** dans le volet **Cloud Shell**.
 
@@ -341,4 +341,21 @@ Résultats : vous avez maintenant terminé ce labo.
    Remove-AzResourceGroup -Name 'myResourceGroup' -Force -AsJob
    ```
 
-    >**Remarque** : La commande s’exécute de façon asynchrone (tel que déterminé par le paramètre -AsJob). Vous pourrez donc exécuter une autre commande PowerShell immédiatement après au cours de la même session PowerShell, mais la suppression effective du groupe de ressources peut prendre quelques minutes.
+>**Remarque** : La commande s’exécute de façon asynchrone (tel que déterminé par le paramètre -AsJob). Vous pourrez donc exécuter une autre commande PowerShell immédiatement après au cours de la même session PowerShell, mais la suppression effective du groupe de ressources peut prendre quelques minutes.
+
+## Développer votre apprentissage avec Copilot
+
+Copilot peut vous aider à apprendre à utiliser les outils de script Azure. Copilot peut également aider dans des domaines non couverts dans le labo ou quand vous avez besoin de plus d’informations. Ouvrez un navigateur Edge et choisissez Copilot (en haut à droite), ou accédez à *copilot.microsoft.com*. Prenez quelques minutes pour essayer ces invites.
++ Quelle est la différence entre des points de terminaison de service Azure et des points de terminaison privés ?
++ Quels services Azure peuvent utiliser des points de terminaison de service ?
++ Quelles sont les étapes permettant de restreindre l’accès au stockage Azure à l’aide de points de terminaison de service ?
+
+## En savoir plus grâce à l’apprentissage auto-rythmé
+
++ [Sécuriser et isoler l’accès aux ressources Azure en utilisant des groupes de sécurité réseau et des points de terminaison de service](https://learn.microsoft.com/training/modules/secure-and-isolate-with-nsg-and-service-endpoints/). Dans ce module, vous allez découvrir comment utiliser des points de terminaison de service de réseau virtuel pour contrôler le trafic réseau en provenance et à destination des services Azure.
+
+## Points clés
++ Les points de terminaison de service de réseau virtuel étendent votre espace d’adressage privé dans Azure en fournissant une connexion directe à vos services Azure.
++ Les points de terminaison de service vous permettent de sécuriser vos ressources Azure uniquement pour votre réseau virtuel. Le trafic de service demeure sur le réseau principal Azure et n’accède pas à Internet.
++ Les points de terminaison de service Azure sont disponibles pour de nombreux services, tels que : stockage Azure, Azure SQL Database et Azure Cosmos DB.
++ Les points de terminaison de service de réseau virtuel ne sont pas, par défaut, accessibles à partir de réseaux locaux. Pour accéder aux ressources à partir d’un réseau local, utilisez des adresses IP NAT.
