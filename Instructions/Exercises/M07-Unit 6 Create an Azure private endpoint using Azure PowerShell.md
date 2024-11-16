@@ -43,7 +43,6 @@ Dans cet exercice, vous allez :
 - Tâche 4 : Créer un point de terminaison privé
 - Tâche 5 : Configurer la zone DNS privée
 - Tâche 6 : Tester la connectivité vers le point de terminaison privé
-- Tâche 7 : Nettoyer les ressources
 
 ## Tâche 1 : créer un groupe de ressources et déployer l’application web utilisée
 
@@ -404,10 +403,26 @@ L’adresse IP privée **10.0.0.5** est retournée pour le nom de l’applicati
 1. La page d’application web par défaut s’affichera si votre application n’a pas été déployée : ![capture d’écran de page dans Azure indiquant qu’un service d’application est opérationnel](../media/web-app-default-page.png)
 1. Fermez la connexion à **myVM**.
 
-## Tâche 7 : Nettoyer les ressources
+## Nettoyer les ressources
 
 Lorsque vous avez fini d’utiliser le point de terminaison privé et la machine virtuelle, supprimez le groupe de ressources et toutes les ressources qu’il contient avec [Remove-AzResourceGroup](https://docs.microsoft.com/en-us/powershell/module/az.resources/remove-azresourcegroup) :
 
 ```PowerShell
 Remove-AzResourceGroup -Name CreatePrivateEndpointQS-rg -Force -AsJob
 ```
+
+## Développer votre apprentissage avec Copilot
+
+Copilot peut vous aider à apprendre à utiliser les outils de script Azure. Copilot peut également aider dans des domaines non couverts dans le labo ou quand vous avez besoin de plus d’informations. Ouvrez un navigateur Edge et choisissez Copilot (en haut à droite), ou accédez à *copilot.microsoft.com*. Prenez quelques minutes pour essayer ces invites.
++ Fournissez un exemple de moment où utiliser un point de terminaison privé au lieu d’un point de terminaison de service.
++ Comment résoudre les problèmes de connectivité de point de terminaison privé ?
+
+## En savoir plus grâce à l’apprentissage auto-rythmé
+
++ [Présentation d’Azure Private Link](https://learn.microsoft.com/training/modules/introduction-azure-private-link/). Dans ce module, vous allez découvrir comment Azure Private Link permet une connectivité privée aux services Azure, y compris ses fonctionnalités, son fonctionnement et ses cas d’usage.
++ [Concevoir et implémenter un accès privé aux services Azure](https://learn.microsoft.com/en-us/training/modules/design-implement-private-access-to-azure-services/). Dans ce module, vous allez apprendre à concevoir et à implémenter un accès privé aux services Azure avec Azure Private Link et des points de terminaison de service de réseau virtuel.
+
+## Points clés
+
++ Le service Azure Private Link vous permet d’accéder aux services Azure PaaS, comme Stockage Azure et SQL Database, ainsi qu’aux services de partenaires ou de clients hébergés par Azure sur un point de terminaison privé dans votre réseau virtuel.
++ Un point de terminaison privé est une interface réseau qui utilise une adresse IP privée de votre réseau virtuel. Cette interface réseau vous connecte de manière privée et sécurisée à un service fonctionnant avec Azure Private Link. 
