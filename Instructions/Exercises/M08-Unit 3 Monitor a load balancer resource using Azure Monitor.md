@@ -31,7 +31,7 @@ Le diagramme ci-dessous illustre l’environnement que vous déploierez dans cet
 + Tâche 13 : configurer les paramètres de diagnostic
 
 
-**Remarque :** Une **[simulation de labo interactive](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Monitor%20a%20load%20balancer%20resource%20using%20Azure%20Monitor)** est disponible et vous permet de progresser à votre propre rythme. Il peut exister de légères différences entre la simulation interactive et le labo hébergé. Toutefois, les concepts et idées de base présentés sont identiques.
+   >**Remarque :** Une **[simulation de labo interactive](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Monitor%20a%20load%20balancer%20resource%20using%20Azure%20Monitor)** est disponible et vous permet de progresser à votre propre rythme. Il peut exister de légères différences entre la simulation interactive et le labo hébergé. Toutefois, les concepts et idées de base présentés sont identiques.
 
 > [!Note]  
 > Il peut exister de légères différences entre les instructions et l’interface du portail Azure, mais le concept de base est identique.
@@ -88,7 +88,9 @@ Dans cette section, vous allez créer un réseau virtuel et un sous-réseau.
 Dans cette section, vous allez créer un équilibreur de charge interne de référence SKU Standard. La raison pour laquelle nous créons un équilibreur de charge de référence SKU Standard dans cet exercice, plutôt qu’un équilibreur de charge de référence SKU De base, est que certains exercices ultérieurs nécessiteront une version SKU Standard de l’équilibreur de charge.
 
 1. Dans la page d’accueil Azure, dans la barre de recherche, entrez **Équilibreur de charge**.
+
 1. Sélectionnez **Créer un équilibreur de charge**.
+
 1. Sous l’onglet **De base**, utilisez les informations du tableau ci-dessous pour créer l’équilibreur de charge.
 
    | **Paramètre**           | **Valeur**                |
@@ -221,8 +223,7 @@ Dans cette section, vous allez créer une machine virtuelle de test, puis tester
 
 ### Créer une machine virtuelle de test
 
-> [!Note]  
-> Il peut exister de légères différences entre les instructions et l’interface du portail Azure, mais le concept de base est identique.
+   >**Remarque** : il peut exister de légères différences entre les instructions et l’interface du portail Azure, mais le concept de base est identique.
 
 1. Sur la page d’accueil Azure, dans la zone de recherche globale, entrez **Machines virtuelles** et sélectionnez Machines virtuelles sous Services.
 
@@ -235,7 +236,8 @@ Dans cette section, vous allez créer une machine virtuelle de test, puis tester
    | Nom de la machine virtuelle | **myTestVM**                                 |
    | Région               | **(États-Unis) USA Ouest**                             |
    | Options de disponibilité | **Aucune redondance de l’infrastructure requise**    |
-   | Image                | **Windows Server 2019 Datacenter - Gen 1**   |
+   | Type de sécurité        | **Standard**                                 |
+   | Image                | **Voir toutes les images** --> **Datacenter pour Windows Server 2019**  |
    | Taille                 | **Standard_DS2_v3 - 2 processeurs virtuels, 8 Gio de mémoire** |
    | Nom d’utilisateur             | **TestUser**                                 |
    | Mot de passe             | **Choisissez un mot de passe sécurisé**                |
@@ -399,7 +401,7 @@ Dans cette section, vous allez créer une machine virtuelle de test, puis tester
 
 ## Nettoyer les ressources
 
-   >**Remarque** : N’oubliez pas de supprimer toutes les nouvelles ressources Azure que vous n’utilisez plus. La suppression des ressources inutilisées vous évitera d’encourir des frais inattendus.
+>**Remarque** : N’oubliez pas de supprimer toutes les nouvelles ressources Azure que vous n’utilisez plus. La suppression des ressources inutilisées vous évitera d’encourir des frais inattendus.
 
 1. Dans le portail Azure, ouvrez la session **PowerShell** dans le volet **Cloud Shell**.
 
