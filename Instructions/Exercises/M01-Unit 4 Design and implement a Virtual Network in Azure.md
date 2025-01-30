@@ -12,7 +12,7 @@ Vous êtes maintenant prêt à déployer des réseaux virtuels dans le portail A
 
 Prenons l’exemple d’une organisation fictive, Contoso Ltd, qui est en train de migrer son infrastructure et ses applications vers Azure. Dans votre rôle d’ingénieur réseau, vous devez planifier et implémenter trois réseaux virtuels et des sous-réseaux pour prendre en charge les ressources dans ces réseaux virtuels.
 
-**Remarque :** Une **[simulation de labo interactive](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Design%20and%20implement%20a%20virtual%20network%20in%20Azure)** est disponible et vous permet de progresser à votre propre rythme. Il peut exister de légères différences entre la simulation interactive et le labo hébergé. Toutefois, les concepts et idées de base présentés sont identiques.
+   >**Remarque :** Une **[simulation de labo interactive](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Design%20and%20implement%20a%20virtual%20network%20in%20Azure)** est disponible et vous permet de progresser à votre propre rythme. Il peut exister de légères différences entre la simulation interactive et le labo hébergé. Toutefois, les concepts et idées de base présentés sont identiques.
 
 ### Durée estimée : 20 minutes
 
@@ -77,6 +77,7 @@ Dans cet exercice, vous allez :
 1. Dans la page d’accueil du portail Azure, accédez à la barre de recherche globale et recherchez **Réseaux virtuels**, puis sélectionnez Réseaux virtuels sous Services.  ![Résultats de la recherche de « réseau virtuel» dans la barre de recherche globale de la page d’accueil du portail Azure.](../media/global-search-bar.PNG)
 
 1. Sélectionnez **Créer** dans la page Réseaux virtuels.  ![Assistant Créer un réseau virtuel.](../media/create-virtual-network.png)
+   
 1. Utilisez les informations du tableau suivant pour créer le réseau virtuel CoreServicesVnet.  
    Supprimer ou remplacer l’espace d’adressage IP par défaut ![Configuration d’adresse IP pour le déploiement d’un réseau virtuel Azure ](../media/default-vnet-ip-address-range-annotated.png)
 
@@ -91,16 +92,17 @@ Dans cet exercice, vous allez :
 
 1. Pour commencer à créer chaque sous-réseau, sélectionnez **+ Ajouter un sous-réseau**. Pour terminer la création de chaque sous-réseau, sélectionnez **Ajouter**.
 
-   | **Sous-réseau**             | **Option**           | **Valeur**              |
-   | ---------------------- | -------------------- | ---------------------- |
-   | Sous-réseau de passerelle          | Nom du sous-réseau          | Sous-réseau de passerelle          |
-   |                        | Plage d’adresses de sous-réseau | 10.20.0.0/27           |
-   | SharedServicesSubnet   | Nom du sous-réseau          | SharedServicesSubnet   |
-   |                        | Plage d’adresses de sous-réseau | 10.20.10.0/24          |
-   | DatabaseSubnet         | Nom du sous-réseau          | DatabaseSubnet         |
-   |                        | Plage d’adresses de sous-réseau | 10.20.20.0/24          |
-   | PublicWebServiceSubnet | Nom du sous-réseau          | PublicWebServiceSubnet |
-   |                        | Plage d’adresses de sous-réseau | 10.20.30.0/24          |
+   | **Sous-réseau**             | **Option**           | **Valeur**               |
+   | ---------------------- | -------------------- | ----------------------- |
+   | Sous-réseau de passerelle          | Objectif du sous-réseau       | Passerelle de réseau virtuel |
+   |                        | Nom du sous-réseau          | Sous-réseau de passerelle           |
+   |                        | Plage d’adresses de sous-réseau | 10.20.0.0/27            |
+   | SharedServicesSubnet   | Nom du sous-réseau          | SharedServicesSubnet    |
+   |                        | Plage d’adresses de sous-réseau | 10.20.10.0/24           |
+   | DatabaseSubnet         | Nom du sous-réseau          | DatabaseSubnet          |
+   |                        | Plage d’adresses de sous-réseau | 10.20.20.0/24           |
+   | PublicWebServiceSubnet | Nom du sous-réseau          | PublicWebServiceSubnet  |
+   |                        | Plage d’adresses de sous-réseau | 10.20.30.0/24           |
 
 1. Pour terminer la création de CoreServicesVnet et des sous-réseaux associés, sélectionnez **Vérifier + créer**.
 

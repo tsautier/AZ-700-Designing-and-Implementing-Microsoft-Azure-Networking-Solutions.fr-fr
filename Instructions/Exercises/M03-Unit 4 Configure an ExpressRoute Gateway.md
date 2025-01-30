@@ -11,7 +11,7 @@ Exercise:
 
 Pour connecter votre réseau virtuel Azure et votre réseau local via ExpressRoute, vous devez d’abord créer une passerelle réseau virtuelle. Une passerelle de réseau virtuel a deux rôles : échanger des routes IP entre les réseaux et router le trafic réseau.
 
-**Remarque :** Une **[simulation de labo interactive](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Configure%20an%20ExpressRoute%20gateway)** est disponible et vous permet de progresser à votre propre rythme. Il peut exister de légères différences entre la simulation interactive et le labo hébergé. Toutefois, les concepts et idées de base présentés sont identiques.
+   >**Remarque :** Une **[simulation de labo interactive](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Configure%20an%20ExpressRoute%20gateway)** est disponible et vous permet de progresser à votre propre rythme. Il peut exister de légères différences entre la simulation interactive et le labo hébergé. Toutefois, les concepts et idées de base présentés sont identiques.
 
 ### Durée estimée : 60 minutes (dont environ 45 minutes d’attente pour le déploiement)
 
@@ -49,10 +49,12 @@ Dans cet exercice, vous allez :
 
 1. Dans le volet Ajouter un sous-réseau, utilisez les informations du tableau suivant pour créer le sous-réseau :
 
-   | **Paramètre**                  | **Valeur**     |
-   | ---------------------------- | ------------- |
-   | Nom du sous-réseau de passerelle          | GatewaySubnet |
-   | Espace d’adressage du sous-réseau de passerelle | 10.20.0.0/27  |
+   | **Paramètre**                  | **Valeur**               |
+   | ---------------------------- | ----------------------- |
+   | Objectif du sous-réseau               | Passerelle de réseau virtuel |
+   | Espace d’adressage du sous-réseau de passerelle | 10.20.0.0/27            |
+
+Notez que le nom du sous-réseau sera automatiquement renseigné.
 
 1. Ensuite, sélectionnez **Ajouter**.
 
@@ -62,7 +64,7 @@ Dans cet exercice, vous allez :
 
 1. Confirmez la validation du réseau virtuel, puis sélectionnez **Créer**.
 
->**Remarque :** si vous utilisez un réseau virtuel à double pile et prévoyez d’utiliser un peering privé IPv6 plutôt qu’ExpressRoute, cliquez sur Ajouter un espace d’adressage IP6, puis entrez les valeurs de la plage d’adresses IPv6.
+   >**Remarque :** si vous utilisez un réseau virtuel à double pile et prévoyez d’utiliser un peering privé IPv6 plutôt qu’ExpressRoute, cliquez sur Ajouter un espace d’adressage IP6, puis entrez les valeurs de la plage d’adresses IPv6.
 
 ## Tâche 2 : Créer la passerelle de réseau virtuel
 
@@ -93,7 +95,7 @@ Dans cet exercice, vous allez :
 
 1. Une fois le déploiement terminé, sélectionnez **Accéder à la ressource**.
 
->**Remarque :** le déploiement d’une passerelle peut prendre jusqu’à 45 minutes.
+   >**Remarque :** le déploiement d’une passerelle peut prendre jusqu’à 45 minutes.
 
 
 ## Développer votre apprentissage avec Copilot

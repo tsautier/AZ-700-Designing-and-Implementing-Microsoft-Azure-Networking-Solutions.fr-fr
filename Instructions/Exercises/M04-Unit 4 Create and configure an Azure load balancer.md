@@ -9,7 +9,7 @@ Exercise:
 
 Dans cet exercice, vous allez créer un équilibreur de charge interne pour l’organisation fictive Contoso Ltd.
 
-**Remarque :** Une **[simulation de labo interactive](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Create%20and%20configure%20an%20Azure%20load%20balancer)** est disponible et vous permet de progresser à votre propre rythme. Il peut exister de légères différences entre la simulation interactive et le labo hébergé. Toutefois, les concepts et idées de base présentés sont identiques.
+   >**Remarque :** Une **[simulation de labo interactive](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Create%20and%20configure%20an%20Azure%20load%20balancer)** est disponible et vous permet de progresser à votre propre rythme. Il peut exister de légères différences entre la simulation interactive et le labo hébergé. Toutefois, les concepts et idées de base présentés sont identiques.
 
 ### Durée estimée : 60 minutes (dont environ 45 minutes d’attente pour le déploiement)
 
@@ -83,7 +83,7 @@ Dans cette section, vous allez créer trois machines virtuelles qui seront dans 
 
 3. Déployez les modèles ARM suivants pour créer les machines virtuelles nécessaires à cet exercice :
 
->**Remarque** : Vous serez invité à fournir un mot de passe d’administrateur.
+   >**Remarque** : Vous serez invité à fournir un mot de passe d’administrateur.
 
    ```powershell
    $RGName = "IntLB-RG"
@@ -118,7 +118,9 @@ Dans cette section, vous allez créer un équilibreur de charge interne de réf�
    | Niveau                  | **Regional**             |
 
 1. Sélectionnez **Suivant : configurations d’adresse IP front-end**.
+   
 1. Sélectionnez Ajouter une adresse IP front-end
+
 1. Dans le volet **Ajouter une adresse IP front-end**, entrez les informations du tableau ci-dessous et sélectionnez **Ajouter**.
 
    | **Paramètre**     | **Valeur**                |
@@ -276,7 +278,7 @@ Dans cette section, vous allez créer une machine virtuelle de test, puis tester
 
 ## Nettoyer les ressources
 
->**Remarque** : N’oubliez pas de supprimer toutes les nouvelles ressources Azure que vous n’utilisez plus. La suppression des ressources inutilisées vous évitera d’encourir des frais inattendus.
+   >**Remarque** : N’oubliez pas de supprimer toutes les nouvelles ressources Azure que vous n’utilisez plus. La suppression des ressources inutilisées vous évitera d’encourir des frais inattendus.
 
 1. Dans le portail Azure, ouvrez la session **PowerShell** dans le volet **Cloud Shell**.
 
@@ -286,7 +288,7 @@ Dans cette section, vous allez créer une machine virtuelle de test, puis tester
    Remove-AzResourceGroup -Name 'IntLB-RG' -Force -AsJob
    ```
 
->**Remarque** : La commande s’exécute de façon asynchrone (tel que déterminé par le paramètre -AsJob). Vous pourrez donc exécuter une autre commande PowerShell immédiatement après au cours de la même session PowerShell, mais la suppression effective du groupe de ressources peut prendre quelques minutes.
+   >**Remarque** : La commande s’exécute de façon asynchrone (tel que déterminé par le paramètre -AsJob). Vous pourrez donc exécuter une autre commande PowerShell immédiatement après au cours de la même session PowerShell, mais la suppression effective du groupe de ressources peut prendre quelques minutes.
 
 ## Développer votre apprentissage avec Copilot
 

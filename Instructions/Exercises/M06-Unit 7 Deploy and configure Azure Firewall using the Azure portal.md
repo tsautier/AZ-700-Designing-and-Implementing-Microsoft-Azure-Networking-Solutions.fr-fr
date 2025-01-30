@@ -26,7 +26,7 @@ Dans cet exercice, vous allez :
 + Tâche 10 : Tester le pare-feu
 
 
-**Remarque :** Une **[simulation de labo interactive](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Deploy%20and%20configure%20Azure%20Firewall%20using%20the%20Azure%20portal)** est disponible et vous permet de progresser à votre propre rythme. Il peut exister de légères différences entre la simulation interactive et le labo hébergé. Toutefois, les concepts et idées de base présentés sont identiques.
+   >**Remarque :** Une **[simulation de labo interactive](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Deploy%20and%20configure%20Azure%20Firewall%20using%20the%20Azure%20portal)** est disponible et vous permet de progresser à votre propre rythme. Il peut exister de légères différences entre la simulation interactive et le labo hébergé. Toutefois, les concepts et idées de base présentés sont identiques.
 
 ### Durée estimée : 60 minutes
 
@@ -113,8 +113,6 @@ Au cours de cette tâche, vous allez créer la machine virtuelle de charge de tr
 
 1. Vérifiez que la machine virtuelle a été créée.
 
-1. Lorsque le déploiement de la machine virtuelle est terminé, sélectionnez **Accéder à la ressource**.
-
 1. Sur la page **Vue d’ensemble** de **Srv-Work**, à droite de la page, sous **Réseau**, prenez note de l’**Adresse IP privée** pour cette machine virtuelle (par exemple **10.0.2.4**).
 
 ## Tâche 4 : Déployer le pare-feu et la stratégie de pare-feu
@@ -146,13 +144,15 @@ Au cours de cette tâche, vous allez déployer le pare-feu dans le réseau virtu
 
    ![Ajouter une adresse IP publique au pare-feu](../media/assign-public-ip-to-firewall.png)
 
-1. Passez en revue tous les paramètres pour vous assurer qu’ils correspondent à la capture d’écran ci-dessous.
+1. Nous n’utilisons pas Firewall Manager, donc décochez la case **Activer la carte d’interface réseau de gestion du pare-feu**. 
+
+1. Passez vos paramètres en revue. 
 
    ![Créer un pare-feu - Vérifier les paramètres](../media/review-all-configurations-for-firewall.png)
 
-1. Sélectionnez **Revoir + créer**.
+1. Passez à **Examiner et créer**, puis **Créer**.
 
-1. Sélectionnez **Créer** et attendez que le déploiement du pare-feu se termine.
+1. Attendez la fin du déploiement du pare-feu.
 
 1. Une fois le déploiement du pare-feu terminé, sélectionnez **Accéder à la ressource**.
 
@@ -366,7 +366,7 @@ Dans cette dernière tâche, vous allez tester le pare-feu pour vérifier que le
 
 ## Nettoyer les ressources
 
->**Remarque** : N’oubliez pas de supprimer toutes les nouvelles ressources Azure que vous n’utilisez plus. La suppression des ressources inutilisées vous évitera d’encourir des frais inattendus.
+   >**Remarque** : N’oubliez pas de supprimer toutes les nouvelles ressources Azure que vous n’utilisez plus. La suppression des ressources inutilisées vous évitera d’encourir des frais inattendus.
 
 1. Dans le portail Azure, ouvrez la session **PowerShell** dans le volet **Cloud Shell**.
 
@@ -376,7 +376,7 @@ Dans cette dernière tâche, vous allez tester le pare-feu pour vérifier que le
    Remove-AzResourceGroup -Name 'Test-FW-RG' -Force -AsJob
    ```
 
->**Remarque** : La commande s’exécute de façon asynchrone (tel que déterminé par le paramètre -AsJob). Vous pourrez donc exécuter une autre commande PowerShell immédiatement après au cours de la même session PowerShell, mais la suppression effective du groupe de ressources peut prendre quelques minutes.
+   >**Remarque** : La commande s’exécute de façon asynchrone (tel que déterminé par le paramètre -AsJob). Vous pourrez donc exécuter une autre commande PowerShell immédiatement après au cours de la même session PowerShell, mais la suppression effective du groupe de ressources peut prendre quelques minutes.
 
 ## Développer votre apprentissage avec Copilot
 

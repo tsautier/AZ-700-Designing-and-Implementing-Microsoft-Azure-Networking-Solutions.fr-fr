@@ -13,7 +13,7 @@ Dans cet exercice, vous allez utiliser le Portail Azure pour créer une passerel
 ![Diagramme d’une architecture de passerelle applicative.](../media/4-exercise-deploy-azure-application-gateway.png)
 
 
->**Remarque :** Une **[simulation de labo interactive](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Deploy%20Azure%20Application%20Gateway)** est disponible et vous permet de progresser à votre propre rythme. Il peut exister de légères différences entre la simulation interactive et le labo hébergé. Toutefois, les concepts et idées de base présentés sont identiques.
+   >**Remarque :** Une **[simulation de labo interactive](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Deploy%20Azure%20Application%20Gateway)** est disponible et vous permet de progresser à votre propre rythme. Il peut exister de légères différences entre la simulation interactive et le labo hébergé. Toutefois, les concepts et idées de base présentés sont identiques.
 
 ### Durée estimée : 25 minutes
 
@@ -151,14 +151,14 @@ Dans cet exercice, vous allez :
 
 1. Déployez les modèles ARM suivants pour créer les machines virtuelles nécessaires à cet exercice :
 
->**Remarque** : Vous serez invité à fournir un mot de passe d’administrateur. 
+   >**Remarque** : Vous serez invité à fournir un mot de passe d’administrateur. 
 
    ```powershell
    $RGName = "ContosoResourceGroup"
    
    New-AzResourceGroupDeployment -ResourceGroupName $RGName -TemplateFile backend.json -TemplateParameterFile backend.parameters.json
    ```
->**Remarque** : prenez le temps de passer en revue le fichier **backend.json**. Deux machines virtuelles sont en cours de déploiement. Cette opération prendra quelques minutes. 
+   >**Remarque** : prenez le temps de passer en revue le fichier **backend.json**. Deux machines virtuelles sont en cours de déploiement. Cette opération prendra quelques minutes. 
 
 1. La commande doit s’exécuter correctement et lister **BackendVM1** et **BackendVM2**.
 
@@ -172,14 +172,14 @@ Dans cet exercice, vous allez :
    Invoke-AzVMRunCommand -ResourceGroupName 'ContosoResourceGroup' -Name 'BackendVM1' -CommandId 'RunPowerShellScript' -ScriptPath 'install-iis.ps1'
    ```
 
->**Remarque** : pendant que vous patientez, vérifiez le script PowerShell. Notez que la page d’accueil IIS est personnalisée de manière à indiquer le nom de la machine virtuelle.
+   >**Remarque** : pendant que vous patientez, vérifiez le script PowerShell. Notez que la page d’accueil IIS est personnalisée de manière à indiquer le nom de la machine virtuelle.
 
 1. Exécutez à nouveau la commande, cette fois pour **BackendVM2**.
 
    ```powershell
    Invoke-AzVMRunCommand -ResourceGroupName 'ContosoResourceGroup' -Name 'BackendVM2' -CommandId 'RunPowerShellScript' -ScriptPath 'install-iis.ps1'
    ```
->**Remarque :** chacune des commandes prend quelques minutes à s’exécuter.
+   >**Remarque :** chacune des commandes prend quelques minutes à s’exécuter.
 
 ## Tâche 3 : ajouter des serveurs back-end au pool de back-ends
 
@@ -225,7 +225,7 @@ IIS n’est pas obligatoire pour créer la passerelle applicative, mais vous l�
 
 ## Nettoyer les ressources
 
->**Remarque** : N’oubliez pas de supprimer toutes les nouvelles ressources Azure que vous n’utilisez plus. La suppression des ressources inutilisées vous évitera d’encourir des frais inattendus.
+   >**Remarque** : N’oubliez pas de supprimer toutes les nouvelles ressources Azure que vous n’utilisez plus. La suppression des ressources inutilisées vous évitera d’encourir des frais inattendus.
 
 1. Dans le portail Azure, ouvrez la session **PowerShell** dans le volet **Cloud Shell**.
 
