@@ -20,13 +20,13 @@ Cette unité vous montrera :
 + Tâche 4 : créer des peerings de réseaux virtuels entre CoreServicesVnet et ManufacturingVnet
 + Tâche 5 : tester la connexion entre les machines virtuelles
 
-**Remarque :** Une **[simulation de labo interactive](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Connect%20two%20Azure%20virtual%20networks%20using%20global%20virtual%20network%20peering)** est disponible et vous permet de progresser à votre propre rythme. Il peut exister de légères différences entre la simulation interactive et le labo hébergé. Toutefois, les concepts et idées de base présentés sont identiques.
+   >**Remarque :** Une **[simulation de labo interactive](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Connect%20two%20Azure%20virtual%20networks%20using%20global%20virtual%20network%20peering)** est disponible et vous permet de progresser à votre propre rythme. Il peut exister de légères différences entre la simulation interactive et le labo hébergé. Toutefois, les concepts et idées de base présentés sont identiques.
 
 ### Durée estimée : 20 minutes
 
 ## Tâche 1 : créer une machine virtuelle pour tester la configuration
 
-Dans cette section, vous allez créer une machine virtuelle de test sur le réseau virtuel Manufacturing pour tester si vous pouvez accéder à des ressources à l’intérieur d’un autre réseau virtuel Azure à partir de ManufacturingVnet.
+Dans cette section, vous allez créer une machine virtuelle de test sur le réseau virtuel pour tester si vous pouvez accéder à des ressources à l’intérieur d’un autre réseau virtuel Azure à partir de votre réseau virtuel.
 
 ### Créer ManufacturingVM
 
@@ -112,7 +112,7 @@ Dans cette section, vous allez créer une machine virtuelle de test sur le rése
 
    | **Option**                                    | **Valeur**                             |
    | ------------------------------------ | --------------------------------------------- | 
-   | Nom du lien de peering    | `CoreServicesVnet-to-ManufacturingVnet` |
+   | Nom du lien de peering    | `ManufacturingVnet-to-CoreServicesVnet` |
    | Réseau virtuel | ManufacturingVnet |
 
     **Paramètres d’appairage de réseaux virtuels distants**

@@ -14,7 +14,7 @@ Dans cet exercice, vous allez créer le réseau virtuel Spoke et créer un hub v
 ![Diagramme de l’architecture de réseau virtuel avec un hub sécurisé.](../media/9-exercise-secure-your-virtual-hub-using-azure-firewall-manager.png)
 
 
-**Remarque :** Une **[simulation de labo interactive](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Secure%20your%20virtual%20hub%20using%20Azure%20Firewall%20Manager)** est disponible et vous permet de progresser à votre propre rythme. Il peut exister de légères différences entre la simulation interactive et le labo hébergé. Toutefois, les concepts et idées de base présentés sont identiques.
+   >**Remarque :** Une **[simulation de labo interactive](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Secure%20your%20virtual%20hub%20using%20Azure%20Firewall%20Manager)** est disponible et vous permet de progresser à votre propre rythme. Il peut exister de légères différences entre la simulation interactive et le labo hébergé. Toutefois, les concepts et idées de base présentés sont identiques.
 
 ## Créer une architecture hub and spoke
 
@@ -40,19 +40,32 @@ Dans cet exercice, vous allez :
 Au cours de cette tâche, vous allez créer les deux réseaux virtuels Spoke contenant chacun un sous-réseau qui hébergera vos serveurs de charge de travail.
 
 1. Sur la page d’accueil du portail Azure, dans la zone de recherche, entrez **Réseau virtuel**, puis sélectionnez **Réseau virtuel** lorsque la valeur apparaît.
-2. Sélectionnez **Créer**.
-3. Dans **Groupe de ressources**, sélectionnez **Créer**, puis entrez **fw-manager-rg** comme nom et sélectionnez **OK**.
-4. Dans **Nom**, entrez **Spoke-01**.
-5. Dans **Région**, sélectionnez votre région.
-6. Sélectionnez **Suivant : Adresses IP**.
-7. Dans **Espace d’adressage IPv4**, entrez **10.0.0.0/16**.
-8. **Supprimez** tous les autres espaces d’adressage répertoriés ici, par exemple **10.1.0.0/16**.
-9. Sous **Nom de sous-réseau**, sélectionnez le mot **par défaut**.
-10. Dans la boîte de dialogue **Modifier le sous-réseau**, remplacez le nom par **Workload-01-SN**.
-11. Remplacez la **Plage d’adresses de sous-réseau** par **10.0.1.0/24**.
-12. Sélectionnez **Enregistrer**.
-13. Sélectionnez **Revoir + créer**.
-14. Sélectionnez **Create** (Créer).
+
+1. Sélectionnez **Créer**.
+
+1. Dans **Groupe de ressources**, sélectionnez **Créer**, puis entrez **fw-manager-rg** comme nom et sélectionnez **OK**.
+
+1. Dans **Nom**, entrez **Spoke-01**.
+
+1. Dans **Région**, sélectionnez votre région.
+
+1. Sélectionnez **Suivant : Adresses IP**.
+
+1. Dans **Espace d’adressage IPv4**, entrez **10.0.0.0/16**.
+
+1. **Supprimez** tous les autres espaces d’adressage répertoriés ici, par exemple **10.1.0.0/16**.
+
+1. Sous **Nom de sous-réseau**, sélectionnez le mot **par défaut**.
+
+1. Dans la boîte de dialogue **Modifier le sous-réseau**, remplacez le nom par **Workload-01-SN**.
+
+1. Remplacez la **Plage d’adresses de sous-réseau** par **10.0.1.0/24**.
+
+1. Sélectionnez **Enregistrer**.
+
+1. Sélectionnez **Revoir + créer**.
+
+1. Sélectionnez **Create** (Créer).
 
 Répétez les étapes 1 à 14 ci-dessus pour créer un autre réseau virtuel et un sous-réseau similaires, mais à l’aide des informations suivantes :
 
@@ -68,32 +81,32 @@ Au cours de cette tâche, vous allez créer votre hub virtuel sécurisé à l’
 
 1. À partir de la page d’accueil du portail Azure, sélectionnez **Tous les services**.
 
-2. Dans la zone de recherche, saisissez **Firewall Manager** et sélectionnez **Firewall Manager** lorsqu’il apparaît.
+1. Dans la zone de recherche, saisissez **Firewall Manager** et sélectionnez **Firewall Manager** lorsqu’il apparaît.
 
-3. Sur la page **Firewall Manager**, à partir de la page Vue d’ensemble, sélectionnez **Voir les hubs virtuels sécurisés**.
+1. Sur la page **Firewall Manager**, à partir de la page Vue d’ensemble, sélectionnez **Voir les hubs virtuels sécurisés**.
 
-4. Sur la page **Hubs virtuels**, sélectionnez **Créer un hub virtuel sécurisé**.
+1. Sur la page **Hubs virtuels**, sélectionnez **Créer un hub virtuel sécurisé**.
 
-5. Pour **Groupe de ressources**, sélectionnez **fw-manager-rg**.
+1. Pour **Groupe de ressources**, sélectionnez **fw-manager-rg**.
 
-6. Pour **Région**, sélectionnez votre région.
+1. Pour **Région**, sélectionnez votre région.
 
-7. Pour le **Nom du hub virtuel sécurisé**, entrez **Hub-01**.
+1. Pour le **Nom du hub virtuel sécurisé**, entrez **Hub-01**.
 
-8. Pour **Espace d’adressage du hub**, entrez **10.2.0.0/16**.
+1. Pour **Espace d’adressage du hub**, entrez **10.2.0.0/16**.
 
-9. Choisissez **Nouveau WAN virtuel**.
+1. Choisissez **Nouveau WAN virtuel**.
 
-10. Dans **Nom de WAN virtuel**, entrez **Vwan-01**.
+1. Dans **Nom de WAN virtuel**, entrez **Vwan-01**.
 
-11. Sélectionnez **Suivant : Pare-feu Azure**.
+1. Sélectionnez **Suivant : Pare-feu Azure**.
     ![Créer un hub virtuel sécurisé - Onglet Général](../media/create-new-secured-virtual-hub-1.png)
 
-12. Sélectionnez **Suivant : Fournisseur de partenaire de sécurité**.
+1. Sélectionnez **Suivant : Fournisseur de partenaire de sécurité**.
 
-13. Sélectionnez **Suivant : Vérifier + créer**.
+1. Sélectionnez **Suivant : Vérifier + créer**.
 
-14. Sélectionnez **Créer**.
+1. Sélectionnez **Créer**.
 
     > **[!NOTE]**
     >
@@ -103,35 +116,44 @@ Au cours de cette tâche, vous allez créer votre hub virtuel sécurisé à l’
 
     ![Créer un hub virtuel sécurisé - Onglet Vérifier + créer](../media/create-new-secured-virtual-hub-2.png)
 
-15. Une fois le déploiement terminé, dans la page d’accueil du portail Azure, sélectionnez **Tous les services**.
+1. Une fois le déploiement terminé, dans la page d’accueil du portail Azure, sélectionnez **Tous les services**.
 
-16. Dans la zone de recherche, saisissez **Firewall Manager** et sélectionnez **Firewall Manager** lorsqu’il apparaît.
+1. Dans la zone de recherche, saisissez **Firewall Manager** et sélectionnez **Firewall Manager** lorsqu’il apparaît.
 
-17. Dans la page **Firewall Manager**, sélectionnez **Afficher les hubs virtuels**.
+1. Dans la page **Firewall Manager**, sélectionnez **Afficher les hubs virtuels**.
 
-18. Sélectionnez **Hub-01**.
+1. Sélectionnez **Hub-01**.
 
-19. Sélectionnez **Configuration d’adresse IP publique**.
+1. Sélectionnez **Configuration d’adresse IP publique**.
 
-20. Notez l’adresse IP publique (par exemple **51.143.226.18**), que vous utiliserez ultérieurement.
+1. Notez l’adresse IP publique (par exemple **51.143.226.18**), que vous utiliserez ultérieurement.
 
 ## Tâche 3 : connecter les réseaux virtuels en étoile
 
 Au cours de cette tâche, vous allez connecter les réseaux virtuels Hub and Spoke. Cela est communément appelé peering.
 
 1. Sur la page d’accueil du portail Azure, sélectionnez **Groupes de ressources**.
-2. Sélectionnez le groupe de ressources **fw-manager-rg**, puis le WAN virtuel **Vwan-01**.
-3. Sous **Connectivité**, sélectionnez **Connexions de réseau virtuel**.
-4. Sélectionnez **Ajouter une connexion**.
-5. Pour **Nom de la connexion**, entrez **hub-spoke-01**.
-6. Pour **Hubs**, sélectionnez **Hub-01**.
-7. Pour **Groupe de ressources**, sélectionnez **fw-manager-rg**.
-8. Pour **Réseau virtuel**, sélectionnez **Spoke-01**.
-9. Sélectionnez **Créer**.
-   ![Ajouter une connexion Hub and Spoke à un WAN virtuel - Spoke 1](../media/connect-hub-spoke-vnet-1.png)
-10. Répétez les étapes 4 à 9 ci-dessus pour créer une autre connexion similaire, mais en utilisant le nom de connexion **hub-spoke-02** pour connecter le réseau virtuel **Spoke-02**.
 
-![Ajouter une connexion Hub and Spoke à un WAN virtuel - Spoke 2](../media/connect-hub-spoke-vnet-2.png)
+1. Sélectionnez le groupe de ressources **fw-manager-rg**, puis le WAN virtuel **Vwan-01**.
+
+1. Sous **Connectivité**, sélectionnez **Connexions de réseau virtuel**.
+
+1. Sélectionnez **Ajouter une connexion**.
+
+1. Pour **Nom de la connexion**, entrez **hub-spoke-01**.
+
+1. Pour **Hubs**, sélectionnez **Hub-01**.
+
+1. Pour **Groupe de ressources**, sélectionnez **fw-manager-rg**.
+
+1. Pour **Réseau virtuel**, sélectionnez **Spoke-01**.
+
+1. Sélectionnez **Créer**.
+   ![Ajouter une connexion Hub and Spoke à un WAN virtuel - Spoke 1](../media/connect-hub-spoke-vnet-1.png)
+
+1. Répétez les étapes 4 à 9 ci-dessus pour créer une autre connexion similaire, mais en utilisant le nom de connexion **hub-spoke-02** pour connecter le réseau virtuel **Spoke-02**.
+
+    ![Ajouter une connexion Hub and Spoke à un WAN virtuel - Spoke 2](../media/connect-hub-spoke-vnet-2.png)
 
 ## Tâche 4 : déployer les serveurs
 
@@ -277,11 +299,17 @@ Au cours de cette tâche, vous allez associer la stratégie de pare-feu au hub v
 
 1. Dans la page d’accueil du portail Azure, sélectionnez **Firewall Manager**.
    + Si l’icône de Firewall Manager n’apparaît pas sur la page d’accueil, sélectionnez **Tous les services**. Ensuite, dans la zone de recherche, saisissez **Firewall Manager** et sélectionnez **Firewall Manager** lorsqu’il apparaît.
+
 1. Dans **Firewall Manager**, sous **Sécurité**, sélectionnez **Stratégies de pare-feu Azure**.
+
 1. Cochez la case **Policy-01**.
+
 1. Sélectionnez **Gérer les associations&gt;associer des hubs**.
+
 1. Activez la case à cocher **Hub-01**.
+
 1. Sélectionnez **Ajouter**.
+
 1. Une fois la stratégie attachée, sélectionnez **Actualiser**. L’association doit être affichée.
 
 ![Afficher la stratégie de pare-feu associée sur le hub](../media/associate-firewall-policy-with-hub-end.png)
@@ -375,4 +403,4 @@ Dans cette tâche, vous allez tester la règle réseau pour confirmer qu’elle 
    Remove-AzResourceGroup -Name 'fw-manager-rg' -Force -AsJob
    ```
 
-    >**Remarque** : La commande s’exécute de façon asynchrone (tel que déterminé par le paramètre -AsJob). Vous pourrez donc exécuter une autre commande PowerShell immédiatement après au cours de la même session PowerShell, mais la suppression effective du groupe de ressources peut prendre quelques minutes.
+   >**Remarque** : La commande s’exécute de façon asynchrone (tel que déterminé par le paramètre -AsJob). Vous pourrez donc exécuter une autre commande PowerShell immédiatement après au cours de la même session PowerShell, mais la suppression effective du groupe de ressources peut prendre quelques minutes.
