@@ -26,7 +26,7 @@ Dans cet exercice, vous allez :
 + Tâche 10 : Confirmer l’accès au compte de stockage
 
 
-**Remarque :** Une **[simulation de labo interactive](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Restrict%20network%20access%20to%20PaaS%20resources%20with%20virtual%20network%20service%20endpoints)** est disponible et vous permet de progresser à votre propre rythme. Il peut exister de légères différences entre la simulation interactive et le labo hébergé. Toutefois, les concepts et idées de base présentés sont identiques.
+   >**Remarque :** Une **[simulation de labo interactive](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Restrict%20network%20access%20to%20PaaS%20resources%20with%20virtual%20network%20service%20endpoints)** est disponible et vous permet de progresser à votre propre rythme. Il peut exister de légères différences entre la simulation interactive et le labo hébergé. Toutefois, les concepts et idées de base présentés sont identiques.
 
 ### Durée estimée : 35 minutes
 
@@ -325,7 +325,7 @@ Vous ne recevez aucune réponse, car le groupe de sécurité réseau associé au
 
  L’accès est refusé, car votre ordinateur ne se trouve pas dans le sous-réseau Private du réseau virtuel CoreServicesVNet.
 
-> **Avertissement** : avant de continuer, vous devez supprimer toutes les ressources utilisées pour ce labo. Pour ce faire, dans le portail Azure, sélectionnez Groupes de ressources. Sélectionnez les groupes de ressources que vous avez créés. Dans le panneau du groupe de ressources, sélectionnez Supprimer un groupe de ressources, entrez le nom du groupe de ressources, puis sélectionnez Supprimer. Répétez le processus pour tous les groupes de ressources supplémentaires que vous avez créés. Sinon, vous risquez de provoquer des problèmes avec d’autres labos.
+   >**Avertissement** : avant de continuer, vous devez supprimer toutes les ressources utilisées pour ce labo. Pour ce faire, dans le portail Azure, sélectionnez Groupes de ressources. Sélectionnez les groupes de ressources que vous avez créés. Dans le panneau du groupe de ressources, sélectionnez Supprimer un groupe de ressources, entrez le nom du groupe de ressources, puis sélectionnez Supprimer. Répétez le processus pour tous les groupes de ressources supplémentaires que vous avez créés. Sinon, vous risquez de provoquer des problèmes avec d’autres labos.
 
 Résultats : vous avez maintenant terminé ce labo.
 
@@ -341,7 +341,7 @@ Résultats : vous avez maintenant terminé ce labo.
    Remove-AzResourceGroup -Name 'myResourceGroup' -Force -AsJob
    ```
 
->**Remarque** : La commande s’exécute de façon asynchrone (tel que déterminé par le paramètre -AsJob). Vous pourrez donc exécuter une autre commande PowerShell immédiatement après au cours de la même session PowerShell, mais la suppression effective du groupe de ressources peut prendre quelques minutes.
+   >**Remarque** : La commande s’exécute de façon asynchrone (tel que déterminé par le paramètre -AsJob). Vous pourrez donc exécuter une autre commande PowerShell immédiatement après au cours de la même session PowerShell, mais la suppression effective du groupe de ressources peut prendre quelques minutes.
 
 ## Développer votre apprentissage avec Copilot
 

@@ -9,7 +9,7 @@ Exercise:
 
 Dans cet exercice, vous allez créer un circuit ExpressRoute à l’aide du portail Azure et du modèle de déploiement Azure Resource Manager.
 
-**Remarque :** Une **[simulation de labo interactive](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Provision%20an%20ExpressRoute%20circuit)** est disponible et vous permet de progresser à votre propre rythme. Il peut exister de légères différences entre la simulation interactive et le labo hébergé. Toutefois, les concepts et idées de base présentés sont identiques.
+   >**Remarque :** Une **[simulation de labo interactive](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Provision%20an%20ExpressRoute%20circuit)** est disponible et vous permet de progresser à votre propre rythme. Il peut exister de légères différences entre la simulation interactive et le labo hébergé. Toutefois, les concepts et idées de base présentés sont identiques.
 
 ### Durée estimée : 15 minutes
 
@@ -26,17 +26,15 @@ Dans cet exercice, vous allez :
 
 1. Dans un navigateur, accédez au [portail Azure](https://portal.azure.com/) et connectez-vous avec votre compte Azure.
 
-   > [!Important]
-   >
-   > Votre circuit ExpressRoute est facturé à partir de l’émission d'une clé de service. Effectuez cette opération seulement quand le fournisseur de connectivité prêt à approvisionner le circuit.
+   >**Important** : votre circuit ExpressRoute est facturé à partir de l’émission d’une clé de service. Effectuez cette opération seulement quand le fournisseur de connectivité prêt à approvisionner le circuit.
 
 1. Dans le menu du portail Azure, sélectionnez **+ Créer une ressource**. Sélectionnez **Mise en réseau**, puis **ExpressRoute**, comme illustré dans l’image suivante. Si ExpressRoute n’apparaît pas dans la liste, utilisez **Rechercher dans la Place de marché** pour le rechercher :
 
    ![Portail Azure - Menu de création de circuit ExpressRoute](../media/create-expressroute-circuit-menu.png)
 
-1. Dans la page **Créer un circuit ExpressRoute**, indiquez le **Groupe de ressources**, la **Région** et le **Nom** du circuit en utilisant les éléments suivants : ExpressRouteResourceGroup, USA Est 2, TestERCircuit. Ensuite, sélectionnez **Suivant : Configuration &gt;**.
+1. Dans la page **Créer ExpressRoute**, indiquez ExpressRouteResourceGroup pour le **groupe de ressources**. Sélectionnez ensuite **Résilience standard** pour la **résilience**.
 
-1. Lorsque vous renseignez les valeurs de cette page, pour cet exemple, assurez-vous de spécifier le bon niveau de référence SKU (**Standard**), modèle de facturation de contrôle de données (**À l’usage**), fournisseur (**Equinix**), lieu du peering (**Seattle**) et bande passante (**50 Mops**).
+1. Pour ***Détails du circuit**, vérifiez que vous spécifiez la région correcte (**USA Est 2**), le nom du circuit (**TestERCircuit**), l’emplacement de peering (**Seattle**), le fournisseur (**Equinix**), la bande passante (**50 Mops**), le niveau de référence SKU (**Standard**) et le modèle de facturation des données (**Limitées**).
 
 1. Sélectionnez **Vérifier + créer**.
 
@@ -55,9 +53,7 @@ Dans cet exercice, vous allez :
 
 + La **référence SKU** détermine si un module complémentaire ExpressRoute local, ExpressRoute standard ou ExpressRoute premium est activé. Vous pouvez spécifier **Local** pour obtenir la référence SKU locale, **Standard** pour obtenir la référence SKU standard ou **Premium** pour le module complémentaire Premium. Vous pouvez changer la référence SKU pour activer le module complémentaire Premium.
 
-> [!Important]
->
-> Vous ne pouvez pas remplacer la référence SKU de Standard/Premium par celle de Local.
+   >**Important** : vous ne pouvez pas remplacer la référence SKU de Standard/Premium par celle de Local.
 
 + Le **modèle de facturation** détermine le type de facturation. Vous pouvez spécifier **Limité** pour un forfait de données limité, et **Illimité** pour un forfait de données illimité. Vous pouvez changer le type de facturation de **Limité** à **Illimité**.
 
@@ -104,11 +100,7 @@ Félicitations ! Vous avez créé un circuit ExpressRoute et localisé la clé d
 
 Si l’état de provisionnement du fournisseur de services du circuit ExpressRoute est **En cours de provisionnement** ou **Provisionné**, vous devez vous mettre en relation avec votre fournisseur de services pour déprovisionner le circuit de son côté. Microsoft peut continuer à réserver des ressources et à vous facturer jusqu’à ce que le fournisseur de services termine le déprovisionnement du circuit et nous informe.
 
-> [!Note]
->
-> Vous devez dissocier tous les réseaux virtuels du circuit ExpressRoute avant le déprovisionnement. Si cette opération échoue, vérifiez si certains de vos réseaux virtuels sont liés au circuit.
->
-> Si le fournisseur de services a annulé l’approvisionnement du circuit (l’état d’approvisionnement du fournisseur de services affiche la valeur Non approvisionné), vous pouvez supprimer le circuit. Cette opération arrête la facturation du circuit.
+   >**Remarque** : vous devez dissocier tous les réseaux virtuels du circuit ExpressRoute avant le déprovisionnement. Si cette opération échoue, vérifiez si certains de vos réseaux virtuels sont liés au circuit. Si le fournisseur de services a annulé l’approvisionnement du circuit (l’état d’approvisionnement du fournisseur de services affiche la valeur Non approvisionné), vous pouvez supprimer le circuit. Cette opération arrête la facturation du circuit.
 
 ## Nettoyer les ressources
 
@@ -116,7 +108,7 @@ Vous pouvez supprimer votre circuit ExpressRoute en sélectionnant l’icône **
 
 ![Portail Azure - Supprimer un circuit ExpressRoute](../media/expressroute-circuit-delete.png)
 
->**Remarque** : N’oubliez pas de supprimer toutes les nouvelles ressources Azure que vous n’utilisez plus. La suppression des ressources inutilisées vous évitera d’encourir des frais inattendus.
+   >**Remarque** : N’oubliez pas de supprimer toutes les nouvelles ressources Azure que vous n’utilisez plus. La suppression des ressources inutilisées vous évitera d’encourir des frais inattendus.
 
 1. Dans le portail Azure, ouvrez la session **PowerShell** dans le volet **Cloud Shell**.
 
@@ -127,7 +119,7 @@ Vous pouvez supprimer votre circuit ExpressRoute en sélectionnant l’icône **
    Remove-AzResourceGroup -Name 'ExpressRouteResourceGroup' -Force -AsJob
    ```
 
->**Remarque** : La commande s’exécute de façon asynchrone (tel que déterminé par le paramètre -AsJob). Vous pourrez donc exécuter une autre commande PowerShell immédiatement après au cours de la même session PowerShell, mais la suppression effective du groupe de ressources peut prendre quelques minutes.
+   >**Remarque** : La commande s’exécute de façon asynchrone (tel que déterminé par le paramètre -AsJob). Vous pourrez donc exécuter une autre commande PowerShell immédiatement après au cours de la même session PowerShell, mais la suppression effective du groupe de ressources peut prendre quelques minutes.
 
 ## Développer votre apprentissage avec Copilot
 
