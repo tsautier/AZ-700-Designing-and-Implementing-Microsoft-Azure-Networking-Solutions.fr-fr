@@ -201,7 +201,7 @@ Dans cet exercice, vous allez :
    |                 |                   | SKU                                         | VpnGw1                       |
    |                 |                   | Generation                                  | Génération1                  |
    |                 |                   | Réseau virtuel                             | ManufacturingVnet            |
-   |                 |                   | Sous-réseau                                      | GatewaySubnet (10.30.0.0/27) |
+   |                 |                   | Sous-réseau                                      | GatewaySubnet |
    |                 |                   | Type d’adresse IP publique                      | Standard                     |
    |                 | Adresse IP publique | Adresse IP publique                           | Création                   |
    |                 |                   | Nom de l’adresse IP publique                      | ManufacturingVnetGateway-ip  |
