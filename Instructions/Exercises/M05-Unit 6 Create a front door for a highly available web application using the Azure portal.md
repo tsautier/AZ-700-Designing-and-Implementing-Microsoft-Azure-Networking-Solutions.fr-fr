@@ -43,8 +43,8 @@ Cet exercice demande deux instances d’une application web qui s’exécutent d
    | Resource group   | Sélectionnez le groupe de ressources ContosoResourceGroup.               |
    | Nom             | Attribuez un Nom unique à votre application web. Cet exemple utilise WebAppContoso-1. |
    | Publish          | Sélectionnez **Code**.                                             |
-   | Pile d’exécution    | Sélectionnez **.NET 6 (LTS)**.                                     |
-   | Système d'exploitation | Sélectionnez **Windows**.                                          |
+   | Pile d’exécution    | Sélectionnez **.NET 8 (LTS)**.                                     |
+   | Système d’exploitation | Sélectionnez **Windows**.                                          |
    | Région           | Sélectionnez **USA Centre**.                                       |
    | Plan Windows     | Sélectionnez **Créer** et entrez myAppServicePlanCentralUS dans la zone de texte. |
    | Plan tarifaire    | Sélectionnez **Standard S1 100 ACU au total, 1,75 Go de mémoire**.        |
@@ -64,8 +64,8 @@ Cet exercice demande deux instances d’une application web qui s’exécutent d
    | Resource group   | Sélectionnez le groupe de ressources ContosoResourceGroup.               |
    | Nom             | Attribuez un Nom unique à votre application web. Cet exemple utilise WebAppContoso-2. |
    | Publish          | Sélectionnez **Code**.                                             |
-   | Pile d’exécution    | Sélectionnez **.NET 6 (LTS)**.                                     |
-   | Système d'exploitation | Sélectionnez **Windows**.                                          |
+   | Pile d’exécution    | Sélectionnez **.NET 8 (LTS)**.                                     |
+   | Système d’exploitation | Sélectionnez **Windows**.                                          |
    | Région           | Sélectionnez **USA Est**.                                          |
    | Plan Windows     | Sélectionnez **Créer** et entrez myAppServicePlanEastUS dans la zone de texte. |
    | Plan tarifaire     | Sélectionnez **Standard S1 100 ACU au total, 1,75 Go de mémoire**.        |
@@ -135,7 +135,7 @@ Une fois la porte d’entrée créée, le déploiement global de la configuratio
 
 ## Nettoyer les ressources
 
-   >**Remarque** : N’oubliez pas de supprimer toutes les nouvelles ressources Azure que vous n’utilisez plus. La suppression des ressources inutilisées vous évitera d’encourir des frais inattendus.
+   >**Remarque** : N’oubliez pas de supprimer toutes les nouvelles ressources Azure que vous n’utilisez plus. La suppression des ressources inutilisées vous évitera d’encourir des frais inattendus.
 
 1. Dans le portail Azure, ouvrez la session **PowerShell** dans le volet **Cloud Shell**.
 
@@ -147,7 +147,7 @@ Une fois la porte d’entrée créée, le déploiement global de la configuratio
 
    ```
 
-   >**Remarque** : La commande s’exécute de façon asynchrone (tel que déterminé par le paramètre -AsJob). Vous pourrez donc exécuter une autre commande PowerShell immédiatement après au cours de la même session PowerShell, mais la suppression effective du groupe de ressources peut prendre quelques minutes.
+   >**Remarque** : La commande s’exécute de façon asynchrone (tel que déterminé par le paramètre -AsJob). Vous pourrez donc exécuter une autre commande PowerShell immédiatement après au cours de la même session PowerShell, mais la suppression effective du groupe de ressources peut prendre quelques minutes.
 
 ## Développer votre apprentissage avec Copilot
 
