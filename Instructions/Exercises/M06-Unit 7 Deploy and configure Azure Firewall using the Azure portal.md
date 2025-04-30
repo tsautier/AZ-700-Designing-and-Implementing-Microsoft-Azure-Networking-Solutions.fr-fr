@@ -218,7 +218,7 @@ Dans cette tâche, vous allez ajouter une règle d’application qui autorise l�
 
 1. Dans la liste des ressources, sélectionnez votre stratégie de pare-feu, **fw-test-pol**.
 
-1. Sous **Paramètres**, sélectionnez **Règles d’application**.
+1. Sous **Règles**, sélectionnez **Règles d’application**.
 
 1. Sélectionnez **Ajouter une collection de règles**.
 
@@ -247,7 +247,7 @@ Dans cette tâche, vous allez ajouter une règle d’application qui autorise l�
 
 Dans cette tâche, vous allez ajouter une règle réseau qui autorise l’accès sortant à deux adresses IP sur le port 53 (DNS).
 
-1. Dans la page **fw-test-pol**, sous **Paramètres**, sélectionnez **Règles réseau**.
+1. Sur la page **fw-test-pol**, sous **Règles**, sélectionnez **Règles réseau**.
 
 1. Sélectionnez **Ajouter une collection de règles**.
 
@@ -277,7 +277,7 @@ Dans cette tâche, vous allez ajouter une règle réseau qui autorise l’accès
 
 Au cours de cette tâche, vous allez ajouter une règle DNAT qui vous permet de connecter un bureau à distance à la machine virtuelle Srv-Work par le biais du pare-feu.
 
-1. Dans la page **fw-test-pol**, sous **Paramètres**, sélectionnez **Règles DNAT**.
+1. Dans la page **fw-test-pol**, sous **Règles**, sélectionnez **Règles DNAT**.
 
 1. Sélectionnez **Ajouter une collection de règles**.
 
@@ -366,7 +366,7 @@ Dans cette dernière tâche, vous allez tester le pare-feu pour vérifier que le
 
 ## Nettoyer les ressources
 
-   >**Remarque** : N’oubliez pas de supprimer toutes les nouvelles ressources Azure que vous n’utilisez plus. La suppression des ressources inutilisées vous évitera d’encourir des frais inattendus.
+   >**Remarque** : N’oubliez pas de supprimer toutes les nouvelles ressources Azure que vous n’utilisez plus. La suppression des ressources inutilisées vous évitera d’encourir des frais inattendus.
 
 1. Dans le portail Azure, ouvrez la session **PowerShell** dans le volet **Cloud Shell**.
 
@@ -376,7 +376,7 @@ Dans cette dernière tâche, vous allez tester le pare-feu pour vérifier que le
    Remove-AzResourceGroup -Name 'Test-FW-RG' -Force -AsJob
    ```
 
-   >**Remarque** : La commande s’exécute de façon asynchrone (tel que déterminé par le paramètre -AsJob). Vous pourrez donc exécuter une autre commande PowerShell immédiatement après au cours de la même session PowerShell, mais la suppression effective du groupe de ressources peut prendre quelques minutes.
+   >**Remarque** : La commande s’exécute de façon asynchrone (tel que déterminé par le paramètre -AsJob). Vous pourrez donc exécuter une autre commande PowerShell immédiatement après au cours de la même session PowerShell, mais la suppression effective du groupe de ressources peut prendre quelques minutes.
 
 ## Développer votre apprentissage avec Copilot
 
