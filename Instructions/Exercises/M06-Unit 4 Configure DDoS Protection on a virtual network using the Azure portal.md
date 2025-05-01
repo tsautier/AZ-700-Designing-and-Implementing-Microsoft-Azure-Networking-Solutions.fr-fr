@@ -214,23 +214,13 @@ Au cours de cette étape, vous allez créer une machine virtuelle, lui affecter 
 
 ## Tâche 7 : tester avec des partenaires de simulation
 
-1. Évaluez la [Stratégie de test de simulation DDoS dans Azure](https://learn.microsoft.com/azure/ddos-protection/test-through-simulations#azure-ddos-simulation-testing-policy)
+1. Consultez la page [Stratégie de test de simulation DDoS Azure](https://learn.microsoft.com/en-us/azure/ddos-protection/test-through-simulations#configure-a-ddos-attack-simulation). 
 
-1. Configurez une attaque de test DDoS à l’aide d’un partenaire de test approuvé. Si vous utilisez BreakingPoint Cloud pour effectuer le test, employez les paramètres visibles sur la capture d’écran ci-dessous (vous devrez peut-être sélectionner la taille de test PPS 100 000 avec le compte d’évaluation), mais en spécifiant l’adresse IP de votre propre ressource **MyPublicIPAddress** dans la zone **Adresse IP cible** (par exemple, **51.140.137.219**) ![DDOSAttack](https://user-images.githubusercontent.com/46939028/138599420-58bef33a-2597-4fa2-919f-bf1614037bc3.JPG)
-
-1. Dans la page d’accueil du portail Azure, sélectionnez **Toutes les ressources**.
-
-1. Dans la liste des ressources, sélectionnez votre ressource **MyPublicIPAddress**, puis sous **Surveillance**, sélectionnez **Métriques**.
-
-1. Dans la zone **Métrique**, sélectionnez **Sous attaque DDoS ou non** dans la liste.
-
-1. Vous pouvez maintenant voir l’attaque DDoS telle qu’elle s’est produite. Notez que l’affichage des résultats peut prendre jusqu’à 10 minutes.
-
-   ![Métriques présentant une ressource sous attaque DDoS](../media/metrics-showing-resource-under-attack.png)
+1. Remarquez qu’il existe plusieurs partenaires de test. Lorsque vous avez le temps, configurez une simulation d’attaque DDoS. Pour BreakingPoint Cloud, vous devez d’abord créer un compte BreakingPoint Cloud.
 
 ## Nettoyer les ressources
 
-   >**Remarque** : N’oubliez pas de supprimer toutes les nouvelles ressources Azure que vous n’utilisez plus. La suppression des ressources inutilisées vous évitera d’encourir des frais inattendus.
+   >**Remarque** : N’oubliez pas de supprimer toutes les nouvelles ressources Azure que vous n’utilisez plus. La suppression des ressources inutilisées vous évitera d’encourir des frais inattendus.
 
 1. Dans le portail Azure, ouvrez la session **PowerShell** dans le volet **Cloud Shell**.
 
@@ -240,7 +230,7 @@ Au cours de cette étape, vous allez créer une machine virtuelle, lui affecter 
    Remove-AzResourceGroup -Name 'MyResourceGroup' -Force -AsJob
    ```
 
-   >**Remarque** : La commande s’exécute de façon asynchrone (tel que déterminé par le paramètre -AsJob). Vous pourrez donc exécuter une autre commande PowerShell immédiatement après au cours de la même session PowerShell, mais la suppression effective du groupe de ressources peut prendre quelques minutes.
+   >**Remarque** : La commande s’exécute de façon asynchrone (tel que déterminé par le paramètre -AsJob). Vous pourrez donc exécuter une autre commande PowerShell immédiatement après au cours de la même session PowerShell, mais la suppression effective du groupe de ressources peut prendre quelques minutes.
 
 ## Développer votre apprentissage avec Copilot
 
