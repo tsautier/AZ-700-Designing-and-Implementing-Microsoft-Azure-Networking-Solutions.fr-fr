@@ -79,9 +79,11 @@ Dans cette section, vous allez créer trois machines virtuelles qui seront dans 
     + Sélectionnez **Aucun compte de stockage requis** et votre **abonnement**, puis sélectionnez **Appliquer**.
     + Attendez que le terminal crée et qu’une invite s’affiche. 
 
-2. Dans la barre d’outils du volet Cloud Shell, sélectionnez l’icône **Charger/télécharger des fichiers**, dans le menu déroulant, sélectionnez **Charger** et chargez un par un les fichiers azuredeploy.json et azuredeploy.parameters.json dans le répertoire racine de Cloud Shell.
+2. Dans la barre d’outils du volet Cloud Shell, sélectionnez l’icône **Charger/télécharger des fichiers**. Dans le menu déroulant, sélectionnez **Charger** et chargez un par un les fichiers azuredeploy.json et azuredeploy.parameters.json dans le répertoire de base de Cloud Shell.
 
-3. Déployez les modèles ARM suivants pour créer les machines virtuelles nécessaires à cet exercice :
+    > **Note :** si vous travaillez dans votre propre abonnement, les [fichiers de modèles](https://github.com/MicrosoftLearning/AZ-700-Designing-and-Implementing-Microsoft-Azure-Networking-Solutions/tree/master/Allfiles/Exercises) sont disponibles dans le référentiel de labo GitHub.
+
+4. Déployez les modèles ARM suivants pour créer les machines virtuelles nécessaires à cet exercice :
 
    >**Remarque** : Vous serez invité à fournir un mot de passe d’administrateur.
 
@@ -278,7 +280,7 @@ Dans cette section, vous allez créer une machine virtuelle de test, puis tester
 
 ## Nettoyer les ressources
 
-   >**Remarque** : N’oubliez pas de supprimer toutes les nouvelles ressources Azure que vous n’utilisez plus. La suppression des ressources inutilisées vous évitera d’encourir des frais inattendus.
+   >**Remarque** : N’oubliez pas de supprimer toutes les nouvelles ressources Azure que vous n’utilisez plus. La suppression des ressources inutilisées vous évitera d’encourir des frais inattendus.
 
 1. Dans le portail Azure, ouvrez la session **PowerShell** dans le volet **Cloud Shell**.
 
@@ -288,7 +290,7 @@ Dans cette section, vous allez créer une machine virtuelle de test, puis tester
    Remove-AzResourceGroup -Name 'IntLB-RG' -Force -AsJob
    ```
 
-   >**Remarque** : La commande s’exécute de façon asynchrone (tel que déterminé par le paramètre -AsJob). Vous pourrez donc exécuter une autre commande PowerShell immédiatement après au cours de la même session PowerShell, mais la suppression effective du groupe de ressources peut prendre quelques minutes.
+   >**Remarque** : La commande s’exécute de façon asynchrone (tel que déterminé par le paramètre -AsJob). Vous pourrez donc exécuter une autre commande PowerShell immédiatement après au cours de la même session PowerShell, mais la suppression effective du groupe de ressources peut prendre quelques minutes.
 
 ## Développer votre apprentissage avec Copilot
 

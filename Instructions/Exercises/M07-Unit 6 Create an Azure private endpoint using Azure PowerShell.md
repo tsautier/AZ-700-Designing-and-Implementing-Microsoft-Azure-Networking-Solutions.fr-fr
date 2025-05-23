@@ -31,7 +31,9 @@ Des points de terminaison privés peuvent être créés pour différents types d
 
 1. Dans le portail Azure, ouvrez la session **PowerShell** dans le volet **Cloud Shell**.
 
-1. Dans la barre d’outils du volet Cloud Shell, sélectionnez l’icône **Gérer des fichiers**, dans le menu déroulant, sélectionnez **Charger** et chargez les fichiers **template.json** et **parameters.json** dans le répertoire racine de Cloud Shell l’un après l’autre.
+1. Dans la barre d’outils du volet Cloud Shell, sélectionnez l’icône **Gérer des fichiers**. Dans le menu déroulant, sélectionnez **Charger** et chargez les fichiers **template.json** et **parameters.json** dans le répertoire de base de Cloud Shell.
+
+    > **Note :** si vous travaillez dans votre propre abonnement, les [fichiers de modèles](https://github.com/MicrosoftLearning/AZ-700-Designing-and-Implementing-Microsoft-Azure-Networking-Solutions/tree/master/Allfiles/Exercises) sont disponibles dans le référentiel de labo GitHub.
 
 Si vous choisissez d’installer et d’utiliser PowerShell en local, vous devez exécuter le module Azure PowerShell version 5.4.1 ou ultérieure pour les besoins de cet exemple. Exécutez ```Get-Module -ListAvailable Az``` pour rechercher la version installée. Si vous devez effectuer une mise à niveau, consultez [Installer le module Azure PowerShell](https://docs.microsoft.com/en-us/powershell/azure/install-az-ps). Si vous exécutez PowerShell en local, vous devez également exécuter ```Connect-AzAccount``` pour créer une connexion avec Azure.
 
