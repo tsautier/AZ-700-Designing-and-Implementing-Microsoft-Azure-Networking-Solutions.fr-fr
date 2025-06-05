@@ -12,15 +12,17 @@ Dans cet exercice, vous allez créer un WAN virtuel pour Contoso.
 
 ![Diagramme de l’architecture WAN de réseau virtuel.](../media/7-exercise-create-virtual-wan-by-using-azure-portal.png)
 
+### Compétences de tâche
 Dans cet exercice, vous allez :
 
 + Tâche 1 : Créer un WAN virtuel
 + Tâche 2 : créer un hub à partir du portail Azure
 + Tâche 3 : Connecter un VNet au hub virtuel
 
+### Simulations de labo interactives
 
-   >**Remarque :** Une **[simulation de labo interactive](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Create%20a%20virtual%20WAN%20using%20the%20Azure%20portal)** est disponible et vous permet de progresser à votre propre rythme. Il peut exister de légères différences entre la simulation interactive et le labo hébergé. Toutefois, les concepts et idées de base présentés sont identiques.
-
+>**Note** : les simulations de labo qui ont été fournies précédemment ont été supprimées.
+>
 ### Durée estimée : 65 minutes (dont environ 45 minutes d’attente pour le déploiement)
 
 ## Tâche 1 : Créer un WAN virtuel
@@ -111,7 +113,7 @@ Un hub contient des passerelles pour offrir des fonctionnalités site à site, E
 
 ## Nettoyer les ressources
 
-   >**Remarque** : N’oubliez pas de supprimer toutes les nouvelles ressources Azure que vous n’utilisez plus. La suppression des ressources inutilisées vous évitera d’encourir des frais inattendus.
+   >**Remarque** : N’oubliez pas de supprimer toutes les nouvelles ressources Azure que vous n’utilisez plus. La suppression des ressources inutilisées vous évitera d’encourir des frais inattendus.
 
 1. Dans le portail Azure, ouvrez la session **PowerShell** dans le volet **Cloud Shell**.
 
@@ -121,7 +123,7 @@ Un hub contient des passerelles pour offrir des fonctionnalités site à site, E
    Remove-AzResourceGroup -Name 'ContosoResourceGroup' -Force -AsJob
    ```
 
-   >**Remarque** : La commande s’exécute de façon asynchrone (tel que déterminé par le paramètre -AsJob). Vous pourrez donc exécuter une autre commande PowerShell immédiatement après au cours de la même session PowerShell, mais la suppression effective du groupe de ressources peut prendre quelques minutes.
+   >**Remarque** : La commande s’exécute de façon asynchrone (tel que déterminé par le paramètre -AsJob). Vous pourrez donc exécuter une autre commande PowerShell immédiatement après au cours de la même session PowerShell, mais la suppression effective du groupe de ressources peut prendre quelques minutes.
 
 ## Développer votre apprentissage avec Copilot
 

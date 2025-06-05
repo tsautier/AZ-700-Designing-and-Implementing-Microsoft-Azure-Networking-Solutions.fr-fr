@@ -12,7 +12,9 @@ Dans cette unité, vous allez configurer la connectivité entre CoreServicesVnet
 
 ![Diagramme du peering de réseaux virtuels.](../media/8-exercise-connect-two-azure-virtual-networks-global.png)
 
-Cette unité vous montrera :
+### Compétences de tâche
+
+Dans cet exercice, vous allez :
 
 + Tâche 1 : créer une machine virtuelle pour tester la configuration
 + Tâche 2 : se connecter aux machines virtuelles de test à l’aide du protocole RDP
@@ -20,7 +22,9 @@ Cette unité vous montrera :
 + Tâche 4 : créer des peerings de réseaux virtuels entre CoreServicesVnet et ManufacturingVnet
 + Tâche 5 : tester la connexion entre les machines virtuelles
 
-   >**Remarque :** Une **[simulation de labo interactive](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Connect%20two%20Azure%20virtual%20networks%20using%20global%20virtual%20network%20peering)** est disponible et vous permet de progresser à votre propre rythme. Il peut exister de légères différences entre la simulation interactive et le labo hébergé. Toutefois, les concepts et idées de base présentés sont identiques.
+### Simulations de labo interactives
+
+>**Note** : les simulations de labo qui ont été fournies précédemment ont été supprimées.
 
 ### Durée estimée : 20 minutes
 

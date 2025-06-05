@@ -12,7 +12,9 @@ Vous êtes maintenant prêt à déployer des réseaux virtuels dans le portail A
 
 Prenons l’exemple d’une organisation fictive, Contoso Ltd, qui est en train de migrer son infrastructure et ses applications vers Azure. Dans votre rôle d’ingénieur réseau, vous devez planifier et implémenter trois réseaux virtuels et des sous-réseaux pour prendre en charge les ressources dans ces réseaux virtuels.
 
-   >**Remarque :** Une **[simulation de labo interactive](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Design%20and%20implement%20a%20virtual%20network%20in%20Azure)** est disponible et vous permet de progresser à votre propre rythme. Il peut exister de légères différences entre la simulation interactive et le labo hébergé. Toutefois, les concepts et idées de base présentés sont identiques.
+### Simulations de labo interactives
+
+>**Note** : les simulations de labo qui ont été fournies précédemment ont été supprimées.
 
 ### Durée estimée : 20 minutes
 
@@ -44,6 +46,8 @@ Vous allez créer les ressources suivantes :
 |                     |                |                                   | ResearchSystemSubnet      | 10.40.0.0/24  |
 
 Ces réseaux virtuels et ces sous-réseaux sont structurés de manière à accueillir les ressources existantes, tout en permettant la croissance prévue. Nous allons créer ces réseaux virtuels et ces sous-réseaux pour poser les bases de notre infrastructure réseau.
+
+### Compétences de tâche
 
 Dans cet exercice, vous allez :
 

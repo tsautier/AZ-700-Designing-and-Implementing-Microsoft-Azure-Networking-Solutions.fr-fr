@@ -9,11 +9,15 @@ Exercise:
 
 Dans cet exercice, vous allez créer un circuit ExpressRoute à l’aide du portail Azure et du modèle de déploiement Azure Resource Manager.
 
-   >**Remarque :** Une **[simulation de labo interactive](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Provision%20an%20ExpressRoute%20circuit)** est disponible et vous permet de progresser à votre propre rythme. Il peut exister de légères différences entre la simulation interactive et le labo hébergé. Toutefois, les concepts et idées de base présentés sont identiques.
+### Simulations de labo interactives
+
+>**Note** : les simulations de labo qui ont été fournies précédemment ont été supprimées.
 
 ### Durée estimée : 15 minutes
 
 ![Diagramme de disposition de circuit ExpressRoute pour l’exercice](../media/5-exercise-provision-expressroute-circuit.png)
+
+### Compétences de tâche
 
 Dans cet exercice, vous allez :
 
@@ -28,11 +32,9 @@ Dans cet exercice, vous allez :
 
    >**Important** : votre circuit ExpressRoute est facturé à partir de l’émission d’une clé de service. Effectuez cette opération seulement quand le fournisseur de connectivité prêt à approvisionner le circuit.
 
-1. Dans le menu du portail Azure, sélectionnez **+ Créer une ressource**. Sélectionnez **Mise en réseau**, puis **ExpressRoute**, comme illustré dans l’image suivante. Si ExpressRoute n’apparaît pas dans la liste, utilisez **Rechercher dans la Place de marché** pour le rechercher :
+1. Dans le menu du portail Azure, recherchez et sélectionnez **Circuits ExpressRoute**.
 
-   ![Portail Azure - Menu de création de circuit ExpressRoute](../media/create-expressroute-circuit-menu.png)
-
-1. Dans la page **Créer ExpressRoute**, indiquez ExpressRouteResourceGroup pour le **groupe de ressources**. Sélectionnez ensuite **Résilience standard** pour la **résilience**.
+1. Dans la page **Créer ExpressRoute**, indiquez `ExpressRouteResourceGroup` pour le **groupe de ressources**. Sélectionnez ensuite **Résilience standard** pour la **résilience**.
 
 1. Pour ***Détails du circuit**, vérifiez que vous spécifiez la région correcte (**USA Est 2**), le nom du circuit (**TestERCircuit**), l’emplacement de peering (**Seattle**), le fournisseur (**Equinix**), la bande passante (**50 Mops**), le niveau de référence SKU (**Standard**) et le modèle de facturation des données (**Limitées**).
 
@@ -119,7 +121,7 @@ Vous pouvez supprimer votre circuit ExpressRoute en sélectionnant l’icône **
    Remove-AzResourceGroup -Name 'ExpressRouteResourceGroup' -Force -AsJob
    ```
 
-   >**Remarque** : La commande s’exécute de façon asynchrone (tel que déterminé par le paramètre -AsJob). Vous pourrez donc exécuter une autre commande PowerShell immédiatement après au cours de la même session PowerShell, mais la suppression effective du groupe de ressources peut prendre quelques minutes.
+   >**Remarque** : La commande s’exécute de façon asynchrone (tel que déterminé par le paramètre -AsJob). Vous pourrez donc exécuter une autre commande PowerShell immédiatement après au cours de la même session PowerShell, mais la suppression effective du groupe de ressources peut prendre quelques minutes.
 
 ## Développer votre apprentissage avec Copilot
 

@@ -12,6 +12,8 @@ Les points de terminaison de service de réseau virtuel permettent de restreindr
 
 ![Diagramme de l’architecture du point de terminaison de service.](../media/5-exercise-restrict-network-paas-resources-virtual-network-service-endpoints.png)
 
+### Compétences de tâche
+
 Dans cet exercice, vous allez :
 
 + Tâche 1 : Créer un réseau virtuel
@@ -26,7 +28,9 @@ Dans cet exercice, vous allez :
 + Tâche 10 : Confirmer l’accès au compte de stockage
 
 
-   >**Remarque :** Une **[simulation de labo interactive](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Restrict%20network%20access%20to%20PaaS%20resources%20with%20virtual%20network%20service%20endpoints)** est disponible et vous permet de progresser à votre propre rythme. Il peut exister de légères différences entre la simulation interactive et le labo hébergé. Toutefois, les concepts et idées de base présentés sont identiques.
+### Simulations de labo interactives
+
+>**Note** : les simulations de labo qui ont été fournies précédemment ont été supprimées.
 
 ### Durée estimée : 35 minutes
 
@@ -166,8 +170,8 @@ Créez une règle de sécurité de trafic entrant qui autorise le trafic du prot
 
    | **Paramètre**             | **Valeur**                 |
    | ----------------------- | ------------------------- |
-   | Source                  | Aucune                       |
-   | Plages de ports source      | *                         |
+   | Source                  | Quelconque                       |
+   | Source port ranges      | *                         |
    | Destination             | Sélectionnez **VirtualNetwork** |
    | Service                 | Custom                    |
    | Plages de ports de destination | 3389                      |
@@ -331,7 +335,7 @@ Résultats : vous avez maintenant terminé ce labo.
 
 ## Nettoyer les ressources
 
->**Remarque** : N’oubliez pas de supprimer toutes les nouvelles ressources Azure que vous n’utilisez plus. La suppression des ressources inutilisées vous évitera d’encourir des frais inattendus.
+>**Remarque** : N’oubliez pas de supprimer toutes les nouvelles ressources Azure que vous n’utilisez plus. La suppression des ressources inutilisées vous évitera d’encourir des frais inattendus.
 
 1. Dans le portail Azure, ouvrez la session **PowerShell** dans le volet **Cloud Shell**.
 
@@ -341,7 +345,7 @@ Résultats : vous avez maintenant terminé ce labo.
    Remove-AzResourceGroup -Name 'myResourceGroup' -Force -AsJob
    ```
 
-   >**Remarque** : La commande s’exécute de façon asynchrone (tel que déterminé par le paramètre -AsJob). Vous pourrez donc exécuter une autre commande PowerShell immédiatement après au cours de la même session PowerShell, mais la suppression effective du groupe de ressources peut prendre quelques minutes.
+   >**Remarque** : La commande s’exécute de façon asynchrone (tel que déterminé par le paramètre -AsJob). Vous pourrez donc exécuter une autre commande PowerShell immédiatement après au cours de la même session PowerShell, mais la suppression effective du groupe de ressources peut prendre quelques minutes.
 
 ## Développer votre apprentissage avec Copilot
 

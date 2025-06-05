@@ -12,6 +12,8 @@ En tant que membre de l’équipe de sécurité réseau de Contoso, la tâche su
 
 ![Diagramme de réseau virtuel avec l’architecture du pare-feu Azure.](../media/7-exercise-deploy-configure-azure-firewall-using-azure-portal.png)
 
+### Compétences de tâche
+
 Dans cet exercice, vous allez :
 
 + Tâche 1 : Créer un groupe de ressources
@@ -25,8 +27,9 @@ Dans cet exercice, vous allez :
 + Tâche 9 : Modifier les adresses DNS principales et secondaires de l’interface réseau du serveur
 + Tâche 10 : Tester le pare-feu
 
+### Simulations de labo interactives
 
-   >**Remarque :** Une **[simulation de labo interactive](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Deploy%20and%20configure%20Azure%20Firewall%20using%20the%20Azure%20portal)** est disponible et vous permet de progresser à votre propre rythme. Il peut exister de légères différences entre la simulation interactive et le labo hébergé. Toutefois, les concepts et idées de base présentés sont identiques.
+>**Note** : les simulations de labo qui ont été fournies précédemment ont été supprimées.
 
 ### Durée estimée : 60 minutes
 

@@ -14,6 +14,8 @@ Le diagramme ci-dessous illustre l’environnement que vous déploierez dans cet
 
 ![Diagramme illustrant l’architecture d’équilibreur de charge qui sera créée dans l’exercice (comprend l’équilibreur de charge, le réseau virtuel, le sous-réseau, le sous-réseau Bastion et les machines virtuelles)](../media/3-exercise-monitor-load-balancer-resource-using-azure-monitor.png)
 
+### Compétences de tâche
+
  Dans cet exercice, vous allez :
 
 + Tâche 1 : Créer le réseau virtuel
@@ -30,11 +32,9 @@ Le diagramme ci-dessous illustre l’environnement que vous déploierez dans cet
 + Tâche 12 : afficher l’intégrité des ressources
 + Tâche 13 : configurer les paramètres de diagnostic
 
+### Simulations de labo interactives
 
-   >**Remarque :** Une **[simulation de labo interactive](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Monitor%20a%20load%20balancer%20resource%20using%20Azure%20Monitor)** est disponible et vous permet de progresser à votre propre rythme. Il peut exister de légères différences entre la simulation interactive et le labo hébergé. Toutefois, les concepts et idées de base présentés sont identiques.
-
-> [!Note]  
-> Il peut exister de légères différences entre les instructions et l’interface du portail Azure, mais le concept de base est identique.
+>**Note** : les simulations de labo qui ont été fournies précédemment ont été supprimées.
 
 ### Durée estimée : 55 minutes
 
