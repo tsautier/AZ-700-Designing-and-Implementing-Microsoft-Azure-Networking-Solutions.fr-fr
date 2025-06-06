@@ -12,8 +12,9 @@ Démarrez avec Azure Private Link en utilisant un point de terminaison privé po
 
 ![Diagramme de l’architecture d’un point de terminaison privé.](../media/6-exercise-create-azure-private-endpoint-using-azure-powershell.png)
 
+### Simulations de labo interactives
 
-   >**Remarque :** Une **[simulation de labo interactive](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Create%20an%20Azure%20private%20endpoint%20using%20Azure%20PowerShell)** est disponible et vous permet de progresser à votre propre rythme. Il peut exister de légères différences entre la simulation interactive et le labo hébergé. Toutefois, les concepts et idées de base présentés sont identiques.
+>**Note** : les simulations de labo qui ont été fournies précédemment ont été supprimées.
 
 ### Durée estimée : 45 minutes
 
@@ -36,6 +37,8 @@ Des points de terminaison privés peuvent être créés pour différents types d
     > **Note :** si vous travaillez dans votre propre abonnement, les [fichiers de modèles](https://github.com/MicrosoftLearning/AZ-700-Designing-and-Implementing-Microsoft-Azure-Networking-Solutions/tree/master/Allfiles/Exercises) sont disponibles dans le référentiel de labo GitHub.
 
 Si vous choisissez d’installer et d’utiliser PowerShell en local, vous devez exécuter le module Azure PowerShell version 5.4.1 ou ultérieure pour les besoins de cet exemple. Exécutez ```Get-Module -ListAvailable Az``` pour rechercher la version installée. Si vous devez effectuer une mise à niveau, consultez [Installer le module Azure PowerShell](https://docs.microsoft.com/en-us/powershell/azure/install-az-ps). Si vous exécutez PowerShell en local, vous devez également exécuter ```Connect-AzAccount``` pour créer une connexion avec Azure.
+
+### Compétences de tâche
 
 Dans cet exercice, vous allez :
 

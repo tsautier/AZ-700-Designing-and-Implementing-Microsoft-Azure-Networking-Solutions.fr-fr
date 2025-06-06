@@ -14,14 +14,17 @@ Dans cet exercice, vous allez configurer une configuration Azure Front Door regr
 
 ![Configuration réseau pour Azure Front Door.](../media/6-exercise-create-front-door-for-highly-available.png)
 
+### Compétences de tâche
+
 Dans cet exercice, vous allez :
 
 + Tâche 1 : créer deux instances d’une application web
 + Tâche 2 : créer une instance Front Door pour votre application
 + Tâche 3 : afficher Azure Front Door à l’œuvre
 
+### Simulations de labo interactives
 
-   >**Remarque :** Une **[simulation de labo interactive](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Create%20a%20Front%20Door%20profile%20for%20a%20highly%20available%20web%20application)** est disponible et vous permet de progresser à votre propre rythme. Il peut exister de légères différences entre la simulation interactive et le labo hébergé. Toutefois, les concepts et idées de base présentés sont identiques.
+>**Note** : les simulations de labo qui ont été fournies précédemment ont été supprimées.
 
 ### Durée estimée : 30 minutes
 
