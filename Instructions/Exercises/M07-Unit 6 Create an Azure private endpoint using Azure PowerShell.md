@@ -4,7 +4,9 @@ Exercise:
   module: Module 07 - Design and implement private access to Azure Services
 ---
 
-# M07 - Unité 6 Créer un point de terminaison privé Azure à l’aide d’Azure PowerShell
+# M07-Unité 6 : créer un point de terminaison privé Azure à l’aide d’Azure PowerShell (facultatif)
+
+> **Remarque** : ce labo est facultatif. Le labo précédent, *Restreindre l’accès réseau aux ressources PaaS avec des points de terminaison de service de réseau virtuel*, couvre cette fonctionnalité. À l’avenir, ce laboratoire sera retiré. 
 
 ## Scénario de l’exercice
 
@@ -144,6 +146,7 @@ $parameters3 = @{
 }
 
 New-AzBastion @parameters3
+
 ```
 
 ## Tâche 3 : Créer une machine virtuelle de test
