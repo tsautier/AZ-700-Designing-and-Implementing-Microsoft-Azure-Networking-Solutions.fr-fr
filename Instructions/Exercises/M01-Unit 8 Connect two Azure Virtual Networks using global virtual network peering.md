@@ -134,7 +134,7 @@ Dans cette section, vous allez créer une machine virtuelle de test sur le rése
     | ------------------------------------ | --------------------------------------------- | 
     | Nom du lien de peering | `CoreServicesVnet-to-ManufacturingVnet` |
  
-    **Paramètres d’appairage de réseaux virtuels distants**
+    **Paramètres d’appairage de réseaux virtuels locaux**
    
     | **Option**                                    | **Valeur**                             |
     | ------------------------------------ | --------------------------------------------- | 
