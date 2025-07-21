@@ -7,8 +7,6 @@ demo:
 
 Dans cette démonstration, nous allons apprendre à créer une instance Azure Application Gateway. 
 
-**Simulation :** [déployer une instance Azure Application Gateway](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Deploy%20Azure%20Application%20Gateway)
-
 **Référence** : [Démarrage rapide : Diriger le trafic web avec Azure Application Gateway - Portail Azure](https://learn.microsoft.com/azure/application-gateway/quick-create-portal)
 
 **Référence** : [chiffrer le trafic réseau de bout en bout avec Azure Application Gateway](https://github.com/MicrosoftDocs/mslearn-end-to-end-encryption-with-app-gateway)

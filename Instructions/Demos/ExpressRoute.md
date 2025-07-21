@@ -7,10 +7,6 @@ demo:
 
 Dans cette démonstration, passez en revue la configuration d’ExpressRoute.
 
-**Simulation :** [configurer une passerelle ExpressRoute](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Configure%20an%20ExpressRoute%20gateway)
-
-**Simulation :** [approvisionner un circuit ExpressRoute](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Provision%20an%20ExpressRoute%20circuit)
-
 **Référence :** [Démarrage rapide : créer et modifier des circuits ExpressRoute](https://learn.microsoft.com/azure/expressroute/expressroute-howto-circuit-portal-resource-manager)
 
 **Référence :** [Tutoriel : établir une connexion privée d’un réseau local à un réseau virtuel Azure à l’aide d’ExpressRoute](https://learn.microsoft.com/azure/expressroute/configure-expressroute-private-peering)
