@@ -45,64 +45,63 @@ Au cours de cette tâche, vous allez créer les deux réseaux virtuels Spoke con
 
 1. Sélectionnez **Créer**.
 
-1. Dans **Groupe de ressources**, sélectionnez **Créer**, puis entrez **fw-manager-rg** comme nom et sélectionnez **OK**.
+1. Dans **Groupe de ressources**, sélectionnez **Créer un nouveau**, puis entrez `fw-manager-rg` comme nom et sélectionnez **OK**.
 
-1. Dans **Nom**, entrez **Spoke-01**.
+1. Dans **Nom**, entrez `Spoke-01`.
 
 1. Dans **Région**, sélectionnez votre région.
 
-1. Sélectionnez **Suivant : Adresses IP**.
+1. Cliquez sur **Suivant**. Vérifiez l’onglet **Sécurité** sans y apporter de modifications. 
 
-1. Dans **Espace d’adressage IPv4**, entrez **10.0.0.0/16**.
+1. Sélectionnez **Suivant** et accédez à l’onglet **Adresses IP**.
 
-1. **Supprimez** tous les autres espaces d’adressage répertoriés ici, par exemple **10.1.0.0/16**.
+1. Sélectionnez **Supprimer l’espace d’adressage**, puis **Ajoutez un espace d’adressage IPv4**. 
 
-1. Sous **Nom de sous-réseau**, sélectionnez le mot **par défaut**.
+1. Vérifiez que l’espace d’adressage IP est **10.0.0.0/16**.
 
-1. Dans la boîte de dialogue **Modifier le sous-réseau**, remplacez le nom par **Workload-01-SN**.
+1. Sélectionnez **Ajouter un sous-réseau**. 
 
-1. Remplacez la **Plage d’adresses de sous-réseau** par **10.0.1.0/24**.
+1. Changez le **Nom** du sous-réseau en `Workload-01-SN`.
 
-1. Sélectionnez **Enregistrer**.
+1. Changez l’**Adresse de départ** en `10.0.1.0`.
+
+1. Sélectionnez **Ajouter**.
 
 1. Sélectionnez **Revoir + créer**.
 
-1. Sélectionnez **Create** (Créer).
+1. Sélectionnez **Créer**.
 
-Répétez les étapes 1 à 14 ci-dessus pour créer un autre réseau virtuel et un sous-réseau similaires, mais à l’aide des informations suivantes :
+Répétez les étapes 1 à 14 ci-dessus pour créer un autre réseau virtuel et un sous-réseau similaires, mais à l’aide des informations suivantes. Vous n’avez pas besoin d’attendre que le premier réseau virtuel termine son déploiement. 
 
 + Groupe de ressources : **fw-manager-rg** (sélectionner un groupe existant)
-+ Nom : **Spoke-02**
++ Nom du réseau virtuel : `Spoke-02`
 + Espace d’adressage : **10.1.0.0/16** (supprimer tous les autres espaces d’adressage listés)
-+ Nom du sous-réseau : **Charge de travail-02-SN**
++ Nom du sous-réseau : `Workload-02-SN`
 + Plage d’adresses de sous-réseau : **10.1.1.0/24**
 
 ## Tâche 2 : créer le hub virtuel sécurisé
 
 Au cours de cette tâche, vous allez créer votre hub virtuel sécurisé à l’aide de Firewall Manager.
 
-1. À partir de la page d’accueil du portail Azure, sélectionnez **Tous les services**.
+1. Dans le portail, recherchez `firewall manager`, puis sélectionnez **Gestionnaire de pare-feu de mots clés de sécurité réseau**.
+   
+1. Dans le panneau **Sécuriser vos ressources**, sélectionnez **Hubs virtuels**.
 
-1. Dans la zone de recherche, saisissez **Firewall Manager** et sélectionnez **Firewall Manager** lorsqu’il apparaît.
-
-1. Sur la page **Firewall Manager**, à partir de la page Vue d’ensemble, sélectionnez **Voir les hubs virtuels sécurisés**.
-
-1. Sur la page **Hubs virtuels**, sélectionnez **Créer un hub virtuel sécurisé**.
+1. Sélectionnez **Créer un nouvel hub virtuel sécurisé**.
 
 1. Pour **Groupe de ressources**, sélectionnez **fw-manager-rg**.
 
 1. Pour **Région**, sélectionnez votre région.
 
-1. Pour le **Nom du hub virtuel sécurisé**, entrez **Hub-01**.
+1. Pour le **Nom du hub virtuel sécurisé**, entrez `Hub-01`.
 
-1. Pour **Espace d’adressage du hub**, entrez **10.2.0.0/16**.
+1. Pour **Espace d’adressage du hub**, entrez `10.2.0.0/16`.
 
-1. Choisissez **Nouveau WAN virtuel**.
+1. S’assurer que **Nouveau vWAN** est sélectionné
 
-1. Dans **Nom de WAN virtuel**, entrez **Vwan-01**.
+1. Dans **Nom de WAN virtuel**, entrez `Vwan-01`.
 
 1. Sélectionnez **Suivant : Pare-feu Azure**.
-    ![Créer un hub virtuel sécurisé - Onglet Général](../media/create-new-secured-virtual-hub-1.png)
 
 1. Sélectionnez **Suivant : Fournisseur de partenaire de sécurité**.
 
@@ -110,17 +109,11 @@ Au cours de cette tâche, vous allez créer votre hub virtuel sécurisé à l’
 
 1. Sélectionnez **Créer**.
 
-    > **[!NOTE]**
-    >
-    > Le déploiement peut durer jusqu’à 30 minutes.
+    > Note : Le déploiement peut durer jusqu’à 30 minutes.
 
-    
+1. Attendez la fin du déploiement. 
 
-    ![Créer un hub virtuel sécurisé - Onglet Vérifier + créer](../media/create-new-secured-virtual-hub-2.png)
-
-1. Une fois le déploiement terminé, dans la page d’accueil du portail Azure, sélectionnez **Tous les services**.
-
-1. Dans la zone de recherche, saisissez **Firewall Manager** et sélectionnez **Firewall Manager** lorsqu’il apparaît.
+1. Dans le portail, recherchez `firewall manager`, puis sélectionnez **Gestionnaire de pare-feu de mots clés de sécurité réseau**.
 
 1. Dans la page **Firewall Manager**, sélectionnez **Afficher les hubs virtuels**.
 
@@ -134,15 +127,15 @@ Au cours de cette tâche, vous allez créer votre hub virtuel sécurisé à l’
 
 Au cours de cette tâche, vous allez connecter les réseaux virtuels Hub and Spoke. Cela est communément appelé peering.
 
-1. Sur la page d’accueil du portail Azure, sélectionnez **Groupes de ressources**.
-
-1. Sélectionnez le groupe de ressources **fw-manager-rg**, puis le WAN virtuel **Vwan-01**.
+1. Sélectionnez **Accéder au groupe de ressources**.
+2. 
+1. Dans le portail, recherchez et sélectionnez le WAN virtuel **Vwan-01**.
 
 1. Sous **Connectivité**, sélectionnez **Connexions de réseau virtuel**.
 
 1. Sélectionnez **Ajouter une connexion**.
 
-1. Pour **Nom de la connexion**, entrez **hub-spoke-01**.
+1. Pour **Connection name** (Nom de la connexion, entrez `hub-spoke-01`.
 
 1. Pour **Hubs**, sélectionnez **Hub-01**.
 
@@ -151,12 +144,11 @@ Au cours de cette tâche, vous allez connecter les réseaux virtuels Hub and Spo
 1. Pour **Réseau virtuel**, sélectionnez **Spoke-01**.
 
 1. Sélectionnez **Créer**.
-   ![Ajouter une connexion Hub and Spoke à un WAN virtuel - Spoke 1](../media/connect-hub-spoke-vnet-1.png)
 
-1. Répétez les étapes 4 à 9 ci-dessus pour créer une autre connexion similaire, mais en utilisant le nom de connexion **hub-spoke-02** pour connecter le réseau virtuel **Spoke-02**.
+1. Répétez les étapes 4 à 9 ci-dessus pour créer une autre connexion similaire, mais en utilisant le nom de connexion `hub-spoke-02` pour connecter le réseau virtuel **Spoke-02**.
 
-    ![Ajouter une connexion Hub and Spoke à un WAN virtuel - Spoke 2](../media/connect-hub-spoke-vnet-2.png)
-
+1. **Actualiser** la page connexions de réseau virtuel et vérifiez que vous avez deux réseaux virtuels, Spoke-01 et Spoke-02.\
+   
 ## Tâche 4 : déployer les serveurs
 
 1. Sélectionnez l’icône Cloud Shell en haut à droite du portail Azure. Si nécessaire, configurez l’interpréteur de commandes.  
@@ -182,36 +174,35 @@ Au cours de cette tâche, vous allez connecter les réseaux virtuels Hub and Spo
 
 1. Dans la page **Vue d’ensemble** de **Srv-workload-01**, dans le volet de droite, sous la section **Réseau**, notez l’**Adresse IP privée** (par exemple **10.0.1.4**).
 
-1. Dans la page **Vue d’ensemble** de **Srv-workload-02**, dans le volet de droite, sous la section **Réseau**, notez l’**Adresse IP privée** (par exemple **10.1.1.4**).
+1. Dans la page **Vue d’ensemble** de **Srv-workload-02**, dans le volet de droite, sous la section **Réseau**, notez l’**Adresse IP privée** (par exemple **10.1.0.4**).
 
 ## Tâche 5 : créer une stratégie de pare-feu et sécuriser votre hub
 
 Au cours de cette tâche, vous allez d’abord créer votre stratégie de pare-feu, puis sécuriser votre hub. La stratégie de pare-feu définit des collections de règles pour diriger le trafic sur un ou plusieurs hubs virtuels sécurisés.
 
-1. Dans la page d’accueil du portail Azure, sélectionnez **Firewall Manager**.
-   + Si l’icône de Firewall Manager n’apparaît pas sur la page d’accueil, sélectionnez **Tous les services**. Ensuite, dans la zone de recherche, saisissez **Firewall Manager** et sélectionnez **Firewall Manager** lorsqu’il apparaît.
+1. Dans le portail, recherchez `firewall manager`, puis sélectionnez **Gestionnaire de pare-feu de mots clés de sécurité réseau**.
 
-1. Dans **Firewall Manager**, à partir de la page Vue d’ensemble, sélectionnez **Voir les stratégies de pare-feu Azure**.
+1. Dans le panneau **Firewall Manager**, sélectionnez **Stratégies de pare-feu Azure**.
 
-1. Sélectionnez **Créer une stratégie de pare-feu Azure**.
+1. Sélectionnez **Créer**.
 
 1. Dans **Groupe de ressources**, sélectionnez **fw-manager-rg**.
 
-5. Sous **Détails de la stratégie**, pour le **Nom**, entrez **Policy-01**.
+5. Sous **Détails de la stratégie**, pour le **Nom**, entrez `Policy-01`.
 
 1. Dans **Région**, sélectionnez votre région.
 
 1. Dans **Niveau de stratégie**, sélectionnez **Standard**.
 
-1. Sélectionnez **Suivant : Paramètres DNS**.
+1. Sélectionnez **Suivant : Paramètres DNS**. Vérifiez, mais n’apportez aucune modification. 
 
-1. Sélectionnez **Suivant : Inspection TLS (préversion)**.
+1. Sélectionnez **Suivant : Inspection TLS**. Vérifiez, mais n’apportez aucune modification. 
 
 1. Sélectionnez **Suivant : Règles**.
 
 1. Dans l’onglet **Règles**, sélectionnez **Ajouter une collection de règles**.
 
-1. Dans la page **Ajouter un regroupement de règles**, dans **Nom**, entrez **App-RC-01**.
+1. Dans la page **Ajouter un regroupement de règles**, dans **Nom**, entrez `App-RC-01`.
 
 1. Pour **Type de collection de règles**, sélectionnez **Application**.
 
@@ -219,31 +210,29 @@ Au cours de cette tâche, vous allez d’abord créer votre stratégie de pare-f
 
 1. Vérifiez que **Action de collection de règles** est défini sur **Autoriser**.
 
-1. Sous **Règles**, dans **Nom**, entrez **Allow-msft**.
+1. Sous **Règles**, dans **Nom**, entrez `Allow-msft`.
 
 1. Pour **Type de source**, sélectionnez **Adresse IP**.
 
 1. Pour **Source**, entrez *.
 
-1. Pour **Protocole**, entrez **http,https**.
+1. Pour **Protocole**, entrez `http,https`.
 
 1. Vérifiez que **Type de destination** est défini sur **FQDN**.
 
-1. Pour **Destination**, entrez ***.microsoft.com**.
+1. Pour **Destination**, entrez `*.microsoft.com`.
 
 1. Sélectionnez **Ajouter**.
 
-    ![Ajouter un regroupement de règles d’application à une stratégie de pare-feu](../media/add-rule-collection-firewall-policy-1.png)
-
 1. Pour ajouter une règle DNAT afin de pouvoir connecter un bureau à distance à la machine virtuelle Srv-workload-01, sélectionnez **Ajouter un regroupement de règles**.
 
-1. Pour **Nom**, entrez **dnat-rdp**.
+1. Pour **Nom**, entrez `dnat-rdp`.
 
 1. Comme **Type de collection de règles**, sélectionnez **DNAT**.
 
 1. Pour **Priorité**, entrez **100**.
 
-1. Sous **Règles**, dans **Nom**, entrez **Allow-rdp**.
+1. Sous **Règles**, dans **Nom**, entrez `Allow-rdp`.
 
 1. Pour **Type de source**, sélectionnez **Adresse IP**.
 
@@ -251,11 +240,11 @@ Au cours de cette tâche, vous allez d’abord créer votre stratégie de pare-f
 
 1. Pour **Protocole**, sélectionnez **TCP**.
 
-1. Pour **Ports de destination**, entrez **3389**.
+1. Pour **Ports de destination**, entrez `3389`.
 
-1. Pour **Type de destination**, sélectionnez **Adresse IP**.
+1. Pour **Adresse IP de destination**, entrez l’adresse IP publique du hub virtuel du pare-feu que vous avez notée précédemment (par exemple **51.143.226.18**).
 
-1. Pour **Destination**, entrez l’adresse IP publique du hub virtuel du pare-feu que vous avez notée précédemment (par exemple **51.143.226.18**).
+1. Dans le champ **Type traduit**, sélectionnez **Adresse IP**.
 
 1. Pour **Adresse traduite**, entrez l’adresse IP privée pour **Srv-workload-01** que vous avez notée précédemment (par exemple **10.0.1.4**).
 
@@ -265,7 +254,7 @@ Au cours de cette tâche, vous allez d’abord créer votre stratégie de pare-f
 
 1. Pour ajouter une règle réseau afin de pouvoir connecter un bureau à distance de la machine virtuelle Srv-workload-01 à Srv-workload-02, sélectionnez **Ajouter un regroupement de règles**.
 
-1. Pour **Nom**, entrez **vnet-rdp**.
+1. Pour **Nom**, entrez `vnet-rdp`.
 
 1. Comme **Type de collection de règles**, sélectionnez **Réseau**.
 
@@ -273,7 +262,7 @@ Au cours de cette tâche, vous allez d’abord créer votre stratégie de pare-f
 
 1. Pour **Action de collection de règles**, sélectionnez **Autoriser**.
 
-1. Sous **Règles**, dans **Nom**, entrez **Allow-vnet**.
+1. Sous **Règles**, dans **Nom**, entrez `Allow-vnet`.
 
 1. Pour **Type de source**, sélectionnez **Adresse IP**.
 
@@ -285,11 +274,9 @@ Au cours de cette tâche, vous allez d’abord créer votre stratégie de pare-f
 
 1. Pour **Type de destination**, sélectionnez **Adresse IP**.
 
-1. Pour **Destination**, entrez l’adresse IP privée pour **Srv-workload-02** que vous avez notée précédemment (par exemple **10.1.1.4**).
+1. Pour **Destination**, entrez l’adresse IP privée pour **Srv-workload-02** que vous avez notée précédemment (par exemple **10.1.0.4**).
 
 1. Sélectionnez **Ajouter**.
-
-    ![Répertorier les regroupements de règles dans la stratégie de pare-feu](../media/list-rule-collections-firewall-policy.png)
 
 1. Vous devez maintenant avoir trois regroupements de règles.
 
@@ -301,8 +288,7 @@ Au cours de cette tâche, vous allez d’abord créer votre stratégie de pare-f
 
 Au cours de cette tâche, vous allez associer la stratégie de pare-feu au hub virtuel.
 
-1. Dans la page d’accueil du portail Azure, sélectionnez **Firewall Manager**.
-   + Si l’icône de Firewall Manager n’apparaît pas sur la page d’accueil, sélectionnez **Tous les services**. Ensuite, dans la zone de recherche, saisissez **Firewall Manager** et sélectionnez **Firewall Manager** lorsqu’il apparaît.
+1. Dans le portail, recherchez `firewall manager`, puis sélectionnez **Gestionnaire de pare-feu de mots clés de sécurité réseau**.
 
 1. Dans **Firewall Manager**, sous **Sécurité**, sélectionnez **Stratégies de pare-feu Azure**.
 
@@ -315,8 +301,6 @@ Au cours de cette tâche, vous allez associer la stratégie de pare-feu au hub v
 1. Sélectionnez **Ajouter**.
 
 1. Une fois la stratégie attachée, sélectionnez **Actualiser**. L’association doit être affichée.
-
-![Afficher la stratégie de pare-feu associée sur le hub](../media/associate-firewall-policy-with-hub-end.png)
 
 ## Tâche 7 : acheminer le trafic vers votre hub
 
