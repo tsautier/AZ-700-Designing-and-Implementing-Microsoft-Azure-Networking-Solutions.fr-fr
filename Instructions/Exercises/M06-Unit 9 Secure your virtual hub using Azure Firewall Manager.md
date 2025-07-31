@@ -15,7 +15,9 @@ Dans cet exercice, vous allez créer le réseau virtuel Spoke et créer un hub v
 
 ### Simulations de labo interactives
 
->**Note** : les simulations de labo qui ont été fournies précédemment ont été supprimées.
+**Note** : les simulations de labo qui ont été fournies précédemment ont été supprimées.
+
+
 ## Créer une architecture hub and spoke
 
 Dans cette partie de l’exercice, vous allez créer les réseaux virtuels Spoke et les sous-réseaux dans lesquels vous allez placer les serveurs de charge de travail. Vous allez ensuite créer le hub virtuel sécurisé et connecter les réseaux virtuels Hub and Spoke.
@@ -41,13 +43,13 @@ Dans cet exercice, vous allez :
 
 Au cours de cette tâche, vous allez créer les deux réseaux virtuels Spoke contenant chacun un sous-réseau qui hébergera vos serveurs de charge de travail.
 
-1. Sur la page d’accueil du portail Azure, dans la zone de recherche, entrez **Réseau virtuel**, puis sélectionnez **Réseau virtuel** lorsque la valeur apparaît.
+1. Dans le portail Azure, recherchez et sélectionnez `Virtual Networks`.
 
 1. Sélectionnez **Créer**.
 
 1. Dans **Groupe de ressources**, sélectionnez **Créer un nouveau**, puis entrez `fw-manager-rg` comme nom et sélectionnez **OK**.
 
-1. Dans **Nom**, entrez `Spoke-01`.
+1. Dans **Nom du réseau virtuel**, entrez `Spoke-01`.
 
 1. Dans **Région**, sélectionnez votre région.
 
@@ -71,13 +73,13 @@ Au cours de cette tâche, vous allez créer les deux réseaux virtuels Spoke con
 
 1. Sélectionnez **Créer**.
 
-Répétez les étapes 1 à 14 ci-dessus pour créer un autre réseau virtuel et un sous-réseau similaires, mais à l’aide des informations suivantes. Vous n’avez pas besoin d’attendre que le premier réseau virtuel termine son déploiement. 
+Répétez les étapes 1 à 14 ci-dessus pour créer un autre réseau virtuel et sous-réseau similaires à l'aide des informations suivantes. Vous n’avez pas besoin d’attendre que le premier réseau virtuel termine son déploiement. 
 
 + Groupe de ressources : **fw-manager-rg** (sélectionner un groupe existant)
 + Nom du réseau virtuel : `Spoke-02`
 + Espace d’adressage : **10.1.0.0/16** (supprimer tous les autres espaces d’adressage listés)
 + Nom du sous-réseau : `Workload-02-SN`
-+ Plage d’adresses de sous-réseau : **10.1.1.0/24**
++ Adresse de début du sous-réseau : `10.1.1.0`
 
 ## Tâche 2 : créer le hub virtuel sécurisé
 
@@ -101,9 +103,9 @@ Au cours de cette tâche, vous allez créer votre hub virtuel sécurisé à l’
 
 1. Dans **Nom de WAN virtuel**, entrez `Vwan-01`.
 
-1. Sélectionnez **Suivant : Pare-feu Azure**.
+1. Sélectionnez **Suivant : Pare-feu Azure**. Vérifiez, mais n’apportez aucune modification. 
 
-1. Sélectionnez **Suivant : Fournisseur de partenaire de sécurité**.
+1. Sélectionnez **Suivant : Fournisseur de partenaire de sécurité**. Vérifiez, mais n’apportez aucune modification. 
 
 1. Sélectionnez **Suivant : Vérifier + créer**.
 
@@ -119,17 +121,15 @@ Au cours de cette tâche, vous allez créer votre hub virtuel sécurisé à l’
 
 1. Sélectionnez **Hub-01**.
 
-1. Sélectionnez **Configuration d’adresse IP publique**.
+1. Sélectionnez **Pare-feu Azure** puis **Configuration de l'adresse IP publique**.
 
-1. Notez l’adresse IP publique (par exemple **51.143.226.18**), que vous utiliserez ultérieurement.
+1. Notez l'adresse IP publique (par exemple,**172.191.79.203**), que vous utiliserez plus tard.
 
 ## Tâche 3 : connecter les réseaux virtuels en étoile
 
 Au cours de cette tâche, vous allez connecter les réseaux virtuels Hub and Spoke. Cela est communément appelé peering.
 
-1. Sélectionnez **Accéder au groupe de ressources**.
-2. 
-1. Dans le portail, recherchez et sélectionnez le WAN virtuel **Vwan-01**.
+1. Dans le portail, recherchez et sélectionnez le `Vwan-01` WAN virtuel.
 
 1. Sous **Connectivité**, sélectionnez **Connexions de réseau virtuel**.
 
@@ -147,7 +147,7 @@ Au cours de cette tâche, vous allez connecter les réseaux virtuels Hub and Spo
 
 1. Répétez les étapes 4 à 9 ci-dessus pour créer une autre connexion similaire, mais en utilisant le nom de connexion `hub-spoke-02` pour connecter le réseau virtuel **Spoke-02**.
 
-1. **Actualiser** la page connexions de réseau virtuel et vérifiez que vous avez deux réseaux virtuels, Spoke-01 et Spoke-02.\
+1. **Actualisez** la page des connexions réseau virtuelles et vérifiez que vous disposez de deux réseaux virtuels, Spoke-01 et Spoke-02.
    
 ## Tâche 4 : déployer les serveurs
 
@@ -162,7 +162,7 @@ Au cours de cette tâche, vous allez connecter les réseaux virtuels Hub and Spo
 
 1. Déployez les modèles ARM suivants pour créer les machines virtuelles nécessaires à cet exercice :
 
-   >**Remarque** : Vous serez invité à fournir un mot de passe d’administrateur.
+   >**Remarque** : Vous serez invité à fournir un mot de passe d’administrateur. **Vous aurez besoin de ce mot de passe dans une étape ultérieure.**
 
    ```powershell
    $RGName = "fw-manager-rg"
@@ -174,7 +174,7 @@ Au cours de cette tâche, vous allez connecter les réseaux virtuels Hub and Spo
 
 1. Dans la page **Vue d’ensemble** de **Srv-workload-01**, dans le volet de droite, sous la section **Réseau**, notez l’**Adresse IP privée** (par exemple **10.0.1.4**).
 
-1. Dans la page **Vue d’ensemble** de **Srv-workload-02**, dans le volet de droite, sous la section **Réseau**, notez l’**Adresse IP privée** (par exemple **10.1.0.4**).
+1. Dans la page **Vue d’ensemble** de **Srv-workload-02**, dans le volet de droite, sous la section **Réseau**, notez l’**Adresse IP privée** (par exemple **10.1.1.4**).
 
 ## Tâche 5 : créer une stratégie de pare-feu et sécuriser votre hub
 
@@ -288,31 +288,38 @@ Au cours de cette tâche, vous allez d’abord créer votre stratégie de pare-f
 
 Au cours de cette tâche, vous allez associer la stratégie de pare-feu au hub virtuel.
 
-1. Dans le portail, recherchez `firewall manager`, puis sélectionnez **Gestionnaire de pare-feu de mots clés de sécurité réseau**.
+1. Dans le portail, recherchez et sélectionnez `Hub-01`.
 
-1. Dans **Firewall Manager**, sous **Sécurité**, sélectionnez **Stratégies de pare-feu Azure**.
+1. Dans le volet **Paramètres**, sélectionnez **Fournisseurs de sécurité**
 
-1. Cochez la case **Policy-01**.
+1. Cochez la case pour **Ajouter une politique**.
 
-1. Sélectionnez **Gérer les associations&gt;associer des hubs**.
+1. Sélectionnez **Policy-01** puis **Enregistrer**.
 
 1. Activez la case à cocher **Hub-01**.
 
 1. Sélectionnez **Ajouter**.
 
-1. Une fois la stratégie attachée, sélectionnez **Actualiser**. L’association doit être affichée.
+1. Une fois la police associée, sélectionnez **Actualiser**. L’association doit être affichée.
 
 ## Tâche 7 : acheminer le trafic vers votre hub
 
 Pour cette tâche, vous devez vérifiez que le trafic réseau est acheminé via votre pare-feu.
 
-1. Dans **Firewall Manager**, sélectionnez **Hubs virtuels**.
-1. Sélectionnez **Hub-01**.
-1. Sous **Paramètres**, sélectionnez **Configuration de la sécurité**.
+1. Dans le portail, recherchez et sélectionnez **Vwan-01**.
+
+1. Dans le volet **Connectivité**, sélectionnez **Concentrateurs**, puis **Hub-01**.
+   
+1. Dans le volet **Sécurité**, sélectionnez **Pare-feu Azure et Gestionnaire de pare-feu**, sélectionnez **Hub-01**, puis **Configuration de la sécurité.**.
+
 1. Dans **Trafic Internet**, sélectionnez **Pare-feu Azure**.
+
 1. Dans **Trafic privé**, sélectionnez **Envoyer via le pare-feu Azure**.
-1. Sélectionnez **Enregistrer**.
+
+1. Sélectionnez **Enregistrer** et cliquez sur **OK** pour confirmer votre choix.
+
 1. L’exécution de cette opération nécessite quelques minutes.
+
 1. Une fois la configuration terminée, vérifiez que sous **TRAFIC INTERNET** et **TRAFIC PRIVÉ**, vous pouvez voir **Sécurisé par le pare-feu Azure** pour les connexions Hub and Spoke.
 
 ## Tâche 8 : tester la règle d’application
@@ -341,7 +348,7 @@ Dans cette tâche, vous allez tester la règle d’application pour confirmer qu
 
 1. Ouvrez Internet Explorer, puis sélectionnez **OK** dans la boîte de dialogue **Configurer Internet Explorer 11**.
 
-1. Accédez à **https://** **<www.microsoft.com>**.
+1. Accédez à `https://www.microsoft.com`
 
 1. Dans la boîte de dialogue **Alerte de sécurité**, sélectionnez **OK**.
 
