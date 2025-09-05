@@ -140,6 +140,8 @@ Dans cette section, vous allez créer une machine virtuelle de test sur le rése
     | ------------------------------------ | --------------------------------------------- | 
     | Autoriser « CoreServicesVnet » à accéder à « ManufacturingVnet » | Activé(e)
     | Autoriser « CoreServicesVnet » à recevoir le trafic transféré à partir de « ManufacturingVnet » | Activé(e) |
+
+1. Cochez la case à gauche de **CoreServicesVnet-to-ManufacturingVnet**, puis sélectionnez **Synchroniser**.
  
 1. Dans CoreServicesVnet\|Peerings, vérifiez que le peering **CoreServicesVnet-to-ManufacturingVnet** est **Connecté**.
 
