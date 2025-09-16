@@ -100,7 +100,7 @@ Vous allez maintenant créer un profil Traffic Manager qui dirige le trafic util
    | Resource group          | **Contoso-RG-TM1**       |
    | Emplacement du groupe de ressources | **USA Est**              |
 
-1. Sélectionnez **Créer**.
+1. Sélectionnez **Vérifier + créer**, puis **Créer**.
 
 ## Tâche 3 : ajouter des points de terminaison Traffic Manager
 
@@ -160,13 +160,13 @@ Dans cette section, vous allez vérifier le nom DNS de votre profil Traffic Mana
 
 1. Pour tester le bon fonctionnement du point de terminaison de basculement, vous devez désactiver le site principal.
 
-1. Sur la page **Contoso-TMProfile**, dans l’écran Vue d’ensemble, sélectionnez **myPrimaryEndpoint**.
+1. Sur la page **Contoso-TMProfile**, dans l’écran de vue d’ensemble, sélectionnez le numéro **2** à droite de **Points de terminaison :**.
 
-1. Dans la page **myPrimaryEndpoint**, sous **État**, sélectionnez **Désactivé**, puis **Enregistrer**.
+1. Sélectionnez le bouton Modifier (icône en forme de crayon) pour **myPrimaryEndpoint**.
 
-   ![Image 25](../media/disable-primary-endpoint-1.png)
+1. Dans le volet **myPrimaryEndpoint**, sous **État**, décochez la case **Activer le point de terminaison**, puis sélectionnez **Enregistrer**.
 
-1. Fermez la page **myPrimaryEndpoint** (sélectionnez le **X** dans le coin supérieur droit de la page).
+1. Si nécessaire, fermez le volet **myPrimaryEndpoint** (sélectionnez le **X** dans le coin supérieur droit de la page).
 
 1. Sur la page **Contoso-TMProfile**, l'**État de la supervision** pour **myPrimaryEndpoint** doit maintenant être **Désactivé**.
 
