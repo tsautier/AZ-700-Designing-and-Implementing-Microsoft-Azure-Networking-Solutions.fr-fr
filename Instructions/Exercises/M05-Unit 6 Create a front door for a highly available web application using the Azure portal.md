@@ -126,7 +126,7 @@ Une fois la porte d’entrée créée, le déploiement global de la configuratio
 
 1. Revenez à votre navigateur, puis sélectionnez Actualiser. Vous devriez voir la même page d’informations.
 
-**Il peut y avoir un retard suite à l’arrêt de l’application web. Si vous recevez une page d’erreur dans votre navigateur, actualisez la page**.
+    **Il peut y avoir un retard suite à l’arrêt de l’application web. Si vous recevez une page d’erreur dans votre navigateur, actualisez la page**.
 
 1. Revenez au portail Azure, recherchez l’autre application web, puis arrêtez-la.
 

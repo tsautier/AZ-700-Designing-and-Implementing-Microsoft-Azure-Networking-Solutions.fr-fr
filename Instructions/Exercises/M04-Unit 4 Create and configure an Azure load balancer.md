@@ -59,19 +59,21 @@ Dans cette section, vous allez créer un réseau virtuel et un sous-réseau.
 
 7. Sélectionnez **Suivant** (vous dirige vers l’onglet Adresses IP).
 
-8. Sous l’onglet **Adresses IP**, dans la zone **Espace d’adressage IPv4**, supprimez le paramètre par défaut et entrez **10.1.0.0/16**.
+8. Dans l’onglet **Adresses IP**, dans la zone **Espace d’adresses IPv4**, remplacez l’espace d’adresses IPv4 prérempli par : **10.1.0.0/16**.
 
-9. Sous l’onglet **Adresses IP**, sélectionnez **+ Ajouter un sous-réseau**.
+9. Dans l’onglet **Adresses IP**, sous **Sous-réseaux**, supprimez le sous-réseau **par défaut**.
 
-10. Dans le volet **Ajouter un sous-réseau**, spécifiez **myBackendSubnet** comme nom de sous-réseau et **10.1.0.0/24** comme plage d’adresses de sous-réseau. Sélectionnez **Ajouter**
+10. Sous l’onglet **Adresses IP**, sélectionnez **+ Ajouter un sous-réseau**.
 
-11. Dans le volet **Ajouter un sous-réseau**, spécifiez **myFrontEndSubnet** comme nom de sous-réseau et **10.1.2.0/24** comme plage d’adresses de sous-réseau. Sélectionnez **Ajouter**
+11. Dans le volet **Ajouter un sous-réseau**, indiquez le nom de sous-réseau **myBackendSubnet** et l’adresse de départ : **10.1.0.0/24**. Sélectionnez **Ajouter**
 
-12. Dans la notification relative à Azure Bastion, sélectionnez **Ajouter un sous-réseau Azure Bastion**.
+12. Sélectionnez **+ Ajouter un sous-réseau** à nouveau, indiquez le nom du sous-réseau **myFrontEndSubnet** et l'adresse de départ : **10.1.2.0/24**. Sélectionnez **Ajouter**
 
-13. Sélectionnez **Revoir + créer**.
+13. Vérifiez que **AzureBastionSubnet** existe, ajoutez-le si nécessaire.
 
-14. Sélectionnez **Create** (Créer).
+14. Sélectionnez **Revoir + créer**.
+
+15. Sélectionnez **Create** (Créer).
 
 ## Tâche 2 : Créer des serveurs de back-end
 
@@ -126,7 +128,7 @@ Dans cette section, vous allez créer un équilibreur de charge interne de réf�
    
 1. Sélectionnez Ajouter une adresse IP front-end
 
-1. Dans le volet **Ajouter une adresse IP front-end**, entrez les informations du tableau ci-dessous et sélectionnez **Ajouter**.
+1. Dans le volet **Ajouter une adresse IP front-end**, entrez les informations du tableau ci-dessous et sélectionnez **Enregistrer**.
 
    | **Paramètre**     | **Valeur**                |
    | --------------- | ------------------------ |
@@ -158,7 +160,7 @@ Le pool d’adresses de back-ends contient les adresses IP des cartes d’inter
    | Nom            | **myBackendPool**    |
    | Réseau virtuel | **IntLB-VNet**       |
 
-1. Sous **Machines virtuelles**, sélectionnez **Ajouter**.
+1. Sous **Machines virtuelles**, sélectionnez **Enregistrer**.
 
 1. Cochez les cases des trois machines virtuelles (**myVM1**, **myVM2** et **myVM3**), puis sélectionnez **Ajouter**.
 

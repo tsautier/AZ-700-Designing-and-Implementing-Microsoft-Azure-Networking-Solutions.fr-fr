@@ -434,5 +434,5 @@ Félicitations, vous avez terminé le labo. Voici les principaux points à reten
 + Les métriques sont des mesures quantitatives qui montrent des instantanés des performances des applications ou des ressources. Les métriques sont généralement des valeurs numériques que vous pouvez mesurer au fil du temps.
 + Les journaux sont des enregistrements textuels d’événements, d’actions et de messages qui se produisent dans une ressource ou une application. 
 + Les insights, les visualisations et les tableaux de bord Azure Monitor peuvent consommer et transmettre des informations de surveillance concernant vos applications.
-+ Les alertes vous avertissent de conditions critiques, et sont susceptibles de prendre des actions correctives. Les règles d’alerte peuvent être basées sur des données de mesure ou de journal.+ 
++ Les alertes vous informent des conditions critiques et peuvent prendre des actions correctives. Les règles d’alerte peuvent être basées sur des données de mesure ou de journal.+ 
     
