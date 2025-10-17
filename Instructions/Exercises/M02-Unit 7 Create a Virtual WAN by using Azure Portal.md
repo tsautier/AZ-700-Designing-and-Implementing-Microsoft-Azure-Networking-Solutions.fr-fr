@@ -129,7 +129,7 @@ Un hub contient des passerelles pour offrir des fonctionnalités site à site, E
 
 Copilot peut vous aider à apprendre à utiliser les outils de script Azure. Copilot peut également aider dans des domaines non couverts dans le labo ou quand vous avez besoin de plus d’informations. Ouvrez un navigateur Edge et choisissez Copilot (en haut à droite), ou accédez à *copilot.microsoft.com*. Prenez quelques minutes pour essayer ces invites.
 + Quel type d’architecture réseau est utilisé par Azure VWAN ?
-+ Quelle sont les différences entre les types de base et standard d’Azure VWAN ? Fournir des exemples.
++ Quelle sont les différences entre les types de base et standard d’Azure VWAN ? Fournissez des exemples.
 + Un réseau VWAN Azure peut-il être créé avec des outils de script ?
 
 ## En savoir plus grâce à l’apprentissage auto-rythmé

@@ -86,7 +86,7 @@ Dans cette section, vous allez créer deux machines virtuelles de test pour test
    
 1. Déployez les modèles ARM suivants pour créer les machines virtuelles nécessaires à cet exercice :
 
-   >**Remarque** : Vous serez invité à fournir un mot de passe d’administrateur. Vous aurez besoin de ce mot de passe ultérieurement. 
+   >**Remarque** : Vous serez invité à fournir un mot de passe d’administrateur. Vous aurez besoin de ce mot de passe dans une étape ultérieure. 
 
    ```powershell
    $RGName = "ContosoResourceGroup"

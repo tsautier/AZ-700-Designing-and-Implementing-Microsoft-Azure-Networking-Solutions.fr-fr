@@ -178,8 +178,8 @@ Copilot peut vous aider à apprendre à utiliser les outils de script Azure. Cop
 
 ## Points clés
 
-+ Le réseau virtuel Azure est le bloc de construction fondamental de votre réseau privé dans Azure. Une instance du service (un réseau virtuel) permet à de nombreux types de ressources Azure de communiquer de manière sécurisée entre elles, avec Internet et avec des réseaux locaux. Vérifiez que les espaces d’adressage ne se chevauchent pas. Assurez-vous que votre espace d’adressage de réseau virtuel (bloc CIDR) ne chevauche pas d’autres plages réseau de votre organisation.
-+ Toutes les ressources Azure d’un réseau virtuel sont déployées en sous-réseaux au sein de ce réseau virtuel. Les sous-réseaux vous permettent de segmenter le réseau virtuel en sous-réseaux, et d’allouer une partie de l’espace d’adressage du réseau virtuel à chaque sous-réseau. Vos sous-réseaux ne doivent pas couvrir l’espace d’adressage entier du réseau virtuel. Planifiez et réserver de l’espace d’adressage pour l’avenir.
++ Le réseau virtuel Azure est un service qui fournit le bloc de construction fondamental de votre réseau privé dans Azure. Une instance du service (un réseau virtuel) permet à de nombreux types de ressources Azure de communiquer en toute sécurité entre elles, avec Internet et les réseaux locaux. Vérifiez que les espaces d’adressage ne se chevauchent pas. Assurez-vous que votre espace d’adressage de réseau virtuel (bloc CIDR) ne chevauche pas d’autres plages réseau de votre organisation.
++ Toutes les ressources Azure d’un réseau virtuel sont déployées en sous-réseaux au sein de ce réseau virtuel. Les sous-réseaux vous permettent de segmenter le réseau virtuel en sous-réseaux, et d’allouer une partie de l’espace d’adressage du réseau virtuel à chaque sous-réseau. Vos sous-réseaux ne doivent pas couvrir l’espace d’adressage entier du réseau virtuel. Planifiez et réservez de l’espace d’adressage pour l’avenir.
 
 
 

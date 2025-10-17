@@ -36,7 +36,7 @@ Dans cet exercice, vous allez :
 
 1. Dans la page **Créer ExpressRoute**, indiquez `ExpressRouteResourceGroup` pour le **groupe de ressources**. Sélectionnez ensuite **Résilience standard** pour la **résilience**.
 
-1. Pour ***Détails du circuit**, vérifiez que vous spécifiez la région correcte (**USA Est 2**), le nom du circuit (**TestERCircuit**), l’emplacement de peering (**Seattle**), le fournisseur (**Equinix**), la bande passante (**50 Mops**), le niveau de référence SKU (**Standard**) et le modèle de facturation des données (**Limitées**).
+1. Pour **Détails du circuit**, vérifiez que vous spécifiez la région correcte (**USA Est 2**), le nom du circuit (**TestERCircuit**), l’emplacement de peering (**Seattle**), le fournisseur (**Equinix**), la bande passante (**50 Mops**), le niveau de référence SKU (**Standard**) et le modèle de facturation des données (**Limitées**).
 
 1. Sélectionnez **Vérifier + créer**.
 
@@ -141,3 +141,4 @@ Félicitations, vous avez terminé le labo. Voici les principaux points à reten
 + Microsoft garantit une disponibilité d’au moins 99,95 % pour les connexions dédiées ExpressRoute. La connexion est privée et se déplace sur une ligne dédiée. Les tiers ne peuvent pas intercepter le trafic.
 + Vous pouvez créer une connexion entre votre réseau local et le cloud Microsoft de quatre façons différentes : avec une colocalisation avec échange de cloud, avec une connexion Ethernet point à point, avec une connexion universelle (IPVPN) et avec ExpressRoute Direct.
 + Les fonctionnalités ExpressRoute sont déterminées par la référence (SKU) : local, standard et premium. 
+

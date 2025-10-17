@@ -180,105 +180,96 @@ Au cours de cette tâche, vous allez connecter les réseaux virtuels Hub and Spo
 
 Au cours de cette tâche, vous allez d’abord créer votre stratégie de pare-feu, puis sécuriser votre hub. La stratégie de pare-feu définit des collections de règles pour diriger le trafic sur un ou plusieurs hubs virtuels sécurisés.
 
-1. Dans le portail, recherchez `firewall manager`, puis sélectionnez **Gestionnaire de pare-feu de mots clés de sécurité réseau**.
-
-1. Dans le panneau **Firewall Manager**, sélectionnez **Stratégies de pare-feu Azure**.
+1. Dans le portail, recherchez et sélectionnez `Firewall Policies`.
 
 1. Sélectionnez **Créer**.
 
-1. Dans **Groupe de ressources**, sélectionnez **fw-manager-rg**.
-
-5. Sous **Détails de la stratégie**, pour le **Nom**, entrez `Policy-01`.
-
-1. Dans **Région**, sélectionnez votre région.
-
-1. Dans **Niveau de stratégie**, sélectionnez **Standard**.
+    | **Paramètre**    | **Valeur** |
+    | ---------- | --------------|
+    | Resource group | **fw-manager-rg** |
+    | Nom    | `Policy-01` |
+    | Région     | Sélectionner votre région |
+    | Niveau de stratégie | **Standard** |
 
 1. Sélectionnez **Suivant : Paramètres DNS**. Vérifiez, mais n’apportez aucune modification. 
 
 1. Sélectionnez **Suivant : Inspection TLS**. Vérifiez, mais n’apportez aucune modification. 
 
-1. Sélectionnez **Suivant : Règles**.
+**Ajouter un regroupement de règles et une règle pour autoriser le domaine Microsoft**
 
-1. Dans l’onglet **Règles**, sélectionnez **Ajouter une collection de règles**.
+1. Sélectionnez **Suivant : Règles**, puis sélectionnez **Ajouter un regroupement de règles**.
 
-1. Dans la page **Ajouter un regroupement de règles**, dans **Nom**, entrez `App-RC-01`.
+   | **Paramètre** | **Valeur** |
+   | ---------- | --------------|
+   | Nom        |  `App-RC-01` |
+   | Type de regroupement de règles | **Application** |
+   | Priorité    | `100` |
+   | Action de regroupement de règles | **Autoriser** |
 
-1. Pour **Type de collection de règles**, sélectionnez **Application**.
+1. Dans la section **Règles**.
 
-1. Pour **Priorité**, entrez **100**.
+   | **Paramètre** | **Valeur** |
+   | ---------- | --------------|
+   | Nom |  `Allow-msft` |
+   | Type de source | **Adresse IP** |
+   | Source | `*` |
+   | Protocol | `http,https` |
+   | Type de destination | **FQDN** |
+   | Destination | `*.microsoft.com` |
 
-1. Vérifiez que **Action de collection de règles** est défini sur **Autoriser**.
+**Ajoutez un regroupement de règles et une règle pour autoriser une connexion Bureau à distance à la machine virtuelle Srv-workload-01.**
 
-1. Sous **Règles**, dans **Nom**, entrez `Allow-msft`.
+1. Sélectionnez **Ajouter une collection de règles**.
 
-1. Pour **Type de source**, sélectionnez **Adresse IP**.
+   | **Paramètre** | **Valeur** |
+   | ---------- | --------------|
+   | Nom        |  `dnat-rdp` |
+   | Type de regroupement de règles | **DNAT** |
+   | Priority    | `100` |
+   | Action de regroupement de règles | **Autoriser** |
 
-1. Pour **Source**, entrez *.
+1. Dans la section **Règles**.
 
-1. Pour **Protocole**, entrez `http,https`.
+   | **Paramètre** | **Valeur** |
+   | ---------- | --------------|
+   | Nom |  `Allow-rdp` |
+   | Type de source | **Adresse IP** |
+   | Source | `*` |
+   | Protocole | **TCP** |
+   | Ports de destination | `3389` |
+   | Destination (adresse IP du pare-feu) | Entrer l’adresse IP publique du hub virtuel du pare-feu |
+   | Type traduit | **Adresse IP** |
+   | Adresse ou FQDN traduit | Entrer l’adresse IP privée pour la machine virtuelle Srv-workload-01 |
+   | Port traduit | `3389` |
+   
+**Ajoutez un regroupement de règles et une règle pour autoriser une connexion Bureau à distance à la machine virtuelle Srv-workload-02.**
 
-1. Vérifiez que **Type de destination** est défini sur **FQDN**.
+1. Sélectionnez **Ajouter une collection de règles**.
 
-1. Pour **Destination**, entrez `*.microsoft.com`.
+   | **Paramètre** | **Valeur** |
+   | ---------- | --------------|
+   | Nom        |  `vnet-rdp` |
+   | Type de regroupement de règles | **Réseau** |
+   | Priorité    | `100` |
+   | Action de regroupement de règles | **Autoriser** |
 
-1. Sélectionnez **Ajouter**.
+1. Dans la section **Règles**.
 
-1. Pour ajouter une règle DNAT afin de pouvoir connecter un bureau à distance à la machine virtuelle Srv-workload-01, sélectionnez **Ajouter un regroupement de règles**.
-
-1. Pour **Nom**, entrez `dnat-rdp`.
-
-1. Comme **Type de collection de règles**, sélectionnez **DNAT**.
-
-1. Pour **Priorité**, entrez **100**.
-
-1. Sous **Règles**, dans **Nom**, entrez `Allow-rdp`.
-
-1. Pour **Type de source**, sélectionnez **Adresse IP**.
-
-1. Pour **Source**, entrez *.
-
-1. Pour **Protocole**, sélectionnez **TCP**.
-
-1. Pour **Ports de destination**, entrez `3389`.
-
-1. Pour **Adresse IP de destination**, entrez l’adresse IP publique du hub virtuel du pare-feu que vous avez notée précédemment (par exemple **51.143.226.18**).
-
-1. Dans le champ **Type traduit**, sélectionnez **Adresse IP**.
-
-1. Pour **Adresse traduite**, entrez l’adresse IP privée pour **Srv-workload-01** que vous avez notée précédemment (par exemple **10.0.1.4**).
-
-1. Pour **Port traduit**, entrez **3389**.
-
-1. Sélectionnez **Ajouter**.
-
-1. Pour ajouter une règle réseau afin de pouvoir connecter un bureau à distance de la machine virtuelle Srv-workload-01 à Srv-workload-02, sélectionnez **Ajouter un regroupement de règles**.
-
-1. Pour **Nom**, entrez `vnet-rdp`.
-
-1. Comme **Type de collection de règles**, sélectionnez **Réseau**.
-
-1. Pour **Priorité**, entrez **100**.
-
-1. Pour **Action de collection de règles**, sélectionnez **Autoriser**.
-
-1. Sous **Règles**, dans **Nom**, entrez `Allow-vnet`.
-
-1. Pour **Type de source**, sélectionnez **Adresse IP**.
-
-1. Pour **Source**, entrez *.
-
-1. Pour **Protocole**, sélectionnez **TCP**.
-
-1. Pour **Ports de destination**, entrez **3389**.
-
-1. Pour **Type de destination**, sélectionnez **Adresse IP**.
-
-1. Pour **Destination**, entrez l’adresse IP privée pour **Srv-workload-02** que vous avez notée précédemment (par exemple **10.1.0.4**).
+   | **Paramètre** | **Valeur** |
+   | ---------- | --------------|
+   | Nom |  `Allow-vnet` |
+   | Type de source | **Adresse IP** |
+   | Source | `*` |
+   | Protocole | **TCP** |
+   | Ports de destination | `3389` |
+   | Destination (adresse IP du pare-feu) | Entrer l’adresse IP publique du hub virtuel du pare-feu |
+   | Type traduit | **Adresse IP** |
+   | Adresse ou FQDN traduit | Entrer l’adresse IP privée pour la machine virtuelle Srv-workload-02 |
+   | Port traduit | `3389` |
 
 1. Sélectionnez **Ajouter**.
 
-1. Vous devez maintenant avoir trois regroupements de règles.
+1. Vérifiez que vous disposez de trois regroupements de règles.
 
 1. Sélectionnez **Revoir + créer**.
 

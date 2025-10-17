@@ -202,7 +202,7 @@ Dans cet exercice, vous allez :
    | Concepts de base          | Détails du projet   | Abonnement                                | Aucune modification n’est requise          |
    |                 |                   | ResourceGroup                               | ContosoResourceGroup         |
    |                 | Détails de l’instance  | Nom                                        | ManufacturingVnetGateway     |
-   |                 |                   | Région                                      | Europe Nord                 |
+   |                 |                   | Région                                      | Europe Ouest                  |
    |                 |                   | Type de passerelle                                | VPN                          |
    |                 |                   | SKU                                         | VpnGw1                       |
    |                 |                   | Generation                                  | Génération1                  |

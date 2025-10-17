@@ -401,4 +401,4 @@ Félicitations, vous avez terminé le labo. Voici les principaux points à reten
 + Un pare-feu est une fonctionnalité de sécurité réseau qui se situe entre un réseau approuvé et un réseau non approuvé, comme Internet. Le travail du pare-feu consiste à analyser le trafic réseau, et à l’autoriser ou à le rejeter.
 + Le Pare-feu Azure est un service de pare-feu basé sur le cloud. Dans la plupart des configurations, le Pare-feu Azure est provisionné dans un réseau virtuel Hub. Le trafic en provenance et à destination des réseaux virtuels Spoke et le réseau local est dirigé vers le pare-feu.
 + Les règles de pare-feu évaluent le trafic réseau. Le Pare-feu Azure comporte trois types de règles : application, réseau et NAT. 
-+ Le Pare-feu Azure est proposé dans trois versions : Standard, Premium et De base.
++ Le Pare-feu Azure est proposé en trois références SKU : Standard, Premium et De base.

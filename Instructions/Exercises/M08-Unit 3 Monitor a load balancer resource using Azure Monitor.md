@@ -44,7 +44,7 @@ Dans cette section, vous allez créer un réseau virtuel et un sous-réseau.
 
 1. Connectez-vous au portail Azure.
 
-1. Sur la page d’accueil du portail Azure, recherchez **Réseau virtuel**, puis sélectionnez Réseau virtuel sous Services.
+1. Dans le portail Microsoft Azure, recherchez et sélectionnez **Réseaux virtuels**.
 
 1. Sélectionnez **+ Créer**.
 
@@ -59,16 +59,6 @@ Dans cette section, vous allez créer un réseau virtuel et un sous-réseau.
    | Nom           | **IntLB-VNet**                                      |
    | Région         | **(États-Unis) USA Ouest**                                    |
 
-1. Sélectionnez **Suivant : Adresses IP**.
-
-1. Sous l’onglet **Adresses IP**, dans la zone **Espace d’adressage IPv4**, entrez **10.1.0.0/16**.
-
-1. Sous **Nom du sous-réseau**, sélectionnez **+ Ajouter un sous-réseau**.
-
-1. Dans le volet **Ajouter un sous-réseau**, spécifiez **myBackendSubnet** comme nom de sous-réseau et **10.1.0.0/24** comme plage d’adresses de sous-réseau.
-
-1. Sélectionnez **Ajouter**.
-
 1. Sélectionnez **Suivant : Sécurité**.
 
 1. Sous **BastionHost** sélectionnez **Activer**, puis entrez les informations du tableau ci-dessous.
@@ -76,8 +66,17 @@ Dans cette section, vous allez créer un réseau virtuel et un sous-réseau.
     | **Paramètre**                       | **Valeur**                                              |
     | --------------------------------- | ------------------------------------------------------ |
     | Nom du bastion                      | **myBastionHost**                                      |
-    | Espace d’adressage AzureBastionSubnet  | **10.1.1.0/24**                                        |
     | Adresse IP publique                 | Sélectionnez **Créer**<br /><br />Nom : **myBastionIP** |
+
+1. Sélectionnez **Suivant : Adresses IP**.
+
+1. **Supprimez l’adresse IP**, puis **l’espace d’adressage IPv4**. Saisissez **10.1.0.0/16.**
+
+1. Modifiez **AzureBastionSubnet** et remplacez **l’adresse de départ** par **10.1.1.0**. **Enregistrez** la modification. 
+
+1. Sélectionnez **Ajouter un sous-réseau**. Le nom du sous-réseau est `myBackendSubnet` et la plage d’adresses du sous-réseau est `10.1.0.0/24`. Sélectionnez **Ajouter**.
+
+1. Vous devez maintenant disposer d’un réseau virtuel avec deux sous-réseaux. 
 
 1. Sélectionnez **Revoir + créer**.
 
@@ -87,9 +86,9 @@ Dans cette section, vous allez créer un réseau virtuel et un sous-réseau.
 
 Dans cette section, vous allez créer un équilibreur de charge interne de référence SKU Standard. La raison pour laquelle nous créons un équilibreur de charge de référence SKU Standard dans cet exercice, plutôt qu’un équilibreur de charge de référence SKU De base, est que certains exercices ultérieurs nécessiteront une version SKU Standard de l’équilibreur de charge.
 
-1. Dans la page d’accueil Azure, dans la barre de recherche, entrez **Équilibreur de charge**.
+1. Dans le portail Microsoft Azure, recherchez et sélectionnez **Load Balancers**.
 
-1. Sélectionnez **Créer un équilibreur de charge**.
+1. Sélectionnez **Créer**, puis **Standard Load Balancer**.
 
 1. Sous l’onglet **De base**, utilisez les informations du tableau ci-dessous pour créer l’équilibreur de charge.
 
@@ -102,21 +101,24 @@ Dans cette section, vous allez créer un équilibreur de charge interne de réf�
    | Région                | **(États-Unis) USA Ouest**         |
    | Référence SKU                   | **Standard**             |
    | Type                  | **Interne**             |
-   | Configuration d'adresse IP front-end | + Ajouter une configuration IP front-end |
-   | Nom                  | **LoadBalancerFrontEnd** |
+
+1. Accédez à l’onglet **Adresse IP du front-end**, puis sélectionnez **+ Ajouter une configuration IP front-end**.
+
+   | **Réglage**            | **Valeur**            |
+   | Nom                  | `LoadBalancerFrontEnd` |
    | Réseau virtuel       | **IntLB-VNet**           |
-   | Subnet                | **myBackendSubnet**      |
-   | Affectation d’adresses IP | **Dynamique**              |
+   | Sous-réseau                | **myBackendSubnet**      |
+   | Affectation d’adresse IP | **Dynamique**              |
 
-1. Sélectionnez **Revoir + créer**.
+1. **Enregistrez** vos modifications, puis sélectionnez **Vérifier + créer**.
 
-1. Sélectionnez **Create** (Créer).
+1. Après une validation réussie, sélectionnez **Créer**.
 
 ## Tâche 3 : Créer un pool de back-ends
 
 Le pool d’adresses de back-ends contient les adresses IP des cartes d’interface réseau virtuelles connectées à l’équilibreur de charge.
 
-1. Sur la page d’accueil du portail Azure, sélectionnez **Toutes les ressources**, puis **myIntLoadBalancer** dans la liste des ressources.
+1. Dans le portail Microsoft Azure, recherchez et sélectionnez la ressource **myIntLoadBalancer**.
 
 1. Sous **Paramètres**, sélectionnez **Pools principaux**, puis **Ajouter**.
 
@@ -125,10 +127,10 @@ Le pool d’adresses de back-ends contient les adresses IP des cartes d’inter
    | **Paramètre**     | **Valeur**            |
    | --------------- | -------------------- |
    | Nom            | **myBackendPool**    |
-   | Réseau virtuel | **IntLB-VNet**       |
+   | Réseau virtuel | IntLB-VNet    |
    | Configuration d’un pool de back-ends   | **Carte d’interface réseau** |
 
-1. Sélectionnez **Ajouter**.
+1. Cliquez sur **Enregistrer**.
 
    ![Afficher le pool de back-ends créé dans l’équilibreur de charge](../media/create-backendpool.png)
 
@@ -136,19 +138,19 @@ Le pool d’adresses de back-ends contient les adresses IP des cartes d’inter
 
 L’équilibreur de charge supervise l’état de votre application avec une sonde d’intégrité. La sonde d’intégrité ajoute ou supprime des machines virtuelles dans l’équilibreur de charge en fonction de leur réponse aux contrôles d’intégrité. Vous allez maintenant créer une sonde d’intégrité afin de superviser l’intégrité des machines virtuelles.
 
-1. Sur la page **Pools back-end** de votre équilibreur de charge, sous **Paramètres**, sélectionnez **Sondes d’intégrité**, puis **Ajouter**.
+1. Pour la ressource d’équilibreur de charge, sélectionnez **Paramètres**, sélectionnez **Sondes d’intégrité**, puis **Ajouter**.
 
 1. Dans la page **Ajouter une sonde d’intégrité**, entrez les informations du tableau ci-dessous.
 
    | **Paramètre**         | **Valeur**         |
    | ------------------- | ----------------- |
-   | Nom                | **myHealthProbe** |
+   | Nom                | `myHealthProbe` |
    | Protocol            | **HTTP**          |
    | Port                | **80**            |
    | Chemin d’accès                | **/**             |
    | Intervalle            | **15**            |
 
-1. Sélectionnez **Ajouter**.
+1. Cliquez sur **Enregistrer**.
 
    ![Afficher la sonde d’intégrité créée dans l’équilibreur de charge](../media/create-healthprobe.png)
 
@@ -156,25 +158,21 @@ L’équilibreur de charge supervise l’état de votre application avec une son
 
 Une règle d’équilibrage de charge est utilisée pour définir la distribution du trafic vers les machines virtuelles. Vous définissez la configuration IP front-end pour le trafic entrant et le pool d’adresses IP de back-ends pour la réception du trafic. Les ports source et de destination sont définis dans la règle. Maintenant, vous allez créer une règle d’équilibreur de charge.
 
-1. Sur la page **Pools back-end** de votre équilibreur de charge, sous **Paramètres**, sélectionnez **Règles d’équilibrage de charge**, puis **Ajouter**.
-
-1. Dans la page **Ajouter une règle d’équilibrage de charge**, entrez les informations du tableau ci-dessous.
+1. Pour la ressource d’équilibreur de charge, sélectionnez **Paramètres**, sélectionnez **Règles d’équilibrage de charge**, puis **Ajouter**.
 
    | **Paramètre**            | **Valeur**                |
    | ---------------------- | ------------------------ |
    | Nom                   | **myHTTPRule**           |
    | Version de l’adresse IP             | **IPv4**                 |
    | Adresse IP du serveur frontal    | **LoadBalancerFrontEnd** |
-   | Protocol               | **TCP**                  |
+   | Pool principal           | **myBackendPool**        |
+   | Protocole               | **TCP**                  |
    | Port                   | **80**                   |
    | Port principal           | **80**                   |
-   | Pool principal           | **myBackendPool**        |
    | Sonde d’intégrité           | **myHealthProbe**        |
    | Persistance de session    | **Aucun**                 |
    | Délai d’inactivité (minutes) | **15**                   |
    | IP flottante            | **Disabled**             |
-
-1. Sélectionnez **Ajouter**.
 
    ![Afficher la règle d’équilibrage de charge créée dans l’équilibreur de charge](../media/create-loadbalancerrule.png)
 
@@ -191,90 +189,41 @@ Dans cette section, vous allez créer trois machines virtuelles pour le pool pri
 
     > **Note :** si vous travaillez dans votre propre abonnement, les [fichiers de modèles](https://github.com/MicrosoftLearning/AZ-700-Designing-and-Implementing-Microsoft-Azure-Networking-Solutions/tree/master/Allfiles/Exercises) sont disponibles dans le référentiel de labo GitHub.
 
-1. Déployez les modèles ARM suivants pour créer le réseau virtuel, les sous-réseaux et les machines virtuelles nécessaires à cet exercice :
-
-   >**Remarque** : Vous serez invité à fournir un mot de passe d’administrateur.
+1. Déployez les modèles ARM suivants pour créer le réseau virtuel, les sous-réseaux et les machines virtuelles nécessaires pour cet exercice. **Remarque** : vous serez invité à fournir un mot de passe d’administrateur.
 
    ```powershell
    $RGName = "IntLB-RG"
-
    New-AzResourceGroupDeployment -ResourceGroupName $RGName -TemplateFile azuredeploy.json -TemplateParameterFile azuredeploy.parameters.json
    ```
-  
-    > **Remarque :** le déploiement peut prendre plusieurs minutes.
+1. Le déploiement peut prendre plusieurs minutes. Vous pouvez vérifier la progression dans le portail en actualisant la page de ressources de la machine virtuelle.   
 
 ## Tâche 7 : Ajouter des machines virtuelles au pool de back-ends
 
-1. Sur la page d’accueil du portail Azure, sélectionnez **Toutes les ressources**, puis **myIntLoadBalancer** dans la liste des ressources.
+1. Dans le portail Microsoft Azure, recherchez et sélectionnez la ressource **myIntLoadBalancer**.
 
 1. Sous **Paramètres**, sélectionnez **Pools principaux**, puis **myBackendPool**.
 
-1. Dans la zone **Associé à**, sélectionnez **Machines virtuelles**.
+1. Dans la section **Configurations IP**, sélectionnez **Ajouter**.
 
-1. Sous **Machines virtuelles**, sélectionnez **Ajouter**.
+1. Sélectionnez toutes les machines virtuelles affichées, puis sélectionnez **Ajouter**.
 
-1. Cochez les cases des trois machines virtuelles (**myVM1**, **myVM2** et **myVM3**), puis sélectionnez **Ajouter**.
+1. Cochez les cases pour **myVM1** et **myVM2**, puis sélectionnez **Ajouter**.
 
 1. Sur la page **myBackendPool**, sélectionnez **Enregistrer**.
-
-   ![Afficher les machines virtuelles ajoutées au pool de back-ends dans l’équilibreur de charge](../media/add-vms-backendpool.png)
 
 ## Tâche 8 : tester l’équilibreur de charge
 
 Dans cette section, vous allez créer une machine virtuelle de test, puis tester l’équilibreur de charge.
 
-### Créer une machine virtuelle de test
+### Se connecter à la machine virtuelle de test (VM3) pour tester l’équilibreur de charge
 
-   >**Remarque** : il peut exister de légères différences entre les instructions et l’interface du portail Azure, mais le concept de base est identique.
-
-1. Sur la page d’accueil Azure, dans la zone de recherche globale, entrez **Machines virtuelles** et sélectionnez Machines virtuelles sous Services.
-
-1. Sélectionnez **+ Créer; + Machine virtuelle**, dans l’onglet **Fonctions de base**, créez la première machine virtuelle en utilisant les informations du tableau ci-dessous.
-
-   | **Paramètre**          | **Valeur**                                    |
-   | -------------------- | -------------------------------------------- |
-   | Abonnement         | Sélectionnez votre abonnement                     |
-   | Resource group       | **IntLB-RG**                                 |
-   | Nom de la machine virtuelle | **myTestVM**                                 |
-   | Région               | **(États-Unis) USA Ouest**                             |
-   | Options de disponibilité | **Aucune redondance de l’infrastructure requise**    |
-   | Type de sécurité        | **Standard**                                 |
-   | Image                | **Voir toutes les images** --> **Datacenter pour Windows Server 2019**  |
-   | Taille                 | **Standard_DS2_v3 - 2 processeurs virtuels, 8 Gio de mémoire** |
-   | Nom d’utilisateur             | **TestUser**                                 |
-   | Mot de passe             | **Choisissez un mot de passe sécurisé**                |
-   | Confirmer le mot de passe     | **Choisissez un mot de passe sécurisé**                |
-
-1. Sélectionnez **Suivant : Disques**, puis **Suivant : Mise en réseau**.
-
-1. Sous l’onglet **Mise en réseau**, utilisez les informations du tableau ci-dessous pour configurer les paramètres réseau.
-
-   | **Paramètre**                                                  | **Valeur**                     |
-   | ------------------------------------------------------------ | ----------------------------- |
-   | Réseau virtuel                                              | **IntLB-VNet**                |
-   | Subnet                                                       | **myBackendSubnet**           |
-   | Adresse IP publique                                                    | Remplacez par **Aucun**            |
-   | Groupe de sécurité réseau de la carte réseau                                   | **Avancée**                  |
-   | Configurer un groupe de sécurité réseau                             | Sélectionnez le groupe **myNSG** existant |
-   | Équilibrage de charge                                               | **Aucun** (ou case non cochée)       |
-
-1. Sélectionnez **Revoir + créer**.
-
-1. Sélectionnez **Create** (Créer).
-
-1. Attendez que cette dernière machine virtuelle soit déployée avant de passer à la tâche suivante.
-
-### Se connecter à la machine virtuelle de test pour tester l’équilibreur de charge
-
-1. Sur la page d’accueil du portail Azure, sélectionnez **Toutes les ressources**, puis **myIntLoadBalancer** dans la liste des ressources.
+1. Dans le portail Microsoft Azure, recherchez et sélectionnez la ressource **myIntLoadBalancer**.
 
 1. Dans la page **Vue d’ensemble**, prenez note de l’**Adresse IP privée** ou copiez-la dans le Presse-papiers. Remarque : vous devrez peut-être sélectionner **Afficher plus** pour voir l’**adresse IP privée**.
 
-1. Sélectionnez **Accueil** puis, sur la page d’accueil du portail Azure, sélectionnez **Toutes les ressources**, puis la machine virtuelle **myTestVM** que vous venez de créer.
+1. Recherchez et sélectionnez **myVM3**. 
 
-1. Dans la page **Vue d’ensemble**, sélectionnez **Se connecter**, puis **Bastion**.
-
-1. Sélectionnez **Utiliser Bastion**.
+1. Sélectionnez **Se connecter**, puis **Se connecter via Bastion**.
 
 1. Dans la zone **Nom d’utilisateur**, entrez **TestUser** et dans la zone **Mot de passe**, entrez le mot de passe que vous avez spécifié pendant le déploiement, puis sélectionnez **Se connecter**.
 
@@ -286,21 +235,14 @@ Dans cette section, vous allez créer une machine virtuelle de test, puis tester
 
 1. Sélectionnez **OK** dans la boîte de dialogue **Configurer Internet Explorer 11**.
 
-1. Entrez (ou collez) l’**Adresse IP privée** (par exemple 10.1.0.4) obtenue à l’étape précédente dans la barre d’adresse du navigateur, puis appuyez sur Entrée.
+1. Entrez (ou collez) l’adresse IP de l’équilibreur de charge (par exemple, 10.1.0.4).
 
-1. La page d’accueil web par défaut du serveur web IIS s’affiche dans la fenêtre du navigateur. L’une des trois machines virtuelles du pool de back-ends répondra.
-    ![Fenêtre de navigateur montrant la réponse Hello World renvoyée par VM1](../media/load-balancer-web-test-1.png)
-
-1. Si vous cliquez plusieurs fois sur le bouton Actualiser dans le navigateur, vous verrez que la réponse est renvoyée de manière aléatoire à partir des différentes machines virtuelles du pool back-end de l’équilibreur de charge interne.
-
-    ![Fenêtre de navigateur montrant la réponse Hello World renvoyée par VM3](../media/load-balancer-web-test-2.png)
+1. L’une des deux machines virtuelles des serveurs back-end (myVM1 ou myVM2) répond. Continuez à actualiser la page et notez que la réponse provient aléatoirement des serveurs principaux. 
 
 ## Tâche 9 : créer un espace de travail Log Analytics
 
-1. Sur la page d’accueil du portail Azure, sélectionnez **Tous les services** puis, dans la zone de recherche en haut de la page, entrez **Log Analytics** et sélectionnez **Espaces de travail Log Analytics** dans la liste filtrée.
-
-   ![Accès aux espaces de travail Log Analytics à partir de la page d’accueil du portail Azure](../media/log-analytics-workspace-1.png)
-
+1. Dans le portail Microsoft Azure, recherchez et sélectionnez la ressource **Espaces de travail Log Analytics**.
+   
 1. Sélectionnez **Créer**.
 
 1. Dans la page **Créer un espace de travail Log Analytics**, sous l’onglet **De base**, utilisez les informations du tableau ci-dessous pour créer l’espace de travail.
@@ -314,30 +256,13 @@ Dans cette section, vous allez créer une machine virtuelle de test, puis tester
 
 1. Sélectionnez **Vérifier + créer**, puis **Créer**.
 
-   ![Liste des espaces de travail Log Analytics](../media/log-analytics-workspace-2.png)
-
 ## Tâche 10 : utiliser l’affichage Dépendance fonctionnelle
 
-1. Sur la page d’accueil du portail Azure, sélectionnez **Toutes les ressources** puis, dans la liste des ressources, sélectionnez **myIntLoadBalancer**.
+1. Dans le portail Microsoft Azure, recherchez et sélectionnez la ressource **myIntLoadBalancer**. 
 
    ![Liste de toutes les ressources dans le portail Azure](../media/network-insights-functional-dependency-view-1.png)
 
 1. Sous **Supervision**, sélectionnez **Insights**.
-
-1. Dans le coin supérieur droit de la page, sélectionnez **X** pour fermer le volet **Métriques** pour le moment. Vous le rouvrirez d’ici peu.
-
-1. Cet affichage est appelé Dépendance fonctionnelle et, dans ce mode, vous disposez d’un diagramme interactif utile qui illustre la topologie de la ressource réseau sélectionnée (en l’occurrence un équilibreur de charge). Pour Standard Load Balancer, les ressources de votre pool principal suivent un code de couleur en fonction de l’état de la sonde d’intégrité, indiquant la disponibilité actuelle de votre pool principal pour traiter le trafic.
-
-1. Utilisez les boutons **Zoom avant (+)** et **Zoom arrière (-)** dans le coin inférieur droit de la page pour effectuer un zoom avant ou arrière sur le diagramme de la topologie (vous pouvez également utiliser la molette de la souris si vous en avez une). Vous pouvez aussi faire glisser le diagramme de topologie sur la page pour le déplacer.
-
-1. Pointez sur le composant **LoadBalancerFrontEnd** dans le diagramme, puis sur le composant **myBackendPool**.
-
-1. Notez que vous pouvez utiliser les liens de ces fenêtres indépendantes pour afficher des informations sur ces composants d’équilibreur de charge et ouvrir leurs panneaux de portail Azure respectifs.
-
-1. Pour télécharger une copie au format de fichier .SVG du diagramme de topologie, sélectionnez **Télécharger la topologie**, puis enregistrez le fichier dans votre dossier **Téléchargements**.
-
-1. Dans le coin supérieur droit, sélectionnez **Afficher les métriques** pour rouvrir le volet de métriques sur le côté droit de l’écran.
-    ![Affichage Dépendance fonctionnelle des insights réseau Azure Monitor - Bouton Afficher les métriques mis en évidence](../media/network-insights-functional-dependency-view-3.png)
 
 1. Le volet Métriques fournit un aperçu rapide de certaines métriques clés pour cette ressource d’équilibreur de charge, sous la forme de graphiques à barres et en courbes.
 

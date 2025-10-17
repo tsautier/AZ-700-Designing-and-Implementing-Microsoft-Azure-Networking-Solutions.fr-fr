@@ -38,7 +38,7 @@ Dans cet exercice, vous allez :
 
 1. Connectez-vous au portail Azure.
 
-1. Sur la page d’accueil du portail Azure, recherchez « réseau virtuel », puis sélectionnez **Réseau virtuel** dans les résultats de la recherche.
+1. Dans la page d’accueil du portail Microsoft Azure, recherchez `virtual network`, puis sélectionnez **Réseau virtuel** dans les résultats.
 
 1. Sélectionnez **+** **Créer**.
 
@@ -51,14 +51,6 @@ Dans cet exercice, vous allez :
    | Nom           | CoreServicesVNet                              |
    | Emplacement       | Sélectionnez **USA Est**.                            |
 
-1. Sélectionnez l’onglet **Adresses IP** et entrez les valeurs suivantes (sélectionnez **par défaut** pour modifier le nom du sous-réseau) : ![interface utilisateur graphique, texte, application, adresse e-mail, description générée automatiquement](../media/create-virtual-network-ip.png).
-
-   | **Paramètre**          | **Valeur**   |
-   | -------------------- | ----------- |
-   | Espace d’adressage        | 10.0.0.0/16 |
-   | Nom du sous-réseau          | Public      |
-   | Plage d’adresses de sous-réseau | 10.0.0.0/24 |
-
 1. Sélectionnez l’onglet **Sécurité** et entrez les valeurs suivantes : ![interface utilisateur graphique, texte, application, adresse e-mail, description générée automatiquement](../media/ create-virtual-network-security.png).
 
    | **Paramètre**             | **Valeur** |
@@ -66,6 +58,14 @@ Dans cet exercice, vous allez :
    | BastionHost             | Désactivé  |
    | Protection réseau DDoS | Désactivé  |
    | Pare-feu                | Désactivé  |
+
+1. Sélectionnez l’onglet **Adresses IP** et entrez les valeurs suivantes (sélectionnez **par défaut** pour modifier le nom du sous-réseau) : ![interface utilisateur graphique, texte, application, adresse e-mail, description générée automatiquement](../media/create-virtual-network-ip.png).
+
+   | **Paramètre**          | **Valeur**   |
+   | -------------------- | ----------- |
+   | Espace d’adressage        | 10.0.0.0/16 |
+   | Nom du sous-réseau          | Public      |
+   | Plage d’adresses de sous-réseau | 10.0.0.0/24 |
 
 1. Sélectionnez **Vérifier + créer**. Une fois la ressource validée, sélectionnez **Créer**.
 
@@ -85,7 +85,7 @@ Les points de terminaison de service sont activés par service, par sous-réseau
    | Plage d’adresses               | 10.0.1.0/24                  |
    | Points de terminaison de service : services | Sélectionnez **Microsoft.Storage** |
 
-1. Sélectionnez **Enregistrer**.
+1. Sélectionnez **Ajouter**.
 
 Deux sous-réseaux doivent maintenant être configurés :
 
@@ -130,7 +130,7 @@ Par défaut, toutes les machines virtuelles d’un sous-réseau peuvent communiq
    | Protocol                | Any                       |
    | Action                  | Autoriser                     |
    | Priorité                | 100                       |
-   | Nom                    | Allow-Storage-All         |
+   | Nom                    | `Allow-Storage-All`         |
 
 1. Sélectionnez **Ajouter** :
 
@@ -154,7 +154,7 @@ Créer une règle de sécurité de trafic sortant qui refuse les communications 
    | Protocol                | Any                       |
    | Action                  | Deny                      |
    | Priority                | 110                       |
-   | Nom                    | Deny-Internet-All         |
+   | Nom                    | `Deny-Internet-All`         |
 
 1. Sélectionnez **Ajouter**.
 
@@ -172,13 +172,13 @@ Créez une règle de sécurité de trafic entrant qui autorise le trafic du prot
    | ----------------------- | ------------------------- |
    | Source                  | Quelconque                       |
    | Source port ranges      | *                         |
-   | Destination             | Sélectionnez **VirtualNetwork** |
+   | Destination             | Quelconque                       |
    | Service                 | Custom                    |
    | Plages de ports de destination | 3389                      |
    | Protocol                | Any                       |
    | Action                  | Autoriser                     |
    | Priority                | 120                       |
-   | Nom                    | Allow-RDP-All             |
+   | Nom                    | `Allow-RDP-All`            |
 
 1. Ensuite, sélectionnez **Ajouter**.
 
@@ -196,9 +196,9 @@ Créez une règle de sécurité de trafic entrant qui autorise le trafic du prot
 
 Les étapes nécessaires pour restreindre l’accès réseau aux ressources créées par le biais des services Azure avec activation des points de terminaison varient d’un service à l’autre. Pour connaître les étapes à suivre, consultez la documentation relative à chacun des services. La suite de cet exercice comprend des étapes permettant de restreindre l’accès réseau pour un compte Stockage Azure, par exemple.
 
-1. Dans le menu du portail Azure, sélectionnez Comptes de stockage.
+1. Dans le portail Azure, recherchez et sélectionnez `Storage accounts`.
 
-1. Sélectionnez + Créer.
+1. Sélectionnez **Créer**.
 
 1. Saisissez ou sélectionnez les informations suivantes, et acceptez les autres valeurs par défaut :
 
@@ -207,20 +207,25 @@ Les étapes nécessaires pour restreindre l’accès réseau aux ressources cré
    | Abonnement   | Sélectionnez votre abonnement                                     |
    | Resource group | myResourceGroup                                              |
    | Nom           | Entrez contosostoragewestxx (où xx sont vos initiales, pour le rendre unique). |
+   | Service principal | Azure Files                                                |
    | Performances    | StorageV2 standard (v2 universel)                      |
    | Emplacement       | Sélectionnez USA Est.                                               |
    | Réplication    | Stockage localement redondant (LRS)                              |
 
 1. Sélectionnez **Vérifier**, puis **Créer**.
 
+1. Une fois le compte de stockage déployé, sélectionnez **Accéder à la ressource**. 
+
 ## Tâche 7 : Créer un partage de fichiers dans le compte de stockage
 
-1. Une fois le compte de stockage créé, entrez le nom du compte de stockage dans le champ **Rechercher des ressources, services et documents** en haut du portail. Lorsque le nom de votre compte de stockage apparaît dans les résultats de la recherche, sélectionnez-le.
-1. Sélectionnez **Partages de fichiers**, comme illustré par l’image suivante : ![interface utilisateur graphique, application, description générée automatiquement](../media/new-file-share-2.png).
-1. Sélectionner **+Partage de fichiers**.
-1. Entrez marketing sous **Nom**, puis sélectionnez **Suivant : sauvegarde**.
-   ![Interface utilisateur graphique, application, description générée automatiquement](../media/new-file-share-basics.png)
-1. Désélectionnez **Activer la sauvegarde**, comme illustré par l’image suivante : ![interface utilisateur graphique, application, description générée automatiquement](../media/new-file-share-backup.png).
+1. Dans le compte de stockage, dans le panneau **Stockage des données**, sélectionnez **Partages de fichiers**.
+
+1. Sélectionner **+Partage de fichiers**. 
+
+1. Pour **Nom**, entrez **marketing**, puis sélectionnez **Suivant : Sauvegarde**.
+
+1. Désélectionnez **Activer la sauvegarde**, comme illustré dans l’image suivante : 
+
 1. Sélectionnez **Vérifier + créer**. Une fois la ressource validée, sélectionnez **Créer**.
 
 ## Tâche 8 : Restreindre l’accès réseau à un sous-réseau
@@ -229,25 +234,23 @@ Par défaut, les comptes de stockage acceptent les connexions réseau provenant 
 
 1. Sous **Sécurité + mise en réseau** pour le compte de stockage, sélectionnez **Mise en réseau**.
 
-1. Sélectionnez **Activé à partir de réseaux virtuels et d’adresses IP sélectionnés**.
+1. Sélectionnez **Gérer** dans la section **Accès au réseau public**.
 
-1. Sélectionnez **+Ajouter un réseau virtuel existant**.
+Dans la section **Étendue d’accès public**, sélectionnez **Activé dans les réseaux sélectionnés**.
 
-1. Sous **Ajouter des réseaux**, sélectionnez les valeurs suivantes : ![interface utilisateur graphique, application, description générée automatiquement](../media/add-network-access.png).
+1. Sélectionnez **+ Ajouter un réseau virtuel existant**, puis **Ajouter un réseau virtuel existant**. 
 
    | **Paramètre**      | **Valeur**                    |
    | ---------------- | ---------------------------- |
    | Abonnement     | Sélectionnez votre abonnement.    |
-   | Réseaux virtuels | Sélectionnez CoreServicesVNet **.** |
-   | Sous-réseaux          | Sélectionnez **Privé**.          |
+   | Réseaux virtuels | **CoreServicesVNet** |
+   | Sous-réseaux          | **Privé**.          |
 
-1. Sélectionnez **Ajouter**.
-
-1. Sélectionnez **Enregistrer**.
+1. Sélectionnez **Ajouter**, puis **Enregistrer**.
 
 1. Sous **Sécurité et mise en réseau** pour le compte de stockage, sélectionnez **Clés d’accès**.
 
-1. Sélectionnez **Afficher les clés**. Notez la valeur **Clé**, car vous devrez l’entrer manuellement dans une étape ultérieure lors du mappage du partage de fichiers à une lettre de lecteur d’une machine virtuelle.
+1. Utilisez **Afficher** pour la valeur **Key1**. Copiez la valeur, vous en aurez besoin ultérieurement. 
 
 ## Tâche 9 : Créer des machines virtuelles
 
@@ -258,7 +261,7 @@ Pour tester l’accès réseau à un compte de stockage, déployez une machine v
     + Sélectionnez **Aucun compte de stockage requis** et votre **abonnement**, puis sélectionnez **Appliquer**.
     + Attendez que le terminal crée et qu’une invite s’affiche. 
 
-1. Dans la barre d’outils du volet Cloud Shell, sélectionnez l’icône **Gérer des fichiers**, dans le menu déroulant, sélectionnez **Charger** et chargez les fichiers **VMs.json** et **VMs.parameters.json** l’un après l’autre dans le répertoire racine de Cloud Shell à partir du dossier source **F:\Allfiles\Exercises\M07**.
+1. Dans la barre d’outils du volet Cloud Shell, sélectionnez l’icône **Gérer des fichiers**. Dans le menu déroulant, sélectionnez **Charger** et chargez les fichiers **VMs.json** et **VMs.parameters.json** dans le répertoire de base de Cloud Shell. Ce module 07, exercice 05. 
 
 1. Déployez les modèles ARM suivants pour créer les machines virtuelles nécessaires à cet exercice :
 
@@ -274,64 +277,38 @@ Pour tester l’accès réseau à un compte de stockage, déployez une machine v
 
 ## Tâche 10 : Confirmer l’accès au compte de stockage
 
-1. Une fois la création de la machine virtuelle ContosoPrivate terminée, ouvrez le panneau de la machine virtuelle en sélectionnant Accéder à la ressource. Sélectionnez le bouton Connecter, puis RDP.
-   ![Interface utilisateur graphique, application, description générée automatiquement](../media/private-virtual-machine-connect.png)
-1. Après avoir sélectionné le bouton Connecter et RDP, sélectionnez le bouton Télécharger le fichier RDP. Un fichier .rdp (Remote Desktop Protocol) est créé et téléchargé sur votre ordinateur.
-1. Ouvrez le fichier .rdp téléchargé. Si vous y êtes invité, sélectionnez Connexion. Entrez le nom d’utilisateur et le mot de passe spécifiés lors de la création de la machine virtuelle. Vous devrez peut-être sélectionner Plus de choix, puis Utiliser un autre compte, pour spécifier les informations d’identification que vous avez entrées lorsque vous avez créé la machine virtuelle.
-1. Cliquez sur **OK**.
-1. Un avertissement de certificat peut s’afficher pendant le processus de connexion. Si vous recevez l’avertissement, sélectionnez Oui ou Continuer pour poursuivre le processus de connexion.
-1. Sur la machine virtuelle ContosoPrivate, mappez le partage de fichiers Azure au lecteur Z à l’aide de PowerShell. Avant d’exécuter les commandes qui suivent, remplacez <storage-account-key>,  <storage-account-name> (par exemple contosostoragexx) et my-file-share (par exemple marketing) par les valeurs que vous avez fournies et récupérées dans la tâche Créer un compte de stockage.
+1. Dans le portail, recherchez et sélectionnez la machine virtuelle **ContosoPrivate**.
 
-```azurecli
-$acctKey = ConvertTo-SecureString -String "<storage-account-key>" -AsPlainText -Force
+1. Sélectionnez **Se connecter**, **Se connecter**, puis **Télécharger le fichier RDP**. Si vous y êtes invité, confirmez le téléchargement.
 
-$credential = New-Object System.Management.Automation.PSCredential -ArgumentList "Azure\<storage-account-name>", $acctKey
+1. Dans le dossier **Téléchargements**, ouvrez le fichier ContosoPrivate.rdp.
 
-New-PSDrive -Name Z -PSProvider FileSystem -Root "\\<storage-account-name>.file.core.windows.net\marketing" -Credential $credential
+1. Sélectionnez **Se connecter** et indiquez le mot de passe de la machine virtuelle. Sélectionnez **Ok** et indiquez **Oui** à l’avertissement du certificat. 
 
-```
+1. Utilisez PowerShell pour créer un partage de fichiers. Remplacez <storage-account-key1-value> , <storage-account-name> (par exemple, contosostoragexx) par les valeurs lorsque vous avez créé le compte de stockage. 
+    ```powershell
+    $acctKey = ConvertTo-SecureString -String "<storage-account-key1-value>" -AsPlainText -Force
 
-Le partage de fichiers Azure est correctement mappé au lecteur Z.
+    $credential = New-Object System.Management.Automation.PSCredential -ArgumentList "Azure\<storage-account-name>", $acctKey
 
-1. Vérifiez que la machine virtuelle ne dispose d’aucune connexion sortante à Internet à partir d’une invite de commande :
+    New-PSDrive -Name Z -PSProvider FileSystem -Root "\\<storage-account-name>.file.core.windows.net\marketing" -Credential $credential
 
- ping bing.com
+    ```
+1. Vérifiez que la machine virtuelle n’a pas de connectivité sortante. Vous ne recevez aucune réponse, car le groupe de sécurité réseau associé au sous-réseau Private n’autorise pas l’accès sortant à Internet.
 
-Vous ne recevez aucune réponse, car le groupe de sécurité réseau associé au sous-réseau Private n’autorise pas l’accès sortant à Internet.
+    ```ping bing.com```
 
 1. Fermez la session Bureau à distance sur la machine virtuelle ContosoPrivate.
 
 ### Vérifier que l’accès au compte de stockage est refusé
 
-1. Entrez ContosoPublic dans la zone **Rechercher des ressources, services et documents** en haut du portail.
+1. Retournez au Portail Azure.
 
-1. Lorsque **ContosoPublic** apparaît dans les résultats de la recherche, sélectionnez-le.
+1. Accédez à votre compte de stockage, sélectionnez **Partages de fichiers**, puis sélectionnez le partage de fichiers **marketing**. 
 
-1. Répétez les étapes 1 à 6 de la tâche Vérifier l’accès au compte de stockage pour la machine virtuelle ContosoPublic.  
+1. Sélectionnez **Parcourir** et notez l’erreur d’accès refusé. Votre erreur peut être différente.  L’accès est refusé, car votre ordinateur ne se trouve pas dans le sous-réseau Private du réseau virtuel CoreServicesVNet.
 
-   ‎Après une brève attente, une erreur s’affiche : New-PSDrive : accès refusé. L’accès est refusé, car la machine virtuelle ContosoPublic est déployée dans le sous-réseau Public. Le sous-réseau Public ne dispose d’aucun point de terminaison de service activé pour le Stockage Azure. Le compte de stockage permet uniquement l’accès à partir du sous-réseau Private et non au sous-réseau Public.
-
-1. Vérifiez que la machine virtuelle ne dispose d’aucune connexion sortante à Internet en entrant l’invite de commande :
-
- ping bing.com
-
-1. Fermez la session Bureau à distance sur la machine virtuelle ContosoPublic.
-
-1. Sur votre ordinateur, accédez au portail Azure.
-
-1. Entrez le nom du compte de stockage que vous avez créé dans le champ **Rechercher des ressources, services et documents**. Lorsque le nom de votre compte de stockage apparaît dans les résultats de la recherche, sélectionnez-le.
-
-1. Sélectionnez **Partages de fichiers**, puis sélectionnez le partage **marketing**.
-
-1. L’erreur indiquée dans la capture d’écran suivante s’affiche :
-
-    ![Interface utilisateur graphique, texte, application, e-mail, description générée automatiquement](../media/no-access.png)
-
- L’accès est refusé, car votre ordinateur ne se trouve pas dans le sous-réseau Private du réseau virtuel CoreServicesVNet.
-
-   >**Avertissement** : avant de continuer, vous devez supprimer toutes les ressources utilisées pour ce labo. Pour ce faire, dans le portail Azure, sélectionnez Groupes de ressources. Sélectionnez les groupes de ressources que vous avez créés. Dans le panneau du groupe de ressources, sélectionnez Supprimer un groupe de ressources, entrez le nom du groupe de ressources, puis sélectionnez Supprimer. Répétez le processus pour tous les groupes de ressources supplémentaires que vous avez créés. Sinon, vous risquez de provoquer des problèmes avec d’autres labos.
-
-Résultats : vous avez maintenant terminé ce labo.
+    ![Interface utilisateur graphique, texte, application, courrier électronique – Description générée automatiquement](../media/no-access.png)
 
 ## Nettoyer les ressources
 
