@@ -24,9 +24,6 @@ Dans cet exercice, vous allez :
 + Tâche 6 : Configurer les alertes DDoS
 + Tâche 7 : tester avec des partenaires de simulation
   
-### Simulations de labo interactives
-
->**Note** : les simulations de labo qui ont été fournies précédemment ont été supprimées.
 ### Durée estimée : 40 minutes
 
 ## Tâche 1 : Créer un groupe de ressources

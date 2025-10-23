@@ -22,10 +22,6 @@ Dans cet exercice, vous allez :
 + Tâche 4 : créer des peerings de réseaux virtuels entre CoreServicesVnet et ManufacturingVnet
 + Tâche 5 : tester la connexion entre les machines virtuelles
 
-### Simulations de labo interactives
-
->**Note** : les simulations de labo qui ont été fournies précédemment ont été supprimées.
-
 ### Durée estimée : 20 minutes
 
 ## Tâche 1 : créer une machine virtuelle pour tester la configuration

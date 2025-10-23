@@ -27,10 +27,6 @@ Dans cet exercice, vous allez :
 + Tâche 9 : Modifier les adresses DNS principales et secondaires de l’interface réseau du serveur
 + Tâche 10 : Tester le pare-feu
 
-### Simulations de labo interactives
-
->**Note** : les simulations de labo qui ont été fournies précédemment ont été supprimées.
-
 ### Durée estimée : 60 minutes
 
 ## Tâche 1 : Créer un groupe de ressources
@@ -69,13 +65,13 @@ Au cours de cette tâche, vous allez créer un seul réseau virtuel avec deux so
 
 1. Sélectionnez **Suivant : Adresses IP**. Entrez l’espace d’adressage IPv4 10.0.0.0/16 si ce n’est pas déjà fait par défaut.
 
-1. Sous **Nom de sous-réseau**, sélectionnez le mot **par défaut**.
+1. Cliquez sur l’icône **Modifier** à côté du sous-réseau **Par défaut**.
 
-1. Dans la boîte de dialogue **Modifier le sous-réseau**, remplacez le nom par **AzureFirewallSubnet**.
+1. Dans le menu déroulant **Objectif du sous-réseau**, sélectionnez **Pare-feu Azure**. 
 
-1. Remplacez la **Plage d’adresses de sous-réseau** par **10.0.1.0/26**.
+1. Modifiez l’**Adresse de départ** en **10.0.1.0/26**.
 
-1. Sélectionnez **Enregistrer**.
+1. Cliquez sur **Enregistrer**.
 
 1. Sélectionnez **Ajouter un sous-réseau** pour créer un autre sous-réseau qui hébergera le serveur de charge de travail que vous allez bientôt créer.
 

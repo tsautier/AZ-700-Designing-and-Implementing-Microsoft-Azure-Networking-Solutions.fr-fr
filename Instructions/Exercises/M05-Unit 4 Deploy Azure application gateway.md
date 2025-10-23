@@ -12,10 +12,6 @@ Dans cet exercice, vous allez utiliser le Portail Azure pour créer une passerel
 
 ![Diagramme d’une architecture de passerelle applicative.](../media/4-exercise-deploy-azure-application-gateway.png)
 
-### Simulations de labo interactives
-
->**Note** : les simulations de labo qui ont été fournies précédemment ont été supprimées.
-
 ### Durée estimée : 25 minutes
 
 La passerelle d’application dirige le trafic web des applications vers des ressources spécifiques d’un pool de back-ends. Vous attribuez des écouteurs aux ports, créez des règles et ajoutez des ressources à un pool de back-ends. Par souci de simplicité, cet article utilise une configuration simple avec une adresse IP front-end publique, un écouteur de base pour héberger un site unique sur cette passerelle d’application, une règle de routage des requêtes simple et deux machines virtuelles dans le pool de back-ends.

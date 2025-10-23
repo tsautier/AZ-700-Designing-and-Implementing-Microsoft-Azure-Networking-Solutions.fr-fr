@@ -9,10 +9,6 @@ Exercise:
 
 Dans cet exercice, vous allez créer un équilibreur de charge interne pour l’organisation fictive Contoso Ltd.
 
-### Simulations de labo interactives
-
->**Note** : les simulations de labo qui ont été fournies précédemment ont été supprimées.
-
 ### Durée estimée : 60 minutes (dont environ 45 minutes d’attente pour le déploiement)
 
 Les étapes de création d’un équilibreur de charge interne sont très similaires à celles que vous avez déjà apprises dans ce module pour créer un équilibreur de charge public. La principale différence réside dans le fait qu’avec un équilibreur de charge public, le serveur frontal est accessible via une adresse IP publique et que vous testez la connectivité à partir d’un hôte situé en dehors de votre réseau virtuel. En revanche, avec un équilibreur de charge interne, le serveur frontal est une adresse IP privée à l’intérieur de votre réseau virtuel et vous testez la connectivité à partir d’un hôte situé dans le même réseau.

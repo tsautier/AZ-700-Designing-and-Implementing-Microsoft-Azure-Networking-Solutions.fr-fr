@@ -11,10 +11,6 @@ Exercise:
 
 Pour connecter votre réseau virtuel Azure et votre réseau local via ExpressRoute, vous devez d’abord créer une passerelle réseau virtuelle. Une passerelle de réseau virtuel a deux rôles : échanger des routes IP entre les réseaux et router le trafic réseau.
 
-### Simulations de labo interactives
-
->**Note** : les simulations de labo qui ont été fournies précédemment ont été supprimées.
-
 ### Durée estimée : 60 minutes (dont environ 45 minutes d’attente pour le déploiement)
 
 **Types de passerelles**
@@ -118,4 +114,5 @@ Félicitations, vous avez terminé le labo. Voici les principaux points à reten
 + Microsoft garantit une disponibilité d’au moins 99,95 % pour les connexions dédiées ExpressRoute. La connexion est privée et se déplace sur une ligne dédiée. Les tiers ne peuvent pas intercepter le trafic.
 + Vous pouvez créer une connexion entre votre réseau local et le cloud Microsoft de quatre façons différentes : avec une colocalisation avec échange de cloud, avec une connexion Ethernet point à point, avec une connexion universelle (IPVPN) et avec ExpressRoute Direct.
 + Les fonctionnalités ExpressRoute sont déterminées par la référence (SKU) : local, standard et premium. 
+
 

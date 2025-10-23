@@ -20,10 +20,6 @@ Dans cet exercice, vous allez :
 + Tâche 3 : Créer des machines virtuelles pour tester la configuration
 + Tâche 4 : Vérifier que les enregistrements sont présents dans la zone DNS
 
-### Simulations de labo interactives
-
->**Note** : les simulations de labo qui ont été fournies précédemment ont été supprimées.
-
 ### Durée estimée : 25 minutes
 
 **Important :** cet exercice nécessite un réseau virtuel à partir du labo précédent. Il peut être installé à l’aide d’un fichier de [modèle](https://github.com/MicrosoftLearning/AZ-700-Designing-and-Implementing-Microsoft-Azure-Networking-Solutions/tree/master/Allfiles/Exercises/M01/template.json). Tous les réseaux virtuels seront installés, mais seuls les coreServicesVNet sont nécessaires. 

@@ -19,10 +19,6 @@ Dans cet exercice, vous allez :
 + Tâche 2 : créer un hub à partir du portail Azure
 + Tâche 3 : Connecter un VNet au hub virtuel
 
-### Simulations de labo interactives
-
->**Note** : les simulations de labo qui ont été fournies précédemment ont été supprimées.
->
 ### Durée estimée : 65 minutes (dont environ 45 minutes d’attente pour le déploiement)
 
 ## Tâche 1 : Créer un WAN virtuel

@@ -12,10 +12,6 @@ Vous êtes maintenant prêt à déployer des réseaux virtuels dans le portail A
 
 Prenons l’exemple d’une organisation fictive, Contoso Ltd, qui est en train de migrer son infrastructure et ses applications vers Azure. Dans votre rôle d’ingénieur réseau, vous devez planifier et implémenter trois réseaux virtuels et des sous-réseaux pour prendre en charge les ressources dans ces réseaux virtuels.
 
-### Simulations de labo interactives
-
->**Note** : les simulations de labo qui ont été fournies précédemment ont été supprimées.
-
 ### Durée estimée : 20 minutes
 
 Le réseau virtuel **CoreServicesVnet** est déployé dans la région **USA Est**. Ce réseau virtuel aura le plus grand nombre de ressources. Il sera connecté à des réseaux locaux via une connexion VPN. Ce réseau aura des services web, des bases de données et d’autres systèmes qui sont essentiels au fonctionnement de l’entreprise. Les services partagés, tels que les contrôleurs de domaine et les DNS, sont également situés à cet endroit. Une croissance importante est prévue, il faut donc un espace d’adressage important pour ce réseau virtuel.

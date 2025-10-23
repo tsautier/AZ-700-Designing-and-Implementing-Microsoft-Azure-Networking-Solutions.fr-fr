@@ -10,10 +10,6 @@ Exercise:
 
 Dans cet exercice, vous allez créer un profil Traffic Manager pour fournir une haute disponibilité pour l’application web de l’organisation fictive Contoso Ltd.
 
-### Simulations de labo interactives
-
->**Note** : les simulations de labo qui ont été fournies précédemment ont été supprimées.
-
 ### Durée estimée : 35 minutes
 
 Vous allez créer deux instances d’une application web déployées dans deux régions différentes (USA Est et Europe Ouest). La région USA Est fait office de point de terminaison principal pour Traffic Manager et la région Europe Ouest agit comme un point de terminaison de basculement.
@@ -51,11 +47,11 @@ Dans cette section, vous allez créer deux instances d’une application web dé
    | Système d’exploitation | **Windows**                                                  |
    | Région           | **USA Est**                                                  |
    | Plan Windows     | Sélectionnez **Créer nouveau** Nom : **ContosoAppServicePlanEastUS** |
-   | Plan tarifaire     | **Standard S1 100 ACU au total, 1,75 Go de mémoire**               |
+   | Plan tarifaire     | **Premium V3 P1V3**  (Sélectionnez un autre plan si celui-ci n’est pas disponible)          |
 
-1. Sélectionnez l’onglet **Supervision**.
+1. Sélectionnez l’onglet **Surveiller + sécuriser**.
 
-1. Sous l’onglet **Supervision**, sélectionnez l’option **Non** pour **Activer Application Insights**.
+1. Sélectionnez l’option **Non** pour **Activer Application Insights**.
 
 1. Sélectionnez **Revoir + créer**.
 

@@ -13,11 +13,6 @@ Dans cet exercice, vous allez créer le réseau virtuel Spoke et créer un hub v
 
 ![Diagramme de l’architecture de réseau virtuel avec un hub sécurisé.](../media/9-exercise-secure-your-virtual-hub-using-azure-firewall-manager.png)
 
-### Simulations de labo interactives
-
-**Note** : les simulations de labo qui ont été fournies précédemment ont été supprimées.
-
-
 ## Créer une architecture hub and spoke
 
 Dans cette partie de l’exercice, vous allez créer les réseaux virtuels Spoke et les sous-réseaux dans lesquels vous allez placer les serveurs de charge de travail. Vous allez ensuite créer le hub virtuel sécurisé et connecter les réseaux virtuels Hub and Spoke.

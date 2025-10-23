@@ -29,10 +29,6 @@ Dans cet exercice, vous allez :
 + Tâche 10 : Vérifier que les connexions sont établies
 + Tâche 11 : Tester la connexion entre les machines virtuelles
 
-### Simulations de labo interactives
-
->**Note** : les simulations de labo qui ont été fournies précédemment ont été supprimées.
-
 ### Durée estimée : 70 minutes (dont environ 45 minutes d’attente pour le déploiement)
 
 ## Tâche 1 : Créer CoreServicesVnet et ManufacturingVnet

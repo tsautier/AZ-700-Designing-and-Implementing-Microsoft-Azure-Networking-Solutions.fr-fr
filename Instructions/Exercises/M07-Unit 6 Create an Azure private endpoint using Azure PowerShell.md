@@ -14,10 +14,6 @@ Démarrez avec Azure Private Link en utilisant un point de terminaison privé po
 
 ![Diagramme de l’architecture d’un point de terminaison privé.](../media/6-exercise-create-azure-private-endpoint-using-azure-powershell.png)
 
-### Simulations de labo interactives
-
->**Note** : les simulations de labo qui ont été fournies précédemment ont été supprimées.
-
 ### Durée estimée : 45 minutes
 
 Vous allez créer un point de terminaison privé pour une application web Azure et déployer une machine virtuelle pour tester la connexion privée.

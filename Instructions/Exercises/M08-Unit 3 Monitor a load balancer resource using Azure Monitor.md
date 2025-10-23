@@ -32,10 +32,6 @@ Le diagramme ci-dessous illustre l’environnement que vous déploierez dans cet
 + Tâche 12 : afficher l’intégrité des ressources
 + Tâche 13 : configurer les paramètres de diagnostic
 
-### Simulations de labo interactives
-
->**Note** : les simulations de labo qui ont été fournies précédemment ont été supprimées.
-
 ### Durée estimée : 55 minutes
 
 ## Tâche 1 : Créer le réseau virtuel

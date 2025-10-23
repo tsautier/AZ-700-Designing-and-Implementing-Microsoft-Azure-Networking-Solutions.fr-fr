@@ -22,10 +22,6 @@ Dans cet exercice, vous allez :
 + Tâche 2 : créer une instance Front Door pour votre application
 + Tâche 3 : afficher Azure Front Door à l’œuvre
 
-### Simulations de labo interactives
-
->**Note** : les simulations de labo qui ont été fournies précédemment ont été supprimées.
-
 ### Durée estimée : 30 minutes
 
 ## Tâche 1 : créer deux instances d’une application web
