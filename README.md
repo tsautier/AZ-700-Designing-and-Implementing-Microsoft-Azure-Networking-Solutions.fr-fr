@@ -1,3 +1,5 @@
+**⚠️ This GitHub repo will retire on 28th November 2025.**
+
 # AZ-700 : Conception et implémentation de solutions Microsoft Azure Networking 
 
 ## Bienvenue
